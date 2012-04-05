@@ -1,0 +1,15 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+body {
+}
+
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+@media handheld, only screen and (max-width: 767px) {
+    body {
+
+    }
+}
