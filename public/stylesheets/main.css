@@ -1,9 +1,30 @@
 /* ============================== */
 /* ! Layout for desktop version   */
 /* ============================== */
-body {
+* {
+    font-family: Arial sans-serif;
 }
 
+#header {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+#footer {
+    border-top: 1px solid #000000;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.sectionHeader {
+    font-weight: bolder;
+    display: block;
+}
+
+.loginDetails {
+    text-align: right
+}
 
 /* ============================= */
 /* ! Layout for mobile version   */
