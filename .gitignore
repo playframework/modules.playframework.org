@@ -7,3 +7,4 @@ tmp
 dist
 module-repo.iml
 .idea
+conf/evolutions

@@ -1,21 +1,32 @@
-@main("Home") {
+@(currentUser: User,
+  mostRecentModules: List[Module],
+  highestRatedModules: List[Module],
+  featuredModules: List[FeaturedModule])
+
+@import tags._
+
+@main("Home", currentUser) {
 <div class="row">
     <div class="sixcol">
+        @if(currentUser != null) {
+        <p>Personal summary</p>
+        } else {
         <p>A welcome message</p>
+        }
     </div>
     <div class="sixcol last">
-        <p>Featured modules</p>
+        @moduleList("Featured modules", featuredModules)
     </div>
 </div>
 <div class="row">
     <div class="fourcol">
-        <p>Latest modules</p>
+        @moduleList("Latest modules", mostRecentModules)
     </div>
     <div class="fourcol">
-        <p>Highest-rated</p>
+        @moduleList("Highest-rated", highestRatedModules)
     </div>
     <div class="fourcol last">
-        <p>Search</p>
+        <p class="sectionHeader">Search</p>
     </div>
 </div>
 }

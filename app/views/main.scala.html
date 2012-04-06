@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, currentUser: User = actions.CurrentUser.get())(content: Html)
 
 <!DOCTYPE html>
 
@@ -18,13 +18,21 @@
     </head>
     <body>
     <div class="container">
-        <div class="row">
-            <div class="twelvecol last">
-                <p>Header</p>
+        <div id="header" class="row">
+            <div class="ninecol">
+                <p><a href="@routes.Application.index">Header</a></p>
+            </div>
+            <div class="threecol last loginDetails">
+                @if(currentUser != null) {
+                    Hello @currentUser.displayName | <a href="@routes.Application.logout">Log out</a>
+                } else {
+                    <a href="@routes.Application.login">Log in</a>
+                }
+                @* This will be replaced with roleHolderPresent from deadbolt *@
             </div>
         </div>
         @content
-        <div class="row">
+        <div id="footer" class="row">
             <div class="twelvecol last">
                 <p>Footer</p>
             </div>

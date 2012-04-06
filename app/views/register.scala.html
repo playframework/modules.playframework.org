@@ -1,0 +1,33 @@
+@(form: Form[forms.login.Register])
+
+@main("Register") {
+<div class="row">
+    <div class="twelvecol last">
+        @helper.form(routes.Application.createAccount) {
+
+        <h1>Register</h1>
+
+        @if(form.hasGlobalErrors) {
+        <p class="error">
+            @form.globalError.message
+        </p>
+        }
+
+        <p>
+            <input type="text" name="userName" placeholder="User name" value="@form(" userName").value">
+        </p>
+
+        <p>
+            <input type="text" name="displayName" placeholder="Display name" value="@form(" displayName").value">
+        </p>
+
+        <p>
+            <input type="password" name="password" placeholder="Password">
+        </p>
+
+        <p>
+            <button type="submit">Register</button>
+        </p>
+    </div>
+</div>
+}}

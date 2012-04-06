@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Steve Chaloner
+ * Copyright 2012 The Play! Framework
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import java.util.List;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Module extends Model
+public class Module extends Model implements ModuleAccessor
 {
     @Id
     public Long id;
@@ -109,6 +109,12 @@ public class Module extends Model
         return FIND.where()
                    .eq("moduleKey", moduleKey)
                    .findUnique();
+    }
+
+    @Override
+    public Module getModule()
+    {
+        return this;
     }
 
     public static List<Module> findByTag(Tag tag)
