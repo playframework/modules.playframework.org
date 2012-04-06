@@ -7,3 +7,7 @@ tmp
 dist
 module-repo.iml
 .idea
+.cache
+.classpath
+.project
+.settings/
