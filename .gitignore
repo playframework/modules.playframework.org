@@ -11,3 +11,4 @@ module-repo.iml
 .classpath
 .project
 .settings/
+conf/evolutions

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Steve Chaloner
+ * Copyright 2012 The Play! Framework
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import java.util.List;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class FeaturedModule extends Model
+public class FeaturedModule extends Model implements ModuleAccessor
 {
     @Id
     public Long id;
@@ -48,5 +48,11 @@ public class FeaturedModule extends Model
     public static List<FeaturedModule> getAll()
     {
         return FIND.all();
+    }
+
+    @Override
+    public Module getModule()
+    {
+        return module;
     }
 }

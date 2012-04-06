@@ -13,26 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package models;
+package services;
 
-import play.db.ebean.Model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import models.Account;
+import models.User;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-@Entity
-public class BinaryContent extends Model
+public class AccountServices
 {
-    @Id
-    public Long id;
+    public Account createAccount(String userName,
+                                 String displayName,
+                                 String password)
+    {
+        User user = new User();
+        user.userName = userName;
+        user.displayName = displayName;
+        user.password = password;
+        user.accountActive = true;
+        user.save();
 
-    @Column(nullable = false)
-    public byte[] content;
+        Account account = new Account();
+        account.user = user;
+        account.save();
 
-    public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
-                                                                                           BinaryContent.class);
+        return account;
+    }
 }

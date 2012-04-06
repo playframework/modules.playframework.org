@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Steve Chaloner
+ * Copyright 2012 The Play! Framework
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,29 +74,11 @@ public class User extends Model
                    .findUnique();
     }
 
-    public boolean hasVoted(Module module)
-    {
-        boolean hasVoted = false;
-
-        for (Iterator<Vote> iterator = votes.iterator(); !hasVoted && iterator.hasNext(); )
-        {
-            Vote vote = iterator.next();
-            hasVoted = module.equals(vote.module);
-        }
-
-        return hasVoted;
-    }
-
-    public boolean hasRated(Module module)
-    {
-        boolean hasRated = false;
-
-        for (Iterator<Rate> iterator = rates.iterator(); !hasRated && iterator.hasNext(); )
-        {
-            Rate rate = iterator.next();
-            hasRated = module.equals(rate.module);
-        }
-
-        return hasRated;
+    public static User authenticate(String userName,
+                                    String password) {
+        return FIND.where()
+                   .eq("userName", userName)
+                   .eq("password", password)
+                   .findUnique();
     }
 }

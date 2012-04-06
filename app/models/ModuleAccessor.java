@@ -15,24 +15,10 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-@Entity
-public class BinaryContent extends Model
+public interface ModuleAccessor
 {
-    @Id
-    public Long id;
-
-    @Column(nullable = false)
-    public byte[] content;
-
-    public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
-                                                                                           BinaryContent.class);
+    Module getModule();
 }

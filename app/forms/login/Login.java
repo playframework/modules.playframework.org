@@ -13,26 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package models;
+package forms.login;
 
-import play.db.ebean.Model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import models.User;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-@Entity
-public class BinaryContent extends Model
+public class Login
 {
-    @Id
-    public Long id;
+    public String userName;
+    public String password;
 
-    @Column(nullable = false)
-    public byte[] content;
-
-    public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
-                                                                                           BinaryContent.class);
+    public String validate()
+    {
+        String result = null;
+        if (User.authenticate(userName,
+                              password) == null)
+        {
+            result = "Invalid user or password";
+        }
+        return result;
+    }
 }

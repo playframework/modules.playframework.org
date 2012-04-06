@@ -13,26 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package models;
-
-import play.db.ebean.Model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+package utils;
 
 /**
+ * A few handy string helpers.
+ *
  * @author Steve Chaloner (steve@objectify.be)
  */
-@Entity
-public class BinaryContent extends Model
+public class StringUtils
 {
-    @Id
-    public Long id;
-
-    @Column(nullable = false)
-    public byte[] content;
-
-    public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
-                                                                                           BinaryContent.class);
+    /**
+     * Check if a string has non-empty content.
+     *
+     * @param s the string
+     * @return true if the string is null, empty or comprised only of empty characters spaces, tabs, \n, etc),
+     * otherwise false
+     */
+    public static boolean isEmpty(String s)
+    {
+        return s == null || s.trim().length() == 0;
+    }
 }

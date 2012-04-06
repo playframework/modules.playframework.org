@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Steve Chaloner
+ * Copyright 2012 The Play! Framework
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,12 @@ public class CollectionUtils
     }
 
     /**
-     * Get the first item from a list, or null if the list is null or empty.
+     * Gets the first element of the list.
      *
      * @param list the list
-     * @param <T> the generic type of the list
-     * @return the first item, or null
+     * @param <T> the list's generic type
+     * @return the first element of the list, or null if the list is null or empty.  The returned value will also be null
+     * if the first element of the list is null.
      */
     public static <T> T first(List<T> list)
     {
@@ -41,11 +42,12 @@ public class CollectionUtils
     }
 
     /**
-     * Get the last item from a list, or null if the list is null or empty.
+     * Gets the last element of the list.
      *
      * @param list the list
-     * @param <T> the generic type of the list
-     * @return the last item, or null
+     * @param <T> the list's generic type
+     * @return the last element of the list, or null if the list is null or empty.  The returned value will also be null
+     * if the last element of the list is null.
      */
     public static <T> T last(List<T> list)
     {
@@ -56,7 +58,8 @@ public class CollectionUtils
      * Checks if a collection is null or empty.
      *
      * @param c the collection
-     * @return true if the list is null or empty, otherwise false
+     * @return true if the collection is null or has a length of 0. A collection containing null entries is considered
+     * to be non-empty.
      */
     public static boolean isEmpty(Collection c)
     {

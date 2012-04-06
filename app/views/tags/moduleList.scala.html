@@ -1,0 +1,10 @@
+@(title: String, moduleAccessors: List[_ <: ModuleAccessor])
+
+<p class="sectionHeader">@title</p>
+<ul>
+@for(accessor <- moduleAccessors) {
+    <li>@accessor.getModule().moduleName</li>
+}
+</ul>
+
+
