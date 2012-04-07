@@ -7,4 +7,6 @@ tmp
 dist
 module-repo.iml
 .idea
+*.iws
+*.ipr
 conf/evolutions
