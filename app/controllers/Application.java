@@ -32,6 +32,8 @@ import views.html.register;
 import java.util.Collections;
 import java.util.List;
 
+import static actions.CurrentUser.currentUser;
+
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
@@ -43,7 +45,7 @@ public class Application extends Controller
         List<Module> mostRecentModules = Module.findMostRecent(10);
         List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
         List<FeaturedModule> featuredModules = FeaturedModule.getAll();
-        return ok(index.render(CurrentUser.get(),
+        return ok(index.render(currentUser(),
                                mostRecentModules,
                                highestRatedModules,
                                featuredModules));

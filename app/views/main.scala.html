@@ -1,4 +1,4 @@
-@(title: String, currentUser: User = actions.CurrentUser.get())(content: Html)
+@(title: String, currentUser: User = actions.CurrentUser.currentUser())(content: Html)
 <!DOCTYPE html>
 <html>
     <head>

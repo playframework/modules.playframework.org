@@ -18,12 +18,13 @@ package controllers;
 import actions.CurrentUser;
 import models.Account;
 import models.Module;
-import models.User;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import views.html.modules.moduleRegistrationForm;
 import views.html.modules.myModules;
+
+import static actions.CurrentUser.currentUser;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -32,16 +33,15 @@ import views.html.modules.myModules;
 public class Modules extends Controller {
 
 	public static Result myModules() {
-		User user = CurrentUser.get();
-		Account account = Account.getByUser(user);
-		return ok(myModules.render(user, account.modules));
+		Account account = Account.getByUser(currentUser());
+		return ok(myModules.render(currentUser(), account.modules));
 	}
 
 	public static Result showModuleRegistrationForm() {
-		return ok(moduleRegistrationForm.render(CurrentUser.get(), form(Module.class)));
+		return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
 	}
 	
 	public static Result submitModuleRegistrationForm(){
-		return ok();
+		return TODO;
 	}
 }

@@ -42,7 +42,7 @@ public class CurrentUser extends Action.Simple
         return delegate.call(ctx);
     }
 
-    public static User get() {
+    public static User currentUser() {
         return (User)Http.Context.current().args.get("user");
     }
 
