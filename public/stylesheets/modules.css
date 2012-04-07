@@ -1,0 +1,19 @@
+/*
+	modules.playframework.org overrides to the CSS from http://www.playframework.org/
+
+	Blue: #19ADE4 (light) #1999CE (normal) #1388B5 (text) #1487B4 (dark text) #C2D8DF (light text)
+*/
+
+a, #quicklinks h2, footer .links dt { color:#1999CE }
+a:hover { color:#1487B4; }
+
+header nav a.download { background-color:#19ADE4; box-shadow: 0 3px 0 #1487B4; }
+header nav a.download:hover {
+  box-shadow: 0 3px 0 #1487B4, 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+header nav a.download:active {
+  box-shadow: 0 1px 0 #1487B4;
+}
+
+#introduction, #top { background-color:#1487B4; }
+#title { color:#C2D8DF; }

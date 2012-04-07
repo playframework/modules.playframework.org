@@ -11,4 +11,6 @@ module-repo.iml
 .classpath
 .project
 .settings/
+*.iws
+*.ipr
 conf/evolutions
