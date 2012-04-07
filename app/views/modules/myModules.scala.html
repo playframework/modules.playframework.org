@@ -1,10 +1,20 @@
-@(currentUser: User,
-  modules: List[Module])
+@(currentUser: User, modules: List[Module])
 
 @main("My modules", currentUser) {
-<ul>
-@for(module <- modules) {
-<li>@module.moduleName</li>
-}
-</ul>
+
+<div class="wrapper">
+
+	@if(modules != null && !modules.isEmpty()) {
+	<ul>
+		@for(module <- modules) {
+			<li>@module.moduleName</li>
+		}
+	</ul>
+	} else {
+		<p>You don't have any modules yet.
+		   <a href="@routes.Modules.showModuleRegistrationForm">Register a module</a>
+		</p>
+	}
+
+	</div>
 }

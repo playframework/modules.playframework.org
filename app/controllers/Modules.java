@@ -17,24 +17,31 @@ package controllers;
 
 import actions.CurrentUser;
 import models.Account;
+import models.Module;
 import models.User;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
+import views.html.modules.moduleRegistrationForm;
 import views.html.modules.myModules;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Modules extends Controller
-{
-    public static Result myModules()
-    {
-        User user = CurrentUser.get();
-        Account account = Account.getByUser(user);
+public class Modules extends Controller {
 
-        return ok(myModules.render(user,
-                                   account.modules));
-    }
+	public static Result myModules() {
+		User user = CurrentUser.get();
+		Account account = Account.getByUser(user);
+		return ok(myModules.render(user, account.modules));
+	}
+
+	public static Result showModuleRegistrationForm() {
+		return ok(moduleRegistrationForm.render(CurrentUser.get(), form(Module.class)));
+	}
+	
+	public static Result submitModuleRegistrationForm(){
+		return ok();
+	}
 }
