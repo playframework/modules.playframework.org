@@ -24,7 +24,7 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
-import services.AccountServices;
+import services.UserServices;
 import views.html.index;
 import views.html.login;
 import views.html.register;
@@ -38,71 +38,54 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Application extends Controller
-{
-    public static Result index()
-    {
-        List<Module> mostRecentModules = Module.findMostRecent(10);
-        List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
-        List<FeaturedModule> featuredModules = FeaturedModule.getAll();
-        return ok(index.render(currentUser(),
-                               mostRecentModules,
-                               highestRatedModules,
-                               featuredModules));
-    }
+public class Application extends Controller {
+	public static Result index() {
+		List<Module> mostRecentModules = Module.findMostRecent(10);
+		List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
+		List<FeaturedModule> featuredModules = FeaturedModule.getAll();
+		return ok(index.render(currentUser(),
+				mostRecentModules,
+				highestRatedModules,
+				featuredModules));
+	}
 
-    public static Result login()
-    {
-        return ok(login.render(form(Login.class)));
-    }
+	public static Result login() {
+		return ok(login.render(form(Login.class)));
+	}
 
-    public static Result authenticate()
-    {
-        Form<Login> loginForm = form(Login.class).bindFromRequest();
-        Result result;
-        if(loginForm.hasErrors())
-        {
-            result = badRequest(login.render(loginForm));
-        }
-        else
-        {
-            session("userName", loginForm.get().userName);
-            result = redirect(routes.Application.index());
-        }
+	public static Result authenticate() {
+		Form<Login> loginForm = form(Login.class).bindFromRequest();
+		Result result;
+		if (loginForm.hasErrors()) {
+			result = badRequest(login.render(loginForm));
+		} else {
+			session("userName", loginForm.get().userName);
+			result = redirect(routes.Application.index());
+		}
 
-        return result;
-    }
+		return result;
+	}
 
-    public static Result register()
-    {
-        return ok(register.render(form(Register.class)));
-    }
+	public static Result register() {
+		return ok(register.render(form(Register.class)));
+	}
 
-    public static Result createAccount()
-    {
-        Form<Register> registerForm = form(Register.class).bindFromRequest();
-        Result result;
-        if(registerForm.hasErrors())
-        {
-            result = badRequest(register.render(registerForm));
-        }
-        else
-        {
-            Register register = registerForm.get();
-            new AccountServices().createAccount(register.userName,
-                                                register.displayName,
-                                                register.password);
-            session("userName",
-                    register.userName);
-            result = redirect(routes.Application.index());
-        }
+	public static Result createAccount() {
+		Form<Register> registerForm = form(Register.class).bindFromRequest();
+		Result result;
+		if (registerForm.hasErrors()) {
+			result = badRequest(register.render(registerForm));
+		} else {
+			Register register = registerForm.get();
+			new UserServices().createUser(register.userName, register.displayName, register.password);
+			session("userName", register.userName);
+			result = redirect(routes.Application.index());
+		}
+		return result;
+	}
 
-        return result;
-    }
-
-    public static Result logout()
-    {
-        session().clear();
-        return redirect(routes.Application.index());
-    }
+	public static Result logout() {
+		session().clear();
+		return redirect(routes.Application.index());
+	}
 }

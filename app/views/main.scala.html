@@ -1,4 +1,7 @@
 @(title: String, currentUser: User = actions.CurrentUser.currentUser())(content: Html)
+
+@import tags._
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,6 +32,8 @@
 			<p>Or browse <a href="/download">all versions</a>.</p>
 		</div>
 	</header>
+
+	@userMenu(currentUser)
 
     @content
 

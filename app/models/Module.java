@@ -50,7 +50,7 @@ public class Module extends Model implements ModuleAccessor {
 	@Required
 	public String description;
 
-	@ManyToOne(optional = false, cascade = {MERGE, DETACH, REFRESH})
+	@ManyToOne(optional = true, cascade = {MERGE, DETACH, REFRESH})
 	public Category category;
 
 	// there's no length limit for a URL according to RFC 2616, but 2500 should be enough
@@ -83,7 +83,7 @@ public class Module extends Model implements ModuleAccessor {
 	public Date updatedOn = new Date();
 
 	@OneToOne(optional = false)
-	public Rating rating;
+	public Rating rating = new Rating();
 
 	@OneToMany(fetch = LAZY, cascade = ALL, orphanRemoval = true)
 	@OrderBy("versionCode ASC")

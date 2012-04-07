@@ -18,14 +18,8 @@ package models;
 import models.security.UserRole;
 import play.db.ebean.Model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import java.util.Iterator;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,6 +30,9 @@ public class User extends Model
 {
     @Id
     public Long id;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	public List<Module> modules = new ArrayList<Module>();
 
     @Column(nullable = false, length = 40, unique = true)
     public String userName;
@@ -81,4 +78,9 @@ public class User extends Model
                    .eq("password", password)
                    .findUnique();
     }
+
+	public User addModule(Module module) {
+		modules.add(module);
+		return this;
+	}
 }

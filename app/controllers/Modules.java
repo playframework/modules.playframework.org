@@ -16,8 +16,8 @@
 package controllers;
 
 import actions.CurrentUser;
-import models.Account;
 import models.Module;
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -34,8 +34,7 @@ import static actions.CurrentUser.currentUser;
 public class Modules extends Controller {
 
 	public static Result myModules() {
-		Account account = Account.getByUser(currentUser());
-		return ok(myModules.render(currentUser(), account.modules));
+		return ok(myModules.render(currentUser(), currentUser().modules));
 	}
 
 	public static Result showModuleRegistrationForm() {
@@ -47,9 +46,10 @@ public class Modules extends Controller {
 		if (form.hasErrors()) {
 			return badRequest(moduleRegistrationForm.render(currentUser(), form));
 		} else {
-			Account account = Account.getByUser(currentUser());
-			account.modules.add(form.get());
-			account.save();
+			Module module = form.get();
+			User user = currentUser();
+			User user1 = user.addModule(module);
+			user1.save();
 			return myModules();
 		}
 	}
