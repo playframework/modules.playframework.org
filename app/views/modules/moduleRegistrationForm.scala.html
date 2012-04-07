@@ -1,4 +1,5 @@
 @(currentUser: User, form: Form[models.Module])
+@import tags._
 
 @main("Register a new module", currentUser) {
 
@@ -11,9 +12,23 @@
 
 <div id="content" class="wrapper">
 	<article>
+		@helper.form(routes.Modules.submitModuleRegistrationForm) {
+
+
+		@helper.inputText(form("moduleName"))
+		@helper.inputText(form("moduleKey"))
+		@helper.textarea(form("summary"))
+		@helper.textarea(form("description"))
+		@helper.inputText(form("projectUrl"))
+		@helper.inputText(form("demoUrl"))
+		@helper.inputText(form("avatarUrl"))
+		@helper.inputText(form("licenseType"))
+		@helper.inputText(form("licenseUrl"))
+
 		<p>
 			<button type="submit">Register</button>
 		</p>
+		}
 	</article>
 
 </div>

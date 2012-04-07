@@ -18,6 +18,7 @@ package controllers;
 import actions.CurrentUser;
 import models.Account;
 import models.Module;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
@@ -40,8 +41,16 @@ public class Modules extends Controller {
 	public static Result showModuleRegistrationForm() {
 		return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
 	}
-	
-	public static Result submitModuleRegistrationForm(){
-		return TODO;
+
+	public static Result submitModuleRegistrationForm() {
+		Form<Module> form = form(Module.class).bindFromRequest();
+		if (form.hasErrors()) {
+			return badRequest(moduleRegistrationForm.render(currentUser(), form));
+		} else {
+			Account account = Account.getByUser(currentUser());
+			account.modules.add(form.get());
+			account.save();
+			return myModules();
+		}
 	}
 }
