@@ -1,0 +1,10 @@
+@(currentUser: User,
+  modules: List[Module])
+
+@main("My modules", currentUser) {
+<ul>
+@for(module <- modules) {
+<li>@module.moduleName</li>
+}
+</ul>
+}
