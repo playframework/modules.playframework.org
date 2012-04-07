@@ -82,8 +82,8 @@ public class Module extends Model implements ModuleAccessor {
 	@Column(nullable = false)
 	public Date updatedOn = new Date();
 
-	@OneToOne(optional = false)
-	public Rating rating = new Rating();
+	@OneToOne(optional = true)
+	public Rating rating;
 
 	@OneToMany(fetch = LAZY, cascade = ALL, orphanRemoval = true)
 	@OrderBy("versionCode ASC")
