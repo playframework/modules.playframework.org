@@ -1,0 +1,38 @@
+models.Category(c1):
+	name: user-interface
+
+
+models.Tags(t1):
+	name: jQuery
+
+models.Tags(t2):
+	name: jQuery-UI
+
+
+models.PlayVersion(p124):
+    majorVersion: 1
+    name: 1.2.4
+
+models.PlayVersion(p20):
+    majorVersion: 2
+    name: 2.0
+
+
+models.Module(m61):
+    moduleKey: jqueryui
+    moduleName: jQuery UI
+    summary: Working examples of jQuery UI widgets, integrated with a Play application.
+    category: c1
+    createdOn: 2011-10-31
+    updatedOn: 2011-10-31
+    tags: [ t1, t2 ]
+    contributors: Peter Hilton
+    projectUrl: https://github.com/lunatech-labs/play-module-jqueryui
+    description: The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui.com/ widgets, integrated with a Play application.
+
+models.ModuleVersion(m61v1):
+    module: m61
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-10-31
+
