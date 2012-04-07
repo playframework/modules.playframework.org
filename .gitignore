@@ -10,3 +10,7 @@ module-repo.iml
 *.iws
 *.ipr
 conf/evolutions
+.cache
+.classpath
+.project
+.settings/

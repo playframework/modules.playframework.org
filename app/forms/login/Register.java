@@ -32,6 +32,10 @@ public class Register
     @Constraints.Required
     public String displayName;
 
+    @Constraints.Required
+    @Constraints.Email
+    public String emailAddress;
+
     public String validate()
     {
         String result = null;
