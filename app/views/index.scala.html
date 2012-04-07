@@ -6,27 +6,49 @@
 @import tags._
 
 @main("Home", currentUser) {
-<div class="row">
-    <div class="sixcol">
-        @if(currentUser != null) {
-        <p>Personal summary</p>
-        } else {
-        <p>A welcome message</p>
-        }
-    </div>
-    <div class="sixcol last">
+
+<section id="introduction">
+	<div class="wrapper">
+		<div id="title">
+			<h1>
+				Play framework<br>
+				modules for<br>
+				Play 2.x and Play 1.x
+			</h1>
+			<p>
+				Here you can find great modules contributed by the play community. Browse the catalog and add instant power to your application.
+			</p>
+		</div>
+		<div id="quicklinks">
+			<h2>Browse modules</h2>
+			<p>
+				<a href="">Play 2.x modules</a> and <a href="">Play 1.x modules</a>.
+			</p>
+			<p>
+				<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
+			</p>
+			<h2>Contribute</h2>
+			<p>
+				<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
+			</p>
+			<h2>Get involved</h2>
+			<p>
+				Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
+			</p>
+		</div>
+	</div>
+</section>
+
+<div id="content" class="wrapper">
+	<article>
+		<h1>Modules</h1>
+
         @moduleList("Featured modules", featuredModules)
-    </div>
-</div>
-<div class="row">
-    <div class="fourcol">
+
         @moduleList("Latest modules", mostRecentModules)
-    </div>
-    <div class="fourcol">
+
         @moduleList("Highest-rated", highestRatedModules)
-    </div>
-    <div class="fourcol last">
-        <p class="sectionHeader">Search</p>
-    </div>
+	</article>
 </div>
+
 }
