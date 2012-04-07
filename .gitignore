@@ -10,3 +10,4 @@ module-repo.iml
 *.iws
 *.ipr
 conf/evolutions
+.DS_Store
