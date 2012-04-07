@@ -7,6 +7,16 @@
 
 @main("Home", currentUser) {
 
+<div id="news">
+	<ul class="wrapper">
+		@if(currentUser != null) {
+		Hello @currentUser.displayName | <a href="@routes.Modules.myModules">My modules</a> | <a href="@routes.Application.logout">Log out</a>
+		} else {
+		<li>This is the work-in-progress for the new modules repository, to be released on modules.playframework.org</li>
+		}
+	</ul>
+</div>
+
 <section id="introduction">
 	<div class="wrapper">
 		<div id="title">
