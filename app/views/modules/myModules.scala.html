@@ -3,25 +3,25 @@
 @main("My modules", currentUser) {
 
 <section id="top">
-	<div class="wrapper">
-		<h1>My Modules</h1>
-	</div>
+    <div class="wrapper">
+        <h1>My Modules</h1>
+    </div>
 </section>
 
 
 <div class="wrapper">
 
-	@if(modules != null && !modules.isEmpty()) {
-	<ul>
-		@for(module <- modules) {
-			<li>@module.moduleName</li>
-		}
-	</ul>
-	} else {
-		<p>You don't have any modules yet. You can register a new module
-		   <a href="@routes.Modules.showModuleRegistrationForm">here</a>.
-		</p>
-	}
+    @if(modules != null && !modules.isEmpty()) {
+    <ul>
+        @for(module <- modules) {
+            <li><a href="@routes.Modules.details(module.moduleKey)">@module.moduleName</a></li>
+        }
+    </ul>
+    } else {
+        <p>You don't have any modules yet. You can register a new module
+            <a href="@routes.Modules.showModuleRegistrationForm">here</a>.
+        </p>
+    }
 
-	</div>
+    </div>
 }

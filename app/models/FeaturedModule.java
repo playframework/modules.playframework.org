@@ -42,6 +42,9 @@ public class FeaturedModule extends Model implements ModuleAccessor
     @Column(nullable = false)
     public Date creationDate;
 
+    @Column(nullable = false)
+    public Boolean sticky;
+    
     public static final Finder<Long, FeaturedModule> FIND = new Finder<Long, FeaturedModule>(Long.class,
                                                                                              FeaturedModule.class);
 
@@ -49,7 +52,21 @@ public class FeaturedModule extends Model implements ModuleAccessor
     {
         return FIND.all();
     }
+    
+    public static List<FeaturedModule> getStickyModules()
+    {
+        return FIND.where()
+                   .eq("sticky", Boolean.TRUE)
+                   .findList();
+    }
 
+    public static List<FeaturedModule> getEphemeralModules()
+    {
+        return FIND.where()
+                   .eq("sticky", Boolean.FALSE)
+                   .findList();
+    }
+    
     @Override
     public Module getModule()
     {
