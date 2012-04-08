@@ -1,22 +1,36 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
-
-# Home page
-GET     /                           controllers.Application.index()
+GET  /                       controllers.Application.index()
 
 # Login/logout/register/password reminder
-GET      /login                     controllers.Application.login()
-POST     /login                     controllers.Application.authenticate()
-GET      /logout                    controllers.Application.logout()
-GET      /register                  controllers.Application.register()
-POST     /register                  controllers.Application.createAccount()
+GET  /users/login            controllers.Application.login()
+POST /users/login            controllers.Application.authenticate()
+GET  /users/logout           controllers.Application.logout()
+GET  /users/register         controllers.Application.register()
+POST /users/register         controllers.Application.createAccount()
 
-GET      /myModules                 controllers.Modules.myModules()
+# Browse (use query string for tags, text search ‘q’ and sorting on top of these)
+GET  /modules/mine                      controllers.Modules.myModules()
+# Note that featured/popular/rating are just sort params - the three entries below need revising for this
+GET  /modules/featured                  controllers.Modules.getModules(ofType = "featured")
+GET  /modules/popular                   controllers.Modules.getModules(ofType = "popular")
+GET  /modules/top-rated                 controllers.Modules.getModules(ofType = "top")
+# e.g. /modules/play-1, /modules/play-1.2, /modules/play-1.2.4
+GET  /modules/play-:version             controllers.Modules.getModulesByPlayVersion(version: String)
+# e.g. /modules/play-1.2.4/view-templates
+GET  /modules/play-:version/:category   controllers.Modules.getModulesByCategory(version: String, category: String)
+# e.g. /modules/view-templates
+GET  /modules/:category                 controllers.Modules.getModulesByCategory(version = "*", category: String)
 
-GET	     /modules/register			controllers.Modules.showModuleRegistrationForm()
-POST	 /modules/register			controllers.Modules.submitModuleRegistrationForm()
+# Submit module - changed the URL slightly because the showModuleRegistrationForm was conflicting with modules/:category
+GET  /modules/my/register       controllers.Modules.showModuleRegistrationForm()
+POST /modules/my/register       controllers.Modules.submitModuleRegistrationForm()
 
+# Administrators’ interface
+# GET  /admin/ # etc…
+
+# Module details (the only path not containing a slash, to make the most published URL cleanest)
+GET  /:moduleKey                    controllers.Modules.details(moduleKey: String)
+POST /:moduleKey/votes              controllers.Modules.vote(moduleKey: String)
+POST /:moduleKey/ratings/:rate      controllers.Modules.rate(moduleKey: String, rate: Integer)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET  /assets/*file           controllers.Assets.at(path="/public", file)

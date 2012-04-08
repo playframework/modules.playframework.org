@@ -17,6 +17,7 @@ package models;
 
 import play.db.ebean.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -32,4 +33,7 @@ public class Rate extends Model
 
     @OneToOne(optional = false)
     public Module module;
+
+    @Column(nullable = false)
+    public Integer value;
 }

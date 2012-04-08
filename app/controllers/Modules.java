@@ -53,4 +53,33 @@ public class Modules extends Controller {
 			return myModules();
 		}
 	}
+    
+    public static Result getModules(String ofType) {
+        return TODO;
+    }
+
+    // e.g. /modules/play-1.2.4
+    public static Result getModulesByPlayVersion(String version) {
+        return TODO;
+    }
+    
+    public static Result getModulesByCategory(String version,
+                                              String category) {
+        return TODO;
+    }
+    
+    public static Result details(String moduleKey) {
+        return TODO;
+    }
+    
+    // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice
+    public static Result vote(String moduleKey) {
+        return TODO;
+    }
+
+    // If a user has already rated, then change the rate, don't add a new one
+    public static Result rate(String moduleKey,
+                              int rate) {
+        return TODO;
+    }
 }

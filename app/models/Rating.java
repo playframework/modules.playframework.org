@@ -31,8 +31,21 @@ public class Rating extends Model
     public Long id;
 
     @Column(nullable = false)
-    public Float averageRating;
+    public Integer oneStar;
 
     @Column(nullable = false)
-    public Integer numberOfRaters;
+    public Integer twoStars;
+
+    @Column(nullable = false)
+    public Integer threeStars;
+
+    @Column(nullable = false)
+    public Integer fourStars;
+
+    @Column(nullable = false)
+    public Integer fiveStars;
+
+    // this will be calculated using the funky anti-cheating algorithm
+    @Column(nullable = false)
+    public Float averageRating;
 }
