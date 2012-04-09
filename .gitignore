@@ -7,6 +7,10 @@ tmp
 dist
 module-repo.iml
 .idea
+.cache
+.classpath
+.project
+.settings/
 *.iws
 *.ipr
 conf/evolutions
