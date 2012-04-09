@@ -17,3 +17,7 @@ header nav a.download:active {
 
 #introduction, #top { background-color:#1487B4; }
 #title { color:#C2D8DF; }
+
+.moduleQuickControl {
+    margin-bottom: 5px
+}

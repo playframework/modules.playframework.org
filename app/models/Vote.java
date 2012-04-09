@@ -32,7 +32,7 @@ public class Vote extends Model
     public Long id;
 
     @OneToOne(optional = false)
-    public Module module;
+    public Module playModule;
 
     @Column(nullable = false)
     public Boolean publicVote;

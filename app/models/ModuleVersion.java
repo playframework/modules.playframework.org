@@ -38,9 +38,9 @@ public class ModuleVersion extends Model
     public Long id;
 
     @ManyToOne
-    public Module module;
+    public Module playModule;
 
-    // this is taken from Build.scala
+    // this will be taken from Build.scala
     @Column(nullable = false)
     public String versionCode;
 
@@ -58,13 +58,13 @@ public class ModuleVersion extends Model
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     public List<PlayVersion> compatibility;
 
-    @OneToOne(optional = false, fetch = FetchType.LAZY)
+    @OneToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BinaryContent binaryFile;
 
-    @OneToOne(optional = true, fetch = FetchType.LAZY)
+    @OneToOne(optional = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BinaryContent sourceFile;
 
-    @OneToOne(optional = true, fetch = FetchType.LAZY)
+    @OneToOne(optional = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BinaryContent documentFile;
 
     public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,

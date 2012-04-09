@@ -20,6 +20,7 @@ import play.db.ebean.Model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -32,6 +33,9 @@ public class BinaryContent extends Model
 
     @Column(nullable = false)
     public byte[] content;
+
+    @Column(nullable = false)
+    public Integer contentLength;
 
     public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
                                                                                            BinaryContent.class);

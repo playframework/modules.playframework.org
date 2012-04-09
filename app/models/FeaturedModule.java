@@ -34,7 +34,7 @@ public class FeaturedModule extends Model implements ModuleAccessor
     public Long id;
 
     @OneToOne(optional = false)
-    public Module module;
+    public Module playModule;
 
     @Column(nullable = true, length = 1000)
     public String description;
@@ -70,6 +70,6 @@ public class FeaturedModule extends Model implements ModuleAccessor
     @Override
     public Module getModule()
     {
-        return module;
+        return playModule;
     }
 }

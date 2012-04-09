@@ -33,4 +33,14 @@ public class StringUtils
     {
         return s == null || s.trim().length() == 0;
     }
+    
+    public static String summarize(String s)
+    {
+        String result = "";
+        if (!isEmpty(s))
+        {
+            result = s.length() <= 100 ? s : s.substring(0, 100) + "...";
+        }
+        return result;
+    }
 }

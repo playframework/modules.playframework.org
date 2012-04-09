@@ -26,13 +26,11 @@ import java.util.List;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
+@Table(name = "MPO_USER")
 public class User extends Model
 {
     @Id
     public Long id;
-
-	@OneToMany(cascade = CascadeType.ALL)
-	public List<Module> modules = new ArrayList<Module>();
 
     @Column(nullable = false, length = 40, unique = true)
     public String userName;
@@ -40,7 +38,7 @@ public class User extends Model
     @Column(nullable = false, length = 100)
     public String displayName;
 
-    @Column(nullable = false, length = 64)
+    @Column(name = "passwd", nullable = false, length = 64)
     public String password;
 
     @Column(nullable = true, length = 2500)
@@ -78,9 +76,4 @@ public class User extends Model
                    .eq("password", password)
                    .findUnique();
     }
-
-	public User addModule(Module module) {
-		modules.add(module);
-		return this;
-	}
 }

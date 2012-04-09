@@ -1,0 +1,30 @@
+@(currentUser: User, module: Module, form: Form[models.ModuleVersion])
+@import tags._
+
+@main("Manage " + module.name + " versions", currentUser) {
+
+
+<section id="top">
+	<div class="wrapper">
+		<h1>Manage @module.name versions</h1>
+	</div>
+</section>
+
+<div id="content" class="wrapper">
+	<article>
+		@helper.form(routes.Modules.uploadNewVersion) {
+
+        <input type="hidden" name="playModule.id" value="@module.id"/>
+		@helper.inputText(form("organisation"))
+		@helper.inputText(form("versionCode"))
+		@helper.textarea(form("releaseNotes"))
+
+        @* best way to handle to handle the file upload? *@
+		<p>
+			<button type="submit">Upload</button>
+		</p>
+		}
+	</article>
+
+</div>
+}

@@ -16,14 +16,22 @@
 package controllers;
 
 import actions.CurrentUser;
+import models.BinaryContent;
 import models.Module;
+import models.ModuleVersion;
+import models.PlayVersion;
 import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import views.html.modules.moduleRegistrationForm;
+import views.html.modules.manageVersionsForm;
 import views.html.modules.myModules;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import static actions.CurrentUser.currentUser;
 
@@ -34,11 +42,14 @@ import static actions.CurrentUser.currentUser;
 public class Modules extends Controller {
 
 	public static Result myModules() {
-		return ok(myModules.render(currentUser(), currentUser().modules));
+        User currentUser = currentUser();
+        return ok(myModules.render(currentUser,
+                                   Module.ownedBy(currentUser)));
 	}
 
-	public static Result showModuleRegistrationForm() {
-		return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
+    public static Result showModuleRegistrationForm() {
+		return ok(moduleRegistrationForm.render(currentUser(),
+                                                form(Module.class)));
 	}
 
 	public static Result submitModuleRegistrationForm() {
@@ -47,11 +58,32 @@ public class Modules extends Controller {
 			return badRequest(moduleRegistrationForm.render(currentUser(), form));
 		} else {
 			Module module = form.get();
-			User user = currentUser();
-			User user1 = user.addModule(module);
-			user1.save();
+            module.owner = currentUser();
+			module.save();
 			return myModules();
 		}
+	}
+    
+    public static Result showVersionManagement(String moduleKey) {
+        Form<ModuleVersion> form = form(ModuleVersion.class);
+        Module module = Module.findByModuleKey(moduleKey);
+        return ok(manageVersionsForm.render(currentUser(),
+                                            module,
+                                            form));
+    }
+
+	public static Result uploadNewVersion() {
+        Form<ModuleVersion> form = form(ModuleVersion.class).bindFromRequest();
+        ModuleVersion moduleVersion = form.get();
+        moduleVersion.releaseDate = new Date();
+        
+        // everything below here needs to be implemented
+        moduleVersion.compatibility = new ArrayList<PlayVersion>();
+        moduleVersion.binaryFile = new BinaryContent();
+        moduleVersion.binaryFile.content = new byte[]{1};
+        moduleVersion.binaryFile.contentLength = 1;
+        moduleVersion.save();
+		return TODO;
 	}
     
     public static Result getModules(String ofType) {

@@ -32,8 +32,8 @@ public class Rate extends Model
     public Long id;
 
     @OneToOne(optional = false)
-    public Module module;
+    public Module playModule;
 
     @Column(nullable = false)
-    public Integer value;
+    public Integer rating;
 }

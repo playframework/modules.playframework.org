@@ -21,8 +21,10 @@ GET  /modules/play-:version/:category   controllers.Modules.getModulesByCategory
 GET  /modules/:category                 controllers.Modules.getModulesByCategory(version = "*", category: String)
 
 # Submit module - changed the URL slightly because the showModuleRegistrationForm was conflicting with modules/:category
-GET  /modules/my/register       controllers.Modules.showModuleRegistrationForm()
-POST /modules/my/register       controllers.Modules.submitModuleRegistrationForm()
+GET  /modules/my/register               controllers.Modules.showModuleRegistrationForm()
+POST /modules/my/register               controllers.Modules.submitModuleRegistrationForm()
+GET  /modules/my/versions/:moduleKey    controllers.Modules.showVersionManagement(moduleKey: String)
+POST /modules/my/versions               controllers.Modules.uploadNewVersion()
 
 # Administrators’ interface
 # GET  /admin/ # etc…

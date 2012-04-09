@@ -40,7 +40,7 @@ import static actions.CurrentUser.currentUser;
 @With(CurrentUser.class)
 public class Application extends Controller {
 	public static Result index() {
-		List<Module> mostRecentModules = Module.findMostRecent(10);
+		List<Module> mostRecentModules = Module.findMostRecent(5);
 		List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
 		List<FeaturedModule> featuredModules = FeaturedModule.getAll();
 		return ok(index.render(currentUser(),

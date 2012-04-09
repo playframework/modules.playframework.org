@@ -1,4 +1,5 @@
 @(currentUser: User, modules: List[Module])
+@import views.html.tags.moduleControl
 
 @main("My modules", currentUser) {
 
@@ -14,7 +15,7 @@
     @if(modules != null && !modules.isEmpty()) {
     <ul>
         @for(module <- modules) {
-            <li><a href="@routes.Modules.details(module.moduleKey)">@module.moduleName</a></li>
+            @moduleControl(module)
         }
     </ul>
     } else {

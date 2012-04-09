@@ -30,17 +30,21 @@ import static play.data.validation.Constraints.Required;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
+@Table(name = "MPO_MODULE")
 public class Module extends Model implements ModuleAccessor {
 	@Id
 	public Long id;
 
-	@Column(nullable = false, unique = true)
+    @ManyToOne(optional = false)
+    public User owner;
+    
+	@Column(name = "module_key", nullable = false, unique = true)
 	@Required
-	public String moduleKey;
+	public String key;
 
 	@Column(nullable = false)
 	@Required
-	public String moduleName;
+	public String name;
 
 	@Column(nullable = false, length = 500)
 	@Required
@@ -102,7 +106,7 @@ public class Module extends Model implements ModuleAccessor {
 	}
 
 	public static Module findByModuleKey(String moduleKey) {
-		return FIND.where().eq("moduleKey", moduleKey).findUnique();
+		return FIND.where().eq("key", moduleKey).findUnique();
 	}
 
 	@Override
@@ -121,4 +125,11 @@ public class Module extends Model implements ModuleAccessor {
 	public static List<Module> findMostRecent(int count) {
 		return FIND.where().orderBy("updatedOn DESC").setMaxRows(count).findList();
 	}
+
+    public static List<Module> ownedBy(User user)
+    {
+        return FIND.where()
+                   .eq("owner", user)
+                   .findList();
+    }
 }

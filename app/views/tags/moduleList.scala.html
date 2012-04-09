@@ -1,9 +1,16 @@
 @(title: String, moduleAccessors: List[_ <: ModuleAccessor])
 
+@import utils.StringUtils;
+
 <p class="sectionHeader">@title</p>
 <ul>
 @for(accessor <- moduleAccessors) {
-    <li><a href="@routes.Modules.details(accessor.getModule().moduleKey)">@accessor.getModule().moduleName</a></li>
+    @defining(accessor.getModule()) { module =>
+    <li>
+        <a href="@routes.Modules.details(module.key)">module.name</a>
+        <p>@StringUtils.summarize(module.summary)</p>
+    </li>
+    }
 }
 </ul>
 
