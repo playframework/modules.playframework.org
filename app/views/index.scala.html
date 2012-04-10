@@ -27,10 +27,12 @@
 			<p>
 				<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
 			</p>
-			<h2>Contribute</h2>
-			<p>
-				<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
-			</p>
+            @if(currentUser == null) {
+                <h2>Contribute</h2>
+                <p>
+                    <a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
+                </p>
+            }
 			<h2>Get involved</h2>
 			<p>
 				Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
