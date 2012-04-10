@@ -16,20 +16,21 @@
 package forms.login;
 
 import models.User;
-import play.data.validation.Constraints;
+
+import static play.data.validation.Constraints.Required;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 public class Register
 {
-    @Constraints.Required
+    @Required
     public String userName;
 
-    @Constraints.Required
+    @Required
     public String password;
 
-    @Constraints.Required
+    @Required
     public String displayName;
 
     public String validate()
