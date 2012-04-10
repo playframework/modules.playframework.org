@@ -5,9 +5,7 @@ target
 tmp
 .history
 dist
-module-repo.iml
 .idea
 *.iws
-*.ipr
 conf/evolutions
 .DS_Store
