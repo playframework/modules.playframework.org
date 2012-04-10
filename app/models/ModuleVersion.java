@@ -15,6 +15,8 @@
  */
 package models;
 
+import com.avaje.ebean.BeanState;
+import com.avaje.ebean.Ebean;
 import play.db.ebean.Model;
 
 import javax.persistence.CascadeType;
@@ -25,8 +27,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -55,7 +60,7 @@ public class ModuleVersion extends Model
     @Column(nullable = false)
     public String organisation;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @ManyToMany
     public List<PlayVersion> compatibility;
 
     @OneToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -69,4 +74,26 @@ public class ModuleVersion extends Model
 
     public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,
                                                                                            ModuleVersion.class);
+
+    public static List<ModuleVersion> findByModule(Module module)
+    {
+        return FIND.where()
+                   .eq("playModule", module)
+                   .order("versionCode ASC")
+                   .findList();
+    }
+
+    public static List<Module> findModulesByPlayVersion(List<PlayVersion> playVersions)
+    {
+        List<ModuleVersion> matches = FIND.where()
+                                          .in("compatibility", playVersions)
+                                          .findList();
+        Set<Module> modules = new HashSet<Module>();
+        for (ModuleVersion match : matches)
+        {
+            modules.add(match.playModule);
+        }
+
+        return new ArrayList<Module>(modules);
+    }
 }

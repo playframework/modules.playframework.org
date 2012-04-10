@@ -25,11 +25,12 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
+import utils.RequestUtils;
 import views.html.modules.moduleRegistrationForm;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.myModules;
+import views.html.modules.genericModuleList;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -69,21 +70,37 @@ public class Modules extends Controller {
         Module module = Module.findByModuleKey(moduleKey);
         return ok(manageVersionsForm.render(currentUser(),
                                             module,
+                                            PlayVersion.getAll(),
                                             form));
     }
 
 	public static Result uploadNewVersion() {
         Form<ModuleVersion> form = form(ModuleVersion.class).bindFromRequest();
         ModuleVersion moduleVersion = form.get();
+        moduleVersion.playModule = Module.findById(moduleVersion.playModule.id);
         moduleVersion.releaseDate = new Date();
-        
+
+        moduleVersion.compatibility.addAll(RequestUtils.getListFromRequest(request(),
+                                                                           "compatibility.id",
+                                                                           PlayVersion.FIND));
+
         // everything below here needs to be implemented
-        moduleVersion.compatibility = new ArrayList<PlayVersion>();
         moduleVersion.binaryFile = new BinaryContent();
         moduleVersion.binaryFile.content = new byte[]{1};
         moduleVersion.binaryFile.contentLength = 1;
+
         moduleVersion.save();
-		return TODO;
+        moduleVersion.saveManyToManyAssociations("compatibility");
+
+        // or just cascade from the module?
+        // looks like an issue with ebean here - see http://www.avaje.org/bugdetail-260.html
+        // should be fixed in this version, but it's not
+        // for now, I'm changing the model to accomodate this
+        // module.versions.add(moduleVersion);
+        // module.save();
+        // Ebean.saveAssociation(module, "versions");
+
+        return TODO;
 	}
     
     public static Result getModules(String ofType) {
@@ -92,7 +109,11 @@ public class Modules extends Controller {
 
     // e.g. /modules/play-1.2.4
     public static Result getModulesByPlayVersion(String version) {
-        return TODO;
+        List<PlayVersion> playVersions = PlayVersion.findByLooseName(version);
+        List<Module> modulesByVersion = ModuleVersion.findModulesByPlayVersion(playVersions);
+        return ok(genericModuleList.render(currentUser(),
+                                           "Modules for Play " + version,
+                                           modulesByVersion));
     }
     
     public static Result getModulesByCategory(String version,

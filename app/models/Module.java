@@ -18,12 +18,19 @@ package models;
 import play.db.ebean.Model;
 import utils.CollectionUtils;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 
 import static javax.persistence.CascadeType.*;
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 import static play.data.validation.Constraints.Required;
 
 /**
@@ -54,7 +61,7 @@ public class Module extends Model implements ModuleAccessor {
 	@Required
 	public String description;
 
-	@ManyToOne(optional = true, cascade = {MERGE, DETACH, REFRESH})
+	@ManyToOne(optional = true, cascade = {DETACH, REFRESH})
 	public Category category;
 
 	// there's no length limit for a URL according to RFC 2616, but 2500 should be enough
@@ -90,19 +97,20 @@ public class Module extends Model implements ModuleAccessor {
 	public Rating rating;
 
 	@OneToMany(fetch = LAZY, cascade = ALL, orphanRemoval = true)
-	@OrderBy("versionCode ASC")
-	public List<ModuleVersion> versions;
-
-	@OneToMany(fetch = LAZY, cascade = ALL, orphanRemoval = true)
 	public List<Comment> comments;
 
-	@ManyToMany(cascade = {DETACH, MERGE, PERSIST, REFRESH})
+	@ManyToMany(cascade = {DETACH, PERSIST, REFRESH})
 	public List<Tag> tags;
 
 	public static final Finder<Long, Module> FIND = new Finder<Long, Module>(Long.class, Module.class);
 
+    public List<ModuleVersion> getVersions()
+    {
+        return ModuleVersion.findByModule(this);
+    }
+
 	public ModuleVersion getMostRecentVersion() {
-		return CollectionUtils.last(versions);
+		return CollectionUtils.last(getVersions());
 	}
 
 	public static Module findByModuleKey(String moduleKey) {
@@ -131,5 +139,12 @@ public class Module extends Model implements ModuleAccessor {
         return FIND.where()
                    .eq("owner", user)
                    .findList();
+    }
+
+    public static Module findById(Long id)
+    {
+        return FIND.where()
+                   .eq("id", id)
+                   .findUnique();
     }
 }

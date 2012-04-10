@@ -20,6 +20,7 @@ import forms.login.Login;
 import forms.login.Register;
 import models.FeaturedModule;
 import models.Module;
+import models.ModuleVersion;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -43,11 +44,12 @@ public class Application extends Controller {
 		List<Module> mostRecentModules = Module.findMostRecent(5);
 		List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
 		List<FeaturedModule> featuredModules = FeaturedModule.getAll();
-		return ok(index.render(currentUser(),
-				mostRecentModules,
-				highestRatedModules,
-				featuredModules));
-	}
+
+        return ok(index.render(currentUser(),
+                               mostRecentModules,
+                               highestRatedModules,
+                               featuredModules));
+    }
 
 	public static Result login() {
 		return ok(login.render(form(Login.class)));

@@ -27,12 +27,16 @@ GET  /modules/my/versions/:moduleKey    controllers.Modules.showVersionManagemen
 POST /modules/my/versions               controllers.Modules.uploadNewVersion()
 
 # Administrators’ interface
-# GET  /admin/ # etc…
+GET  /admin/versions                    controllers.PlayVersions.showPlayVersions()
+POST /admin/versions                    controllers.PlayVersions.addNewPlayVersion()
+GET  /admin/categories                  controllers.Categories.showCategories()
+POST /admin/categories                  controllers.Categories.addNewCategory()
+GET  /admin/category/:categoryName      controllers.Categories.categoryDetails(categoryName: String)
 
 # Module details (the only path not containing a slash, to make the most published URL cleanest)
 GET  /:moduleKey                    controllers.Modules.details(moduleKey: String)
 POST /:moduleKey/votes              controllers.Modules.vote(moduleKey: String)
-POST /:moduleKey/ratings/:rate      controllers.Modules.rate(moduleKey: String, rate: Integer)
+POST /:moduleKey/ratings/:rate      controllers.Modules.rate(moduleKey: String, rate: java.lang.Integer)
 
 # Map static resources from the /public folder to the /assets URL path
 GET  /assets/*file           controllers.Assets.at(path="/public", file)

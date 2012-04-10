@@ -1,4 +1,7 @@
-@(currentUser: User, module: Module, form: Form[models.ModuleVersion])
+@(currentUser: User,
+  module: Module,
+  playVersions: List[PlayVersion],
+  form: Form[models.ModuleVersion])
 @import tags._
 
 @main("Manage " + module.name + " versions", currentUser) {
@@ -18,6 +21,9 @@
 		@helper.inputText(form("organisation"))
 		@helper.inputText(form("versionCode"))
 		@helper.textarea(form("releaseNotes"))
+        @for(playVersion <- playVersions) {
+            <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name
+        }
 
         @* best way to handle to handle the file upload? *@
 		<p>

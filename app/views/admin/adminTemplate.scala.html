@@ -1,0 +1,8 @@
+@(title: String, currentUser: User)(content: Html)
+
+@main("Admin :: " + title, currentUser) {
+<div id="content" class="wrapper">
+    @tags.admin.adminMenu()
+    @content
+</div>
+}

@@ -1,0 +1,11 @@
+@(currentUser: User,
+  category: Category,
+  modules: List[Module])
+
+@import tags.moduleList
+
+@admin.adminTemplate("Categories > " + category.name, currentUser) {
+<article>
+    @moduleList("Modules in " + category.name, modules)
+</article>
+}

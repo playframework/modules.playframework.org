@@ -14,11 +14,11 @@
 	<article>
 		@helper.form(routes.Modules.submitModuleRegistrationForm) {
 
-
 		@helper.inputText(form("name"))
 		@helper.inputText(form("key"))
 		@helper.textarea(form("summary"))
 		@helper.textarea(form("description"))
+        @helper.select(form("category.id"), helper.options(Category.options()))
 		@helper.inputText(form("projectUrl"))
 		@helper.inputText(form("demoUrl"))
 		@helper.inputText(form("avatarUrl"))
