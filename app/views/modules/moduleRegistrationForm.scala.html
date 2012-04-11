@@ -24,6 +24,11 @@
             '_label -> "Module Key"
         )
 
+        @helper.inputText(form("organisation"),
+            'size -> 50,
+            'maxLength -> 255
+        )
+
         @helper.inputText(form("summary"),
             'size  -> 50,
             '_label -> "Describe your module in a single line"
@@ -34,6 +39,8 @@
             'cols -> 80,
             '_label -> "Describe your module in a couple of lines"
         )
+
+        @helper.select(form("category.id"), helper.options(Category.options()))
 
         @helper.inputText(form("projectUrl"),
             'size  -> 50,

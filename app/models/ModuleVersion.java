@@ -15,6 +15,8 @@
  */
 package models;
 
+import play.data.validation.Constraints;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -29,18 +31,15 @@ public class ModuleVersion extends AbstractModel {
 
     // this will be taken from Build.scala
     @Column(nullable = false)
+    @Constraints.Required
     public String versionCode;
 
     @Column(nullable = false)
+    @Constraints.Required
     public String releaseNotes;
 
     @Column(nullable = false)
     public Date releaseDate;
-
-    // this is taken from Build.scala
-    // organisation here or in {@link Module}? I think it makes more sense here
-    @Column(nullable = false)
-    public String organisation;
 
     @ManyToMany
     public List<PlayVersion> compatibility;

@@ -3,34 +3,27 @@
   playTwoVersions: List[PlayVersion],
   versionForm: Form[models.PlayVersion])
 
-@import models.PlayVersion
+@import tags.admin.playVersionList
+
 
 @admin.adminTemplate("Play versions", currentUser) {
-<article>
-    <h4>Play 1</h4>
-    <ul>
-        @for(playVersion <- playOneVersions) {
-        <li>@playVersion.name</li>
+<section>
+    <div id="overviewArea">
+        <h4>Play 1</h4>
+        @playVersionList(playOneVersions)
+
+        <h4>Play 2</h4>
+        @playVersionList(playTwoVersions)
+    </div>
+    <div id="controlArea">
+        <h3>Add new version</h3>
+        @helper.form(routes.PlayVersions.addNewPlayVersion) {
+        @helper.inputText(versionForm("name"))
+        @helper.inputText(versionForm("documentationUrl"))
+        <p>
+            <button type="submit">Add</button>
+        </p>
         }
-    </ul>
-
-    <h4>Play 2</h4>
-    <ul>
-        @for(playVersion <- playTwoVersions) {
-        <li>@playVersion.name</li>
-        }
-    </ul>
-
-    <fieldset class="addNew">
-        <legend>Add new version</legend>
-    @helper.form(routes.PlayVersions.addNewPlayVersion) {
-
-    @helper.inputText(versionForm("name"))
-
-    <p>
-        <button type="submit">Add</button>
-    </p>
-    </fieldset>
-    }
-</article>
+    </div>
+</section>
 }

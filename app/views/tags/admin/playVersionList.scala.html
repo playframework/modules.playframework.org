@@ -1,0 +1,7 @@
+@(playVersions: List[PlayVersion])
+
+<ul>
+@for(playVersion <- playVersions) {
+<li>@playVersion.name - <a href="@playVersion.documentationUrl" target="_blank">@playVersion.documentationUrl</a></li>
+}
+</ul>

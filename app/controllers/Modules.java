@@ -16,17 +16,23 @@
 package controllers;
 
 import actions.CurrentUser;
-import models.*;
+import models.BinaryContent;
+import models.Module;
+import models.ModuleVersion;
+import models.PlayVersion;
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
+import utils.RequestUtils;
 import views.html.modules.manageVersionsForm;
+import views.html.modules.moduleDetails;
 import views.html.modules.moduleRegistrationForm;
 import views.html.modules.myModules;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static actions.CurrentUser.currentUser;
 
@@ -34,22 +40,29 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Modules extends Controller {
+public class Modules extends Controller
+{
 
-    public static Result myModules() {
+    public static Result myModules()
+    {
         User currentUser = currentUser();
         return ok(myModules.render(currentUser, Module.ownedBy(currentUser)));
     }
 
-    public static Result showModuleRegistrationForm() {
-        return ok(moduleRegistrationForm.render(currentUser(),form(Module.class)));
+    public static Result showModuleRegistrationForm()
+    {
+        return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
     }
 
-    public static Result submitModuleRegistrationForm() {
+    public static Result submitModuleRegistrationForm()
+    {
         Form<Module> form = form(Module.class).bindFromRequest();
-        if (form.hasErrors()) {
+        if (form.hasErrors())
+        {
             return badRequest(moduleRegistrationForm.render(currentUser(), form));
-        } else {
+        }
+        else
+        {
             Module module = form.get();
             module.owner = currentUser();
             module.save();
@@ -58,55 +71,85 @@ public class Modules extends Controller {
     }
 
 
-    public static Result showVersionManagement(String moduleKey) {
+    public static Result showVersionManagement(String moduleKey)
+    {
         Form<ModuleVersion> form = form(ModuleVersion.class);
         Module module = Module.findByModuleKey(moduleKey);
         return ok(manageVersionsForm.render(currentUser(),
-                module,
-                PlayVersion.getAll(),
-                form));
+                                            module,
+                                            PlayVersion.getAll(),
+                                            form));
     }
 
-    public static Result uploadNewVersion() {
+    public static Result uploadNewVersion(String moduleKey)
+    {
+        Result result;
         Form<ModuleVersion> form = form(ModuleVersion.class).bindFromRequest();
-        ModuleVersion moduleVersion = form.get();
-        moduleVersion.releaseDate = new Date();
+        if (form.hasErrors())
+        {
+            return badRequest(manageVersionsForm.render(currentUser(),
+                                                        Module.findByModuleKey(moduleKey),
+                                                        PlayVersion.getAll(),
+                                                        form));
+        }
+        else
+        {
+            ModuleVersion moduleVersion = form.get();
+            moduleVersion.playModule = Module.findByModuleKey(moduleKey);
+            moduleVersion.releaseDate = new Date();
 
-        // everything below here needs to be implemented
-        moduleVersion.compatibility = new ArrayList<PlayVersion>();
-        moduleVersion.binaryFile = new BinaryContent();
-        moduleVersion.binaryFile.content = new byte[]{1};
-        moduleVersion.binaryFile.contentLength = 1;
-        moduleVersion.save();
-        return TODO;
+            moduleVersion.compatibility.addAll(RequestUtils.getListFromRequest(request(),
+                                                                               "compatibility.id",
+                                                                               PlayVersion.FIND));
+
+            // everything below here needs to be implemented
+            moduleVersion.binaryFile = new BinaryContent();
+            moduleVersion.binaryFile.content = new byte[]{1};
+            moduleVersion.binaryFile.contentLength = 1;
+            moduleVersion.save();
+            moduleVersion.saveManyToManyAssociations("compatibility");
+
+            result = myModules();
+        }
+        return result;
     }
 
-    public static Result getModules(String ofType) {
+    public static Result getModules(String ofType)
+    {
         return TODO;
     }
 
     // e.g. /modules/play-1.2.4
-    public static Result getModulesByPlayVersion(String version) {
+    public static Result getModulesByPlayVersion(String version)
+    {
         return TODO;
     }
 
     public static Result getModulesByCategory(String version,
-                                              String category) {
+                                              String category)
+    {
         return TODO;
     }
 
-    public static Result details(String moduleKey) {
-        return TODO;
+    public static Result details(String moduleKey)
+    {
+        Module module = Module.findByModuleKey(moduleKey);
+        List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
+        return ok(moduleDetails.render(currentUser(),
+                                       module,
+                                       moduleVersions));
     }
 
     // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice
-    public static Result vote(String moduleKey) {
+    public static Result vote(String moduleKey)
+    {
         return TODO;
     }
 
     // If a user has already rated, then change the rate, don't add a new one
     public static Result rate(String moduleKey,
-                              int rate) {
+                              int rate)
+    {
         return TODO;
     }
 }

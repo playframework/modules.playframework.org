@@ -15,6 +15,8 @@
  */
 package models;
 
+import play.data.validation.Constraints;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.LinkedHashMap;
@@ -28,6 +30,7 @@ import java.util.Map;
 public class Category extends AbstractModel {
 
     @Column(nullable = false, unique = true)
+    @Constraints.Required
     public String name;
 
     public static Map<String, String> options() {

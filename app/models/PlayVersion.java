@@ -49,6 +49,10 @@ public class PlayVersion extends AbstractModel {
     @Enumerated(EnumType.STRING)
     public MajorVersion majorVersion;
 
+    @Column(nullable = false)
+    @Constraints.Required
+    public String documentationUrl;
+    
     public static final Finder<Long, PlayVersion> FIND = new Finder<Long, PlayVersion>(Long.class,
             PlayVersion.class);
 

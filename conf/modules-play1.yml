@@ -1,11 +1,12 @@
 models.PlayVersion(p124):
     majorVersion: 1
     name: 1.2.4
+    documentationUrl: http://www.playframework.org/documentation/1.2.4/home
 
 models.PlayVersion(p20):
     majorVersion: 2
     name: 2.0
-
+    documentationUrl: http://www.playframework.org/documentation/2.0/Home
 
 models.Module(m1):
     moduleKey: messages

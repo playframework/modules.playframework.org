@@ -11,5 +11,6 @@ dist
 .project
 .settings/
 *.iws
+*.iml
 conf/evolutions
 .DS_Store

@@ -1,6 +1,6 @@
 @(module: Module)
 
-<h4>@module.name (@module.key)</h4>
+<h4><a href="@routes.Modules.details(module.key)">@module.name</a> (@module.key)</h4>
 <div class="moduleQuickControl">
     <a href="@routes.Modules.details(module.key)">Edit details</a> | <a href="@routes.Modules.showVersionManagement(module.key)">Manage versions</a>
 </div>

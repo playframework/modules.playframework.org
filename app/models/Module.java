@@ -15,6 +15,7 @@
  */
 package models;
 
+import play.data.validation.Constraints;
 import utils.CollectionUtils;
 
 import javax.persistence.*;
@@ -53,6 +54,10 @@ public class Module extends AbstractModel implements ModuleAccessor {
     @Column(nullable = false, length = 4000)
     @Required
     public String description;
+
+    @Column(nullable = false)
+    @Constraints.Required
+    public String organisation;
 
     @ManyToOne(optional = true, cascade = {DETACH, REFRESH})
     public Category category;
