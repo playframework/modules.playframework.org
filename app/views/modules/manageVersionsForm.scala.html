@@ -15,11 +15,12 @@
 
 <div id="content" class="wrapper">
 	<article>
-		@helper.form(routes.Modules.uploadNewVersion) {
+		@helper.form(routes.Modules.uploadNewVersion(module.key)) {
 
-        <input type="hidden" name="playModule.id" value="@module.id"/>
 		@helper.inputText(form("versionCode"))
 		@helper.textarea(form("releaseNotes"))
+
+        <div class="formSection">Compatibility</div>
         @for(playVersion <- playVersions) {
             <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name
         }

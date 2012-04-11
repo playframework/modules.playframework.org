@@ -24,7 +24,7 @@ GET  /modules/:category                 controllers.Modules.getModulesByCategory
 GET  /modules/my/register               controllers.Modules.showModuleRegistrationForm()
 POST /modules/my/register               controllers.Modules.submitModuleRegistrationForm()
 GET  /modules/my/versions/:moduleKey    controllers.Modules.showVersionManagement(moduleKey: String)
-POST /modules/my/versions               controllers.Modules.uploadNewVersion()
+POST /modules/my/versions/:moduleKey    controllers.Modules.uploadNewVersion(moduleKey: String)
 
 # Administrators’ interface
 GET  /admin/versions                    controllers.PlayVersions.showPlayVersions()

@@ -76,3 +76,7 @@ header nav a.download:active {
 .moduleQuickControl {
     margin-bottom: 5px
 }
+
+.formSection {
+    font-weight: bolder;
+}

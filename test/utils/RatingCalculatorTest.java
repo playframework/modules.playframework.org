@@ -15,10 +15,10 @@
  */
 package utils;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
+import org.junit.Test;
 
-import org.junit.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * @author Ed Southey (me@edsouthey.com)

@@ -5,13 +5,12 @@ target
 tmp
 .history
 dist
-module-repo.iml
 .idea
 .cache
 .classpath
 .project
 .settings/
 *.iws
-*.ipr
+*.iml
 conf/evolutions
 .DS_Store
