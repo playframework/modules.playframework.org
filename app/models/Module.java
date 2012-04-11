@@ -15,6 +15,7 @@
  */
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 import utils.CollectionUtils;
 
@@ -31,7 +32,7 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
-import static play.data.validation.Constraints.Required;
+import play.data.validation.Constraints;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -46,19 +47,23 @@ public class Module extends Model implements ModuleAccessor {
     public User owner;
     
 	@Column(name = "module_key", nullable = false, unique = true)
-	@Required
+	@Constraints.Required
 	public String key;
 
 	@Column(nullable = false)
-	@Required
+	@Constraints.Required
 	public String name;
 
+    @Column(nullable = false)
+    @Constraints.Required
+    public String organisation;
+
 	@Column(nullable = false, length = 500)
-	@Required
+	@Constraints.Required
 	public String summary;
 
 	@Column(nullable = false, length = 4000)
-	@Required
+	@Constraints.Required
 	public String description;
 
 	@ManyToOne(optional = true, cascade = {DETACH, REFRESH})
@@ -75,7 +80,7 @@ public class Module extends Model implements ModuleAccessor {
 	public String avatarUrl;
 
 	@Column(nullable = false)
-	@Required
+	@Constraints.Required
 	public String licenseType;
 
 	@Column(nullable = true)

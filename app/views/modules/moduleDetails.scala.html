@@ -1,0 +1,56 @@
+@(currentUser: User, module: Module, versions: List[ModuleVersion])
+@import tags.moduleList
+@import utils.StringUtils.isEmpty
+
+@main(module.name, currentUser) {
+
+<section id="top">
+    <div class="wrapper">
+        <h1>@module.name</h1>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <div id="overviewArea">
+            <table>
+                <tr>
+                    <td>Summary :</td>
+                    <td>@module.summary</td>
+                </tr>
+                <tr>
+                    <td>Category: </td>
+                    <td>@module.category.name</td>
+                </tr>
+                <tr>
+                    <td>License :</td>
+                    <td><a href="@module.licenseUrl" target="_blank">@module.licenseType</a></td>
+                </tr>
+                @if(!isEmpty(module.demoUrl)) {
+                <tr>
+                    <td>Demo: </td>
+                    <td><a href="@module.demoUrl">@module.demoUrl</a></td>
+                </tr>
+                }
+                <tr>
+                    <td>Description :</td>
+                    <td>@module.description</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id="controlArea">
+            @for(version <- versions){
+            <h3>@version.versionCode (@version.releaseDate)</h3>
+            <p>@version.releaseNotes</p>
+            <p>
+                Compatible with: @for(compatible <- version.compatibility) {<span class="lineList">@compatible.name,</span>}
+            </p>
+            }
+        </div>
+    </div>
+</section>
+}

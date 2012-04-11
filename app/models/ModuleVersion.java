@@ -17,6 +17,7 @@ package models;
 
 import com.avaje.ebean.BeanState;
 import com.avaje.ebean.Ebean;
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.CascadeType;
@@ -47,18 +48,15 @@ public class ModuleVersion extends Model
 
     // this will be taken from Build.scala
     @Column(nullable = false)
+    @Constraints.Required
     public String versionCode;
 
     @Column(nullable = false)
+    @Constraints.Required
     public String releaseNotes;
 
     @Column(nullable = false)
     public Date releaseDate;
-
-    // this is taken from Build.scala
-    // organisation here or in {@link Module}? I think it makes more sense here
-    @Column(nullable = false)
-    public String organisation;
 
     @ManyToMany
     public List<PlayVersion> compatibility;

@@ -28,6 +28,7 @@ import play.mvc.With;
 import utils.RequestUtils;
 import views.html.modules.moduleRegistrationForm;
 import views.html.modules.manageVersionsForm;
+import views.html.modules.moduleDetails;
 import views.html.modules.myModules;
 import views.html.modules.genericModuleList;
 
@@ -122,7 +123,11 @@ public class Modules extends Controller {
     }
     
     public static Result details(String moduleKey) {
-        return TODO;
+        Module module = Module.findByModuleKey(moduleKey);
+        List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
+        return ok(moduleDetails.render(currentUser(),
+                                       module,
+                                       moduleVersions));
     }
     
     // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice

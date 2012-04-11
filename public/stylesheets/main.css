@@ -900,16 +900,3 @@ aside a[href^="http"]:after, .doc a[href^="http"]:after {
   vertical-align: middle;
   margin-left: 5px;
 }
-
-
-/*  Styles added by Steve, these can be removed once consistent styling is added*/
-.addNew {
-    margin-top: 10px;
-    border: 1px solid #000000;
-}
-
-.addNew legend {
-  font-weight:bolder;
-    border:solid 1px #555;
-    padding:3px;
-}

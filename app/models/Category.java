@@ -15,6 +15,7 @@
  */
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Column;
@@ -34,6 +35,7 @@ public class Category extends Model
     public Long id;
 
     @Column(nullable = false, unique = true)
+    @Constraints.Required
     public String name;
 
     public static Map<String, String> options()

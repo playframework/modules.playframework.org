@@ -1,37 +1,28 @@
 @(form: Form[forms.login.Register])
 
 @main("Register") {
-	<section id="top">
-		<div class="wrapper">
-			<h1>Register</h1>
-		</div>
-	</section>
-	<div id="content" class="wrapper">
-		<article>
-			@helper.form(routes.Application.createAccount) {
+<section id="top">
+    <div class="wrapper">
+        <h1>Register</h1>
+    </div>
+</section>
+<div id="content" class="wrapper">
+    <article>
+        @helper.form(routes.Application.createAccount) {
 
+        @if(form.hasGlobalErrors) {
+        <p class="error">
+            @form.globalError.message
+        </p>
+        }
+        @helper.inputText(form("userName"))
+        @helper.inputText(form("displayName"))
+        @helper.inputPassword(form("password"))
 
-			@if(form.hasGlobalErrors) {
-			<p class="error">
-				@form.globalError.message
-			</p>
-			}
-
-			<p>
-				<input type="text" name="userName" placeholder="User name" value="@form(" userName").value">
-			</p>
-
-			<p>
-				<input type="text" name="displayName" placeholder="Display name" value="@form(" displayName").value">
-			</p>
-
-			<p>
-				<input type="password" name="password" placeholder="Password">
-			</p>
-
-			<p>
-				<button type="submit">Register</button>
-			</p>
-		</article>
-	</div>
-}}
+        <p>
+            <button type="submit">Register</button>
+        </p>
+        }
+    </article>
+</div>
+}

@@ -18,7 +18,6 @@
 		@helper.form(routes.Modules.uploadNewVersion) {
 
         <input type="hidden" name="playModule.id" value="@module.id"/>
-		@helper.inputText(form("organisation"))
 		@helper.inputText(form("versionCode"))
 		@helper.textarea(form("releaseNotes"))
         @for(playVersion <- playVersions) {

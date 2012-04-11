@@ -18,6 +18,61 @@ header nav a.download:active {
 #introduction, #top { background-color:#1487B4; }
 #title { color:#C2D8DF; }
 
+
+/*  Styles added by Steve, these can be removed once consistent styling is added*/
+.addNew {
+    margin-top: 10px;
+    border: 1px solid #000000;
+}
+
+.addNew legend {
+    font-weight:bolder;
+    border:solid 1px #555;
+    padding:3px;
+}
+
+.lineList {
+    padding-right: 3px
+}
+
+#overviewArea {
+    width: 500px;
+    float: left;
+    color: #888;
+}
+
+#overviewArea h4 {
+    margin-top: 10px;
+    color: #1999CE;
+    font-size: 16px;
+}
+
+#overviewArea ul li:before {
+    content: "►";
+    color: #ccc;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+#controlArea {
+    width: 350px;
+    margin: -15px 0 0 0;
+    box-sizing: border-box;
+    float: right;
+    background: #fff;
+    color: #888;
+}
+#controlArea h3 {
+    color: #1999CE;
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 2px;
+    border-top: 1px solid #eee;
+}
+#controlArea a {
+    color: #444;
+}
+
 .moduleQuickControl {
     margin-bottom: 5px
 }
