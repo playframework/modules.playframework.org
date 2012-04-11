@@ -6,6 +6,10 @@ tmp
 .history
 dist
 .idea
+.cache
+.classpath
+.project
+.settings/
 *.iws
 conf/evolutions
 .DS_Store

@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+import models.PlayVersion;
 import play.Application;
 import play.GlobalSettings;
 
 /**
+ * 
  * @author Steve Chaloner (steve@objectify.be)
  */
 public class Global extends GlobalSettings

@@ -50,7 +50,7 @@ public class User extends Model
     @Column(nullable = true, length = 36)
     public String confirmationCode;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.REFRESH})
     public List<UserRole> roles;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

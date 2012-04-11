@@ -1,0 +1,17 @@
+@(currentUser: User, title: String, modules: List[Module])
+@import tags.moduleList
+
+@* convenience template for dumping a list of modules to screen.  Should be replaced by well-targeted templates *@
+@main(title, currentUser) {
+
+<section id="top">
+    <div class="wrapper">
+        <h1>@title</h1>
+    </div>
+</section>
+
+
+<div class="wrapper">
+    @moduleList("", modules)
+</div>
+}

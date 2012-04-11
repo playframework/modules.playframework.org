@@ -57,11 +57,13 @@ public class Modules extends Controller {
         }
     }
 
+
     public static Result showVersionManagement(String moduleKey) {
         Form<ModuleVersion> form = form(ModuleVersion.class);
         Module module = Module.findByModuleKey(moduleKey);
         return ok(manageVersionsForm.render(currentUser(),
                 module,
+                PlayVersion.getAll(),
                 form));
     }
 

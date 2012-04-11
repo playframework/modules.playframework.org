@@ -1,0 +1,24 @@
+@(currentUser: User,
+  categories: List[Category],
+  versionForm: Form[Category])
+
+@admin.adminTemplate("Categories", currentUser) {
+<article>
+    <ul>
+        @for(category <- categories) {
+        <li><a href="@routes.Categories.categoryDetails(category.name)">@category.name</a></li>
+        }
+    </ul>
+
+    <fieldset class="addNew">
+        <legend>Add new category</legend>
+        @helper.form(routes.Categories.addNewCategory) {
+        @helper.inputText(versionForm("name"))
+        <p>
+            <button type="submit">Add</button>
+        </p>
+
+    </fieldset>
+    }
+</article>
+}
