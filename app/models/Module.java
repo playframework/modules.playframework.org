@@ -23,6 +23,7 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
+import static play.data.validation.Constraints.MaxLength;
 import static play.data.validation.Constraints.Required;
 
 /**
@@ -46,6 +47,7 @@ public class Module extends AbstractModel implements ModuleAccessor {
 
     @Column(nullable = false, length = 500)
     @Required
+    @MaxLength(500)
     public String summary;
 
     @Column(nullable = false, length = 4000)
