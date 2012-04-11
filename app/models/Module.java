@@ -32,12 +32,13 @@ import static play.data.validation.Constraints.Required;
 @Entity
 @Table(name = "MPO_MODULE")
 public class Module extends Model implements ModuleAccessor {
+
 	@Id
 	public Long id;
 
     @ManyToOne(optional = false)
     public User owner;
-    
+
 	@Column(name = "module_key", nullable = false, unique = true)
 	@Required
 	public String key;

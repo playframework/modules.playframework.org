@@ -1,12 +1,12 @@
 @(currentUser: User, form: Form[models.Module])
 @import tags._
 
-@main("Register a new module", currentUser) {
+@main("Submit a new module", currentUser) {
 
 
 <section id="top">
 	<div class="wrapper">
-		<h1>Sumbit a new module</h1>
+		<h1>Submit a new module</h1>
 	</div>
 </section>
 
@@ -14,18 +14,40 @@
 	<article>
 		@helper.form(routes.Modules.submitModuleRegistrationForm) {
 
-		@helper.inputText(form("name"))
-		@helper.inputText(form("key"))
-		@helper.textarea(form("summary"))
-		@helper.textarea(form("description"))
-		@helper.inputText(form("projectUrl"))
-		@helper.inputText(form("demoUrl"))
-		@helper.inputText(form("avatarUrl"))
-		@helper.inputText(form("licenseType"))
-		@helper.inputText(form("licenseUrl"))
+		@helper.inputText(form("name"),
+            'size  -> 50,
+            '_label -> "Module Name"
+        )
+
+        @helper.inputText(form("key"),
+            'size  -> 50,
+            '_label -> "Module Key"
+        )
+
+        @helper.inputText(form("summary"),
+            'size  -> 50,
+            '_label -> "Describe your module in a single line"
+        )
+
+        @helper.textarea(form("description"),
+            'rows -> 10,
+            'cols -> 80,
+            '_label -> "Describe your module in a couple of lines"
+        )
+
+        @helper.inputText(form("projectUrl"),
+            'size  -> 50,
+            '_label -> "Project URL",
+            'placeholder -> "http://..."
+        )
+
+        @helper.inputText(form("licenseType"),
+            'size  -> 50,
+            '_label -> "License"
+        )
 
 		<p>
-			<button type="submit">Register</button>
+			<button type="submit">Submit!</button>
 		</p>
 		}
 	</article>
