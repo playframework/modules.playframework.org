@@ -15,11 +15,8 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,39 +25,32 @@ import java.util.Map;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Category extends Model
-{
-    @Id
-    public Long id;
+public class Category extends AbstractModel {
 
     @Column(nullable = false, unique = true)
     public String name;
 
-    public static Map<String, String> options()
-    {
+    public static Map<String, String> options() {
         Map<String, String> options = new LinkedHashMap<String, String>();
 
-        for (Category category : getAll())
-        {
+        for (Category category : getAll()) {
             options.put(category.id.toString(),
-                        category.name);
+                    category.name);
         }
 
         return options;
     }
 
     public static final Finder<Long, Category> FIND = new Finder<Long, Category>(Long.class,
-                                                                                 Category.class);
+            Category.class);
 
-    public static List<Category> getAll()
-    {
+    public static List<Category> getAll() {
         return FIND.all();
     }
 
-    public static Category findByName(String name)
-    {
+    public static Category findByName(String name) {
         return FIND.where()
-                   .eq("name", name)
-                   .findUnique();
+                .eq("name", name)
+                .findUnique();
     }
 }

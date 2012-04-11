@@ -15,31 +15,24 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Tag extends Model
-{
-    @Id
-    public Long id;
+public class Tag extends AbstractModel {
 
     @Column(nullable = false)
     public String name;
 
     public static final Finder<Long, Tag> FIND = new Finder<Long, Tag>(Long.class,
-                                                                       Tag.class);
+            Tag.class);
 
-    public static Tag findByName(String name)
-    {
+    public static Tag findByName(String name) {
         return FIND.where()
-                   .eq("name", name)
-                   .findUnique();
+                .eq("name", name)
+                .findUnique();
     }
 }

@@ -16,10 +16,8 @@
 package models;
 
 import models.security.UserRole;
-import play.db.ebean.Model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,10 +25,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "MPO_USER")
-public class User extends Model
-{
-    @Id
-    public Long id;
+public class User extends AbstractModel {
 
     @Column(nullable = false, length = 40, unique = true)
     public String userName;
@@ -60,20 +55,19 @@ public class User extends Model
     public List<Rate> rates;
 
     public static final Finder<Long, User> FIND = new Finder<Long, User>(Long.class,
-                                                                         User.class);
+            User.class);
 
-    public static User findByUserName(String userName)
-    {
+    public static User findByUserName(String userName) {
         return FIND.where()
-                   .eq("userName", userName)
-                   .findUnique();
+                .eq("userName", userName)
+                .findUnique();
     }
 
     public static User authenticate(String userName,
                                     String password) {
         return FIND.where()
-                   .eq("userName", userName)
-                   .eq("password", password)
-                   .findUnique();
+                .eq("userName", userName)
+                .eq("password", password)
+                .findUnique();
     }
 }

@@ -15,13 +15,7 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -29,10 +23,7 @@ import java.util.List;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Comment extends Model
-{
-    @Id
-    public Long id;
+public class Comment extends AbstractModel {
 
     @OneToOne(optional = false)
     public User author;
@@ -50,12 +41,11 @@ public class Comment extends Model
     public Boolean visible;
 
     public static final Finder<Long, Comment> FIND = new Finder<Long, Comment>(Long.class,
-                                                                               Comment.class);
+            Comment.class);
 
-    public static List<Comment> findByAuthor(User author)
-    {
+    public static List<Comment> findByAuthor(User author) {
         return FIND.where()
-                   .eq("author", author)
-                   .findList();
+                .eq("author", author)
+                .findList();
     }
 }

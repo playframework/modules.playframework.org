@@ -15,21 +15,15 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Rate extends Model
-{
-    @Id
-    public Long id;
+public class Rate extends AbstractModel {
 
     @OneToOne(optional = false)
     public Module playModule;

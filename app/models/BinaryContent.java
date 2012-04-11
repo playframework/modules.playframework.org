@@ -15,21 +15,14 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.PrePersist;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class BinaryContent extends Model
-{
-    @Id
-    public Long id;
+public class BinaryContent extends AbstractModel {
 
     @Column(nullable = false)
     public byte[] content;
@@ -38,5 +31,5 @@ public class BinaryContent extends Model
     public Integer contentLength;
 
     public static final Finder<Long, BinaryContent> FIND = new Finder<Long, BinaryContent>(Long.class,
-                                                                                           BinaryContent.class);
+            BinaryContent.class);
 }

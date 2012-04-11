@@ -15,32 +15,14 @@
  */
 package models;
 
-import com.avaje.ebean.BeanState;
-import com.avaje.ebean.Ebean;
-import play.db.ebean.Model;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.persistence.*;
+import java.util.*;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class ModuleVersion extends Model
-{
-    @Id
-    public Long id;
+public class ModuleVersion extends AbstractModel {
 
     @ManyToOne
     public Module playModule;
@@ -73,24 +55,21 @@ public class ModuleVersion extends Model
     public BinaryContent documentFile;
 
     public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,
-                                                                                           ModuleVersion.class);
+            ModuleVersion.class);
 
-    public static List<ModuleVersion> findByModule(Module module)
-    {
+    public static List<ModuleVersion> findByModule(Module module) {
         return FIND.where()
-                   .eq("playModule", module)
-                   .order("versionCode ASC")
-                   .findList();
+                .eq("playModule", module)
+                .order("versionCode ASC")
+                .findList();
     }
 
-    public static List<Module> findModulesByPlayVersion(List<PlayVersion> playVersions)
-    {
+    public static List<Module> findModulesByPlayVersion(List<PlayVersion> playVersions) {
         List<ModuleVersion> matches = FIND.where()
-                                          .in("compatibility", playVersions)
-                                          .findList();
+                .in("compatibility", playVersions)
+                .findList();
         Set<Module> modules = new HashSet<Module>();
-        for (ModuleVersion match : matches)
-        {
+        for (ModuleVersion match : matches) {
             modules.add(match.playModule);
         }
 

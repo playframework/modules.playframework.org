@@ -15,11 +15,8 @@
  */
 package models;
 
-import play.db.ebean.Model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.Date;
 import java.util.List;
@@ -28,10 +25,7 @@ import java.util.List;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class FeaturedModule extends Model implements ModuleAccessor
-{
-    @Id
-    public Long id;
+public class FeaturedModule extends AbstractModel implements ModuleAccessor {
 
     @OneToOne(optional = false)
     public Module playModule;
@@ -44,32 +38,28 @@ public class FeaturedModule extends Model implements ModuleAccessor
 
     @Column(nullable = false)
     public Boolean sticky;
-    
-    public static final Finder<Long, FeaturedModule> FIND = new Finder<Long, FeaturedModule>(Long.class,
-                                                                                             FeaturedModule.class);
 
-    public static List<FeaturedModule> getAll()
-    {
+    public static final Finder<Long, FeaturedModule> FIND = new Finder<Long, FeaturedModule>(Long.class,
+            FeaturedModule.class);
+
+    public static List<FeaturedModule> getAll() {
         return FIND.all();
     }
-    
-    public static List<FeaturedModule> getStickyModules()
-    {
+
+    public static List<FeaturedModule> getStickyModules() {
         return FIND.where()
-                   .eq("sticky", Boolean.TRUE)
-                   .findList();
+                .eq("sticky", Boolean.TRUE)
+                .findList();
     }
 
-    public static List<FeaturedModule> getEphemeralModules()
-    {
+    public static List<FeaturedModule> getEphemeralModules() {
         return FIND.where()
-                   .eq("sticky", Boolean.FALSE)
-                   .findList();
+                .eq("sticky", Boolean.FALSE)
+                .findList();
     }
-    
+
     @Override
-    public Module getModule()
-    {
+    public Module getModule() {
         return playModule;
     }
 }
