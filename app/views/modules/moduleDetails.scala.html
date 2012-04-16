@@ -1,6 +1,7 @@
 @(currentUser: User, module: Module, versions: List[ModuleVersion])
 @import tags.moduleList
 @import utils.StringUtils.isEmpty
+@import be.objectify.deadbolt.views.html._
 
 @main(module.name, currentUser) {
 
@@ -36,10 +37,14 @@
                     <td>Description :</td>
                     <td>@module.description</td>
                 </tr>
+                @dynamic(security.dynamic.AllowToVote.KEY, module.key) {
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Vote: </td>
+                    <td>
+                        <a href="@routes.Modules.vote(module.key)">Vote</a>
+                    </td>
                 </tr>
+                }
             </table>
         </div>
         <div id="controlArea">

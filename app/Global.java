@@ -15,8 +15,14 @@
  */
 
 import models.PlayVersion;
+import models.User;
+import models.UserRole;
 import play.Application;
 import play.GlobalSettings;
+import security.RoleDefinitions;
+import services.UserServices;
+
+import java.util.Arrays;
 
 /**
  * 
@@ -35,5 +41,22 @@ public class Global extends GlobalSettings
         // featured modules can be made sticky to have them stick around for more than 24 hours via admin console - featured modules can also be created from there
         // I'll add this to the wiki later
         // this space for rent
+
+        // TODO remove this!  It's a development convenience
+        if (UserRole.findByRoleName(RoleDefinitions.ADMIN) == null)
+        {
+            UserRole role = new UserRole();
+            role.roleName = RoleDefinitions.ADMIN;
+            role.description = "MPO administrator";
+            role.save();
+        }
+
+        if (User.findByUserName("admin") == null)
+        {
+            new UserServices().createUser("admin",
+                                          "MPO Admin",
+                                          "password",
+                                          Arrays.asList(UserRole.findByRoleName(RoleDefinitions.ADMIN)));
+        }
     }
 }

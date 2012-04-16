@@ -16,11 +16,13 @@
 package controllers;
 
 import actions.CurrentUser;
+import be.objectify.deadbolt.actions.Restrict;
 import models.PlayVersion;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
+import security.RoleDefinitions;
 import views.html.admin.playVersions;
 
 import static actions.CurrentUser.currentUser;
@@ -29,6 +31,7 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@obectify.be)
  */
 @With(CurrentUser.class)
+@Restrict(RoleDefinitions.ADMIN)
 public class PlayVersions extends Controller
 {
     public static Result showPlayVersions()

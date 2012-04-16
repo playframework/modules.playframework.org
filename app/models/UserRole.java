@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package models.security;
+package models;
 
 import play.db.ebean.Model;
+import be.objectify.deadbolt.models.Role;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ import javax.persistence.Id;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class UserRole extends Model
+public class UserRole extends Model implements Role
 {
     @Id
     public Long id;
@@ -38,4 +39,19 @@ public class UserRole extends Model
 
     public static final Finder<Long, UserRole> FIND = new Finder<Long, UserRole>(Long.class,
                                                                                  UserRole.class);
+
+    @Override
+    public String getRoleName()
+    {
+        return roleName;
+    }
+
+    public static UserRole findByRoleName(String roleName)
+    {
+        return FIND.where()
+                   .eq("roleName",
+                       roleName)
+                   .findUnique();
+
+    }
 }
