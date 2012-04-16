@@ -1,12 +1,17 @@
 @(currentUser: User)
 
+@import be.objectify.deadbolt.views.html._
+@import be.objectify.deadbolt.utils.TemplateUtils._
+
 <div id="news">
 	<ul class="wrapper">
 		@if(currentUser != null) {
 		Hello @currentUser.displayName |
 		<a href="@routes.Modules.myModules">My modules</a> |
 		<a href="@routes.Modules.showModuleRegistrationForm">Submit a new module</a> |
-        <a href="@routes.PlayVersions.showPlayVersions">Admin</a> |
+        @restrict(la(as("admin"))) {
+            <a href="@routes.PlayVersions.showPlayVersions">Admin</a> |
+        }
 		<a href="@routes.Application.logout">Log out</a>
 		} else {
 		<li>

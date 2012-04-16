@@ -29,21 +29,37 @@ public class CurrentUser extends Action.Simple
     @Override
     public Result call(Http.Context ctx) throws Throwable
     {
-        String userName = ctx.session().get("userName");
-        if (!StringUtils.isEmpty(userName))
-        {
-            User user = User.findByUserName(userName);
-            if (user != null)
-            {
-                ctx.args.put("user",
-                             user);
-            }
-        }
+        accessUser(ctx);
         return delegate.call(ctx);
     }
 
-    public static User currentUser() {
-        return (User)Http.Context.current().args.get("user");
+    private static User accessUser(Http.Context ctx)
+    {
+        User user = (User)ctx.args.get("user");
+        if (user == null)
+        {
+            String userName = ctx.session().get("userName");
+            if (!StringUtils.isEmpty(userName))
+            {
+                user = User.findByUserName(userName);
+                if (user != null)
+                {
+                    ctx.args.put("user",
+                                 user);
+                }
+            }
+        }
+
+        return user;
     }
 
+    public static User currentUser()
+    {
+        return currentUser(Http.Context.current());
+    }
+
+    public static User currentUser(Http.Context context)
+    {
+        return accessUser(context);
+    }
 }

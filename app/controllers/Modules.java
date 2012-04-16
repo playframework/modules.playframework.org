@@ -16,6 +16,7 @@
 package controllers;
 
 import actions.CurrentUser;
+import be.objectify.deadbolt.actions.RoleHolderPresent;
 import models.BinaryContent;
 import models.Module;
 import models.ModuleVersion;
@@ -42,18 +43,20 @@ import static actions.CurrentUser.currentUser;
 @With(CurrentUser.class)
 public class Modules extends Controller
 {
-
+    @RoleHolderPresent
     public static Result myModules()
     {
         User currentUser = currentUser();
         return ok(myModules.render(currentUser, Module.ownedBy(currentUser)));
     }
 
+    @RoleHolderPresent
     public static Result showModuleRegistrationForm()
     {
         return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
     }
 
+    @RoleHolderPresent
     public static Result submitModuleRegistrationForm()
     {
         Form<Module> form = form(Module.class).bindFromRequest();
@@ -70,7 +73,7 @@ public class Modules extends Controller
         }
     }
 
-
+    @RoleHolderPresent
     public static Result showVersionManagement(String moduleKey)
     {
         Form<ModuleVersion> form = form(ModuleVersion.class);
@@ -81,6 +84,7 @@ public class Modules extends Controller
                                             form));
     }
 
+    @RoleHolderPresent
     public static Result uploadNewVersion(String moduleKey)
     {
         Result result;
@@ -140,13 +144,15 @@ public class Modules extends Controller
                                        moduleVersions));
     }
 
-    // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice
+    // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice, when request params are available
+    @RoleHolderPresent
     public static Result vote(String moduleKey)
     {
         return TODO;
     }
 
     // If a user has already rated, then change the rate, don't add a new one
+    @RoleHolderPresent
     public static Result rate(String moduleKey,
                               int rate)
     {

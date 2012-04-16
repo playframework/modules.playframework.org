@@ -15,9 +15,12 @@
  */
 package models;
 
-import models.security.UserRole;
+import be.objectify.deadbolt.models.Permission;
+import be.objectify.deadbolt.models.Role;
+import be.objectify.deadbolt.models.RoleHolder;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,7 +28,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "MPO_USER")
-public class User extends AbstractModel {
+public class User extends AbstractModel implements RoleHolder
+{
 
     @Column(nullable = false, length = 40, unique = true)
     public String userName;
@@ -69,5 +73,18 @@ public class User extends AbstractModel {
                 .eq("userName", userName)
                 .eq("password", password)
                 .findUnique();
+    }
+
+    @Override
+    public List<? extends Role> getRoles()
+    {
+        return roles;
+    }
+
+    @Override
+    public List<? extends Permission> getPermissions()
+    {
+        // for now, let's go with role-based security.  I don't think we need any fine-grained control.
+        return Collections.emptyList();
     }
 }

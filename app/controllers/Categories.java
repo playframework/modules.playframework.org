@@ -16,12 +16,14 @@
 package controllers;
 
 import actions.CurrentUser;
+import be.objectify.deadbolt.actions.Restrict;
 import models.Category;
 import models.Module;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
+import security.RoleDefinitions;
 import views.html.admin.categories;
 import views.html.admin.categoryDetails;
 
@@ -33,6 +35,7 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@obectify.be)
  */
 @With(CurrentUser.class)
+@Restrict(RoleDefinitions.ADMIN)
 public class Categories extends Controller
 {
     public static Result showCategories()

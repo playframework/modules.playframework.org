@@ -16,19 +16,41 @@
 package services;
 
 import models.User;
+import models.UserRole;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-public class UserServices {
+public class UserServices
+{
 
-	public User createUser(String userName, String displayName, String password) {
-		User user = new User();
-		user.userName = userName;
-		user.displayName = displayName;
-		user.password = password;
-		user.accountActive = true;
-		user.save();
-		return user;
-	}
+    public User createUser(String userName,
+                           String displayName,
+                           String password)
+    {
+        return createUser(userName,
+                          displayName,
+                          password,
+                          Collections.<UserRole>emptyList());
+    }
+
+    public User createUser(String userName,
+                           String displayName,
+                           String password,
+                           List<UserRole> roles)
+    {
+        User user = new User();
+        user.userName = userName;
+        user.displayName = displayName;
+        user.password = password;
+        user.accountActive = true;
+        user.roles = new ArrayList<UserRole>(roles);
+        user.save();
+        user.saveManyToManyAssociations("roles");
+        return user;
+    }
 }
