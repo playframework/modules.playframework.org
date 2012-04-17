@@ -27,6 +27,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import utils.RequestUtils;
+import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.moduleDetails;
 import views.html.modules.moduleRegistrationForm;
@@ -126,7 +127,10 @@ public class Modules extends Controller
     // e.g. /modules/play-1.2.4
     public static Result getModulesByPlayVersion(String version)
     {
-        return TODO;
+        User currentUser = currentUser();
+        final String title = String.format("Play %s.x modules", version);
+        // TODO List modules with a ModuleVersion with the given majorVersion, instead of all modules.
+        return ok(genericModuleList.render(currentUser, title, Module.all()));
     }
 
     public static Result getModulesByCategory(String version,

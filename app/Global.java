@@ -15,6 +15,7 @@
  */
 
 import com.avaje.ebean.Ebean;
+import models.Module;
 import models.PlayVersion;
 import models.User;
 import models.UserRole;
@@ -47,6 +48,7 @@ public class Global extends GlobalSettings
         // this space for rent
 
         // TODO remove this!  It's a development convenience
+        Logger.info("Adding admin user...");
         if (UserRole.findByRoleName(RoleDefinitions.ADMIN) == null)
         {
             UserRole role = new UserRole();
@@ -66,16 +68,34 @@ public class Global extends GlobalSettings
         loadInitialData();
     }
 
+    /**
+     * Simplistic loading of YAML initial data file.
+     */
     public void loadInitialData()
     {
         Logger.info("Loading initial data...");
-        Map<String, List<Object>> data = (Map<String, List<Object>>) Yaml.load("initial-play-versions.yml");
+        Map<String, List<Object>> data = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
 
         if (PlayVersion.count() == 0)
         {
-            final List<Object> versions = data.get("versions");
+            final List<Object> versions = data.get("playVersions");
             Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
             Ebean.save(versions);
+        }
+
+        // The 'admin' user is already loaded.
+        if (User.count() <= 1)
+        {
+            final List<Object> users = data.get("users");
+            Logger.debug(String.format("User: %d loaded", users.size()));
+            Ebean.save(users);
+        }
+
+        if (Module.count() == 0)
+        {
+            final List<Object> modules = data.get("modules");
+            Logger.debug(String.format("Module: %d loaded", modules.size()));
+            Ebean.save(modules);
         }
     }
 }

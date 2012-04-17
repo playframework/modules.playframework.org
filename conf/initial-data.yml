@@ -1,0 +1,37 @@
+playVersions:
+
+    - !!models.PlayVersion
+        majorVersion: ONE
+        name: 1.2.4
+        documentationUrl: http://www.playframework.org/documentation/1.2.4/home
+
+    - !!models.PlayVersion
+        majorVersion: TWO
+        name: 2.0
+        documentationUrl: http://www.playframework.org/documentation/2.0/Home
+
+users:
+
+    - !!models.User
+        id: 1
+        userName: peter
+        displayName: Peter Hilton
+        password: none
+        accountActive: true
+
+modules:
+
+    - !!models.Module
+        owner: !!models.User
+               id: 1
+        key: jqueryui
+        name: jQuery UI
+        summary: Working examples of jQuery UI widgets, integrated with a Play application.
+        description: The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui.com/ widgets, integrated with a Play application.
+        organisation: Lunatech Research
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+        createdOn: 2011-10-31
+        updatedOn: 2011-10-31
+        contributors: Peter Hilton
+        projectUrl: https://github.com/lunatech-labs/play-module-jqueryui
