@@ -1,7 +1,8 @@
 @(currentUser: User,
   mostRecentModules: List[Module],
   highestRatedModules: List[Module],
-  featuredModules: List[FeaturedModule])
+  featuredModules: List[FeaturedModule],
+  playVersions: List[PlayVersion])
 
 @import tags._
 
@@ -43,6 +44,14 @@
 
 <div id="content" class="wrapper">
 	<article>
+		<h1>Play versions</h1>
+
+    <ul>
+      @for(version <- playVersions) {
+        <li><a href="@routes.Modules.getModulesByPlayVersion(version.majorVersion.numeric)">Play @version.name modules</a></li>
+      }
+    </ul>
+
 		<h1>Modules</h1>
 
         @moduleList("Featured modules", featuredModules)

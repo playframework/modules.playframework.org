@@ -56,6 +56,10 @@ public class PlayVersion extends AbstractModel {
     public static final Finder<Long, PlayVersion> FIND = new Finder<Long, PlayVersion>(Long.class,
             PlayVersion.class);
 
+    public static int count() {
+        return FIND.findRowCount();
+    }
+
     public static List<PlayVersion> getAll() {
         return FIND.where()
                 .order("name ASC")

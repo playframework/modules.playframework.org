@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
+import com.avaje.ebean.Ebean;
 import models.PlayVersion;
 import models.User;
 import models.UserRole;
 import play.Application;
 import play.GlobalSettings;
+import play.Logger;
+import play.libs.Yaml;
 import security.RoleDefinitions;
 import services.UserServices;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 /**
- * 
  * @author Steve Chaloner (steve@objectify.be)
  */
 public class Global extends GlobalSettings
@@ -57,6 +61,21 @@ public class Global extends GlobalSettings
                                           "MPO Admin",
                                           "password",
                                           Arrays.asList(UserRole.findByRoleName(RoleDefinitions.ADMIN)));
+        }
+
+        loadInitialData();
+    }
+
+    public void loadInitialData()
+    {
+        Logger.info("Loading initial data...");
+        Map<String, List<Object>> data = (Map<String, List<Object>>) Yaml.load("initial-play-versions.yml");
+
+        if (PlayVersion.count() == 0)
+        {
+            final List<Object> versions = data.get("versions");
+            Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
+            Ebean.save(versions);
         }
     }
 }
