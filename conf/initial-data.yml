@@ -13,25 +13,2351 @@ playVersions:
 users:
 
     - !!models.User
-        id: 1
-        userName: peter
-        displayName: Peter Hilton
-        password: none
+        id: 51
+        userName: ahmed.mahmoud.mohammed.abd.el.wahab
+        displayName: Ahmed Mahmoud Mohammed Abd El-wahab
         accountActive: true
+        password: none
+
+    - !!models.User
+        id: 73
+        userName: aishwarya.singhal
+        displayName: Aishwarya Singhal
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 79
+        userName: an.do
+        displayName: An Do
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 58
+        userName: andrew.louth
+        displayName: Andrew Louth
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 5
+        userName: andre.pareis
+        displayName: André Pareis
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 34
+        userName: ben.verbeken
+        displayName: Ben Verbeken
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 17
+        userName: benoit.courtine
+        displayName: Benoît Courtine
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 53
+        userName: benoit.simard
+        displayName: Benoît Simard
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 45
+        userName: bing.ran
+        displayName: Bing Ran
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 44
+        userName: blr
+        displayName: BLR
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 59
+        userName: bogdan.tanase
+        displayName: Bogdan Tanase
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 2
+        userName: brian.nesbitt
+        displayName: Brian Nesbitt
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 12
+        userName: damien.gouyette
+        displayName: Damien Gouyette
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 62
+        userName: dave.cheong
+        displayName: Dave Cheong
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 84
+        userName: dave.jafari
+        displayName: Dave Jafari
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 23
+        userName: david.cardon
+        displayName: David Cardon
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 56
+        userName: dirk
+        displayName: Dirk
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 3
+        userName: dustin.whitney
+        displayName: Dustin Whitney
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 8
+        userName: edward.southey
+        displayName: Edward Southey
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 32
+        userName: eric.jacob
+        displayName: Eric Jacob
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 49
+        userName: erik.bakker
+        displayName: Erik Bakker
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 52
+        userName: erwan.le.goulven
+        displayName: Erwan Le Goulven
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 6
+        userName: erwan.loisant
+        displayName: Erwan Loisant
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 28
+        userName: felipe.oliveira
+        displayName: Felipe Oliveira
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 69
+        userName: florian.gutmann
+        displayName: Florian Gutmann
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 42
+        userName: gaetan.renaudeau
+        displayName: Gaëtan Renaudeau
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 29
+        userName: green.luo
+        displayName: Green Luo
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 30
+        userName: guillaume.bort
+        displayName: Guillaume Bort
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 4
+        userName: guy.mograbi
+        displayName: Guy Mograbi
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 87
+        userName: heikki.uljas
+        displayName: Heikki Uljas
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 60
+        userName: hugo.lassiege
+        displayName: Hugo Lassiege
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 47
+        userName: igor.yova
+        displayName: Igor Yova
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 16
+        userName: ivan.meredith
+        displayName: Ivan Meredith
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 36
+        userName: james.gregory
+        displayName: James Gregory
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 41
+        userName: james.ward
+        displayName: James Ward
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 74
+        userName: jean.francois.poux
+        displayName: Jean-Francois POUX
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 35
+        userName: jesper.joergensen
+        displayName: Jesper Joergensen
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 67
+        userName: joel.soderstrom
+        displayName: Joel Söderström
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 75
+        userName: jorge.aliss
+        displayName: Jorge Aliss
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 19
+        userName: julien.bille
+        displayName: Julien Bille
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 82
+        userName: julien.richard.foy
+        displayName: Julien Richard-Foy
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 18
+        userName: jorg.viola
+        displayName: Jörg Viola
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 63
+        userName: kumaresan
+        displayName: Kumaresan
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 14
+        userName: lawrence.mcalpin
+        displayName: Lawrence McAlpin
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 26
+        userName: leif.singer
+        displayName: Leif Singer
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 54
+        userName: logisima
+        displayName: logisima
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 61
+        userName: lungisa.matshobam
+        displayName: Lungisa Matshobam
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 27
+        userName: lyubomir.ivanov
+        displayName: Lyubomir Ivanov
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 10
+        userName: marc.deschamps
+        displayName: Marc Deschamps
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 46
+        userName: marc.fornos
+        displayName: Marc Fornos
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 66
+        userName: marius.andra
+        displayName: Marius Andra
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 38
+        userName: matteo.barbieri
+        displayName: Matteo Barbieri
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 31
+        userName: michael.murray
+        displayName: Michael Murray
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 33
+        userName: morten.kjetland
+        displayName: Morten Kjetland
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 43
+        userName: naholyr
+        displayName: naholyr
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 24
+        userName: nicolas.leroux
+        displayName: Nicolas Leroux
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 57
+        userName: olivier.gilbert
+        displayName: Olivier GILBERT
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 9
+        userName: olivier.refalo
+        displayName: Olivier Refalo
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 11
+        userName: pascal.voitot
+        displayName: Pascal Voitot
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 39
+        userName: peter.hausel
+        displayName: Peter Hausel
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 50
+        userName: peter.hilton
+        displayName: Peter Hilton
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 78
+        userName: peter.lundberg
+        displayName: Peter Lundberg
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 48
+        userName: piero.sartini
+        displayName: Piero Sartini
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 86
+        userName: raghu.kaippully
+        displayName: Raghu Kaippully
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 13
+        userName: raphael.andre.bauer
+        displayName: Raphael André Bauer
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 68
+        userName: regis.bamba
+        displayName: Regis Bamba
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 80
+        userName: rich.kroll
+        displayName: Rich Kroll
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 20
+        userName: rob.figueiredo
+        displayName: Rob Figueiredo
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 37
+        userName: rustem.suniev
+        displayName: Rustem Suniev
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 72
+        userName: sadek.drobi
+        displayName: Sadek Drobi
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 83
+        userName: satoshi.takata
+        displayName: Satoshi Takata
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 85
+        userName: scott.clasen
+        displayName: Scott Clasen
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 76
+        userName: scott.phillips
+        displayName: Scott Phillips
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 22
+        userName: sebastian.hoss
+        displayName: Sebastian Hoß
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 64
+        userName: sebastian.scarano
+        displayName: Sebastián Scarano
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 21
+        userName: sondre.eikanger.kvalo
+        displayName: Sondre Eikanger Kvalø
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 71
+        userName: stephane.epardaud
+        displayName: Stéphane Épardaud
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 7
+        userName: stephane.godbillon
+        displayName: Stephane Godbillon
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 25
+        userName: steve.chaloner
+        displayName: Steve Chaloner
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 70
+        userName: tim.kral
+        displayName: Tim Kral
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 81
+        userName: tony.tam
+        displayName: Tony Tam
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 77
+        userName: vijay.kiran
+        displayName: Vijay Kiran
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 40
+        userName: vincent.buzzano
+        displayName: Vincent Buzzano
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 55
+        userName: wang.yizhuo
+        displayName: Wang Yizhuo
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 15
+        userName: wayson.clown
+        displayName: Wayson Clown
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 65
+        userName: zenexity
+        displayName: Zenexity
+        accountActive: true
+        password: none
+
 
 modules:
 
     - !!models.Module
+        id: 59
         owner: !!models.User
-               id: 1
+               id: 87
+        key: messages
+        name: "@messages"
+        summary: "A web based tool for managing your application's localizations"
+        description: "Module **messages** provides a web based tool for managing your application's localizations. \r\n\r\n* *Forgetting the localizations as you code?* This tool will look through your sources and lists the keys that have not been localized yet!\r\n* *Forgot to remove the localizations when you refactoring?* It also finds keys that are no longer in use and let's you easily remove them!\r\n* *Your messages file is a mess?* The messages files are saved in alphabetical order so you can easily add keys to the files manually too!\r\n* *Not sure where the key is used?* No worries, the tool will show you a snippet from the source code where it found the key!\r\n\r\nCheck out the usage examples in this \"blog post\":http://huljas.github.com/code/2011/04/01/localizing-your-play-application-with-messages.html\r\n\r\nFor bug reports and feature requests use the project home page at \"github\":https://github.com/huljas/play-messages."
+        contributors: Heikki Uljas
+        projectUrl: https://github.com/huljas/play-messages
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 105
+        owner: !!models.User
+               id: 2
+        key: accesslog
+        name: "accesslog"
+        summary: "A Play framework module that performs request logging similar to an access log file in nginx or apache"
+        description: "A Play framework module that performs request logging similar to an access log file in nginx or apache.\r\n"
+        contributors: Brian Nesbitt
+        projectUrl: https://github.com/briannesbitt/play-accesslog/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 27
+        owner: !!models.User
+               id: 3
+        key: akka
+        name: "akka support"
+        summary: "Akka integration"
+        description: "akka (http://akkasource.org) is a platform for building simple, correct, fault-tolerant, concurrent, and scalable applications for the JVM.  This module allows you to configure akka through The Play! framework's conf/application.conf file; it provides a few command-line scripts to start akka when your application starts; and it has some examples of it in action."
+        contributors: Dustin Whitney
+        projectUrl: http://github.com/dwhitney/akka
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 67
+        owner: !!models.User
+               id: 4
+        key: tests
+        name: "Alternative Test module for Play"
+        summary: "(none)"
+        description: "\"Presentation\":http://blog.mograbi.info/p/test-module-for-playframework.html"
+        contributors: Guy Mograbi
+        projectUrl: https://github.com/GuyMograbi/play_test_module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 65
+        owner: !!models.User
+               id: 5
+        key: antify
+        name: "Antify"
+        summary: "Antify module allows you to generate a ant project file for your play application and run it with ant"
+        description: "Antify module allows you to generate a ant project file for your play application and run it with ant.\r\n\r\np(note). This module is no longer maintained. The antify support is now built-in since Play 1.2.2. \"Unofficial instructions here\":http://pragmatastic.blogspot.com/2011/08/using-antify-to-run-your-play.html"
+        contributors: Heikki Uljas
+        projectUrl: https://github.com/huljas/play-antify
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 85
+        owner: !!models.User
+               id: 5
+        key: associations
+        name: "Associations"
+        summary: "reduces the code to manage bi-directional associations"
+        description: "p. This module reduces the code to manage bi-directional associations. Instead of writing\r\n\r\nbc.. forum1.posts.remove(post);\r\npost.forum = forum2;\r\nforum2.posts.add(post);\r\np. you can just write\r\n\r\nbc. forum2.posts.add(post);\r\n\r\np. and the module handles everything else for you."
+        contributors: André Pareis
+        projectUrl: https://github.com/pareis/play-associations
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 6
+        owner: !!models.User
+               id: 6
+        key: bespin
+        name: "Bespin online editor"
+        summary: "Bespin is a Mozilla Labs experiment on how to build an extensible web code editor using HTML 5 technology"
+        description: "Bespin is a Mozilla Labs experiment on how to build an extensible web code editor using HTML 5 technology. The play bespin module allows you to edit all the application sources directly in the browser using bespin."
+        contributors: Erwan Loisant
+        projectUrl: http://github.com/erwan/playbespin
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 78
+        owner: !!models.User
+               id: 7
+        key: betterlogs
+        name: "BetterLogs"
+        summary: "This very simple module enhances the Play! Framework logs to bring some missing information such as the class name, the method name where the log has been called, its signature, the file name and the line"
+        description: "This very simple module enhances the Play! Framework logs to bring some missing information such as the class name, the method name where the log has been called, its signature, the file name and the line."
+        contributors: Stephane Godbillon
+        projectUrl: https://github.com/sgodbillon/BetterLogs
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 131
+        owner: !!models.User
+               id: 8
+        key: bhave
+        name: "bhave"
+        summary: "Web-based BDD Framework, for web apps, done in a funky way!"
+        description: "Web-based BDD Framework, for web apps, done in a funky way!"
+        contributors: Edward Southey
+        projectUrl: http://bhave.org/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 133
+        owner: !!models.User
+               id: 9
+        key: browserid
+        name: "BrowserID"
+        summary: " BrowserID is an experimental new way of signing into websites"
+        description: " BrowserID is an experimental new way of signing into websites. The goal with BrowserID is to design something safe and easy for users and the developers."
+        contributors: Olivier Refalo
+        projectUrl: https://github.com/orefalo/browserid
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 84
+        owner: !!models.User
+               id: 10
+        key: camel
+        name: "Camel"
+        summary: "A EIP + Messaging module for the Play! Framework\r\n\r\n- Integration done right\r\n\r\nInclude engine from:\r\n- Apache-Camel => EIP engine\r\n- Apache ActiveMQ => embedded JMS Broker"
+        description: "A EIP + Messaging module for the Play! Framework\r\n\r\n- Integration done right\r\n\r\nInclude engine from:\r\n- Apache-Camel => EIP engine\r\n- Apache ActiveMQ => embedded JMS Broker"
+        contributors: Marc Deschamps
+        projectUrl: https://github.com/marcuspocus/play-camel
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 98
+        owner: !!models.User
+               id: 11
+        key: capistrano
+        name: "capistrano"
+        summary: "Here is a draft module to deploy a remote play app using Capistrano + SSH + VCS and run it in nohup/background mode"
+        description: "Here is a draft module to deploy a remote play app using Capistrano + SSH + VCS and run it in nohup/background mode.\r\nI'm complete noob in Ruby so this is for people who don't want to write ruby as me yet having a few basic functions around play and this great Capistrano tool. \r\nBut this is also for those who know ruby and want to customize cap configuration.\r\n"
+        contributors: Pascal Voitot
+        projectUrl: https://github.com/mandubian/play-capistrano
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 71
+        owner: !!models.User
+               id: 12
+        key: carbonate
+        name: "Carbonate migrations"
+        summary: "Module for creating and running database migrations for Play application"
+        description: "Module for creating and running database migrations for Play application. Uses Hibernate schema update to automatically generate SQL to the migrations.\r\n\r\nFor usage examples see \"this blog post\":http://huljas.github.com/code/2011/04/04/managing-database-with-play-carbonate.html"
+        contributors: Heikki Uljas
+        projectUrl: https://github.com/huljas/play-carbonate
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 91
+        owner: !!models.User
+               id: 12
+        key: cargo
+        name: "cargo"
+        summary: "This module helps you remotely deploy your Play! application"
+        description: "This module helps you remotely deploy your Play! application.\r\n\r\nThe first version (0.1) only supports Tomcat, but 0.2 is coming soon\r\nand will add jboss and glassfish supports."
+        contributors: Damien Gouyette
+        projectUrl: https://github.com/dgouyette/play-cargo
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 135
+        owner: !!models.User
+               id: 13
+        key: casino
+        name: "casino"
+        summary: "This project provides a simple method to integrate sign-up and\r\npassword recovery to your project"
+        description: "This project provides a simple method to integrate sign-up and\r\npassword recovery to your project. The cool thing is that it is based on play's security concept. So we don't re-invent the wheel but simply add some stuff."
+        contributors: Raphael André Bauer
+        projectUrl: https://github.com/reyez/casino-play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 111
+        owner: !!models.User
+               id: 14
+        key: cheese
+        name: "Cheese"
+        summary: "Simplified API for integration Play! applications with the CheddarGetter subscription management service"
+        description: "Simplified API for integration Play! applications with the CheddarGetter subscription management service.  (Sign up here: \"http://zfer.us/KIt2E\":http://zfer.us/KIt2E)"
+        contributors: Lawrence McAlpin
+        projectUrl: https://github.com/lmcalpin/Play--Cheese
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 103
+        owner: !!models.User
+               id: 15
+        key: chronostamp
+        name: "Chronostamp"
+        summary: "Chronostamp enhances Models by adding magic timestamp fields (created_at & updated_at) and it will automatically record creation and update timestamps of database objects in an unobtrusive way"
+        description: "Chronostamp enhances Models by adding magic timestamp fields (created_at & updated_at) and it will automatically record creation and update timestamps of database objects in an unobtrusive way."
+        contributors: Wayson Clown
+        projectUrl: https://github.com/omaroman/chronostamp
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 72
+        owner: !!models.User
+               id: 16
+        key: cloudbees
+        name: "CloudBees"
+        summary: "This module provides integration with CloudBees RUN@cloud PaaS, For a getting started guide go \"here\":http://wiki"
+        description: "This module provides integration with CloudBees RUN@cloud PaaS, For a getting started guide go \"here\":http://wiki.cloudbees.com/bin/view/RUN/Playframework"
+        contributors: Ivan Meredith
+        projectUrl: https://github.com/hadashi/play-cloudbees
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 94
+        owner: !!models.User
+               id: 17
+        key: cloudfoundry
+        name: "CloudFoundry"
+        summary: "In CloudFoundry, when a database resource is linked to an application, the credentials are put in an environment variable"
+        description: "In CloudFoundry, when a database resource is linked to an application, the credentials are put in an environment variable. This module automatically reads this variable and configures the Play database.\r\n"
+        contributors: Benoît Courtine
+        projectUrl: https://github.com/bcourtine/play--cloudfondry
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 121
+        owner: !!models.User
+               id: 18
+        key: cms
+        name: "cms"
+        summary: "A very simple embedded CMS"
+        description: " A very simple embedded CMS. I know about Sematic and Percont.  But I needed to edit some of the \"static\" pages of my App (help,\r\nlicense, whatever) and wanted the business people do that   in a fairly simple way."
+        contributors: Jörg Viola
+        projectUrl: http://code.google.com/p/play-cms/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 7
+        owner: !!models.User
+               id: 19
+        key: cobertura
+        name: "Cobertura"
+        summary: "Cobertura is a free Java tool that calculates the percentage of code accessed by tests"
+        description: "Cobertura is a free Java tool that calculates the percentage of code accessed by tests. It can be used to identify which parts of your Java program are lacking test coverage. It is based on jcoverage."
+        contributors: Julien Bille
+        projectUrl: http://github.com/julienba/play-cobertura
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 73
+        owner: !!models.User
+               id: 20
+        key: coffee
+        name: "CoffeeScript"
+        summary: "CoffeeScript integration"
+        description: "\"CoffeeScript\":http://jashkenas.github.com/coffee-script/ is a great way to produce javascript.  This module provides support for it (Java and Scala):\r\n\r\n* You can write coffee script directly into your templates with the tag #{coffee.inline}. \r\n* You can include coffee script files in your page without having to save the compiled versions.  \r\n* The module generates nice error pages upon compilation errors. \r\n\r\n\r\nComments are welcome!\r\n "
+        contributors: Rob Figueiredo
+        projectUrl: https://github.com/robfig/play-coffee
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 123
+        owner: !!models.User
+               id: 21
+        key: constretto
+        name: "Constretto Play module"
+        summary: "Module thats make integration with the Constretto configration framework easy"
+        description: "Module thats make integration with the Constretto configration framework easy. Includes the ability to inject configuration in Play controllers using the standard Constretto @Configuration annotation.\r\n\r\nIncludes a sample application and a \"project Wiki\":https://github.com/zapodot/constretto-play/wiki\r\n"
+        contributors: Sondre Eikanger Kvalø
+        projectUrl: https://github.com/zapodot/constretto-play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 40
+        owner: !!models.User
+               id: 22
+        key: cnm
+        name: "Content Negotiation"
+        summary: "The content negotiation module helps using content types which are not directly supported by the Play! framework such as VCard and Atom/RSS feeds using annotations"
+        description: "The content negotiation module helps using content types which are not directly supported by the Play! framework such as VCard and Atom/RSS feeds using annotations."
+        contributors: Sebastian Hoß
+        projectUrl: http://github.com/oasits/play-content-negotiation
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 41
+        owner: !!models.User
+               id: 23
+        key: crudsiena
+        name: "CRUD for Siena"
+        summary: "The CRUD (Create, Read, Update, Delete) Siena module a fully usable web interface for your Siena Model objects with a few more features than default CRUD"
+        description: "The CRUD (Create, Read, Update, Delete) Siena module a fully usable web interface for your Siena Model objects with a few more features than default CRUD. \r\n\r\n* **NEW: v2.0.x with support for GAE/MySQL/Postgres/H2 for Play! v1.2.1 and play-siena v2.0.x**\r\n* v1.6_play1.2 works with Play! v1.2 but not v1.1\r\n* v1.6_play1.1 works with Play! v1.1 but not v1.2\r\n\r\n\r\n"
+        contributors: Pascal Voitot
+        projectUrl: https://github.com/mandubian/play-crud-siena
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 21
+        owner: !!models.User
+               id: 23
+        key: migrate
+        name: "Database migration"
+        summary: "This module allows you to easily maintain database versions for your project"
+        description: "This module allows you to easily maintain database versions for your project."
+        contributors: David Cardon
+        projectUrl: http://github.com/dcardon/play-migrate
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 31
+        owner: !!models.User
+               id: 24
+        key: db
+        name: "Database module"
+        summary: "Export your Play! domain model to a DDL file and import a database into your Play! domain model"
+        description: "Export your Play! domain model to a DDL file and import a database into your Play! domain model. Please refer to the documentation for more information. The 1.1 version is for the Play! 1.1 branch while the 1.0 is for the 1.0 Play! branch."
+        contributors: Nicolas Leroux
+        projectUrl: http://github.com/pepite/play--database
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 53
+        owner: !!models.User
+               id: 25
+        key: deadbolt
+        name: "Deadbolt"
+        summary: "Deadbolt is an authorisation mechanism for defining access rights to certain controller methods or parts of a view"
+        description: "Deadbolt is an authorisation mechanism for defining access rights to certain controller methods or parts of a view.  It has a powerful but simple syntax that allows AND/OR/NOT relations.  Both controller and view restrictions can be nested to allow for an elegant DRY approach to securing your application.\r\n\r\nIt's also possible to specify pre-defined restriction trees for your controllers and thus be able to change security allowances without changing your code.\r\n\r\nFinally, you can name controller classes, controller methods and views as resources and determine arbitrarily if access is allowed.  This feature also integrates with the features above to provide specific/generic authorisation scenarios. "
+        contributors: Steve Chaloner
+        projectUrl: https://github.com/schaloner/deadbolt
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 76
+        owner: !!models.User
+               id: 26
+        key: dotcloud
+        name: "Dotcloud"
+        summary: "helps you deploy your Play! application to dotcloud"
+        description: "h1. Usage\r\n\r\nThis module helps you deploy your Play! application to \"dotcloud\":http://dotcloud.com. \r\n\r\nh2. Installation\r\n\r\nFirst, install the module from the Play! module repository like so: \r\n\r\nbc. play install dotcloud\r\n\r\nh2. Prepare your Play! application\r\n\r\nTell Play! that you want your application to use the dotcloud module by adding it to your @conf/dependencies.yml@ file. It might look like this: \r\n\r\nbc. require:\r\n	- play\r\n	- play -> dotcloud 0.2\r\n\r\nNow run @play dependencies@ to install the module into your application. Then, create a @dotcloud.yml@ file in your application's @conf@ directory. The file might look like this: \r\n\r\nbc. www:\r\n	type: java\r\ndb:\r\n	type: mysql\r\n\r\nh2. Push to dotcloud\r\n\r\nUse\r\n\r\n@play dotcloud:deploy@\r\n\r\n to push the current version of your application to dotcloud. \r\n\r\nFor more information, consult the documentation in \"this module's GitHub repository\":https://github.com/lsinger/play-dotcloud. "
+        contributors: Leif Singer
+        projectUrl: https://github.com/lsinger/play-dotcloud
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 29
+        owner: !!models.User
+               id: 27
+        key: ebean
+        name: "EBean ORM support"
+        summary: "Adds Ebean ORM"
+        description: "Adds Ebean ORM to play!. Still in very experimental phase."
+        contributors: Lyubomir Ivanov
+        projectUrl: https://github.com/lyubo/play-ebean
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 66
+        owner: !!models.User
+               id: 28
+        key: elasticsearch
+        name: "ElasticSearch"
+        summary: "Elastic Search is a Distributed Search Solution based on Apache Lucene"
+        description: "Elastic Search is a Distributed Search Solution based on Apache Lucene. This module provides an embedded Elastic Server instance for Rapid Development. Documentation is available at http://geeks.aretotally.in/wp-content/uploads/2011/05/Play-Framework-ElasticSearch-Module.pdf."
+        contributors: Felipe Oliveira and Sebastian Gooren
+        projectUrl: http://geeks.aretotally.in/play-framework-module-elastic-search-distributed-searching-with-json-http-rest-or-java
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 24
+        owner: !!models.User
+               id: 29
+        key: excel
+        name: "Excel module"
+        summary: "Template based Excel report generator"
+        description: "Template based Excel report generator. 'x' version support xlsx format template but is much bigger than normal version (19MB vs. 3MB)"
+        contributors: Green Luo
+        projectUrl: http://github.com/greenlaw110/play-excel
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 9
+        owner: !!models.User
+               id: 30
+        key: ecss
+        name: "Extended CSS"
+        summary: "This module allow you to use constants in the CSS files"
+        description: "This module allow you to use constants in the CSS files. It is very helpful when you work with large CSS files, to avoid to repeat yourself with color, fonts... \r\n\r\np(note). This module is no longer maintained. You should take a look at the sass module."
+        contributors: Guillaume Bort
+        projectUrl: http://github.com/guillaumebort/play-ecss
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 49
+        owner: !!models.User
+               id: 31
+        key: fbconnect
+        name: "Facebook connect"
+        summary: "Easily integrate Facebook based authentication into any Play framework application"
+        description: "Easily integrate Facebook based authentication into any Play framework application."
+        contributors: Michael Murray
+        projectUrl: https://github.com/murz/play-fbconnect
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 56
+        owner: !!models.User
+               id: 32
+        key: fbgraph
+        name: "Facebook Graph API"
+        summary: "enables your application to access all the features of the Facebook Graph API"
+        description: "p(note). The FbGraph module now supports OAuth 2.0 for authentication.\r\n\r\nFbGraph module enables your application to access all the features of the Facebook Graph API via Java and the Play framework. It uses the JavaScript SDK to provide simple login and signup."
+        contributors: Eric Jacob
+        projectUrl: http://code.google.com/p/play-fbgraph/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 130
+        owner: !!models.User
+               id: 33
+        key: fastergt
+        name: "Faster Groovy Templates  "
+        summary: "This is a module for Play! Framework 1 applications which replaces the default groovy template implementation with \"GT-Engine\":https://github"
+        description: "This is a module for Play! Framework 1 applications which replaces the default groovy template implementation with \"GT-Engine\":https://github.com/mbknor/gt-engine which is \"faster and uses less memory\":http://kjetland.com/blog/2011/11/playframework-new-faster-groovy-template-engine/.\r\n\r\nGT-Engine is also used in the \"Play 2.0 module\":https://github.com/mbknor/gt-engine-play2 that enables legacy support for groovy templates.\r\n\r\nh3. Features\r\n\r\n* Almost 100% compatible with old Play Groovy template implementation (See note below for more info)\r\n* Run faster\r\n* Compiles faster\r\n* Can write generated source to disk so you can step-debug it\r\n* Uses less memory\r\n* Supports old FastTag\r\n* Supports new GTFastTag which is optimized for inserting rendered tag-body-content (without copying)\r\n\r\nPlease see documentation for more info"
+        contributors: Morten Kjetland
+        projectUrl: https://github.com/mbknor/faster-groovy-templates
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 68
+        owner: !!models.User
+               id: 34
+        key: featureflags
+        name: "Feature Flags"
+        summary: "play-featureflags is a module for playframework that enables you to easily use 'feature flags' in your application"
+        description: "play-featureflags is a module for playframework that enables you to easily use 'feature flags' in your application. A feature flag is any piece of functionality in your application that you want to be able to switch ON and OFF at runtime, using an admin screen. \r\nWith this module, you can define feature flags by name, using a simple annotation on your controllers and/or a tag in your views. \r\n\r\nThis simple technique allows you to never have to branch your code again! You can safely deploy your HEAD multiple times a day to all of your environments for development, testing, production, whatever. Just use a different set of enabled features.\r\nFeature flags are what Flickr uses to be able to do 10+ deployments to production per day. See http://code.flickr.com/blog/2009/12/02/flipping-out/ for more info."
+        contributors: Ben Verbeken
+        projectUrl: http://code.google.com/p/play-featureflags
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 109
+        owner: !!models.User
+               id: 35
+        key: force
+        name: "Force.com"
+        summary: "Build Play! applications that integrates to Force"
+        description: "Build Play! applications that integrates to Force.com. Provides OAuth authentication and REST API adapter.\r\n"
+        contributors: Jesper Joergensen
+        projectUrl: https://github.com/jesperfj/play-force
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 119
+        owner: !!models.User
+               id: 36
+        key: formee
+        name: "Formee"
+        summary: "Formee eases and helps out to build html forms designs, and also validates its data from both client-side and server-side based on model validation annotations"
+        description: "Formee eases and helps out to build html forms designs, and also validates its data from both client-side and server-side based on model validation annotations. \r\nFeatures:\r\n- It has all the features of formee \r\n- A form wraps an single model \r\n- Automate validations from client-side based on Play model \r\nannotations by using jquery.validate plugin. \r\n- Homogeneous error messages from both client-side and server-side, \r\ni.e., they appear in the same place. "
+        contributors: Wayson Clown
+        projectUrl: https://github.com/omaroman/formee
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 13
+        owner: !!models.User
+               id: 36
+        key: gae
+        name: "Google App Engine"
+        summary: "Create play application for the Google App Engine platform"
+        description: "Create play application for the Google App Engine platform."
+        contributors: Guillaume Bort, Pascal Voitot
+        projectUrl: http://github.com/guillaumebort/play-gae
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 117
+        owner: !!models.User
+               id: 36
+        key: googlecheckout
+        name: "Google Checkout"
+        summary: "Enable your Play application to integrate with Google Checkout as a merchant"
+        description: "Enable your Play application to integrate with Google Checkout as a merchant."
+        contributors: James Gregory
+        projectUrl: https://github.com/jagregory/play-google-checkout
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 47
+        owner: !!models.User
+               id: 37
+        key: googleclosure
+        name: "Google Closure"
+        summary: "This module is aimed at integrating Google Closure tools with play!"
+        description: "This module is aimed at integrating Google Closure tools with play!. \r\n\r\nFor the time being, it ONLY provides javascript client templating based on \"Google Closure Templates\":http://code.google.com/closure/templates/.\r\n\r\n_v1.1 renders SoyException into web page_\r\n\r\n_Other tools from Google Closure will be added later but don't hesitate to ask if you need something first._"
+        contributors: Pascal Voitot
+        projectUrl: http://code.google.com/p/mandubian-play-google-closure/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 4
+        owner: !!models.User
+               id: 37
+        key: gwt
+        name: "Google Web Toolkit"
+        summary: "This module provides a helper to simplify the integration of a GWT UI with Play as an application server"
+        description: "This module provides a helper to simplify the integration of a GWT UI with Play as an application server."
+        contributors: Rustem Suniev
+        projectUrl: http://code.google.com/p/play-framework-gwt/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 70
+        owner: !!models.User
+               id: 38
+        key: gravatar
+        name: "Gravatar"
+        summary: "Integrate Gravatar into your Play application"
+        description: "Integrate Gravatar into your Play application"
+        contributors: Matteo Barbieri
+        projectUrl: https://github.com/mbarbieri/play-gravatar
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 10
+        owner: !!models.User
+               id: 39
+        key: grizzly
+        name: "Grizzly network stack"
+        summary: "Experimental module that replace the Mina based network stack by the Grizzly one"
+        description: "Experimental module that replace the Mina based network stack by the Grizzly one.\r\n\r\np(note). This module is no longer maintained. The grizzly support is now built-in since Play 1.1"
+        contributors: Guillaume Bort
+        projectUrl: http://github.com/guillaumebort/play-grizzly
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 3
+        owner: !!models.User
+               id: 39
+        key: guice
+        name: "Guice"
+        summary: "The Guice module helps you to inject Guice managed components into your play application"
+        description: "The Guice module helps you to inject Guice managed components into your play application. The injection points are defined by the upcoming **@javax.inject.Inject** annotation, which is bundled with play at the moment."
+        contributors: Peter Hausel
+        projectUrl: http://github.com/pk11/play-guice-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 33
+        owner: !!models.User
+               id: 40
+        key: gwt2
+        name: "GWT2"
+        summary: "GWT2 Plugin for Play!\r\nby Vincent Buzzano\r\n\r\nCurrent version is 1"
+        description: "GWT2 Plugin for Play!\r\nby Vincent Buzzano\r\n\r\nCurrent version is 1.8 for play 1.2.3\r\nProject Webstie: http://github.com/vbuzzano/play-gwt2\r\n\r\nThis module has been tested with gwt 2.2.x and 2.3.0\r\n\r\nQUICK START:\r\nCreate a new application --with gwt2\r\n\r\n> play new myGwt2App --with gwt2\r\n> cd myGwt2App\r\n\r\nThat's all .. you are ok to start your project !!\r\n\r\n#################################################\r\nWORKAROUND FOR:\r\nVALIDATION COMPILATION ERROR due to missing Type and Sources\r\n#################################################\r\nCopy validation-api-1.0.0.GA and source to your project libs. You can find them into the GWT SDK Directory.\r\n\r\n> cp $GWT_HOME/validation-api-1.0.0.GA* lib/"
+        contributors: Vincent Buzzano
+        projectUrl: http://github.com/vbuzzano/play-gwt2
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 80
+        owner: !!models.User
+               id: 41
+        key: hazelcast
+        name: "Hazelcast"
+        summary: "This module is a dropin replacement for @EhCacheImpl@ or @MemcachedImpl@ from Play"
+        description: "This module is a dropin replacement for @EhCacheImpl@ or @MemcachedImpl@ from Play. It allow your application to have a clustered cache when you can’t install a memcached server on your platform. It’s also a great free open source In-Memory Data Grid."
+        contributors: Marc Deschamps
+        projectUrl: https://github.com/marcuspocus/hazelcast
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 113
+        owner: !!models.User
+               id: 41
+        key: heroku
+        name: "Heroku"
+        summary: "This module makes it easy to deploy Play applications on Heroku"
+        description: "This module makes it easy to deploy Play applications on Heroku."
+        contributors: James Ward
+        projectUrl: https://github.com/jamesward/play-heroku
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 52
+        owner: !!models.User
+               id: 42
+        key: html5validation
+        name: "HTML5 Validation"
+        summary: "Client-side form validation based on your Play framework\r\nmodel annotations using HTML5 attributes"
+        description: "Client-side form validation based on your Play framework\r\nmodel annotations using HTML5 attributes."
+        contributors: Sebastian Hoß
+        projectUrl: https://github.com/oasits/play-html5-validation
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 55
+        owner: !!models.User
+               id: 42
+        key: httpmock
+        name: "HttpMock"
+        summary: "play-httpmock caches WebService requests to emulate them in order to overcome connection problems (lag, denial of service, HTTP errors) for fast developping"
+        description: "play-httpmock caches WebService requests to emulate them in order to overcome connection problems (lag, denial of service, HTTP errors) for fast developping."
+        contributors: Gaëtan Renaudeau
+        projectUrl: http://github.com/zenexity/play--httpmock
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 45
+        owner: !!models.User
+               id: 43
+        key: i18ntools
+        name: "i18ntools"
+        summary: "This module will add some tools to ease use of i18n in your Play! projects"
+        description: "This module will add some tools to ease use of i18n in your Play! projects. \r\n\r\n\"i18n-extract\" will parse your application's files to find internationalized strings, and add missing strings to your messages files."
+        contributors: naholyr
+        projectUrl: http://github.com/naholyr/i18ntools
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 17
+        owner: !!models.User
+               id: 44
+        key: infoplay
+        name: "InfoPlay"
+        summary: "InfoPlay is a module which gives many informations like infophp in PHP language"
+        description: "InfoPlay is a module which gives many informations like infophp in PHP language. It display useful informations about the running application, the framework, the virtual machine and the operating system."
+        contributors: BLR
+        projectUrl: http://code.google.com/p/infoplay/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 25
+        owner: !!models.User
+               id: 45
+        key: ivy
+        name: "Ivy dependency management"
+        summary: "This module lets you manage your dependencies with apache ivy"
+        description: "This module lets you manage your dependencies with apache ivy."
+        contributors: Peter Hausel
+        projectUrl: http://github.com/pk11/play-ivy
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 14
+        owner: !!models.User
+               id: 45
+        key: japid
+        name: "Japid Template Engine"
+        summary: "A pure Java-based fast statically typed template engine for the  Play! framework"
+        description: "A pure Java-based fast statically typed template engine for the  Play! framework. \r\n\r\nJapid is about 2X - 20X times faster than the built-in Play! template engine and delivers 3X as much total web throughput with Play!. See \"a third-party benchmark\":http://www.jtict.com/blog/rails-wicket-grails-play-lift-jsp/ . The Japid change-reloading cycle is 5-10X faster than that of the Groovy/Scala based templates, a big productivity boost.\r\n\r\nIt can be used as a super fast generic template engine as well. It also contains a Eclipse plugin that helps developing in Japid in the Eclipse IDE. Please go to ${PLAY_HOME}/modules/japid_xxx/eclipse-plugin for detail. The source code is hosted on \"Github/Japid Eclipse Plugin\":http://github.com/branaway/playclipse/ .\r\n\r\nPlease go to the \"project home page\":http://github.com/branaway/Japid for the code.\r\n\r\nVersion compatibility:\r\n\r\njapid-0.8.1.2 or older: play 1.1.x\r\njapid-0.8.2 or newer: play 1.2.x\r\n\r\n"
+        contributors: Bing Ran
+        projectUrl: http://github.com/branaway/Japid
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 90
+        owner: !!models.User
+               id: 46
+        key: cream
+        name: "JCR for Play!"
+        summary: "A module that seamlessly integrates Apache Jackrabbit\r\n(JCR 2"
+        description: "A module that seamlessly integrates Apache Jackrabbit\r\n(JCR 2.0) with Play framework. Provides:\r\n\r\n* OCM\r\n** Uses jcrom as the underlying object-to-content mapper\r\n* Full text search\r\n** Indexing PDF, MS Word, Excel, PowerPoint, OpenOffice, RTF, HTML and XML\r\n* Content versioning\r\n* Repository observers\r\n* play.db.Model support\r\n* CRUD support\r\n\r\n"
+        contributors: Marc Fornos
+        projectUrl: https://github.com/mfornos/Cream
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 122
+        owner: !!models.User
+               id: 47
+        key: jelastic
+        name: "Jelastic Deployment Support"
+        summary: "This module helps you remotely deploy your Play! application in to Jelastic Platform"
+        description: "This module helps you remotely deploy your Play! application in to Jelastic Platform.\r\n\r\nTo deploy to Jelastic :\r\nplay jelastic:deploy [app name] \\\r\n        --l [your login] \\\r\n        --p [your password] \\\r\n	--c [your context name] \\\r\n	--e [your environment name] \\\r\n	--a [your api hoster provider]\r\n\r\nTo publish to Jelastic :\r\n\r\nplay jelastic:publish [appname] \\\r\n        --l [your login] \\\r\n        --p [your password] \\\r\n	--a [your api hoster provider]\r\n\r\nTo make it easier to deploy, those fields can be put in the projects application.conf file\r\njelastic.api.login= your login\r\njelastic.api.password= your password\r\njelastic.api.context= your context name\r\njelastic.api.environment= your environment name\r\njelastic.api.apihoster= your api hoster provider\r\n\r\nplay jelastic:deploy\r\nor\r\nplay jelastic:publish\r\n"
+        contributors: Igor Yova
+        projectUrl: https://github.com/Fameing/play-jelastic
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 81
+        owner: !!models.User
+               id: 48
+        key: jersey
+        name: "Jersey"
+        summary: "Integrates Jersey into the Play! Framework"
+        description: "Integrates Jersey into the Play! Framework. This enables you to use JAX-RS 1.1 annotations to define your endpoints.\r\n\r\nJackson is shipped with the plugin and used for all serialization/deserialization issues, but it should be pretty easy to provide custom providers and use whatever you want.\r\n"
+        contributors: Piero Sartini
+        projectUrl: https://bitbucket.org/psartini/play-jersey
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 75
+        owner: !!models.User
+               id: 49
+        key: jpagen
+        name: "JpaGen"
+        summary: "JPAGEN aim at generating JPA Entities and Composite keys (when needed) from metadata or a file containing a list of tables"
+        description: "JPAGEN aim at generating JPA Entities and Composite keys (when needed) from metadata or a file containing a list of tables."
+        contributors: Marc Deschamps
+        projectUrl: http://github.com/marcuspocus/jpagen
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 118
+        owner: !!models.User
+               id: 49
+        key: jpastats
+        name: "jpastats"
+        summary: "Record how many database queries were executed during a request"
+        description: "Record how many database queries were executed during a request. It has tags to show this and some other numbers on your pages. Additionally, it can also output these numbers in the response headers, so you can also see it for Ajax\r\nrequests etcetera.\r\n"
+        contributors: Erik Bakker
+        projectUrl: https://github.com/eamelink/play-jpastats/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 99
+        owner: !!models.User
+               id: 50
         key: jqueryui
-        name: jQuery UI
-        summary: Working examples of jQuery UI widgets, integrated with a Play application.
-        description: The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui.com/ widgets, integrated with a Play application.
+        name: "jQuery UI"
+        summary: "The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui"
+        description: "The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui.com/ widgets, integrated with a Play application."
+        contributors: Peter Hilton
+        projectUrl: https://github.com/lunatech-labs/play-module-jqueryui
         organisation: Lunatech Research
         licenseType: Apache License 2.0
         licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
         createdOn: 2011-10-31
         updatedOn: 2011-10-31
-        contributors: Peter Hilton
-        projectUrl: https://github.com/lunatech-labs/play-module-jqueryui
+
+    - !!models.Module
+        id: 51
+        owner: !!models.User
+               id: 51
+        key: jqvalidate
+        name: "JQuery Validation"
+        summary: "Client-side form validation via jQuery, based on your\r\nPlay framework model annotations"
+        description: "Client-side form validation via jQuery, based on your\r\nPlay framework model annotations. \"Check the demo application\":http://play-jqvalidate.appspot.com/"
+        contributors: Michael Murray
+        projectUrl: https://github.com/murz/play-jqvalidate
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 102
+        owner: !!models.User
+               id: 51
+        key: jqvalidation
+        name: "jqvalidation"
+        summary: "A jquery library API for validation, supports Ajax validation (per field or per Form)"
+        description: "A jquery library API for validation, supports Ajax validation (per field or per Form). It saves info about the models and their fields' validation in a singleton created on Application Start Up. It's also intended to extend the server side validation annotations as well. It's time to make the daily routine automated, easier, and more efficient! Contributions, comments, or suggestions are welcome. \r\n\"check demo for JPA\":http://jqvalidationdemo.ahmedmahmoud.cloudbees.net & \"check demo for Siena & GAE\":http://jqvalidation-demo.appspot.com"
+        contributors: Ahmed Mahmoud Mohammed Abd El-wahab
+        projectUrl: http://code.google.com/p/jqvalidate-play-framework/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 58
+        owner: !!models.User
+               id: 52
+        key: less
+        name: "Less module"
+        summary: "The less module converts less (http://lesscss"
+        description: "The less module converts less (http://lesscss.org/)\r\nto CSS, similar to what the sass module does with sass.\r\n\r\n"
+        contributors: Erik Bakker
+        projectUrl: https://github.com/lunatech-labs/play-module-less
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 63
+        owner: !!models.User
+               id: 52
+        key: linkedin
+        name: "LinkedIn OAuth Authentication"
+        summary: "Easily integrate LinkedIn's OAuth authentication into your Play Framework application"
+        description: "Easily integrate LinkedIn's OAuth authentication into your Play Framework application. Currently it feeds the following fields to the application: linkedin id, first name, last name, industry, headline and oauth token (linkedin doesn't provide email)."
+        contributors: Felipe Oliveira
+        projectUrl: http://geeks.aretotally.in/projects/play-framework-linkedin-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 50
+        owner: !!models.User
+               id: 52
+        key: liquibase
+        name: "Liquibase"
+        summary: "a simple, reliable and elegant solution for database refactoring management"
+        description: "bq. \"You never develop code without version control, why do you develop your db without it ? ™\"\r\n\r\np. Liquibase (http://www.liquibase.org) is a simple, reliable and elegant solution for database refactoring management. It comes with main features :\r\n\r\n* multi dabase support (SGBDR)\r\n* structural / data changeset \r\n* safety check (on md5sum basis)\r\n* safety database upgrade process (cluster is liquibase friend) \r\n* contexts execution filter (you Player know what I'm talking about)\r\n* automation tooling provided (ant / servlet, and now PlayFramework !)\r\n\r\nLiquibase module differs from Migrate module for the main following reason :\r\n\r\nh3. Database changes follow application changes just the same way code source does"
+        contributors: Erwan Le Goulven
+        projectUrl: https://github.com/7uc0/play-liquibase
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 77
+        owner: !!models.User
+               id: 53
+        key: log4play
+        name: "Log4Play "
+        summary: "Log4Play is a module that provides a log4j appender which publishes log entries to an EventStream"
+        description: "Log4Play is a module that provides a log4j appender which publishes log entries to an EventStream. The module also provides an user interface which uses a WebSocket to create a live stream of log messages. You can use this user interface to look at the logs of your application without needing to login to the actual box.\r\n\r\nLog4Play integrates with BetterLogs by Stephane Godbillon. Special thanks to Diogenes Buarque and Marc Deschamps.\r\n\r\nAdd configuration 'log4play.disabled=true' to turn off Log4Play."
+        contributors: Felipe Oliveira and Deepthi Rallabandi
+        projectUrl: https://github.com/feliperazeek/log4play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 30
+        owner: !!models.User
+               id: 53
+        key: cas
+        name: "logisima-cas"
+        summary: "This module is a CAS client for Play! application"
+        description: "This module is a CAS client for Play! application. \r\n\r\nFeatures are : \r\n* CAS authentification (with Gateway feature) \r\n* Proxy CASification\r\n* CAS Attribut\r\n* CAS Mock Server\r\n\r\nThere is also a play application for testq purpose (with unit & selenium test) here: https://github.com/sim51/logisima-play-cas-test"
+        contributors: Benoît Simard
+        projectUrl: http://github.com/sim51/logisima-play-cas
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 120
+        owner: !!models.User
+               id: 54
+        key: neo4j
+        name: "logisima-neo4j"
+        summary: "Integrate neo4j database into your play! project"
+        description: "Integrate neo4j database into your play! project. "
+        contributors: logisima
+        projectUrl: https://github.com/sim51/logisima-play-neo4j
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 36
+        owner: !!models.User
+               id: 55
+        key: logisimayml
+        name: "logisima-yml"
+        summary: "Logisima-yml helps you to export your database into an yml file, just with the following command line : 'play yml:generate' !\r\n\r\nNew features :\r\n- compatible with embedded annotation\r\n- compatible with temporal annotation\r\n\r\nAdding a testing application"
+        description: "Logisima-yml helps you to export your database into an yml file, just with the following command line : 'play yml:generate' !\r\n\r\nNew features :\r\n- compatible with embedded annotation\r\n- compatible with temporal annotation\r\n\r\nAdding a testing application. @See samples-and-tests ..."
+        contributors: Benoît Simard
+        projectUrl: http://github.com/sim51/logisima-play-yml
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 86
+        owner: !!models.User
+               id: 55
+        key: markdown
+        name: "Markdown"
+        summary: "Easily bring markdown contents into your application"
+        description: "Easily bring markdown contents into your application.\r\n\r\nVersion 1.7 : Added ability to read markdown files from groovy. markdownPaper upgraded to v1.2.7\r\nversion 1.6: updated markdownPapers to v1.2.6\r\nversion 1.5: fixed - compilation in prod mode fails\r\nversion 1.4: updated markdownPapers to v1.2.5\r\nversion 1.3: updated markdownPapers to v1.2.4\r\nversion 1.2 comes from with better samples and updates from the md parser"
+        contributors: Olivier Refalo
+        projectUrl: https://github.com/orefalo/markdown
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 34
+        owner: !!models.User
+               id: 55
+        key: maven
+        name: "Maven dependency management"
+        summary: "This module lets you manage your dependencies with apache maven"
+        description: "This module lets you manage your dependencies with apache maven. Use head for Play 1.1, and 1.0 for Play 1.0.\r\n\r\nExpected behavior this module: \r\n\r\n# Allow declaration dependencies in pom.xml, without putting explicitly unless the transitive dependency does not work (for older version or depending on undesirable big jar file) \r\n# Able to download all dependencies not provided by Play into lib folder, with src and javadoc \r\n# Able to download source/javadoc artifiacts to depsrc folder for declared or transitive dependency which is provided by Play, for easier debugging (using command mvn:play-src) \r\n\r\nThere is something I am consciously trying to avoid: \r\n\r\n# Long download time. \r\n# Handle classpath. \r\n# Change Play's structure. "
+        contributors: Wang Yizhuo
+        projectUrl: http://github.com/wangyizhuo/play-maven
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 43
+        owner: !!models.User
+               id: 56
+        key: menu
+        name: "Menu"
+        summary: "help app developer to easily implement navigation menu"
+        description: "help app developer to easily implement navigation menu. Basically with the module what you need to do is: \r\n\r\n# create menu structure file (_menu.yml) in YAML format \r\n# put \"#{menu.menu /}\" tag in proper place of your main.html file \r\n\r\nYes, that's all! \r\n\r\nfor detail, please refer to document \r\n\r\nMany thanks to roymax@gmail.com who test and report issues of this module"
+        contributors: Green Luo
+        projectUrl: http://github.com/greenlaw110/play-menu
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 39
+        owner: !!models.User
+               id: 56
+        key: press
+        name: "Minimize javascript/css files"
+        summary: "The press module is a JavaScript and CSS minimizer that is designed to be transparent to the application developer: \r\nSimply replace script tags with #{press"
+        description: "The press module is a JavaScript and CSS minimizer that is designed to be transparent to the application developer: \r\nSimply replace script tags with #{press.script} tags. \r\n\r\nIt is a simplified version of the greenscript module, with the difference that the order of JS/CSS remains the same whether or not compression is enabled, making it easier to debug. Greenscript is more feature rich and may be more appropriate for some applications."
+        contributors: Dirk
+        projectUrl: http://github.com/dirkmc/press
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 23
+        owner: !!models.User
+               id: 57
+        key: greenscript
+        name: "Minimize javascript/css files "
+        summary: "Play with your javascript/css files! \r\n\r\n* compress and merge (configurable) \r\n* cache minimized files (configurable) \r\n* js/css dependency management (configurable) \r\n* support runtime configuration (minimize/caching/dependencies) \r\n* simplest tag syntax: #{js 'js1 js2' /}\r\n* inline dependency declaration: #{greenscript"
+        description: "Play with your javascript/css files! \r\n\r\n* compress and merge (configurable) \r\n* cache minimized files (configurable) \r\n* js/css dependency management (configurable) \r\n* support runtime configuration (minimize/caching/dependencies) \r\n* simplest tag syntax: #{js 'js1 js2' /}\r\n* inline dependency declaration: #{greenscript.js 'app ＜ lib ＜ jquery'/}\r\n* transparent compression zero configuration \r\n* support CDN \r\n* support inline js/css body \r\n* support resource and dependency management in modules\r\n* support in-memory file cache\r\n* support LESS\r\n* support Last-Modified and E-Tag\r\n* support Play.ctxPath\r\n* support deploy to cluster like heroku (new in 1.2.7)\r\n* support Rythm Template Engine (new in 1.2.7)\r\n* support coffeescript (new in 1.2.8)\r\n* support bootstrap 2.0 less compile (new in 1.2.8)\r\n* use google closure to compress js file (new in 1.2.8)\r\n* Anything else you want? send email to greenlaw110@gmail.com"
+        contributors: Green Luo
+        projectUrl: http://github.com/greenlaw110/greenscript
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 108
+        owner: !!models.User
+               id: 57
+        key: mocha
+        name: "mocha"
+        summary: "Mocha module for Play! Framework is an implementation of mocha UI javascript interface for Play!"
+        description: "Mocha module for Play! Framework is an implementation of mocha UI javascript interface for Play!. Aims of this module is to get windows Web interfaces easy to use. You don't need to know javascript now to use this javascript interface. The implementation is only in HTML or tags for Play! Framework. "
+        contributors: Olivier GILBERT
+        projectUrl: https://bitbucket.org/blobsmith/mocha/overview
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 96
+        owner: !!models.User
+               id: 58
+        key: mockito
+        name: "mockito"
+        summary: "Mockito is a mocking framework that tastes really good"
+        description: "Mockito is a mocking framework that tastes really good. It lets you write beautiful tests with clean & simple API. Mockito doesn't give you hangover because the tests are very readable and they produce clean verification errors."
+        contributors: Erik Bakker
+        projectUrl: https://github.com/eamelink/play-mockito
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 26
+        owner: !!models.User
+               id: 58
+        key: mongo
+        name: "MongoDB"
+        summary: "This module provides a simple, elegant solution for using models stored in mongodb"
+        description: "This module provides a simple, elegant solution for using models stored in mongodb. For a more complex use cases, please take a look at the morphia module. \r\n\r\nVersion 1.3 addresses many issues raised by the community. Please read the documentation for usage. "
+        contributors: Andrew Louth
+        projectUrl: http://github.com/louth/play-mongo
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 42
+        owner: !!models.User
+               id: 59
+        key: morphia
+        name: "Morphia - MongoDB Integration"
+        summary: "Seamlessly MongoDB access integration with Play's Model interface"
+        description: "Seamlessly MongoDB access integration with Play's Model interface. \r\n\r\nStart from morphia1.2.2beta1, support to Play-1.1 branch is dropped. Please update your play to 1.2.x. Or keep using the legacy morphia-1.2beta6. "
+        contributors: Green Luo
+        projectUrl: http://github.com/greenlaw110/play-morphia
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 38
+        owner: !!models.User
+               id: 59
+        key: multidb
+        name: "Multiple Databases"
+        summary: "Multiple Database module for the Play! framework"
+        description: "Multiple Database module for the Play! framework.u000du000aThis module allows you to scale your Play! apps to multiple databases with a common schema."
+        contributors: David Cardon
+        projectUrl: http://github.com/dcardon/play-multidb
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 48
+        owner: !!models.User
+               id: 59
+        key: mustache
+        name: "Mustache"
+        summary: "Allows you to define logic-less template snippets that can be used server-side in your Play! views as well as client-side in your JavaScript"
+        description: "Allows you to define logic-less template snippets that can be used server-side in your Play! views as well as client-side in your JavaScript. The snippets use \"Mustache\":http://mustache.github.com, a logic-less template language that has compilers for both JavaScript and Java."
+        contributors: Michael Murray
+        projectUrl: https://github.com/murz/play-mustache
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 136
+        owner: !!models.User
+               id: 59
+        key: mybatisplay
+        name: "MyBatisPlay"
+        summary: "This module includes and provides support for MyBatis persistence framework"
+        description: "This module includes and provides support for MyBatis persistence framework.\r\n\r\nLatest version includes MyBatis 3.1.0"
+        contributors: Bogdan Tanase
+        projectUrl: https://github.com/bftanase/mybatisplay
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 83
+        owner: !!models.User
+               id: 60
+        key: navigation
+        name: "navigation"
+        summary: "Define and display navigation menus in your Play \r\napplication"
+        description: "Define and display navigation menus in your Play \r\napplication. \r\n\r\nRobust core, easily adaptable to suit your needs."
+        contributors: Erik Bakker
+        projectUrl: https://github.com/eamelink/play-navigation/wiki
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 100
+        owner: !!models.User
+               id: 60
+        key: nemrod
+        name: "nemrod"
+        summary: "This module provides integration with Nemrod"
+        description: "This module provides integration with Nemrod. It helps to import and export translations from your application to a Nemrod instance automatically.\r\n\r\nMore information about Nemrod and www.localizeyourapps.com here : \"Nemrod\":http://www.localizeyourapps.com "
+        contributors: Hugo Lassiege
+        projectUrl: https://bitbucket.org/hlassiege/play-nemrod
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 15
+        owner: !!models.User
+               id: 61
+        key: netty
+        name: "Netty module"
+        summary: "Module that replaces the Mina based network stack by the Netty one"
+        description: "Module that replaces the Mina based network stack by the Netty one.\r\n\r\np(note). This module has been integrated into Play core since 1.1"
+        contributors: Lungisa Matshobam, Nicolas Leroux
+        projectUrl: http://github.com/pepite/Play--Netty
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 20
+        owner: !!models.User
+               id: 62
+        key: oauth
+        name: "OAuth Client"
+        summary: "This module provides tools to connect to an OAuth provider, such as Twitter or Google"
+        description: "This module provides tools to connect to an OAuth provider, such as Twitter or Google."
+        contributors: Erwan Loisant
+        projectUrl: http://github.com/erwan/playoauthclient
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 32
+        owner: !!models.User
+               id: 62
+        key: objectify
+        name: "Objectify"
+        summary: "Objectify is a flexible abstraction on Google App Engine/J which makes data access simple and elegant"
+        description: "Objectify is a flexible abstraction on Google App Engine/J which makes data access simple and elegant. Together the Play Framework and Objectify provide a powerful technology stack for building fast and scalable applications on Google's infrastructure. \r\n\r\nSample Application: \r\nhttp://play-framework-objectify.appspot.com/"
+        contributors: Dave Cheong
+        projectUrl: http://code.google.com/p/play-framework-objectify/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 126
+        owner: !!models.User
+               id: 63
+        key: openebay
+        name: "Open eBay"
+        summary: "This module provides the basic plumbing to create an Open eBay Application (http://apps"
+        description: "This module provides the basic plumbing to create an Open eBay Application (http://apps.ebay.com/). More details about these applications can be found at eBay Developer  Network (https://www.x.com/developers/ebay/products/open-ebay-apps) \r\n\r\nFeatures in Version 0.1 \r\n-         Gadgets Url request verification \r\n-         Username & Auth token decryption \r\n-         Open eBay parameter extraction \r\n-         Templates for Canvas, Default  and Wide Views using Bootstrap. \r\n\r\nPlanned Features \r\n-        eBay Api Integration \r\n-        Subscription End point management & User Management \r\n-        eBay oAuth Integration for external pages "
+        contributors: Kumaresan
+        projectUrl: https://bitbucket.org/kumaresan/openebay
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 129
+        owner: !!models.User
+               id: 64
+        key: openshift
+        name: "openshift"
+        summary: "Openshift is Red Hat’s free, auto-scaling, cloud-based platform-as-a-service for Java, Perl, PHP, Python, and Ruby applications"
+        description: "Openshift is Red Hat’s free, auto-scaling, cloud-based platform-as-a-service for Java, Perl, PHP, Python, and Ruby applications. With this module, you’ll be able to easily deploy and manage your play applications on Red Hat’s cloud platform, with just a couple of keystrokes from the command line.\r\n"
+        contributors: Sebastián Scarano @develsas
+        projectUrl: https://github.com/opensas/openshift
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 93
+        owner: !!models.User
+               id: 65
+        key: orientdb
+        name: "OrientDB"
+        summary: "OrientDB for Play! Framework\r\n\r\nFeatures\r\n* play"
+        description: "OrientDB for Play! Framework\r\n\r\nFeatures\r\n* play.db.Model support\r\n* CRUD support\r\n* Embedded server for development\r\n* Injection of database sessions in controllers\r\n* Annotation-based transaction demarcation\r\n* Live class-reloading as usual\r\n* Basic support for RecordHooks and DatabaseListeners\r\n\r\n"
+        contributors: Marc Fornos
+        projectUrl: https://github.com/mfornos/orientdb
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 44
+        owner: !!models.User
+               id: 65
+        key: paginate
+        name: "paginate"
+        summary: "A replacement for #{list} tags that allows for easy pagination"
+        description: "A replacement for #{list} tags that allows for easy pagination."
+        contributors: Lawrence McAlpin
+        projectUrl: http://github.com/lmcalpin/Play--Paginate
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 16
+        owner: !!models.User
+               id: 65
+        key: pdf
+        name: "PDF module"
+        summary: "A module that allows you to render PDF document from your HTML templates"
+        description: "A module that allows you to render PDF document from your HTML templates. This module is based on the \"YaHP Converter\":https://github.com/allcolor/YaHP-Converter library. You can find its source code at:\r\n"
+        contributors: Nicolas Leroux, Stéphane Epardaud, Stéphane Thomas
+        projectUrl: http://github.com/pepite/play--pdf
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 116
+        owner: !!models.User
+               id: 65
+        key: pegdown
+        name: "PegDown Markdown"
+        summary: "Integrate the pegdown Markdown (see: https://github"
+        description: "Integrate the pegdown Markdown (see: https://github.com/sirthias/pegdown) processor with your Play application; this module provides SmartyPants support, as well as the other Markdown extensions which ship with pegdown."
+        contributors: James Gregory
+        projectUrl: https://github.com/jagregory/play-pegdown
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 1
+        owner: !!models.User
+               id: 65
+        key: router
+        name: "Play Router Annotations "
+        summary: "This module allows you to add routes through annotations, allowing you to declare your routes in your controllers"
+        description: "This module allows you to add routes through annotations, allowing you to declare your routes in your controllers."
+        contributors: Nicolas Leroux, Leon Radley
+        projectUrl: https://github.com/digiPlant/play-router-annotations
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 35
+        owner: !!models.User
+               id: 65
+        key: playapps
+        name: "playapps.net "
+        summary: "playapps deployment"
+        description: "playapps.net is a streamlined deployment environment designed to get your Play applications up and running quickly and efficiently"
+        contributors: Zenexity
+        projectUrl: http://github.com/zenexity/play-playapps
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 87
+        owner: !!models.User
+               id: 66
+        key: playerrors
+        name: "gathers and informs you about the errors in your production webapps"
+        summary: "Playerrors gathers and informs you about the errors in your production webapps, so you can fix them before your visitors get a chance to complain\r\n\r\n\"https://playerrors"
+        description: "Playerrors gathers and informs you about the errors in your production webapps, so you can fix them before your visitors get a chance to complain\r\n\r\n\"https://playerrors.com/\":https://playerrors.com/"
+        contributors:  Marius Andra
+        projectUrl: https://github.com/marius0/playerrors
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 128
+        owner: !!models.User
+               id: 67
+        key: postmark
+        name: "Postmark"
+        summary: "Postmark module provides easy integration with postmarkapp"
+        description: "Postmark module provides easy integration with postmarkapp.com for handling outgoing emails."
+        contributors: Joel Söderström
+        projectUrl: https://github.com/FrostDigital/play-postmark
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 104
+        owner: !!models.User
+               id: 68
+        key: pusher
+        name: "pusher"
+        summary: "This module lets you easily add realtime functionality to your Play applications with Pusher (http://www"
+        description: "This module lets you easily add realtime functionality to your Play applications with Pusher (http://www.pusher.com) using websockets.\r\n"
+        contributors: Regis Bamba
+        projectUrl: https://github.com/rhb9/Play-Pusher
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 79
+        owner: !!models.User
+               id: 69
+        key: qunit
+        name: "QUnit"
+        summary: "The QUnit module provides integration of JUnit Javascript tests with the Play! Framework"
+        description: "The QUnit module provides integration of JUnit Javascript tests with the Play! Framework.\r\n\r\nFeatures:\r\n\r\n* Use Play! templating syntax in QUnit tests\r\n* Friendly running and error reporting of QUnit tests directly from the application\r\n* Generated JUnit compatible XML test reports for continuous integration\r\n"
+        contributors: Florian Gutmann
+        projectUrl: https://github.com/irregular-at/play-qunit
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 74
+        owner: !!models.User
+               id: 70
+        key: rabbitmq
+        name: "RabbitMQ"
+        summary: "RabbitMQ offers a highly available and scalable, and yet lightweight, messaging system with predictable"
+        description: "RabbitMQ offers a highly available and scalable, and yet lightweight, messaging system with predictable. RabbitMQ is the leading implementation of AMQP, and a great alternative to JMS. RabbitMQ supports Work Queues, Routing, PubSub, etc. This module allows your Play! application to produce and consume messages from RabbitMQ queues; it provides statistics and streaming through WebSockets; retry logic has been added on version 0.0.4. "
+        contributors: Felipe Oliveira
+        projectUrl: http://geeks.aretotally.in/rabbitmq-module-for-play-framework
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 46
+        owner: !!models.User
+               id: 70
+        key: recaptcha
+        name: "Recaptcha"
+        summary: "Quickly integrate reCaptcha"
+        description: "Quickly integrate reCaptcha.com challenge-response test in your applications.\r\na 2 minutes integration !\r\n\r\n1.3: support for HTTPS recaptchas"
+        contributors: Olivier Refalo
+        projectUrl: https://github.com/orefalo/recaptcha
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 114
+        owner: !!models.User
+               id: 70
+        key: recordtracking
+        name: "RecordTracking"
+        summary: "RecordTracking unobtrusively tracks the creation, updating and\r\nelimination events regarding to records"
+        description: "RecordTracking unobtrusively tracks the creation, updating and\r\nelimination events regarding to records.\r\nWhen one of those events occurs, writes into a log:\r\n- The name of the action\r\n- The date when the action was invoked\r\n- The user who invoked the event\r\n- The name of the model\r\n- The model data including association id’s"
+        contributors: Wayson Clown
+        projectUrl: https://github.com/omaroman/recordtracking
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 95
+        owner: !!models.User
+               id: 70
+        key: redis
+        name: "Redis"
+        summary: "The Redis Play! module helps you easily use Redis in your Play! applications"
+        description: "The Redis Play! module helps you easily use Redis in your Play! applications.  The module consists of three parts:\r\n\r\n1. A Redis client that lets you persist data to a Redis datastore.\r\n2. A Redis implementation of the Play! cache interface. This allows you to choose Redis as your caching system.\r\n3. A cache monitor that helps with debugging while using Redis cache."
+        contributors: Tim Kral
+        projectUrl: https://github.com/tkral/play-redis
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 60
+        owner: !!models.User
+               id: 71
+        key: resteasycrud
+        name: "RESTEasy CRUD module"
+        summary: "The Play! RESTEasy CRUD module which allows you to automagically generate your RESTful CRUD resources for a given model"
+        description: "The Play! RESTEasy CRUD module which allows you to automagically generate your RESTful CRUD resources for a given model. No boilerplate code needed anymore and 100% RESTful."
+        contributors: Stephane Epardaud
+        projectUrl: http://www.lunatech-labs.com/open-source/resteasy-crud-play-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 61
+        owner: !!models.User
+               id: 72
+        key: resteasy
+        name: "RESTEasy Play! module"
+        summary: "The RESTEasy Play! module allows you to define JAX-RS RESTful web services in the Play! Framework using RESTEasy"
+        description: "The RESTEasy Play! module allows you to define JAX-RS RESTful web services in the Play! Framework using RESTEasy."
+        contributors: Stephane Epardaud
+        projectUrl: http://www.lunatech-labs.com/open-source/resteasy-play-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 106
+        owner: !!models.User
+               id: 72
+        key: reverseproxy
+        name: "ReverseProxy"
+        summary: "ReverseProxy allows developers to configure web applications to automatically switch between the HTTP and HTTPS protocols per page when used behind a front end Reverse-Proxy server such as Apache, Nginx or Lighttpd"
+        description: "ReverseProxy allows developers to configure web applications to automatically switch between the HTTP and HTTPS protocols per page when used behind a front end Reverse-Proxy server such as Apache, Nginx or Lighttpd.\r\nConfiguration is done in Controllers using annotations."
+        contributors: Wayson Clown
+        projectUrl: https://github.com/omaroman/reverseproxy
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 54
+        owner: !!models.User
+               id: 72
+        key: riak
+        name: "Riak"
+        summary: "Allow to use \"riak-java-client\":http://hg"
+        description: "Allow to use \"riak-java-client\":http://hg.basho.com/riak-java-client/  in play! way. All java properties is encode in JSON and save in riak with bucket and key declare in Annotation."
+        contributors: Julien Bille
+        projectUrl: https://github.com/julienba/play-riak/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 137
+        owner: !!models.User
+               id: 72
+        key: rythm
+        name: "Rythm Template Engine"
+        summary: "PlayRythm is yet another template engine for play v1"
+        description: "PlayRythm is yet another template engine for play v1.x. It's built on top of \"Rythm template engine\":http://www.rythmengine.com with the following features:\r\n* \"high performance\":http://www.rythmengine.com/document/feature#performance - the same level of Japid\r\n* general purpose - generate html, json, xml, email etc.\r\n* clear \"Razor\":http://razorengine.codeplex.com like syntax\r\n* easy to integrate with Play - no special controller, no separate view folder\r\n* \"smooth migration from groovy\":/modules/rythm-0.9.4g/integration.\r\n* support existing \"user defined fast tags\":/modules/rythm-0.9.4g/user_guide#fast_tags and many play's built-in fast tags\r\n* support most \"built-in java extensions\":/modules/rythm-0.9.4g/user_guide#java_extension\r\n* easy to debug. Exceptions reporting is the same as groovy one\r\n* unlimited \"template inheritance\":/modules/rythm-0.9.4g/user_guide#inheritance\r\n* every template is a tag\r\n\r\nCheck \"documentation\":/modules/rythm-0.9.4g/home for more information"
+        contributors: Green Luo
+        projectUrl: https://github.com/greenlaw110/play-rythm
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 112
+        owner: !!models.User
+               id: 72
+        key: s3blobs
+        name: "S3Blobs"
+        summary: "The S3Blobs Play Framework Module provides an easy way to read an write files from Amazon S3 from within JPA entities"
+        description: "The S3Blobs Play Framework Module provides an easy way to read an write files from Amazon S3 from within JPA entities."
+        contributors: James Ward
+        projectUrl: https://github.com/jamesward/S3-Blobs-module-for-Play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 37
+        owner: !!models.User
+               id: 72
+        key: scaffold
+        name: "scaffold"
+        summary: "scaffold will generate basic scaffolding for bootstrapping a project from your JPA or Senia entities"
+        description: "scaffold will generate basic scaffolding for bootstrapping a project from your JPA or Senia entities. Unlike the CRUD module, scaffold statically generates the controllers and templates, and does not dynamically introspect your model at runtime. \r\n\r\nSimply create your JPA or Senia models and run \"play scaffold:gen --overwrite\" to create controllers and CRUD templates for your models."
+        contributors: Lawrence McAlpin
+        projectUrl: http://github.com/lmcalpin/Play--Scaffold
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 8
+        owner: !!models.User
+               id: 72
+        key: scala
+        name: "Scala"
+        summary: "Play Scala enables you to use the Scala language for your application keeping key properties of the Play framework"
+        description: "Play Scala enables you to use the Scala language for your application keeping key properties of the Play framework. It uses a more functional and Scala idiomatic style of programming without giving up on simplicity and developer friendliness.\r\n\r\nCheck the dedicated website at \"http://scala.playframework.org\":http://scala.playframework.org."
+        contributors: Sadek Drobi, Guillaume Bort, Peter Hausel
+        projectUrl: https://github.com/playframework/play-scala
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 89
+        owner: !!models.User
+               id: 73
+        key: scalagen
+        name: "Scala Gen"
+        summary: "Scala code generators for the Play! framework\r\n\r\nThis module can be used to generate Scala code"
+        description: "Scala code generators for the Play! framework\r\n\r\nThis module can be used to generate Scala code. It can generate JPA/ Siena based models, CRUD and associated test cases.\r\n\r\nOptions:\r\n\r\n--scaffold-jpa [entity name] [attribute1:type1]*     Generates the JPA based model and associated CRUD code.\r\n--model-jpa [entity name] [attribute1:type1]*         Generates the JPA based model.\r\n--scaffold-siena [entity name] [attribute1:type1]*     Generates the Siena based model and associated CRUD code.\r\n\r\nNote: --scaffold and --model are shortcuts to generate JPA\r\n\r\nThese generators can only be used from inside a Scala Play! project. \r\n"
+        contributors: Aishwarya Singhal
+        projectUrl: https://github.com/asinghal/Play-ScalaGen
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 88
+        owner: !!models.User
+               id: 74
+        key: scalasecure
+        name: "Scala secure"
+        summary: "This module provides basic security (authentication/ authorization) for Play applications written in Scala"
+        description: "This module provides basic security (authentication/ authorization) for Play applications written in Scala."
+        contributors: Aishwarya Singhal
+        projectUrl: https://github.com/asinghal/Play-ScalaSecure
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 18
+        owner: !!models.User
+               id: 74
+        key: scalate
+        name: "Scalate"
+        summary: "Scalate Template engine support (more info about scalate: http://scalate"
+        description: "Scalate Template engine support (more info about scalate: http://scalate.fusesource.org ). \r\n\r\nThis module depends on the scala module, so you will need to enable both modules. \r\n\r\nrequired play version: 1.1r956 \r\nrequired play scala version: 0.7.2 \r\n\r\nYou can start a new project with the following command: \r\nplay new myapp --with scala,scalate \r\n\r\n(assuming you have only scala-0.7.2 and scalate-0.7.2 installed) "
+        contributors: Peter Hausel
+        projectUrl: http://github.com/pk11/play-scalate
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 12
+        owner: !!models.User
+               id: 74
+        key: search
+        name: "Search"
+        summary: "Search allows you to have basic full text search functionalities to your JPA Model"
+        description: "Search allows you to have basic full text search functionalities to your JPA Model. It is based on Lucene, and requires a real file system to store its indexes."
+        contributors: Jean-Francois POUX
+        projectUrl: http://github.com/jfp/play-search/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 62
+        owner: !!models.User
+               id: 75
+        key: securepermissions
+        name: "Secure Permissions Play! module"
+        summary: "The Secure Permissions Play! module extends the Secure module in Play! Framework to add permission checks based on the rule-based permissions in the Seam Framework (based on Drools rules)"
+        description: "The Secure Permissions Play! module extends the Secure module in Play! Framework to add permission checks based on the rule-based permissions in the Seam Framework (based on Drools rules).\r\n"
+        contributors: Stephane Epardaud
+        projectUrl: http://www.lunatech-labs.com/open-source/secure-permissions-play-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 107
+        owner: !!models.User
+               id: 75
+        key: securesocial
+        name: "SecureSocial"
+        summary: "SecureSocial allows you to add an authentication UI to your app that works with services based on OAuth1, OAuth2, OpenID and OpenID+OAuth hybrid protocols"
+        description: "SecureSocial allows you to add an authentication UI to your app that works with services based on OAuth1, OAuth2, OpenID and OpenID+OAuth hybrid protocols. The following services are supported:\r\n\r\n- Twitter (OAuth1)\r\n- Facebook (OAuth2)\r\n- Google (OpenID + OAuth Hybrid)\r\n- Yahoo (OpenID + OAuth Hybrid)\r\n- LinkedIn (OAuth1)\r\n- Foursquare (OAuth2)\r\n- MyOpenID (OpenID)\r\n- Wordpress (OpenID)\r\n- Username and Password"
+        contributors: Jorge Aliss
+        projectUrl: https://github.com/jaliss/securesocial
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 110
+        owner: !!models.User
+               id: 76
+        key: shibboleth
+        name: "shibboleth"
+        summary: "Allow users to login to your Play! application via Shibboleth"
+        description: "Allow users to login to your Play! application via Shibboleth.\r\nShibboleth is a federated identity management protocol popular in higher education. The protocol provides a single sign on service across multiple organizational boundaries with secure attribute delivery. Shibboleth support requires that your application be proxies behind a Shibboleth capable web server such as Apache, Lighttpd, or IIS with the corresponding Shibboleth module installed. For more information on the protocol visit: \r\n\r\nhttp://shibboleth.internet2.edu/\r\n"
+        contributors: Scott Phillips
+        projectUrl: https://github.com/TAMULib/Shibboleth-play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 5
+        owner: !!models.User
+               id: 77
+        key: siena
+        name: "Siena"
+        summary: "The siena module enables Siena support to map your Java entities to GAE/MySQL/PostgreSQL/H2 from your play application (at least since v2"
+        description: "The siena module enables Siena support to map your Java entities to GAE/MySQL/PostgreSQL/H2 from your play application (at least since v2.0.0). \r\n\r\n* **NEW: play-siena v2.0.6 with support for GoogleCloudSql**\r\n* play-siena v2.0.5 provides support for Amazon SimpleDB (not yet fully tested)\r\n* play-siena v.2.0.x with support for GAE/MySQL/Postgres/H2 + SQL DDL + Play >1.2.1\r\n\r\nMain github project is: https://github.com/mandubian/play-siena\r\n\r\nRead more on Siena at: http://www.sienaproject.com/ + https://github.com/mandubian/siena"
+        contributors: Vijay Kiran, Pascal Voitot, Alberto Gimeno
+        projectUrl: http://github.com/mandubian/play-siena
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 64
+        owner: !!models.User
+               id: 78
+        key: spocktests
+        name: "Spock tests"
+        summary: "This module allows running \"Spock\":http://www"
+        description: "This module allows running \"Spock\":http://www.spockframework.org specifications. This provides the possibility to write \"BDD\":http://en.wikipedia.org/wiki/Behavior_Driven_Development style tests (still wrapped as  junit) with the expressive power of groovy and still have the tested application be in playframework. This can also be combined with \"Geb\":http://geb.codehaus.org/ which provides \"The future of functional web testing\":http://blog.springsource.com/2010/08/28/the-future-of-functional-web-testing/.\r\n\r\nSee more description on \"github\":http://github.com/peterlundberg/play-spock-tests\r\n"
+        contributors: Peter Lundberg
+        projectUrl: http://github.com/peterlundberg/play-spock-tests
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 11
+        owner: !!models.User
+               id: 79
+        key: spring
+        name: "Spring"
+        summary: "This module allows to use Spring managed beans inside your play! applications"
+        description: "This module allows to use Spring managed beans inside your play! applications. "
+        contributors: Nicolas Leroux
+        projectUrl: http://github.com/pepite/Play--framework-Spring-module
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 124
+        owner: !!models.User
+               id: 79
+        key: springtester
+        name: "spring tester"
+        summary: "Used to write tests that can auto-magically inject mocks (using\r\nMockito) into Play applications wired up using the spring module"
+        description: "Used to write tests that can auto-magically inject mocks (using\r\nMockito) into Play applications wired up using the spring module."
+        contributors: An Do
+        projectUrl: https://github.com/digiarnie/springtester
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 132
+        owner: !!models.User
+               id: 80
+        key: statsd
+        name: "statsd"
+        summary: "The module is a wrapper over StatsD (https://github"
+        description: "The module is a wrapper over StatsD (https://github.com/etsy/statsd) which allow for dead simple statistic aggregation from within play."
+        contributors: Rich Kroll
+        projectUrl: https://github.com/rkroll/play-statsd/
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 19
+        owner: !!models.User
+               id: 81
+        key: stax
+        name: "Stax"
+        summary: "Easy deployment to Stax cloud hosting platform (http://www"
+        description: "Easy deployment to Stax cloud hosting platform (http://www.stax.net)."
+        contributors: Erwan Loisant
+        projectUrl: http://github.com/erwan/playstax
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 127
+        owner: !!models.User
+               id: 81
+        key: swagger
+        name: "Swagger"
+        summary: "Creates a self-documenting meta-description for REST APIs which allows for code-gen, UI-sandbox, and test framework"
+        description: "Creates a self-documenting meta-description for REST APIs which allows for code-gen, UI-sandbox, and test framework.  See more at http://swagger.wordnik.com and at http://developer.wordnik.com/docs\r\n"
+        contributors: Tony Tam
+        projectUrl: https://github.com/wordnik/swagger-play
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 2
+        owner: !!models.User
+               id: 82
+        key: sass
+        name: "Syntactically Awesome Stylesheets"
+        summary: "**{style with attitude}** - Sass makes CSS fun again"
+        description: "**{style with attitude}** - Sass makes CSS fun again. Sass is CSS, plus nested rules, variables, mixins, and more, all in a concise, readable syntax. \r\n\r\nRead more at \"http://sass-lang.com\":http://sass-lang.com/"
+        contributors: Guillaume Bort
+        projectUrl: http://github.com/guillaumebort/play-sass
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 69
+        owner: !!models.User
+               id: 82
+        key: table
+        name: "Table"
+        summary: "This module aims to simplify the code needed to display data in HTML tables"
+        description: "This module aims to simplify the code needed to display data in HTML tables."
+        contributors: Julien Richard-Foy
+        projectUrl: https://github.com/julienrf/play-table
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 57
+        owner: !!models.User
+               id: 83
+        key: tabularasa
+        name: "Tabula Rasa"
+        summary: "Tabula Rasa provides support for user-customisable tables in views"
+        description: "Tabula Rasa provides support for user-customisable tables in views.  DataTables is used as the client-side table renderer. Loading data via AJAX into tables is also simplified, and can be used with or without personalized tables."
+        contributors: Steve Chaloner
+        projectUrl: https://github.com/schaloner/tabula-rasa
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 134
+        owner: !!models.User
+               id: 83
+        key: thymeleaf
+        name: "Thymeleaf"
+        summary: "Play framework module to use Thymeleaf 2"
+        description: "Play framework module to use Thymeleaf 2.0 (http://www.thymeleaf.org/)  as a template engine.\r\nThis is NOT a whole replacement of the groovy template. It is rather an add-on, rendering thymeleaf only if the alternative template exists."
+        contributors: Satoshi Takata
+        projectUrl: https://github.com/choreo/play-thymeleaf
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 82
+        owner: !!models.User
+               id: 84
+        key: twig
+        name: "Twig"
+        summary: "Twig superpowers Google App Engine's Datastore for Play applications"
+        description: "Twig superpowers Google App Engine's Datastore for Play applications. Get a fluid API, in-memory joins, and asynchronous queries out of the box. "
+        contributors: Dave Jafari
+        projectUrl: https://github.com/netmau5/Play-Twig
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 101
+        owner: !!models.User
+               id: 85
+        key: twitterbootstrap
+        name: "twitterbootstrap"
+        summary: "Play module that bundles up the twitter-bootstrap stylekit and the play less plugin, so that you can use twitter-bootstrap, edit the "
+        description: "Play module that bundles up the twitter-bootstrap stylekit and the play less plugin, so that you can use twitter-bootstrap, edit the .less files and have your changes picked up and dynamically rendered to css."
+        contributors: Scott Clasen
+        projectUrl: http://github.com/sclasen/twitterBootstrap
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 97
+        owner: !!models.User
+               id: 86
+        key: useragentcheck
+        name: "UserAgentCheck"
+        summary: "UserAgentCheck provides an easy way to notify users when their browser is outdated"
+        description: "UserAgentCheck provides an easy way to notify users when their browser is outdated. It displays a banner (blocking or non blocking) that drives the user to a page where he/she may download an upgrade.\r\n\r\nVersion 0.3: Fixes issues with IE10"
+        contributors: Olivier Refalo
+        projectUrl: https://github.com/orefalo/useragentcheck
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 28
+        owner: !!models.User
+               id: 86
+        key: vhost
+        name: "VHost"
+        summary: "Adds some virtual hosts functionality with separate datasource and customizable application settings for each virtual host"
+        description: "Adds some virtual hosts functionality with separate datasource and customizable application settings for each virtual host. "
+        contributors: Lyubomir Ivanov
+        projectUrl: https://github.com/lyubo/play-vhost
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 92
+        owner: !!models.User
+               id: 86
+        key: webdrive
+        name: "webdrive"
+        summary: "WebDrive module provides Selenium 2 testing support for Play framework"
+        description: "WebDrive module provides Selenium 2 testing support for Play framework. You can use this module to test your application with any browser supported by Selenium WebDriver."
+        contributors: Raghu Kaippully
+        projectUrl: https://github.com/rkaippully/play-webdrive
+        organisation: (unknown)
+        licenseType: (unknown)
