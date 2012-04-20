@@ -7,8 +7,8 @@
 @for(accessor <- moduleAccessors) {
     @defining(accessor.getModule()) { module =>
     <li>
-        <a href="@routes.Modules.details(module.key)">@module.name</a>
-        <p>@StringUtils.summarize(module.summary)</p>
+		<p><a href="@routes.Modules.details(module.key)">@module.name</a>
+        <br>@StringUtils.summarize(module.summary)</p>
     </li>
     }
 }

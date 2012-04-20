@@ -52,7 +52,8 @@ public class Application extends Controller {
                                mostRecentModules,
                                highestRatedModules,
                                featuredModules,
-                               playVersions));
+                               playVersions,
+				               Module.count()));
     }
 
 	public static Result login() {
