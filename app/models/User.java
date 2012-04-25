@@ -61,6 +61,10 @@ public class User extends AbstractModel implements RoleHolder
     public static final Finder<Long, User> FIND = new Finder<Long, User>(Long.class,
             User.class);
 
+    public static int count() {
+        return FIND.findRowCount();
+    }
+
     public static User findByUserName(String userName) {
         return FIND.where()
                 .eq("userName", userName)

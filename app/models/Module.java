@@ -77,6 +77,9 @@ public class Module extends AbstractModel implements ModuleAccessor {
     public String licenseType;
 
     @Column(nullable = true)
+    public String contributors;
+
+    @Column(nullable = true)
     public String licenseUrl;
 
     @Column(nullable = false)
@@ -117,6 +120,14 @@ public class Module extends AbstractModel implements ModuleAccessor {
     @Override
     public Module getModule() {
         return this;
+    }
+
+    public static List<Module> all() {
+        return FIND.findList();
+    }
+
+    public static int count() {
+        return FIND.findRowCount();
     }
 
     public static List<Module> findByTag(Tag tag) {

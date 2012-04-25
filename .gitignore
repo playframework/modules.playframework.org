@@ -12,5 +12,6 @@ dist
 .settings/
 *.iws
 *.iml
+*.ipr
 conf/evolutions
 .DS_Store

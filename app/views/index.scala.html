@@ -1,55 +1,72 @@
 @(currentUser: User,
   mostRecentModules: List[Module],
   highestRatedModules: List[Module],
-  featuredModules: List[FeaturedModule])
+  featuredModules: List[FeaturedModule],
+  playVersions: List[PlayVersion],
+  moduleCount: Int)
 
 @import tags._
 
+@featureList(title: String, moduleAccessors: List[_ <: ModuleAccessor]) = {
+	<div class="item">
+		<h2>@title</h2>
+		@for(accessor <- moduleAccessors) {
+			@defining(accessor.getModule()) { module =>
+				<p><a href="@routes.Modules.details(module.key)">@module.name</a> - @module.summary</p>
+			}
+		}
+	</div>
+}
+
 @main("Home", currentUser) {
 
-<section id="introduction">
-	<div class="wrapper">
-		<div id="title">
-			<h1>
-				Play framework<br>
-				modules for<br>
-				Play 2.x and Play 1.x
-			</h1>
-			<p>
-				Here you can find great modules contributed by the play community. Browse the catalog and add instant power to your application.
-			</p>
+	<section id="introduction">
+		<div class="wrapper">
+			<div id="title">
+				<h1>
+					@moduleCount Play framework<br>
+					modules for<br>
+					Play 2.x and Play 1.x
+				</h1>
+				<p>
+					Here you can find great modules contributed by the play community. Browse the catalog and add instant power to your application.
+				</p>
+			</div>
+			<div id="quicklinks">
+				<h2>Browse 2.x modules</h2>
+				<p>
+					<a href='@routes.Modules.getModulesByPlayVersion("2")'>All</a>,
+					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
+				</p>
+				<h2>Browse 1.x modules</h2>
+				<p>
+					<a href='@routes.Modules.getModulesByPlayVersion("1")'>All</a>,
+					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
+				</p>
+				@if(currentUser == null) {
+				<h2>Contribute</h2>
+				<p>
+					<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
+				</p>
+				}
+				<h2>Get involved</h2>
+				<p>
+					Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
+				</p>
+			</div>
 		</div>
-		<div id="quicklinks">
-			<h2>Browse modules</h2>
-			<p>
-				<a href='@routes.Modules.getModulesByPlayVersion("2")'>Play 2.x modules</a> and <a href='@routes.Modules.getModulesByPlayVersion("1")'>Play 1.x modules</a>.
-			</p>
-			<p>
-				<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
-			</p>
-            @if(currentUser == null) {
-            <h2>Contribute</h2>
-            <p>
-                <a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
-            </p>
-            }
-			<h2>Get involved</h2>
-			<p>
-				Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
-			</p>
+	</section>
+
+	<section id="features">
+		<div class="wrapper">
+			@featureList("Latest 2.x modules", mostRecentModules)
+			@featureList("Featured 2.x modules", featuredModules)
+			@featureList("Highest-rated 2.x", highestRatedModules)
 		</div>
-	</div>
-</section>
-
-<div id="content" class="wrapper">
-	<article>
-		<h1>Modules</h1>
-
-        @moduleList("Featured modules", featuredModules)
-
-        @moduleList("Latest modules", mostRecentModules)
-
-        @moduleList("Highest-rated", highestRatedModules)
-	</article>
-</div>
+		<div class="wrapper">
+			<div class="item"><h2>Latest 1.x modules</h2></div>
+			<div class="item"><h2>Featured 1.x modules</h2></div>
+			<div class="item"><h2>Highest-rated 1.x</h2></div>
+		</div>
+	</section>
 }

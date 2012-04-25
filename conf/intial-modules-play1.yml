@@ -1,0 +1,4711 @@
+models.PlayVersion(p124):
+    majorVersion: 1
+    name: 1.2.4
+    documentationUrl: http://www.playframework.org/documentation/1.2.4/home
+
+models.PlayVersion(p20):
+    majorVersion: 2
+    name: 2.0
+    documentationUrl: http://www.playframework.org/documentation/2.0/Home
+
+models.Module(m1):
+    moduleKey: messages
+    moduleName: @messages
+    contributors: Heikki Uljas
+    projectUrl: https://github.com/huljas/play-messages
+    description: Module **messages** provides a web based tool for managing your application's localizations. \r\n\r\n* *Forgetting the localizations as you code?* This tool will look through your sources and lists the keys that have not been localized yet!\r\n* *Forgot to remove the localizations when you refactoring?* It also finds keys that are no longer in use and let's you easily remove them!\r\n* *Your messages file is a mess?* The messages files are saved in alphabetical order so you can easily add keys to the files manually too!\r\n* *Not sure where the key is used?* No worries, the tool will show you a snippet from the source code where it found the key!\r\n\r\nCheck out the usage examples in this \"blog post\":http://huljas.github.com/code/2011/04/01/localizing-your-play-application-with-messages.html\r\n\r\nFor bug reports and feature requests use the project home page at \"github\":https://github.com/huljas/play-messages.
+
+models.ModuleVersion(m1v1):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2011-03-05
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m1v2):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-03-12
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m1v3):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-05-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m1v4):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 1.1.1
+    releaseDate: 2011-08-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m1v5):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-12-23
+    releaseNotes: Works with Play 1.2.2
+
+models.ModuleVersion(m1v6):
+    module: m1
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2012-02-09
+    releaseNotes: Works with Play 1.2.2
+
+
+models.Module(m2):
+    moduleKey: accesslog
+    moduleName: accesslog
+    contributors: Brian Nesbitt
+    projectUrl: https://github.com/briannesbitt/play-accesslog/
+    description: A Play framework module that performs request logging similar to an access log file in nginx or apache.\r\n
+
+models.ModuleVersion(m2v1):
+    module: m2
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-10-28
+
+models.ModuleVersion(m2v2):
+    module: m2
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-11-16
+    releaseNotes: Works with Play 1.2.x
+
+models.ModuleVersion(m2v3):
+    module: m2
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-12-19
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m3):
+    moduleKey: akka
+    moduleName: akka support
+    contributors: Dustin Whitney
+    projectUrl: http://github.com/dwhitney/akka
+    description: akka (http://akkasource.org) is a platform for building simple, correct, fault-tolerant, concurrent, and scalable applications for the JVM.  This module allows you to configure akka through The Play! framework's conf/application.conf file; it provides a few command-line scripts to start akka when your application starts; and it has some examples of it in action.
+
+models.ModuleVersion(m3v1):
+    module: m3
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2010-07-10
+    releaseNotes: Works with Play r921
+
+
+models.Module(m4):
+    moduleKey: tests
+    moduleName: Alternative Test module for Play
+    contributors: Guy Mograbi
+    projectUrl: https://github.com/GuyMograbi/play_test_module
+    description: \"Presentation\":http://blog.mograbi.info/p/test-module-for-playframework.html
+
+
+models.Module(m5):
+    moduleKey: antify
+    moduleName: Antify
+    contributors: Heikki Uljas
+    projectUrl: https://github.com/huljas/play-antify
+    description: Antify module allows you to generate a ant project file for your play application and run it with ant.\r\n\r\np(note). This module is no longer maintained. The antify support is now built-in since Play 1.2.2. \"Unofficial instructions here\":http://pragmatastic.blogspot.com/2011/08/using-antify-to-run-your-play.html
+
+models.ModuleVersion(m5v1):
+    module: m5
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-04-06
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m6):
+    moduleKey: associations
+    moduleName: Associations
+    contributors: André Pareis
+    projectUrl: https://github.com/pareis/play-associations
+    description: p. This module reduces the code to manage bi-directional associations. Instead of writing\r\n\r\nbc.. forum1.posts.remove(post);\r\npost.forum = forum2;\r\nforum2.posts.add(post);\r\np. you can just write\r\n\r\nbc. forum2.posts.add(post);\r\n\r\np. and the module handles everything else for you.
+
+models.ModuleVersion(m6v1):
+    module: m6
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-07-26
+
+models.ModuleVersion(m6v2):
+    module: m6
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2011-07-28
+
+
+models.Module(m7):
+    moduleKey: bespin
+    moduleName: Bespin online editor
+    contributors: Erwan Loisant
+    projectUrl: http://github.com/erwan/playbespin
+    description: Bespin is a Mozilla Labs experiment on how to build an extensible web code editor using HTML 5 technology. The play bespin module allows you to edit all the application sources directly in the browser using bespin.
+
+models.ModuleVersion(m7v1):
+    module: m7
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-01-13
+    releaseNotes: Works with Play 1.0
+
+
+models.Module(m8):
+    moduleKey: betterlogs
+    moduleName: BetterLogs
+    contributors: Stephane Godbillon
+    projectUrl: https://github.com/sgodbillon/BetterLogs
+    description: This very simple module enhances the Play! Framework logs to bring some missing information such as the class name, the method name where the log has been called, its signature, the file name and the line.
+
+models.ModuleVersion(m8v1):
+    module: m8
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-05-17
+    releaseNotes: Works with Play 1.0 1.1 1.2
+
+
+models.Module(m9):
+    moduleKey: bhave
+    moduleName: bhave
+    contributors: Edward Southey 
+    projectUrl: http://bhave.org/
+    description: Web-based BDD Framework, for web apps, done in a funky way!
+
+models.ModuleVersion(m9v1):
+    module: m9
+    compatibility: [ p124 ]
+    versionCode: 0.7
+    releaseDate: 2012-03-08
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m9v2):
+    module: m9
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2012-03-11
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m10):
+    moduleKey: browserid
+    moduleName: BrowserID
+    contributors: Olivier Refalo
+    projectUrl: https://github.com/orefalo/browserid
+    description:  BrowserID is an experimental new way of signing into websites. The goal with BrowserID is to design something safe and easy for users and the developers.
+
+models.ModuleVersion(m10v1):
+    module: m10
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-03-08
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m11):
+    moduleKey: camel
+    moduleName: Camel
+    contributors: Marc Deschamps
+    projectUrl: https://github.com/marcuspocus/play-camel
+    description: A EIP + Messaging module for the Play! Framework\r\n\r\n- Integration done right\r\n\r\nInclude engine from:\r\n- Apache-Camel => EIP engine\r\n- Apache ActiveMQ => embedded JMS Broker
+
+models.ModuleVersion(m11v1):
+    module: m11
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-07-19
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m12):
+    moduleKey: capistrano
+    moduleName: capistrano
+    contributors: Pascal Voitot
+    projectUrl: https://github.com/mandubian/play-capistrano
+    description: Here is a draft module to deploy a remote play app using Capistrano + SSH + VCS and run it in nohup/background mode.\r\nI'm complete noob in Ruby so this is for people who don't want to write ruby as me yet having a few basic functions around play and this great Capistrano tool. \r\nBut this is also for those who know ruby and want to customize cap configuration.\r\n
+
+models.ModuleVersion(m12v1):
+    module: m12
+    compatibility: [ p124 ]
+    versionCode: 1.0.0
+    releaseDate: 2011-10-03
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m12v2):
+    module: m12
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2011-11-19
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m13):
+    moduleKey: carbonate
+    moduleName: Carbonate migrations
+    contributors: Heikki Uljas
+    projectUrl: https://github.com/huljas/play-carbonate
+    description: Module for creating and running database migrations for Play application. Uses Hibernate schema update to automatically generate SQL to the migrations.\r\n\r\nFor usage examples see \"this blog post\":http://huljas.github.com/code/2011/04/04/managing-database-with-play-carbonate.html
+
+models.ModuleVersion(m13v1):
+    module: m13
+    compatibility: [ p124 ]
+    versionCode: 0.8
+    releaseDate: 2011-04-06
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m13v2):
+    module: m13
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2011-06-19
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m13v3):
+    module: m13
+    compatibility: [ p124 ]
+    versionCode: 0.9.1
+    releaseDate: 2011-10-19
+    releaseNotes: Works with Play 1.2.2
+
+models.ModuleVersion(m13v4):
+    module: m13
+    compatibility: [ p124 ]
+    versionCode: 0.9.2
+    releaseDate: 2011-11-29
+    releaseNotes: Works with Play 1.2.2
+
+
+models.Module(m14):
+    moduleKey: cargo
+    moduleName: cargo
+    contributors: Damien Gouyette
+    projectUrl: https://github.com/dgouyette/play-cargo
+    description: This module helps you remotely deploy your Play! application.\r\n\r\nThe first version (0.1) only supports Tomcat, but 0.2 is coming soon\r\nand will add jboss and glassfish supports.
+
+models.ModuleVersion(m14v1):
+    module: m14
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-04
+
+
+models.Module(m15):
+    moduleKey: casino
+    moduleName: casino
+    contributors: Raphael André Bauer
+    projectUrl: https://github.com/reyez/casino-play
+    description: This project provides a simple method to integrate sign-up and\r\npassword recovery to your project. The cool thing is that it is based on play's security concept. So we don't re-invent the wheel but simply add some stuff.
+
+
+models.Module(m16):
+    moduleKey: cheese
+    moduleName: Cheese
+    contributors: Lawrence McAlpin
+    projectUrl: https://github.com/lmcalpin/Play--Cheese
+    description: Simplified API for integration Play! applications with the CheddarGetter subscription management service.  (Sign up here: \"http://zfer.us/KIt2E\":http://zfer.us/KIt2E)
+
+models.ModuleVersion(m16v1):
+    module: m16
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-12-20
+    releaseNotes: Works with Play 1.x
+
+
+models.Module(m17):
+    moduleKey: chronostamp
+    moduleName: Chronostamp
+    contributors: Wayson Clown
+    projectUrl: https://github.com/omaroman/chronostamp
+    description: Chronostamp enhances Models by adding magic timestamp fields (created_at & updated_at) and it will automatically record creation and update timestamps of database objects in an unobtrusive way.
+
+models.ModuleVersion(m17v1):
+    module: m17
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-10-11
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m18):
+    moduleKey: cloudbees
+    moduleName: CloudBees
+    contributors: Ivan Meredith
+    projectUrl: https://github.com/hadashi/play-cloudbees
+    description: This module provides integration with CloudBees RUN@cloud PaaS, For a getting started guide go \"here\":http://wiki.cloudbees.com/bin/view/RUN/Playframework
+
+models.ModuleVersion(m18v1):
+    module: m18
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-04-07
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m18v2):
+    module: m18
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-05-30
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m18v3):
+    module: m18
+    compatibility: [ p124 ]
+    versionCode: 0.2.1
+    releaseDate: 2011-06-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m18v4):
+    module: m18
+    compatibility: [ p124 ]
+    versionCode: 0.2.2
+    releaseDate: 2011-07-04
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m19):
+    moduleKey: cloudfoundry
+    moduleName: CloudFoundry
+    contributors: Benoît Courtine
+    projectUrl: https://github.com/bcourtine/play--cloudfondry
+    description: In CloudFoundry, when a database resource is linked to an application, the credentials are put in an environment variable. This module automatically reads this variable and configures the Play database.\r\n
+
+models.ModuleVersion(m19v1):
+    module: m19
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m19v2):
+    module: m19
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-09-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m19v3):
+    module: m19
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-09-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m19v4):
+    module: m19
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2011-11-06
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m20):
+    moduleKey: cms
+    moduleName: cms
+    contributors: Jörg Viola
+    projectUrl: http://code.google.com/p/play-cms/
+    description:  A very simple embedded CMS. I know about Sematic and Percont.  But I needed to edit some of the \"static\" pages of my App (help,\r\nlicense, whatever) and wanted the business people do that   in a fairly simple way.
+
+
+models.Module(m21):
+    moduleKey: cobertura
+    moduleName: Cobertura
+    contributors: Julien Bille
+    projectUrl: http://github.com/julienba/play-cobertura
+    description: Cobertura is a free Java tool that calculates the percentage of code accessed by tests. It can be used to identify which parts of your Java program are lacking test coverage. It is based on jcoverage.
+
+models.ModuleVersion(m21v1):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-14
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m21v2):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-03-15
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m21v3):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-04-11
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m21v4):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.0
+    releaseDate: 2010-05-13
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m21v5):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.1
+    releaseDate: 2010-12-31
+
+models.ModuleVersion(m21v6):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.2
+    releaseDate: 2011-08-30
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m21v7):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.3
+    releaseDate: 2011-09-21
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m21v8):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.4
+    releaseDate: 2011-10-06
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m21v9):
+    module: m21
+    compatibility: [ p124 ]
+    versionCode: 2.5
+    releaseDate: 2012-03-11
+    releaseNotes: Works with Play master
+
+
+models.Module(m22):
+    moduleKey: coffee
+    moduleName: CoffeeScript
+    contributors: Rob Figueiredo
+    projectUrl: https://github.com/robfig/play-coffee
+    description: \"CoffeeScript\":http://jashkenas.github.com/coffee-script/ is a great way to produce javascript.  This module provides support for it (Java and Scala):\r\n\r\n* You can write coffee script directly into your templates with the tag #{coffee.inline}. \r\n* You can include coffee script files in your page without having to save the compiled versions.  \r\n* The module generates nice error pages upon compilation errors. \r\n\r\n\r\nComments are welcome!\r\n 
+
+models.ModuleVersion(m22v1):
+    module: m22
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2011-04-10
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m22v2):
+    module: m22
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-07-18
+    releaseNotes: Works with Play 1.1,1.2
+
+
+models.Module(m23):
+    moduleKey: constretto
+    moduleName: Constretto Play module
+    contributors: Sondre Eikanger Kvalø
+    projectUrl: https://github.com/zapodot/constretto-play
+    description: Module thats make integration with the Constretto configration framework easy. Includes the ability to inject configuration in Play controllers using the standard Constretto @Configuration annotation.\r\n\r\nIncludes a sample application and a \"project Wiki\":https://github.com/zapodot/constretto-play/wiki\r\n
+
+models.ModuleVersion(m23v1):
+    module: m23
+    compatibility: [ p124 ]
+    versionCode: 0.1.1
+    releaseDate: 2012-02-07
+    releaseNotes: Works with Play 1.2.X
+
+
+models.Module(m24):
+    moduleKey: cnm
+    moduleName: Content Negotiation
+    contributors: Sebastian Hoß
+    projectUrl: http://github.com/oasits/play-content-negotiation
+    description: The content negotiation module helps using content types which are not directly supported by the Play! framework such as VCard and Atom/RSS feeds using annotations.
+
+models.ModuleVersion(m24v1):
+    module: m24
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-08-04
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m24v2):
+    module: m24
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-10-11
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m24v3):
+    module: m24
+    compatibility: [ p124 ]
+    versionCode: 2.0
+    releaseDate: 2011-04-10
+    releaseNotes: Works with Play 1.1.1
+
+
+models.Module(m25):
+    moduleKey: crudsiena
+    moduleName: CRUD for Siena
+    contributors: Pascal Voitot
+    projectUrl: https://github.com/mandubian/play-crud-siena
+    description: The CRUD (Create, Read, Update, Delete) Siena module a fully usable web interface for your Siena Model objects with a few more features than default CRUD. \r\n\r\n* **NEW: v2.0.x with support for GAE/MySQL/Postgres/H2 for Play! v1.2.1 and play-siena v2.0.x**\r\n* v1.6_play1.2 works with Play! v1.2 but not v1.1\r\n* v1.6_play1.1 works with Play! v1.1 but not v1.2\r\n\r\n\r\n
+
+models.ModuleVersion(m25v1):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-08-26
+    releaseNotes: Works with Play 1.0.3.x
+
+models.ModuleVersion(m25v2):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.01
+    releaseDate: 2010-10-21
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m25v3):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-11-09
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m25v4):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-11-13
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m25v5):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-12-14
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m25v6):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-01-10
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m25v7):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2011-01-11
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m25v8):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.6_play1.1
+    releaseDate: 2011-04-14
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m25v9):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 1.6_play1.2
+    releaseDate: 2011-04-14
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m25v10):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 2.0.0
+    releaseDate: 2011-06-01
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m25v11):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 2.0.1
+    releaseDate: 2011-06-24
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m25v12):
+    module: m25
+    compatibility: [ p124 ]
+    versionCode: 2.0.2
+    releaseDate: 2011-08-10
+    releaseNotes: Works with Play [1.2.1,)
+
+
+models.Module(m26):
+    moduleKey: migrate
+    moduleName: Database migration
+    contributors: David Cardon
+    projectUrl: http://github.com/dcardon/play-migrate
+    description: This module allows you to easily maintain database versions for your project.
+
+models.ModuleVersion(m26v1):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-02-28
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m26v2):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-04-16
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m26v3):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-06-22
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m26v4):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-07-20
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m26v5):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.3.1
+    releaseDate: 2010-08-10
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m26v6):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.3.2
+    releaseDate: 2010-09-02
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m26v7):
+    module: m26
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-02-02
+    releaseNotes: Works with Play 1.0.1 or higher
+
+
+models.Module(m27):
+    moduleKey: db
+    moduleName: Database module
+    contributors: Nicolas Leroux
+    projectUrl: http://github.com/pepite/play--database
+    description: Export your Play! domain model to a DDL file and import a database into your Play! domain model. Please refer to the documentation for more information. The 1.1 version is for the Play! 1.1 branch while the 1.0 is for the 1.0 Play! branch.
+
+models.ModuleVersion(m27v1):
+    module: m27
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-05-16
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m27v2):
+    module: m27
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-05-16
+    releaseNotes: Works with Play 1.0.2.1
+
+models.ModuleVersion(m27v3):
+    module: m27
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-07-24
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m27v4):
+    module: m27
+    compatibility: [ p124 ]
+    versionCode: 1.1.1
+    releaseDate: 2010-07-24
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m28):
+    moduleKey: deadbolt
+    moduleName: Deadbolt
+    contributors: Steve Chaloner
+    projectUrl: https://github.com/schaloner/deadbolt
+    description: Deadbolt is an authorisation mechanism for defining access rights to certain controller methods or parts of a view.  It has a powerful but simple syntax that allows AND/OR/NOT relations.  Both controller and view restrictions can be nested to allow for an elegant DRY approach to securing your application.\r\n\r\nIt's also possible to specify pre-defined restriction trees for your controllers and thus be able to change security allowances without changing your code.\r\n\r\nFinally, you can name controller classes, controller methods and views as resources and determine arbitrarily if access is allowed.  This feature also integrates with the features above to provide specific/generic authorisation scenarios. 
+
+models.ModuleVersion(m28v1):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-12-29
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v2):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2011-02-02
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v3):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-02-10
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v4):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-02-11
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v5):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.2.1
+    releaseDate: 2011-02-15
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v6):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2011-03-10
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v7):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.3.1
+    releaseDate: 2011-03-24
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v8):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-04-01
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v9):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4.1
+    releaseDate: 2011-05-25
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m28v10):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4.2
+    releaseDate: 2011-08-25
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m28v11):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4.3
+    releaseDate: 2011-11-05
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m28v12):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4.4
+    releaseDate: 2012-01-04
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m28v13):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.4.5
+    releaseDate: 2012-02-14
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v14):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2012-02-19
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m28v15):
+    module: m28
+    compatibility: [ p124 ]
+    versionCode: 1.5.1
+    releaseDate: 2012-02-21
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m29):
+    moduleKey: dotcloud
+    moduleName: Dotcloud
+    contributors: Leif Singer
+    projectUrl: https://github.com/lsinger/play-dotcloud
+    description: h1. Usage\r\n\r\nThis module helps you deploy your Play! application to \"dotcloud\":http://dotcloud.com. \r\n\r\nh2. Installation\r\n\r\nFirst, install the module from the Play! module repository like so: \r\n\r\nbc. play install dotcloud\r\n\r\nh2. Prepare your Play! application\r\n\r\nTell Play! that you want your application to use the dotcloud module by adding it to your @conf/dependencies.yml@ file. It might look like this: \r\n\r\nbc. require:\r\n	- play\r\n	- play -> dotcloud 0.2\r\n\r\nNow run @play dependencies@ to install the module into your application. Then, create a @dotcloud.yml@ file in your application's @conf@ directory. The file might look like this: \r\n\r\nbc. www:\r\n	type: java\r\ndb:\r\n	type: mysql\r\n\r\nh2. Push to dotcloud\r\n\r\nUse\r\n\r\n@play dotcloud:deploy@\r\n\r\n to push the current version of your application to dotcloud. \r\n\r\nFor more information, consult the documentation in \"this module's GitHub repository\":https://github.com/lsinger/play-dotcloud. 
+
+models.ModuleVersion(m29v1):
+    module: m29
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-05-06
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m29v2):
+    module: m29
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-08-01
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m30):
+    moduleKey: ebean
+    moduleName: EBean ORM support
+    contributors: Lyubomir Ivanov
+    projectUrl: https://github.com/lyubo/play-ebean
+    description: Adds Ebean ORM to play!. Still in very experimental phase.
+
+models.ModuleVersion(m30v1):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-04-20
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m30v2):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-04-29
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m30v3):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2010-06-01
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m30v4):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0.4
+    releaseDate: 2011-03-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m30v5):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0.5
+    releaseDate: 2011-10-27
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m30v6):
+    module: m30
+    compatibility: [ p124 ]
+    versionCode: 1.0.6
+    releaseDate: 2012-01-12
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m31):
+    moduleKey: elasticsearch
+    moduleName: ElasticSearch
+    contributors: Felipe Oliveira and Sebastian Gooren
+    projectUrl: http://geeks.aretotally.in/play-framework-module-elastic-search-distributed-searching-with-json-http-rest-or-java
+    description: Elastic Search is a Distributed Search Solution based on Apache Lucene. This module provides an embedded Elastic Server instance for Rapid Development. Documentation is available at http://geeks.aretotally.in/wp-content/uploads/2011/05/Play-Framework-ElasticSearch-Module.pdf.
+
+models.ModuleVersion(m31v1):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.1
+    releaseDate: 2011-03-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v2):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.2
+    releaseDate: 2011-03-20
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v3):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.3
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v4):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.4
+    releaseDate: 2011-03-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v5):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.5
+    releaseDate: 2011-03-27
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v6):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.6
+    releaseDate: 2011-04-12
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m31v7):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.7
+    releaseDate: 2011-09-02
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v8):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.8
+    releaseDate: 2011-09-03
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v9):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.0.9
+    releaseDate: 2011-09-06
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v10):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-06
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v11):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-09-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v12):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-11-03
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m31v13):
+    module: m31
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2012-02-29
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m32):
+    moduleKey: excel
+    moduleName: Excel module
+    contributors: Green Luo
+    projectUrl: http://github.com/greenlaw110/play-excel
+    description: Template based Excel report generator. 'x' version support xlsx format template but is much bigger than normal version (19MB vs. 3MB)
+
+models.ModuleVersion(m32v1):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-03-28
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m32v2):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-04-08
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m32v3):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-10-06
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m32v4):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-06-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v5):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2x
+    releaseDate: 2011-06-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v6):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.1
+    releaseDate: 2011-06-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v7):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.1x
+    releaseDate: 2011-06-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v8):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.2
+    releaseDate: 2011-06-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v9):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.2x
+    releaseDate: 2011-06-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v10):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.3x
+    releaseDate: 2011-07-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m32v11):
+    module: m32
+    compatibility: [ p124 ]
+    versionCode: 1.2.3
+    releaseDate: 2011-07-18
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m33):
+    moduleKey: ecss
+    moduleName: Extended CSS
+    contributors: Guillaume Bort
+    projectUrl: http://github.com/guillaumebort/play-ecss
+    description: This module allow you to use constants in the CSS files. It is very helpful when you work with large CSS files, to avoid to repeat yourself with color, fonts... \r\n\r\np(note). This module is no longer maintained. You should take a look at the sass module.
+
+models.ModuleVersion(m33v1):
+    module: m33
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-12
+    releaseNotes: Works with Play 1.0
+
+
+models.Module(m34):
+    moduleKey: fbconnect
+    moduleName: Facebook connect
+    contributors: Michael Murray
+    projectUrl: https://github.com/murz/play-fbconnect
+    description: Easily integrate Facebook based authentication into any Play framework application.
+
+models.ModuleVersion(m34v1):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-11-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v2):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v3):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2010-11-25
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v4):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2010-12-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v5):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2011-02-19
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v6):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.5
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m34v7):
+    module: m34
+    compatibility: [ p124 ]
+    versionCode: 0.6
+    releaseDate: 2011-10-31
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m35):
+    moduleKey: fbgraph
+    moduleName: Facebook Graph API
+    contributors: Eric Jacob
+    projectUrl: http://code.google.com/p/play-fbgraph/
+    description: p(note). The FbGraph module now supports OAuth 2.0 for authentication.\r\n\r\nFbGraph module enables your application to access all the features of the Facebook Graph API via Java and the Play framework. It uses the JavaScript SDK to provide simple login and signup.
+
+models.ModuleVersion(m35v1):
+    module: m35
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-01-28
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m35v2):
+    module: m35
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-04-15
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m35v3):
+    module: m35
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-05-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m35v4):
+    module: m35
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2012-02-12
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m36):
+    moduleKey: fastergt
+    moduleName: Faster Groovy Templates  
+    contributors: Morten Kjetland
+    projectUrl: https://github.com/mbknor/faster-groovy-templates
+    description: This is a module for Play! Framework 1 applications which replaces the default groovy template implementation with \"GT-Engine\":https://github.com/mbknor/gt-engine which is \"faster and uses less memory\":http://kjetland.com/blog/2011/11/playframework-new-faster-groovy-template-engine/.\r\n\r\nGT-Engine is also used in the \"Play 2.0 module\":https://github.com/mbknor/gt-engine-play2 that enables legacy support for groovy templates.\r\n\r\nh3. Features\r\n\r\n* Almost 100% compatible with old Play Groovy template implementation (See note below for more info)\r\n* Run faster\r\n* Compiles faster\r\n* Can write generated source to disk so you can step-debug it\r\n* Uses less memory\r\n* Supports old FastTag\r\n* Supports new GTFastTag which is optimized for inserting rendered tag-body-content (without copying)\r\n\r\nPlease see documentation for more info
+
+models.ModuleVersion(m36v1):
+    module: m36
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2012-02-12
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m36v2):
+    module: m36
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2012-02-14
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m36v3):
+    module: m36
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2012-02-19
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m36v4):
+    module: m36
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2012-02-27
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m36v5):
+    module: m36
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2012-03-04
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m37):
+    moduleKey: featureflags
+    moduleName: Feature Flags
+    contributors: Ben Verbeken
+    projectUrl: http://code.google.com/p/play-featureflags
+    description: play-featureflags is a module for playframework that enables you to easily use 'feature flags' in your application. A feature flag is any piece of functionality in your application that you want to be able to switch ON and OFF at runtime, using an admin screen. \r\nWith this module, you can define feature flags by name, using a simple annotation on your controllers and/or a tag in your views. \r\n\r\nThis simple technique allows you to never have to branch your code again! You can safely deploy your HEAD multiple times a day to all of your environments for development, testing, production, whatever. Just use a different set of enabled features.\r\nFeature flags are what Flickr uses to be able to do 10+ deployments to production per day. See http://code.flickr.com/blog/2009/12/02/flipping-out/ for more info.
+
+models.ModuleVersion(m37v1):
+    module: m37
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-03-30
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m37v2):
+    module: m37
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-03-31
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m38):
+    moduleKey: force
+    moduleName: Force.com
+    contributors: Jesper Joergensen
+    projectUrl: https://github.com/jesperfj/play-force
+    description: Build Play! applications that integrates to Force.com. Provides OAuth authentication and REST API adapter.\r\n
+
+models.ModuleVersion(m38v1):
+    module: m38
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-12-20
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m38v2):
+    module: m38
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-12-22
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m38v3):
+    module: m38
+    compatibility: [ p124 ]
+    versionCode: 0.5
+    releaseDate: 2012-01-04
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m38v4):
+    module: m38
+    compatibility: [ p124 ]
+    versionCode: 0.7
+    releaseDate: 2012-01-06
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m39):
+    moduleKey: formee
+    moduleName: Formee
+    contributors: Wayson Clown
+    projectUrl: https://github.com/omaroman/formee
+    description: Formee eases and helps out to build html forms designs, and also validates its data from both client-side and server-side based on model validation annotations. \r\nFeatures:\r\n- It has all the features of formee \r\n- A form wraps an single model \r\n- Automate validations from client-side based on Play model \r\nannotations by using jquery.validate plugin. \r\n- Homogeneous error messages from both client-side and server-side, \r\ni.e., they appear in the same place. 
+
+models.ModuleVersion(m39v1):
+    module: m39
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-02-09
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m40):
+    moduleKey: gae
+    moduleName: Google App Engine
+    contributors: Guillaume Bort, Pascal Voitot
+    projectUrl: http://github.com/guillaumebort/play-gae
+    description: Create play application for the Google App Engine platform.
+
+models.ModuleVersion(m40v1):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-30
+    releaseNotes: Works with Play Play 1.0.*, GAE SDK 1.2.7
+
+models.ModuleVersion(m40v2):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-02-07
+    releaseNotes: Works with Play play 1.0.1, play 1.1-trunk and GAE SDK 1.3.0
+
+models.ModuleVersion(m40v3):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2010-03-17
+    releaseNotes: Works with Play Tested with GAE SDK 1.3.1 and Play 1.0-947
+
+models.ModuleVersion(m40v4):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.0.3
+    releaseDate: 2010-09-05
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m40v5):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-10-29
+    releaseNotes: Works with Play Play-1.1
+
+models.ModuleVersion(m40v6):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2010-12-08
+    releaseNotes: Works with Play 1.1, and GAE 1.4.0
+
+models.ModuleVersion(m40v7):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.6.0_b1
+    releaseDate: 2011-11-28
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m40v8):
+    module: m40
+    compatibility: [ p124 ]
+    versionCode: 1.6.0
+    releaseDate: 2012-01-17
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m41):
+    moduleKey: googlecheckout
+    moduleName: Google Checkout
+    contributors: James Gregory
+    projectUrl: https://github.com/jagregory/play-google-checkout
+    description: Enable your Play application to integrate with Google Checkout as a merchant.
+
+
+models.Module(m42):
+    moduleKey: googleclosure
+    moduleName: Google Closure
+    contributors: Pascal Voitot
+    projectUrl: http://code.google.com/p/mandubian-play-google-closure/
+    description: This module is aimed at integrating Google Closure tools with play!. \r\n\r\nFor the time being, it ONLY provides javascript client templating based on \"Google Closure Templates\":http://code.google.com/closure/templates/.\r\n\r\n_v1.1 renders SoyException into web page_\r\n\r\n_Other tools from Google Closure will be added later but don't hesitate to ask if you need something first._
+
+models.ModuleVersion(m42v1):
+    module: m42
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-11-15
+    releaseNotes: Works with Play Play1.1
+
+models.ModuleVersion(m42v2):
+    module: m42
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-11-30
+    releaseNotes: Works with Play Play1.1
+
+
+models.Module(m43):
+    moduleKey: gwt
+    moduleName: Google Web Toolkit
+    contributors: Rustem Suniev
+    projectUrl: http://code.google.com/p/play-framework-gwt/
+    description: This module provides a helper to simplify the integration of a GWT UI with Play as an application server.
+
+models.ModuleVersion(m43v1):
+    module: m43
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-13
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m44):
+    moduleKey: gravatar
+    moduleName: Gravatar
+    contributors: Matteo Barbieri
+    projectUrl: https://github.com/mbarbieri/play-gravatar
+    description: Integrate Gravatar into your Play application
+
+models.ModuleVersion(m44v1):
+    module: m44
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-04-05
+    releaseNotes: Works with Play 1.0, 1.1, 1.2
+
+models.ModuleVersion(m44v2):
+    module: m44
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2011-06-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m44v3):
+    module: m44
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2011-11-17
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m45):
+    moduleKey: grizzly
+    moduleName: Grizzly network stack
+    contributors: Guillaume Bort
+    projectUrl: http://github.com/guillaumebort/play-grizzly
+    description: Experimental module that replace the Mina based network stack by the Grizzly one.\r\n\r\np(note). This module is no longer maintained. The grizzly support is now built-in since Play 1.1
+
+models.ModuleVersion(m45v1):
+    module: m45
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2010-01-12
+    releaseNotes: Works with Play Should work with any version
+
+
+models.Module(m46):
+    moduleKey: guice
+    moduleName: Guice
+    contributors: Peter Hausel
+    projectUrl: http://github.com/pk11/play-guice-module
+    description: The Guice module helps you to inject Guice managed components into your play application. The injection points are defined by the upcoming **@javax.inject.Inject** annotation, which is bundled with play at the moment.
+
+models.ModuleVersion(m46v1):
+    module: m46
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-12
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m46v2):
+    module: m46
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-09-12
+    releaseNotes: Works with Play 1.1r1033
+
+models.ModuleVersion(m46v3):
+    module: m46
+    compatibility: [ p124 ]
+    versionCode: 1.1.1
+    releaseDate: 2011-04-11
+    releaseNotes: Works with Play play-core e2c434d4e1fbbccfa3357d181614fc795f8e9e90
+
+models.ModuleVersion(m46v4):
+    module: m46
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-05-27
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m47):
+    moduleKey: gwt2
+    moduleName: GWT2
+    contributors: Vincent Buzzano
+    projectUrl: http://github.com/vbuzzano/play-gwt2
+    description: GWT2 Plugin for Play!\r\nby Vincent Buzzano\r\n\r\nCurrent version is 1.8 for play 1.2.3\r\nProject Webstie: http://github.com/vbuzzano/play-gwt2\r\n\r\nThis module has been tested with gwt 2.2.x and 2.3.0\r\n\r\nQUICK START:\r\nCreate a new application --with gwt2\r\n\r\n> play new myGwt2App --with gwt2\r\n> cd myGwt2App\r\n\r\nThat's all .. you are ok to start your project !!\r\n\r\n#################################################\r\nWORKAROUND FOR:\r\nVALIDATION COMPILATION ERROR due to missing Type and Sources\r\n#################################################\r\nCopy validation-api-1.0.0.GA and source to your project libs. You can find them into the GWT SDK Directory.\r\n\r\n> cp $GWT_HOME/validation-api-1.0.0.GA* lib/
+
+models.ModuleVersion(m47v1):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-05-23
+    releaseNotes: Works with Play 1.0.2.1
+
+models.ModuleVersion(m47v2):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-06-15
+    releaseNotes: Works with Play 1.0.2.1
+
+models.ModuleVersion(m47v3):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-10-11
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m47v4):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2011-05-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m47v5):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.6
+    releaseDate: 2011-06-01
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m47v6):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.7
+    releaseDate: 2011-07-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m47v7):
+    module: m47
+    compatibility: [ p124 ]
+    versionCode: 1.8
+    releaseDate: 2011-09-19
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m48):
+    moduleKey: hazelcast
+    moduleName: Hazelcast
+    contributors: Marc Deschamps
+    projectUrl: https://github.com/marcuspocus/hazelcast
+    description: This module is a dropin replacement for @EhCacheImpl@ or @MemcachedImpl@ from Play. It allow your application to have a clustered cache when you can’t install a memcached server on your platform. It’s also a great free open source In-Memory Data Grid.
+
+models.ModuleVersion(m48v1):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-05-22
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v2):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-05-29
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v3):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.2.1
+    releaseDate: 2011-05-30
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v4):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.2.2
+    releaseDate: 2011-06-02
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v5):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.2.3
+    releaseDate: 2011-07-12
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v6):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-09-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m48v7):
+    module: m48
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2011-11-13
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m49):
+    moduleKey: heroku
+    moduleName: Heroku
+    contributors: James Ward
+    projectUrl: https://github.com/jamesward/play-heroku
+    description: This module makes it easy to deploy Play applications on Heroku.
+
+models.ModuleVersion(m49v1):
+    module: m49
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2012-01-29
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m50):
+    moduleKey: html5validation
+    moduleName: HTML5 Validation
+    contributors: Sebastian Hoß
+    projectUrl: https://github.com/oasits/play-html5-validation
+    description: Client-side form validation based on your Play framework\r\nmodel annotations using HTML5 attributes.
+
+models.ModuleVersion(m50v1):
+    module: m50
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-12-07
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m50v2):
+    module: m50
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-02-26
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m50v3):
+    module: m50
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-04-09
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m50v4):
+    module: m50
+    compatibility: [ p124 ]
+    versionCode: 1.2.2
+    releaseDate: 2011-10-06
+    releaseNotes: Works with Play 1.2.0-1.2.X
+
+
+models.Module(m51):
+    moduleKey: httpmock
+    moduleName: HttpMock
+    contributors: Gaëtan Renaudeau
+    projectUrl: http://github.com/zenexity/play--httpmock
+    description: play-httpmock caches WebService requests to emulate them in order to overcome connection problems (lag, denial of service, HTTP errors) for fast developping.
+
+models.ModuleVersion(m51v1):
+    module: m51
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-01-18
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m52):
+    moduleKey: i18ntools
+    moduleName: i18ntools
+    contributors: naholyr
+    projectUrl: http://github.com/naholyr/i18ntools
+    description: This module will add some tools to ease use of i18n in your Play! projects. \r\n\r\n\"i18n-extract\" will parse your application's files to find internationalized strings, and add missing strings to your messages files.
+
+models.ModuleVersion(m52v1):
+    module: m52
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-10-04
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m52v2):
+    module: m52
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-10-08
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m53):
+    moduleKey: infoplay
+    moduleName: InfoPlay
+    contributors: BLR
+    projectUrl: http://code.google.com/p/infoplay/
+    description: InfoPlay is a module which gives many informations like infophp in PHP language. It display useful informations about the running application, the framework, the virtual machine and the operating system.
+
+
+models.Module(m54):
+    moduleKey: ivy
+    moduleName: Ivy dependency management
+    contributors: Peter Hausel
+    projectUrl: http://github.com/pk11/play-ivy
+    description: This module lets you manage your dependencies with apache ivy.
+
+models.ModuleVersion(m54v1):
+    module: m54
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-04-01
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m54v2):
+    module: m54
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-09-10
+    releaseNotes: Works with Play 1.1r1028
+
+
+models.Module(m55):
+    moduleKey: japid
+    moduleName: Japid Template Engine
+    contributors: Bing Ran
+    projectUrl: http://github.com/branaway/Japid
+    description: A pure Java-based fast statically typed template engine for the  Play! framework. \r\n\r\nJapid is about 2X - 20X times faster than the built-in Play! template engine and delivers 3X as much total web throughput with Play!. See \"a third-party benchmark\":http://www.jtict.com/blog/rails-wicket-grails-play-lift-jsp/ . The Japid change-reloading cycle is 5-10X faster than that of the Groovy/Scala based templates, a big productivity boost.\r\n\r\nIt can be used as a super fast generic template engine as well. It also contains a Eclipse plugin that helps developing in Japid in the Eclipse IDE. Please go to ${PLAY_HOME}/modules/japid_xxx/eclipse-plugin for detail. The source code is hosted on \"Github/Japid Eclipse Plugin\":http://github.com/branaway/playclipse/ .\r\n\r\nPlease go to the \"project home page\":http://github.com/branaway/Japid for the code.\r\n\r\nVersion compatibility:\r\n\r\njapid-0.8.1.2 or older: play 1.1.x\r\njapid-0.8.2 or newer: play 1.2.x\r\n\r\n
+
+models.ModuleVersion(m55v1):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2010-02-15
+    releaseNotes: Works with Play 1.02
+
+models.ModuleVersion(m55v2):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.3.1
+    releaseDate: 2010-02-25
+    releaseNotes: Works with Play 1.02
+
+models.ModuleVersion(m55v3):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.5.1
+    releaseDate: 2010-08-18
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m55v4):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.6.0
+    releaseDate: 2011-01-08
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v5):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.7
+    releaseDate: 2011-02-17
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v6):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.7.1
+    releaseDate: 2011-02-28
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v7):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.0
+    releaseDate: 2011-03-09
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v8):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.1
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v9):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.1.2
+    releaseDate: 2011-04-03
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v10):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.2
+    releaseDate: 2011-04-19
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v11):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.3.0
+    releaseDate: 2011-05-10
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m55v12):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.3.1
+    releaseDate: 2011-05-14
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v13):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.4.1
+    releaseDate: 2011-06-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v14):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.4.6
+    releaseDate: 2011-06-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v15):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.4.8
+    releaseDate: 2011-06-13
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v16):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.5
+    releaseDate: 2011-06-14
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v17):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.5.1
+    releaseDate: 2011-06-15
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v18):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.6
+    releaseDate: 2011-06-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v19):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.7
+    releaseDate: 2011-06-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v20):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.7.1
+    releaseDate: 2011-06-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v21):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.8
+    releaseDate: 2011-06-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v22):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.8.1
+    releaseDate: 2011-06-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v23):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.8.2
+    releaseDate: 2011-06-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v24):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.8.3
+    releaseDate: 2011-06-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v25):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.8.4
+    releaseDate: 2011-06-23
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v26):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9
+    releaseDate: 2011-08-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v27):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.1
+    releaseDate: 2011-08-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v28):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.2
+    releaseDate: 2011-08-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v29):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.3
+    releaseDate: 2011-08-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v30):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.4
+    releaseDate: 2011-08-22
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v31):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.5
+    releaseDate: 2011-08-24
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v32):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.6
+    releaseDate: 2011-09-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v33):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.7
+    releaseDate: 2011-09-24
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v34):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.9.8
+    releaseDate: 2011-10-01
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v35):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.8.10
+    releaseDate: 2011-10-01
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v36):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.0
+    releaseDate: 2011-10-09
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v37):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.1
+    releaseDate: 2011-10-13
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v38):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2
+    releaseDate: 2011-10-24
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v39):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.1
+    releaseDate: 2011-11-26
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v40):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.2
+    releaseDate: 2011-11-27
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v41):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.3
+    releaseDate: 2011-11-29
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v42):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.4
+    releaseDate: 2011-11-30
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v43):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.5
+    releaseDate: 2011-12-01
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v44):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.6
+    releaseDate: 2012-01-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v45):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.7
+    releaseDate: 2012-01-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v46):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.2.8
+    releaseDate: 2012-01-19
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m55v47):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.3.1
+    releaseDate: 2012-03-09
+    releaseNotes: Works with Play 1.2.x
+
+models.ModuleVersion(m55v48):
+    module: m55
+    compatibility: [ p124 ]
+    versionCode: 0.9.3.2
+    releaseDate: 2012-03-11
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m56):
+    moduleKey: cream
+    moduleName: JCR for Play!
+    contributors: Marc Fornos
+    projectUrl: https://github.com/mfornos/Cream
+    description: A module that seamlessly integrates Apache Jackrabbit\r\n(JCR 2.0) with Play framework. Provides:\r\n\r\n* OCM\r\n** Uses jcrom as the underlying object-to-content mapper\r\n* Full text search\r\n** Indexing PDF, MS Word, Excel, PowerPoint, OpenOffice, RTF, HTML and XML\r\n* Content versioning\r\n* Repository observers\r\n* play.db.Model support\r\n* CRUD support\r\n\r\n
+
+models.ModuleVersion(m56v1):
+    module: m56
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-01
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m57):
+    moduleKey: jelastic
+    moduleName: Jelastic Deployment Support
+    contributors: Igor Yova
+    projectUrl: https://github.com/Fameing/play-jelastic
+    description: This module helps you remotely deploy your Play! application in to Jelastic Platform.\r\n\r\nTo deploy to Jelastic :\r\nplay jelastic:deploy [app name] \\\r\n        --l [your login] \\\r\n        --p [your password] \\\r\n	--c [your context name] \\\r\n	--e [your environment name] \\\r\n	--a [your api hoster provider]\r\n\r\nTo publish to Jelastic :\r\n\r\nplay jelastic:publish [appname] \\\r\n        --l [your login] \\\r\n        --p [your password] \\\r\n	--a [your api hoster provider]\r\n\r\nTo make it easier to deploy, those fields can be put in the projects application.conf file\r\njelastic.api.login= your login\r\njelastic.api.password= your password\r\njelastic.api.context= your context name\r\njelastic.api.environment= your environment name\r\njelastic.api.apihoster= your api hoster provider\r\n\r\nplay jelastic:deploy\r\nor\r\nplay jelastic:publish\r\n
+
+models.ModuleVersion(m57v1):
+    module: m57
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-02-29
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m57v2):
+    module: m57
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2012-03-10
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m58):
+    moduleKey: jersey
+    moduleName: Jersey
+    contributors: Piero Sartini
+    projectUrl: https://bitbucket.org/psartini/play-jersey
+    description: Integrates Jersey into the Play! Framework. This enables you to use JAX-RS 1.1 annotations to define your endpoints.\r\n\r\nJackson is shipped with the plugin and used for all serialization/deserialization issues, but it should be pretty easy to provide custom providers and use whatever you want.\r\n
+
+models.ModuleVersion(m58v1):
+    module: m58
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-05-31
+    releaseNotes: Works with Play 1.2.1
+
+
+models.Module(m59):
+    moduleKey: jpagen
+    moduleName: JpaGen
+    contributors: Marc Deschamps
+    projectUrl: http://github.com/marcuspocus/jpagen
+    description: JPAGEN aim at generating JPA Entities and Composite keys (when needed) from metadata or a file containing a list of tables.
+
+models.ModuleVersion(m59v1):
+    module: m59
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-04-27
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m59v2):
+    module: m59
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2011-07-22
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m60):
+    moduleKey: jpastats
+    moduleName: jpastats
+    contributors: Erik Bakker
+    projectUrl: https://github.com/eamelink/play-jpastats/
+    description: Record how many database queries were executed during a request. It has tags to show this and some other numbers on your pages. Additionally, it can also output these numbers in the response headers, so you can also see it for Ajax\r\nrequests etcetera.\r\n
+
+models.ModuleVersion(m60v1):
+    module: m60
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2012-02-01
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m61):
+    moduleKey: jqueryui
+    moduleName: jQuery UI
+    contributors: Peter Hilton
+    projectUrl: https://github.com/lunatech-labs/play-module-jqueryui
+    description: The jQuery UI module provides working examples of \"jQuery UI\":http://jqueryui.com/ widgets, integrated with a Play application.
+
+models.ModuleVersion(m61v1):
+    module: m61
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-10-31
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m62):
+    moduleKey: jqvalidate
+    moduleName: JQuery Validation
+    contributors: Michael Murray
+    projectUrl: https://github.com/murz/play-jqvalidate
+    description: Client-side form validation via jQuery, based on your\r\nPlay framework model annotations. \"Check the demo application\":http://play-jqvalidate.appspot.com/
+
+models.ModuleVersion(m62v1):
+    module: m62
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-11-25
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m62v2):
+    module: m62
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2010-11-26
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m62v3):
+    module: m62
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2010-11-26
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m62v4):
+    module: m62
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2010-11-26
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m63):
+    moduleKey: jqvalidation
+    moduleName: jqvalidation
+    contributors: Ahmed Mahmoud Mohammed Abd El-wahab
+    projectUrl: http://code.google.com/p/jqvalidate-play-framework/
+    description: A jquery library API for validation, supports Ajax validation (per field or per Form). It saves info about the models and their fields' validation in a singleton created on Application Start Up. It's also intended to extend the server side validation annotations as well. It's time to make the daily routine automated, easier, and more efficient! Contributions, comments, or suggestions are welcome. \r\n\"check demo for JPA\":http://jqvalidationdemo.ahmedmahmoud.cloudbees.net & \"check demo for Siena & GAE\":http://jqvalidation-demo.appspot.com
+
+models.ModuleVersion(m63v1):
+    module: m63
+    compatibility: [ p124 ]
+    versionCode: 0.1.2
+    releaseDate: 2011-10-12
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m63v2):
+    module: m63
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2012-01-16
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m63v3):
+    module: m63
+    compatibility: [ p124 ]
+    versionCode: 0.1.3
+    releaseDate: 2011-10-17
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m63v4):
+    module: m63
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-11-03
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m63v5):
+    module: m63
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2012-01-16
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m64):
+    moduleKey: less
+    moduleName: Less module
+    contributors: Erik Bakker
+    projectUrl: https://github.com/lunatech-labs/play-module-less
+    description: The less module converts less (http://lesscss.org/)\r\nto CSS, similar to what the sass module does with sass.\r\n\r\n
+
+models.ModuleVersion(m64v1):
+    module: m64
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-03-03
+    releaseNotes: Works with Play 1.0, 1.1
+
+models.ModuleVersion(m64v2):
+    module: m64
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-07-06
+    releaseNotes: Works with Play 1.1, 1.2
+
+models.ModuleVersion(m64v3):
+    module: m64
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-07-13
+    releaseNotes: Works with Play 1.1, 1.2
+
+models.ModuleVersion(m64v4):
+    module: m64
+    compatibility: [ p124 ]
+    versionCode: 0.3.compatibility
+    releaseDate: 2011-09-02
+    releaseNotes: Works with Play 1.1, 1.2
+
+models.ModuleVersion(m64v5):
+    module: m64
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2012-02-01
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m65):
+    moduleKey: linkedin
+    moduleName: LinkedIn OAuth Authentication
+    contributors: Felipe Oliveira
+    projectUrl: http://geeks.aretotally.in/projects/play-framework-linkedin-module
+    description: Easily integrate LinkedIn's OAuth authentication into your Play Framework application. Currently it feeds the following fields to the application: linkedin id, first name, last name, industry, headline and oauth token (linkedin doesn't provide email).
+
+models.ModuleVersion(m65v1):
+    module: m65
+    compatibility: [ p124 ]
+    versionCode: 0.2.1
+    releaseDate: 2011-03-08
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m66):
+    moduleKey: liquibase
+    moduleName: Liquibase
+    contributors: Erwan Le Goulven
+    projectUrl: https://github.com/7uc0/play-liquibase
+    description: bq. \"You never develop code without version control, why do you develop your db without it ? ™\"\r\n\r\np. Liquibase (http://www.liquibase.org) is a simple, reliable and elegant solution for database refactoring management. It comes with main features :\r\n\r\n* multi dabase support (SGBDR)\r\n* structural / data changeset \r\n* safety check (on md5sum basis)\r\n* safety database upgrade process (cluster is liquibase friend) \r\n* contexts execution filter (you Player know what I'm talking about)\r\n* automation tooling provided (ant / servlet, and now PlayFramework !)\r\n\r\nLiquibase module differs from Migrate module for the main following reason :\r\n\r\nh3. Database changes follow application changes just the same way code source does
+
+models.ModuleVersion(m66v1):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-11-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m66v2):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-12-02
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m66v3):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 1.0.3
+    releaseDate: 2010-12-03
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m66v4):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 1.1.3
+    releaseDate: 2010-12-03
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m66v5):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.0.3
+    releaseDate: 2010-12-24
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m66v6):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.1.0
+    releaseDate: 2010-12-24
+    releaseNotes: Works with Play 2.1
+
+models.ModuleVersion(m66v7):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.0.4
+    releaseDate: 2011-01-08
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m66v8):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.1.1
+    releaseDate: 2011-01-08
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m66v9):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.1.2
+    releaseDate: 2011-01-26
+    releaseNotes: Works with Play 1.0.x,1.1.x
+
+models.ModuleVersion(m66v10):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.2
+    releaseDate: 2011-02-20
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m66v11):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.3
+    releaseDate: 2011-09-27
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m66v12):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.3.1
+    releaseDate: 2011-10-11
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m66v13):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.4
+    releaseDate: 2011-11-29
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m66v14):
+    module: m66
+    compatibility: [ p124 ]
+    versionCode: 2.4.1
+    releaseDate: 2012-01-16
+    releaseNotes: Works with Play 1.x
+
+
+models.Module(m67):
+    moduleKey: log4play
+    moduleName: Log4Play 
+    contributors: Felipe Oliveira and Deepthi Rallabandi
+    projectUrl: https://github.com/feliperazeek/log4play
+    description: Log4Play is a module that provides a log4j appender which publishes log entries to an EventStream. The module also provides an user interface which uses a WebSocket to create a live stream of log messages. You can use this user interface to look at the logs of your application without needing to login to the actual box.\r\n\r\nLog4Play integrates with BetterLogs by Stephane Godbillon. Special thanks to Diogenes Buarque and Marc Deschamps.\r\n\r\nAdd configuration 'log4play.disabled=true' to turn off Log4Play.
+
+models.ModuleVersion(m67v1):
+    module: m67
+    compatibility: [ p124 ]
+    versionCode: 0.0.1
+    releaseDate: 2011-05-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m67v2):
+    module: m67
+    compatibility: [ p124 ]
+    versionCode: 0.0.2
+    releaseDate: 2011-05-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m67v3):
+    module: m67
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-05-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m67v4):
+    module: m67
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2011-06-23
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m67v5):
+    module: m67
+    compatibility: [ p124 ]
+    versionCode: 0.5
+    releaseDate: 2011-08-16
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m68):
+    moduleKey: cas
+    moduleName: logisima-cas
+    contributors: Benoît Simard
+    projectUrl: http://github.com/sim51/logisima-play-cas
+    description: This module is a CAS client for Play! application. \r\n\r\nFeatures are : \r\n* CAS authentification (with Gateway feature) \r\n* Proxy CASification\r\n* CAS Attribut\r\n* CAS Mock Server\r\n\r\nThere is also a play application for testq purpose (with unit & selenium test) here: https://github.com/sim51/logisima-play-cas-test
+
+models.ModuleVersion(m68v1):
+    module: m68
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-06-12
+    releaseNotes: Works with Play 1.*
+
+models.ModuleVersion(m68v2):
+    module: m68
+    compatibility: [ p124 ]
+    versionCode: 2.0
+    releaseDate: 2010-06-13
+    releaseNotes: Works with Play 1.*
+
+models.ModuleVersion(m68v3):
+    module: m68
+    compatibility: [ p124 ]
+    versionCode: 3.0
+    releaseDate: 2011-01-23
+    releaseNotes: Works with Play 1.*
+
+models.ModuleVersion(m68v4):
+    module: m68
+    compatibility: [ p124 ]
+    versionCode: 3.1
+    releaseDate: 2011-07-05
+    releaseNotes: Works with Play 1.1.x, 1.2.x
+
+
+models.Module(m69):
+    moduleKey: neo4j
+    moduleName: logisima-neo4j
+    contributors: logisima
+    projectUrl: https://github.com/sim51/logisima-play-neo4j
+    description: Integrate neo4j database into your play! project. 
+
+models.ModuleVersion(m69v1):
+    module: m69
+    compatibility: [ p124 ]
+    versionCode: 1.0RC1
+    releaseDate: 2012-02-04
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m70):
+    moduleKey: logisimayml
+    moduleName: logisima-yml
+    contributors: Benoît Simard
+    projectUrl: http://github.com/sim51/logisima-play-yml
+    description: Logisima-yml helps you to export your database into an yml file, just with the following command line : 'play yml:generate' !\r\n\r\nNew features :\r\n- compatible with embedded annotation\r\n- compatible with temporal annotation\r\n\r\nAdding a testing application. @See samples-and-tests ...
+
+models.ModuleVersion(m70v1):
+    module: m70
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-06-13
+    releaseNotes: Works with Play 1.0.*
+
+models.ModuleVersion(m70v2):
+    module: m70
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2011-02-17
+    releaseNotes: Works with Play 1.1.*
+
+models.ModuleVersion(m70v3):
+    module: m70
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-03-28
+    releaseNotes: Works with Play 1.1.*
+
+models.ModuleVersion(m70v4):
+    module: m70
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2011-07-31
+    releaseNotes: Works with Play 1.2.*
+
+models.ModuleVersion(m70v5):
+    module: m70
+    compatibility: [ p124 ]
+    versionCode: 1.8
+    releaseDate: 2012-02-01
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m71):
+    moduleKey: markdown
+    moduleName: Markdown
+    contributors: Olivier Refalo
+    projectUrl: https://github.com/orefalo/markdown
+    description: Easily bring markdown contents into your application.\r\n\r\nVersion 1.7 : Added ability to read markdown files from groovy. markdownPaper upgraded to v1.2.7\r\nversion 1.6: updated markdownPapers to v1.2.6\r\nversion 1.5: fixed - compilation in prod mode fails\r\nversion 1.4: updated markdownPapers to v1.2.5\r\nversion 1.3: updated markdownPapers to v1.2.4\r\nversion 1.2 comes from with better samples and updates from the md parser
+
+models.ModuleVersion(m71v1):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-08-17
+    releaseNotes: Works with Play 1.2.2
+
+models.ModuleVersion(m71v2):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-09-15
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m71v3):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-10-03
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m71v4):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2011-10-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m71v5):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-10-29
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m71v6):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2011-11-12
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m71v7):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.6
+    releaseDate: 2012-02-06
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m71v8):
+    module: m71
+    compatibility: [ p124 ]
+    versionCode: 1.7
+    releaseDate: 2012-02-15
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m72):
+    moduleKey: maven
+    moduleName: Maven dependency management
+    contributors: Wang Yizhuo
+    projectUrl: http://github.com/wangyizhuo/play-maven
+    description: This module lets you manage your dependencies with apache maven. Use head for Play 1.1, and 1.0 for Play 1.0.\r\n\r\nExpected behavior this module: \r\n\r\n# Allow declaration dependencies in pom.xml, without putting explicitly unless the transitive dependency does not work (for older version or depending on undesirable big jar file) \r\n# Able to download all dependencies not provided by Play into lib folder, with src and javadoc \r\n# Able to download source/javadoc artifiacts to depsrc folder for declared or transitive dependency which is provided by Play, for easier debugging (using command mvn:play-src) \r\n\r\nThere is something I am consciously trying to avoid: \r\n\r\n# Long download time. \r\n# Handle classpath. \r\n# Change Play's structure. 
+
+models.ModuleVersion(m72v1):
+    module: m72
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-11-15
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m72v2):
+    module: m72
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2010-11-21
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m73):
+    moduleKey: menu
+    moduleName: Menu
+    contributors: Green Luo
+    projectUrl: http://github.com/greenlaw110/play-menu
+    description: help app developer to easily implement navigation menu. Basically with the module what you need to do is: \r\n\r\n# create menu structure file (_menu.yml) in YAML format \r\n# put \"#{menu.menu /}\" tag in proper place of your main.html file \r\n\r\nYes, that's all! \r\n\r\nfor detail, please refer to document \r\n\r\nMany thanks to roymax@gmail.com who test and report issues of this module
+
+models.ModuleVersion(m73v1):
+    module: m73
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-09-17
+    releaseNotes: Works with Play 1.1beta2
+
+models.ModuleVersion(m73v2):
+    module: m73
+    compatibility: [ p124 ]
+    versionCode: 1.0b
+    releaseDate: 2010-10-11
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m73v3):
+    module: m73
+    compatibility: [ p124 ]
+    versionCode: 1.0c
+    releaseDate: 2010-10-24
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m73v4):
+    module: m73
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-09-13
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m73v5):
+    module: m73
+    compatibility: [ p124 ]
+    versionCode: 1.1a
+    releaseDate: 2011-10-18
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m74):
+    moduleKey: press
+    moduleName: Minimize javascript/css files
+    contributors: Dirk
+    projectUrl: http://github.com/dirkmc/press
+    description: The press module is a JavaScript and CSS minimizer that is designed to be transparent to the application developer: \r\nSimply replace script tags with #{press.script} tags. \r\n\r\nIt is a simplified version of the greenscript module, with the difference that the order of JS/CSS remains the same whether or not compression is enabled, making it easier to debug. Greenscript is more feature rich and may be more appropriate for some applications.
+
+models.ModuleVersion(m74v1):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-07-29
+
+models.ModuleVersion(m74v2):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-08-03
+
+models.ModuleVersion(m74v3):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2010-08-05
+
+models.ModuleVersion(m74v4):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.3
+    releaseDate: 2010-08-06
+
+models.ModuleVersion(m74v5):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.4
+    releaseDate: 2010-08-06
+
+models.ModuleVersion(m74v6):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.5
+    releaseDate: 2010-08-06
+
+models.ModuleVersion(m74v7):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.6
+    releaseDate: 2010-08-06
+
+models.ModuleVersion(m74v8):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.7
+    releaseDate: 2010-08-26
+
+models.ModuleVersion(m74v9):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.8
+    releaseDate: 2010-09-07
+
+models.ModuleVersion(m74v10):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.9
+    releaseDate: 2010-10-06
+
+models.ModuleVersion(m74v11):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.10
+    releaseDate: 2010-10-20
+
+models.ModuleVersion(m74v12):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.11
+    releaseDate: 2010-11-26
+
+models.ModuleVersion(m74v13):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.12
+    releaseDate: 2010-11-30
+
+models.ModuleVersion(m74v14):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.13
+    releaseDate: 2011-01-21
+
+models.ModuleVersion(m74v15):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.14
+    releaseDate: 2011-02-15
+
+models.ModuleVersion(m74v16):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.15
+    releaseDate: 2011-02-21
+
+models.ModuleVersion(m74v17):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.16
+    releaseDate: 2011-02-24
+
+models.ModuleVersion(m74v18):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.17
+    releaseDate: 2011-04-27
+
+models.ModuleVersion(m74v19):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.18
+    releaseDate: 2011-05-06
+
+models.ModuleVersion(m74v20):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.19
+    releaseDate: 2011-05-13
+
+models.ModuleVersion(m74v21):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.20
+    releaseDate: 2011-05-30
+
+models.ModuleVersion(m74v22):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.21
+    releaseDate: 2011-06-16
+
+models.ModuleVersion(m74v23):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.22
+    releaseDate: 2011-06-23
+
+models.ModuleVersion(m74v24):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.23
+    releaseDate: 2011-07-13
+
+models.ModuleVersion(m74v25):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.24
+    releaseDate: 2011-11-11
+
+models.ModuleVersion(m74v26):
+    module: m74
+    compatibility: [ p124 ]
+    versionCode: 1.0.25
+    releaseDate: 2011-11-28
+
+
+models.Module(m75):
+    moduleKey: greenscript
+    moduleName: Minimize javascript/css files 
+    contributors: Green Luo
+    projectUrl: http://github.com/greenlaw110/greenscript
+    description: Play with your javascript/css files! \r\n\r\n* compress and merge (configurable) \r\n* cache minimized files (configurable) \r\n* js/css dependency management (configurable) \r\n* support runtime configuration (minimize/caching/dependencies) \r\n* simplest tag syntax: #{js 'js1 js2' /}\r\n* inline dependency declaration: #{greenscript.js 'app ＜ lib ＜ jquery'/}\r\n* transparent compression zero configuration \r\n* support CDN \r\n* support inline js/css body \r\n* support resource and dependency management in modules\r\n* support in-memory file cache\r\n* support LESS\r\n* support Last-Modified and E-Tag\r\n* support Play.ctxPath\r\n* support deploy to cluster like heroku (new in 1.2.7)\r\n* support Rythm Template Engine (new in 1.2.7)\r\n* support coffeescript (new in 1.2.8)\r\n* support bootstrap 2.0 less compile (new in 1.2.8)\r\n* use google closure to compress js file (new in 1.2.8)\r\n* Anything else you want? send email to greenlaw110@gmail.com
+
+models.ModuleVersion(m75v1):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-03-25
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m75v2):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.0a
+    releaseDate: 2010-09-14
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m75v3):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.1d
+    releaseDate: 2010-10-07
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m75v4):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2d
+    releaseDate: 2011-04-18
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m75v5):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.2
+    releaseDate: 2011-07-08
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v6):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.3
+    releaseDate: 2011-07-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v7):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.4
+    releaseDate: 2011-07-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v8):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.5
+    releaseDate: 2011-08-08
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v9):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6g
+    releaseDate: 2011-09-17
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v10):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6h
+    releaseDate: 2011-09-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v11):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6i
+    releaseDate: 2011-09-29
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v12):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6j
+    releaseDate: 2011-09-30
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v13):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6k
+    releaseDate: 2011-10-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v14):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6l
+    releaseDate: 2011-11-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v15):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.6m
+    releaseDate: 2011-11-22
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m75v16):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.7
+    releaseDate: 2012-02-10
+    releaseNotes: Works with Play [1.2,)
+
+models.ModuleVersion(m75v17):
+    module: m75
+    compatibility: [ p124 ]
+    versionCode: 1.2.8
+    releaseDate: 2012-02-15
+    releaseNotes: Works with Play [1.2,)
+
+
+models.Module(m76):
+    moduleKey: mocha
+    moduleName: mocha
+    contributors: Olivier GILBERT
+    projectUrl: https://bitbucket.org/blobsmith/mocha/overview
+    description: Mocha module for Play! Framework is an implementation of mocha UI javascript interface for Play!. Aims of this module is to get windows Web interfaces easy to use. You don't need to know javascript now to use this javascript interface. The implementation is only in HTML or tags for Play! Framework. 
+
+models.ModuleVersion(m76v1):
+    module: m76
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-12-01
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m77):
+    moduleKey: mockito
+    moduleName: mockito
+    contributors: Erik Bakker
+    projectUrl: https://github.com/eamelink/play-mockito
+    description: Mockito is a mocking framework that tastes really good. It lets you write beautiful tests with clean & simple API. Mockito doesn't give you hangover because the tests are very readable and they produce clean verification errors.
+
+models.ModuleVersion(m77v1):
+    module: m77
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-12
+    releaseNotes: Works with Play 1.0, 1.1, 1.2
+
+
+models.Module(m78):
+    moduleKey: mongo
+    moduleName: MongoDB
+    contributors: Andrew Louth
+    projectUrl: http://github.com/louth/play-mongo
+    description: This module provides a simple, elegant solution for using models stored in mongodb. For a more complex use cases, please take a look at the morphia module. \r\n\r\nVersion 1.3 addresses many issues raised by the community. Please read the documentation for usage. 
+
+models.ModuleVersion(m78v1):
+    module: m78
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-04-15
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m78v2):
+    module: m78
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-10-15
+    releaseNotes: Works with Play 1.0.3.2
+
+
+models.Module(m79):
+    moduleKey: morphia
+    moduleName: Morphia - MongoDB Integration
+    contributors: Green Luo
+    projectUrl: http://github.com/greenlaw110/play-morphia
+    description: Seamlessly MongoDB access integration with Play's Model interface. \r\n\r\nStart from morphia1.2.2beta1, support to Play-1.1 branch is dropped. Please update your play to 1.2.x. Or keep using the legacy morphia-1.2beta6. 
+
+models.ModuleVersion(m79v1):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.1c
+    releaseDate: 2010-10-12
+    releaseNotes: Works with Play 1.1beta2
+
+models.ModuleVersion(m79v2):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta
+    releaseDate: 2010-12-06
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v3):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.1d
+    releaseDate: 2010-12-12
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v4):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta2
+    releaseDate: 2010-12-12
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v5):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta3
+    releaseDate: 2011-01-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v6):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta4
+    releaseDate: 2011-02-16
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v7):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta5
+    releaseDate: 2011-03-26
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v8):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2beta6
+    releaseDate: 2011-04-01
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m79v9):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta1
+    releaseDate: 2011-04-08
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v10):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta2
+    releaseDate: 2011-04-28
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v11):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta3
+    releaseDate: 2011-05-24
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v12):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta4
+    releaseDate: 2011-06-06
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v13):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta5
+    releaseDate: 2011-06-21
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v14):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.1beta6
+    releaseDate: 2011-06-23
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v15):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.2beta1
+    releaseDate: 2011-08-27
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v16):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.3beta1
+    releaseDate: 2011-09-07
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v17):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.3c
+    releaseDate: 2011-09-23
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v18):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.3d
+    releaseDate: 2011-09-28
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v19):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.4
+    releaseDate: 2011-11-14
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v20):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.4a
+    releaseDate: 2011-11-15
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v21):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.4b
+    releaseDate: 2011-11-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v22):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.4c
+    releaseDate: 2012-01-09
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v23):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.4d
+    releaseDate: 2012-01-16
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m79v24):
+    module: m79
+    compatibility: [ p124 ]
+    versionCode: 1.2.5a
+    releaseDate: 2012-03-10
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m80):
+    moduleKey: multidb
+    moduleName: Multiple Databases
+    contributors: David Cardon
+    projectUrl: http://github.com/dcardon/play-multidb
+    description: Multiple Database module for the Play! framework.u000du000aThis module allows you to scale your Play! apps to multiple databases with a common schema.
+
+models.ModuleVersion(m80v1):
+    module: m80
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-07-13
+    releaseNotes: Works with Play 1.0.2.1
+
+models.ModuleVersion(m80v2):
+    module: m80
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-08-11
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m80v3):
+    module: m80
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-08-31
+    releaseNotes: Works with Play 1.0.2
+
+
+models.Module(m81):
+    moduleKey: mustache
+    moduleName: Mustache
+    contributors: Michael Murray
+    projectUrl: https://github.com/murz/play-mustache
+    description: Allows you to define logic-less template snippets that can be used server-side in your Play! views as well as client-side in your JavaScript. The snippets use \"Mustache\":http://mustache.github.com, a logic-less template language that has compilers for both JavaScript and Java.
+
+models.ModuleVersion(m81v1):
+    module: m81
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-11-14
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m81v2):
+    module: m81
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m81v3):
+    module: m81
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-03-21
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m82):
+    moduleKey: mybatisplay
+    moduleName: MyBatisPlay
+    contributors: Bogdan Tanase
+    projectUrl: https://github.com/bftanase/mybatisplay
+    description: This module includes and provides support for MyBatis persistence framework.\r\n\r\nLatest version includes MyBatis 3.1.0
+
+models.ModuleVersion(m82v1):
+    module: m82
+    compatibility: [ p124 ]
+    versionCode: 0.1.2
+    releaseDate: 2012-03-08
+    releaseNotes: Works with Play 1.2.4
+
+models.ModuleVersion(m82v2):
+    module: m82
+    compatibility: [ p124 ]
+    versionCode: 0.2.0
+    releaseDate: 2012-03-12
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m83):
+    moduleKey: navigation
+    moduleName: navigation
+    contributors: Erik Bakker
+    projectUrl: https://github.com/eamelink/play-navigation/wiki
+    description: Define and display navigation menus in your Play \r\napplication. \r\n\r\nRobust core, easily adaptable to suit your needs.
+
+models.ModuleVersion(m83v1):
+    module: m83
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-07-07
+    releaseNotes: Works with Play 1.1, 1.2
+
+
+models.Module(m84):
+    moduleKey: nemrod
+    moduleName: nemrod
+    contributors: Hugo Lassiege
+    projectUrl: https://bitbucket.org/hlassiege/play-nemrod
+    description: This module provides integration with Nemrod. It helps to import and export translations from your application to a Nemrod instance automatically.\r\n\r\nMore information about Nemrod and www.localizeyourapps.com here : \"Nemrod\":http://www.localizeyourapps.com 
+
+models.ModuleVersion(m84v1):
+    module: m84
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-10-03
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m84v2):
+    module: m84
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-10-27
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m84v3):
+    module: m84
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-12-02
+
+models.ModuleVersion(m84v4):
+    module: m84
+    compatibility: [ p124 ]
+    versionCode: 0.4
+    releaseDate: 2012-01-08
+
+
+models.Module(m85):
+    moduleKey: netty
+    moduleName: Netty module
+    contributors: Lungisa Matshobam, Nicolas Leroux
+    projectUrl: http://github.com/pepite/Play--Netty
+    description: Module that replaces the Mina based network stack by the Netty one.\r\n\r\np(note). This module has been integrated into Play core since 1.1
+
+models.ModuleVersion(m85v1):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-03-01
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m85v2):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-03-04
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m85v3):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2010-04-09
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m85v4):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.3
+    releaseDate: 2010-05-16
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m85v5):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.4
+    releaseDate: 2010-06-27
+    releaseNotes: Works with Play 1.0.2+
+
+models.ModuleVersion(m85v6):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.5
+    releaseDate: 2010-07-24
+    releaseNotes: Works with Play 1.0.2
+
+models.ModuleVersion(m85v7):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.6
+    releaseDate: 2010-08-04
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m85v8):
+    module: m85
+    compatibility: [ p124 ]
+    versionCode: 1.0.7
+    releaseDate: 2010-09-05
+    releaseNotes: Works with Play 1.0.3
+
+
+models.Module(m86):
+    moduleKey: oauth
+    moduleName: OAuth Client
+    contributors: Erwan Loisant
+    projectUrl: http://github.com/erwan/playoauthclient
+    description: This module provides tools to connect to an OAuth provider, such as Twitter or Google.
+
+models.ModuleVersion(m86v1):
+    module: m86
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-02-24
+    releaseNotes: Works with Play 1.0
+
+
+models.Module(m87):
+    moduleKey: objectify
+    moduleName: Objectify
+    contributors: Dave Cheong
+    projectUrl: http://code.google.com/p/play-framework-objectify/
+    description: Objectify is a flexible abstraction on Google App Engine/J which makes data access simple and elegant. Together the Play Framework and Objectify provide a powerful technology stack for building fast and scalable applications on Google's infrastructure. \r\n\r\nSample Application: \r\nhttp://play-framework-objectify.appspot.com/
+
+models.ModuleVersion(m87v1):
+    module: m87
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-05-18
+    releaseNotes: Works with Play 1.0.2.1
+
+
+models.Module(m88):
+    moduleKey: openebay
+    moduleName: Open eBay
+    contributors: Kumaresan
+    projectUrl: https://bitbucket.org/kumaresan/openebay
+    description: This module provides the basic plumbing to create an Open eBay Application (http://apps.ebay.com/). More details about these applications can be found at eBay Developer  Network (https://www.x.com/developers/ebay/products/open-ebay-apps) \r\n\r\nFeatures in Version 0.1 \r\n-         Gadgets Url request verification \r\n-         Username & Auth token decryption \r\n-         Open eBay parameter extraction \r\n-         Templates for Canvas, Default  and Wide Views using Bootstrap. \r\n\r\nPlanned Features \r\n-        eBay Api Integration \r\n-        Subscription End point management & User Management \r\n-        eBay oAuth Integration for external pages 
+
+models.ModuleVersion(m88v1):
+    module: m88
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-03-01
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m89):
+    moduleKey: openshift
+    moduleName: openshift
+    contributors: Sebastián Scarano @develsas
+    projectUrl: https://github.com/opensas/openshift
+    description: Openshift is Red Hat’s free, auto-scaling, cloud-based platform-as-a-service for Java, Perl, PHP, Python, and Ruby applications. With this module, you’ll be able to easily deploy and manage your play applications on Red Hat’s cloud platform, with just a couple of keystrokes from the command line.\r\n
+
+models.ModuleVersion(m89v1):
+    module: m89
+    compatibility: [ p124 ]
+    versionCode: 0.1.0
+    releaseDate: 2012-02-09
+
+models.ModuleVersion(m89v2):
+    module: m89
+    compatibility: [ p124 ]
+    versionCode: 0.1.1
+    releaseDate: 2012-03-06
+
+models.ModuleVersion(m89v3):
+    module: m89
+    compatibility: [ p124 ]
+    versionCode: 0.1.2
+    releaseDate: 2012-03-08
+
+
+models.Module(m90):
+    moduleKey: orientdb
+    moduleName: OrientDB
+    contributors: Marc Fornos
+    projectUrl: https://github.com/mfornos/orientdb
+    description: OrientDB for Play! Framework\r\n\r\nFeatures\r\n* play.db.Model support\r\n* CRUD support\r\n* Embedded server for development\r\n* Injection of database sessions in controllers\r\n* Annotation-based transaction demarcation\r\n* Live class-reloading as usual\r\n* Basic support for RecordHooks and DatabaseListeners\r\n\r\n
+
+models.ModuleVersion(m90v1):
+    module: m90
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-08
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m90v2):
+    module: m90
+    compatibility: [ p124 ]
+    versionCode: 0.1.1
+    releaseDate: 2011-12-30
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m91):
+    moduleKey: paginate
+    moduleName: paginate
+    contributors: Lawrence McAlpin
+    projectUrl: http://github.com/lmcalpin/Play--Paginate
+    description: A replacement for #{list} tags that allows for easy pagination.
+
+models.ModuleVersion(m91v1):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2012-02-03
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m91v2):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-07-26
+    releaseNotes: Works with Play 1.0-1.2
+
+models.ModuleVersion(m91v3):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: 0.11
+    releaseDate: 2011-09-13
+    releaseNotes: Works with Play 1.0-1.2.3
+
+models.ModuleVersion(m91v4):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: 0.12
+    releaseDate: 2011-11-23
+    releaseNotes: Works with Play 1.0-1.2.x
+
+models.ModuleVersion(m91v5):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: 0.13
+    releaseDate: 2012-01-26
+    releaseNotes: Works with Play 1.x
+
+models.ModuleVersion(m91v6):
+    module: m91
+    compatibility: [ p124 ]
+    versionCode: 0.14
+    releaseDate: 2012-02-23
+    releaseNotes: Works with Play 1.x
+
+
+models.Module(m92):
+    moduleKey: pdf
+    moduleName: PDF module
+    contributors: Nicolas Leroux, Stéphane Epardaud, Stéphane Thomas
+    projectUrl: http://github.com/pepite/play--pdf
+    description: A module that allows you to render PDF document from your HTML templates. This module is based on the \"YaHP Converter\":https://github.com/allcolor/YaHP-Converter library. You can find its source code at:\r\n
+
+models.ModuleVersion(m92v1):
+    module: m92
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-03-06
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m92v2):
+    module: m92
+    compatibility: [ p124 ]
+    versionCode: 0.6
+    releaseDate: 2011-06-01
+    releaseNotes: Works with Play 1.1,1.2
+
+models.ModuleVersion(m92v3):
+    module: m92
+    compatibility: [ p124 ]
+    versionCode: 0.7
+    releaseDate: 2011-08-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m92v4):
+    module: m92
+    compatibility: [ p124 ]
+    versionCode: 0.8
+    releaseDate: 2011-12-12
+
+models.ModuleVersion(m92v5):
+    module: m92
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2011-12-19
+
+
+models.Module(m93):
+    moduleKey: pegdown
+    moduleName: PegDown Markdown
+    contributors: James Gregory
+    projectUrl: https://github.com/jagregory/play-pegdown
+    description: Integrate the pegdown Markdown (see: https://github.com/sirthias/pegdown) processor with your Play application; this module provides SmartyPants support, as well as the other Markdown extensions which ship with pegdown.
+
+
+models.Module(m94):
+    moduleKey: router
+    moduleName: Play Router Annotations 
+    contributors: Nicolas Leroux, Leon Radley
+    projectUrl: https://github.com/digiPlant/play-router-annotations
+    description: This module allows you to add routes through annotations, allowing you to declare your routes in your controllers.
+
+models.ModuleVersion(m94v1):
+    module: m94
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-04-19
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m94v2):
+    module: m94
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-04-19
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m94v3):
+    module: m94
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-06-22
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m94v4):
+    module: m94
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-12-16
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m95):
+    moduleKey: playapps
+    moduleName: playapps.net 
+    contributors: Zenexity
+    projectUrl: http://github.com/zenexity/play-playapps
+    description: playapps.net is a streamlined deployment environment designed to get your Play applications up and running quickly and efficiently
+
+models.ModuleVersion(m95v1):
+    module: m95
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-08-09
+    releaseNotes: Works with Play 1.0.3.2
+
+models.ModuleVersion(m95v2):
+    module: m95
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-10-29
+    releaseNotes: Works with Play Play-1.1
+
+models.ModuleVersion(m95v3):
+    module: m95
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-12-02
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m95v4):
+    module: m95
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2011-01-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m95v5):
+    module: m95
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-05-20
+    releaseNotes: Works with Play 1.2.1
+
+
+models.Module(m96):
+    moduleKey: playerrors
+    moduleName: playerrors
+    contributors:  Marius Andra
+    projectUrl: https://github.com/marius0/playerrors
+    description: Playerrors gathers and informs you about the errors in your production webapps, so you can fix them before your visitors get a chance to complain\r\n\r\n\"https://playerrors.com/\":https://playerrors.com/
+
+models.ModuleVersion(m96v1):
+    module: m96
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-08-23
+
+models.ModuleVersion(m96v2):
+    module: m96
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-08-24
+
+
+models.Module(m97):
+    moduleKey: postmark
+    moduleName: Postmark
+    contributors: Joel Söderström
+    projectUrl: https://github.com/FrostDigital/play-postmark
+    description: Postmark module provides easy integration with postmarkapp.com for handling outgoing emails.
+
+models.ModuleVersion(m97v1):
+    module: m97
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2012-02-08
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m98):
+    moduleKey: pusher
+    moduleName: pusher
+    contributors: Regis Bamba
+    projectUrl: https://github.com/rhb9/Play-Pusher
+    description: This module lets you easily add realtime functionality to your Play applications with Pusher (http://www.pusher.com) using websockets.\r\n
+
+models.ModuleVersion(m98v1):
+    module: m98
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-10-11
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m99):
+    moduleKey: qunit
+    moduleName: QUnit
+    contributors: Florian Gutmann 
+    projectUrl: https://github.com/irregular-at/play-qunit
+    description: The QUnit module provides integration of JUnit Javascript tests with the Play! Framework.\r\n\r\nFeatures:\r\n\r\n* Use Play! templating syntax in QUnit tests\r\n* Friendly running and error reporting of QUnit tests directly from the application\r\n* Generated JUnit compatible XML test reports for continuous integration\r\n
+
+models.ModuleVersion(m99v1):
+    module: m99
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-05-20
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m100):
+    moduleKey: rabbitmq
+    moduleName: RabbitMQ
+    contributors: Felipe Oliveira
+    projectUrl: http://geeks.aretotally.in/rabbitmq-module-for-play-framework
+    description: RabbitMQ offers a highly available and scalable, and yet lightweight, messaging system with predictable. RabbitMQ is the leading implementation of AMQP, and a great alternative to JMS. RabbitMQ supports Work Queues, Routing, PubSub, etc. This module allows your Play! application to produce and consume messages from RabbitMQ queues; it provides statistics and streaming through WebSockets; retry logic has been added on version 0.0.4. 
+
+models.ModuleVersion(m100v1):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.1
+    releaseDate: 2011-04-25
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v2):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.2
+    releaseDate: 2011-05-01
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v3):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.3
+    releaseDate: 2011-05-04
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v4):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.4
+    releaseDate: 2011-05-10
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v5):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.5
+    releaseDate: 2011-05-11
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v6):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.6
+    releaseDate: 2011-05-20
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v7):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.7
+    releaseDate: 2011-05-24
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v8):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.8
+    releaseDate: 2011-05-26
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v9):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.0.9
+    releaseDate: 2011-05-28
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v10):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-09-13
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m100v11):
+    module: m100
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-09-20
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m101):
+    moduleKey: recaptcha
+    moduleName: Recaptcha
+    contributors: Olivier Refalo
+    projectUrl: https://github.com/orefalo/recaptcha
+    description: Quickly integrate reCaptcha.com challenge-response test in your applications.\r\na 2 minutes integration !\r\n\r\n1.3: support for HTTPS recaptchas
+
+models.ModuleVersion(m101v1):
+    module: m101
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2010-11-13
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m101v2):
+    module: m101
+    compatibility: [ p124 ]
+    versionCode: 1.03
+    releaseDate: 2011-03-02
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m101v3):
+    module: m101
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-07-09
+    releaseNotes: Works with Play 1.2.2
+
+models.ModuleVersion(m101v4):
+    module: m101
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2012-01-16
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m102):
+    moduleKey: recordtracking
+    moduleName: RecordTracking
+    contributors: Wayson Clown
+    projectUrl: https://github.com/omaroman/recordtracking
+    description: RecordTracking unobtrusively tracks the creation, updating and\r\nelimination events regarding to records.\r\nWhen one of those events occurs, writes into a log:\r\n- The name of the action\r\n- The date when the action was invoked\r\n- The user who invoked the event\r\n- The name of the model\r\n- The model data including association id’s
+
+
+models.Module(m103):
+    moduleKey: redis
+    moduleName: Redis
+    contributors: Tim Kral
+    projectUrl: https://github.com/tkral/play-redis
+    description: The Redis Play! module helps you easily use Redis in your Play! applications.  The module consists of three parts:\r\n\r\n1. A Redis client that lets you persist data to a Redis datastore.\r\n2. A Redis implementation of the Play! cache interface. This allows you to choose Redis as your caching system.\r\n3. A cache monitor that helps with debugging while using Redis cache.
+
+models.ModuleVersion(m103v1):
+    module: m103
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-09-09
+
+models.ModuleVersion(m103v2):
+    module: m103
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-10-08
+
+
+models.Module(m104):
+    moduleKey: resteasycrud
+    moduleName: RESTEasy CRUD module
+    contributors: Stephane Epardaud
+    projectUrl: http://www.lunatech-labs.com/open-source/resteasy-crud-play-module
+    description: The Play! RESTEasy CRUD module which allows you to automagically generate your RESTful CRUD resources for a given model. No boilerplate code needed anymore and 100% RESTful.
+
+models.ModuleVersion(m104v1):
+    module: m104
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-03-03
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m105):
+    moduleKey: resteasy
+    moduleName: RESTEasy Play! module
+    contributors: Stephane Epardaud
+    projectUrl: http://www.lunatech-labs.com/open-source/resteasy-play-module
+    description: The RESTEasy Play! module allows you to define JAX-RS RESTful web services in the Play! Framework using RESTEasy.
+
+models.ModuleVersion(m105v1):
+    module: m105
+    compatibility: [ p124 ]
+    versionCode: 1.3.1
+    releaseDate: 2011-03-03
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m106):
+    moduleKey: reverseproxy
+    moduleName: ReverseProxy
+    contributors: Wayson Clown
+    projectUrl: https://github.com/omaroman/reverseproxy
+    description: ReverseProxy allows developers to configure web applications to automatically switch between the HTTP and HTTPS protocols per page when used behind a front end Reverse-Proxy server such as Apache, Nginx or Lighttpd.\r\nConfiguration is done in Controllers using annotations.
+
+models.ModuleVersion(m106v1):
+    module: m106
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-11-07
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m107):
+    moduleKey: riak
+    moduleName: Riak
+    contributors: Julien Bille
+    projectUrl: https://github.com/julienba/play-riak/
+    description: Allow to use \"riak-java-client\":http://hg.basho.com/riak-java-client/  in play! way. All java properties is encode in JSON and save in riak with bucket and key declare in Annotation.
+
+models.ModuleVersion(m107v1):
+    module: m107
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-01-04
+
+
+models.Module(m108):
+    moduleKey: rythm
+    moduleName: Rythm Template Engine
+    contributors: Green Luo
+    projectUrl: https://github.com/greenlaw110/play-rythm
+    description: PlayRythm is yet another template engine for play v1.x. It's built on top of \"Rythm template engine\":http://www.rythmengine.com with the following features:\r\n* \"high performance\":http://www.rythmengine.com/document/feature#performance - the same level of Japid\r\n* general purpose - generate html, json, xml, email etc.\r\n* clear \"Razor\":http://razorengine.codeplex.com like syntax\r\n* easy to integrate with Play - no special controller, no separate view folder\r\n* \"smooth migration from groovy\":/modules/rythm-0.9.4g/integration.\r\n* support existing \"user defined fast tags\":/modules/rythm-0.9.4g/user_guide#fast_tags and many play's built-in fast tags\r\n* support most \"built-in java extensions\":/modules/rythm-0.9.4g/user_guide#java_extension\r\n* easy to debug. Exceptions reporting is the same as groovy one\r\n* unlimited \"template inheritance\":/modules/rythm-0.9.4g/user_guide#inheritance\r\n* every template is a tag\r\n\r\nCheck \"documentation\":/modules/rythm-0.9.4g/home for more information
+
+models.ModuleVersion(m108v1):
+    module: m108
+    compatibility: [ p124 ]
+    versionCode: 0.9.4g
+    releaseDate: 2012-03-08
+    releaseNotes: Works with Play 1.2
+
+
+models.Module(m109):
+    moduleKey: s3blobs
+    moduleName: S3Blobs
+    contributors: James Ward
+    projectUrl: https://github.com/jamesward/S3-Blobs-module-for-Play
+    description: The S3Blobs Play Framework Module provides an easy way to read an write files from Amazon S3 from within JPA entities.
+
+models.ModuleVersion(m109v1):
+    module: m109
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-02-14
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m110):
+    moduleKey: scaffold
+    moduleName: scaffold
+    contributors: Lawrence McAlpin
+    projectUrl: http://github.com/lmcalpin/Play--Scaffold
+    description: scaffold will generate basic scaffolding for bootstrapping a project from your JPA or Senia entities. Unlike the CRUD module, scaffold statically generates the controllers and templates, and does not dynamically introspect your model at runtime. \r\n\r\nSimply create your JPA or Senia models and run \"play scaffold:gen --overwrite\" to create controllers and CRUD templates for your models.
+
+models.ModuleVersion(m110v1):
+    module: m110
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-04-29
+    releaseNotes: Works with Play 1.0-1.2
+
+models.ModuleVersion(m110v2):
+    module: m110
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-07-26
+    releaseNotes: Works with Play 1.0-1.2
+
+
+models.Module(m111):
+    moduleKey: scala
+    moduleName: Scala
+    contributors: Sadek Drobi, Guillaume Bort, Peter Hausel
+    projectUrl: https://github.com/playframework/play-scala
+    description: Play Scala enables you to use the Scala language for your application keeping key properties of the Play framework. It uses a more functional and Scala idiomatic style of programming without giving up on simplicity and developer friendliness.\r\n\r\nCheck the dedicated website at \"http://scala.playframework.org\":http://scala.playframework.org.
+
+models.ModuleVersion(m111v1):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.7
+    releaseDate: 2010-07-12
+    releaseNotes: Works with Play Tested with 1.1-r942
+
+models.ModuleVersion(m111v2):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.7.1
+    releaseDate: 2010-07-15
+    releaseNotes: Works with Play Tested with play-1.1-r946
+
+models.ModuleVersion(m111v3):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.7.2
+    releaseDate: 2010-07-22
+    releaseNotes: Works with Play Tested with Play-1.1r956
+
+models.ModuleVersion(m111v4):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.7.3
+    releaseDate: 2010-08-13
+    releaseNotes: Works with Play 1.1-beta1
+
+models.ModuleVersion(m111v5):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.8
+    releaseDate: 2010-11-01
+    releaseNotes: Works with Play Play-1.1
+
+models.ModuleVersion(m111v6):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.9
+    releaseDate: 2011-04-13
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m111v7):
+    module: m111
+    compatibility: [ p124 ]
+    versionCode: 0.9.1
+    releaseDate: 2011-05-29
+    releaseNotes: Works with Play 1.2.2
+
+
+models.Module(m112):
+    moduleKey: scalagen
+    moduleName: Scala Gen
+    contributors: Aishwarya Singhal
+    projectUrl: https://github.com/asinghal/Play-ScalaGen
+    description: Scala code generators for the Play! framework\r\n\r\nThis module can be used to generate Scala code. It can generate JPA/ Siena based models, CRUD and associated test cases.\r\n\r\nOptions:\r\n\r\n--scaffold-jpa [entity name] [attribute1:type1]*     Generates the JPA based model and associated CRUD code.\r\n--model-jpa [entity name] [attribute1:type1]*         Generates the JPA based model.\r\n--scaffold-siena [entity name] [attribute1:type1]*     Generates the Siena based model and associated CRUD code.\r\n\r\nNote: --scaffold and --model are shortcuts to generate JPA\r\n\r\nThese generators can only be used from inside a Scala Play! project. \r\n
+
+models.ModuleVersion(m112v1):
+    module: m112
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-08-31
+
+
+models.Module(m113):
+    moduleKey: scalasecure
+    moduleName: Scala secure
+    contributors: Aishwarya Singhal
+    projectUrl: https://github.com/asinghal/Play-ScalaSecure
+    description: This module provides basic security (authentication/ authorization) for Play applications written in Scala.
+
+models.ModuleVersion(m113v1):
+    module: m113
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-10-03
+
+
+models.Module(m114):
+    moduleKey: scalate
+    moduleName: Scalate
+    contributors: Peter Hausel
+    projectUrl: http://github.com/pk11/play-scalate
+    description: Scalate Template engine support (more info about scalate: http://scalate.fusesource.org ). \r\n\r\nThis module depends on the scala module, so you will need to enable both modules. \r\n\r\nrequired play version: 1.1r956 \r\nrequired play scala version: 0.7.2 \r\n\r\nYou can start a new project with the following command: \r\nplay new myapp --with scala,scalate \r\n\r\n(assuming you have only scala-0.7.2 and scalate-0.7.2 installed) 
+
+models.ModuleVersion(m114v1):
+    module: m114
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-03-08
+    releaseNotes: Works with Play > 1.1 r812 +scala 0.1
+
+models.ModuleVersion(m114v2):
+    module: m114
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2010-03-13
+    releaseNotes: Works with Play > 1.1r812 + scala 0.1
+
+models.ModuleVersion(m114v3):
+    module: m114
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2010-04-20
+    releaseNotes: Works with Play 1.1r881+scala 0.3
+
+models.ModuleVersion(m114v4):
+    module: m114
+    compatibility: [ p124 ]
+    versionCode: 0.7.2
+    releaseDate: 2010-07-29
+    releaseNotes: Works with Play  1.1r956
+
+
+models.Module(m115):
+    moduleKey: search
+    moduleName: Search
+    contributors: Jean-Francois POUX
+    projectUrl: http://github.com/jfp/play-search/
+    description: Search allows you to have basic full text search functionalities to your JPA Model. It is based on Lucene, and requires a real file system to store its indexes.
+
+models.ModuleVersion(m115v1):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-13
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m115v2):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-03-20
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m115v3):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-03-29
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m115v4):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2011-12-10
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m115v5):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-11-16
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m115v6):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-01-06
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m115v7):
+    module: m115
+    compatibility: [ p124 ]
+    versionCode: 2.0
+    releaseDate: 2011-02-25
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m116):
+    moduleKey: securepermissions
+    moduleName: Secure Permissions Play! module
+    contributors: Stephane Epardaud
+    projectUrl: http://www.lunatech-labs.com/open-source/secure-permissions-play-module
+    description: The Secure Permissions Play! module extends the Secure module in Play! Framework to add permission checks based on the rule-based permissions in the Seam Framework (based on Drools rules).\r\n
+
+models.ModuleVersion(m116v1):
+    module: m116
+    compatibility: [ p124 ]
+    versionCode: 1.2.1
+    releaseDate: 2011-03-04
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m117):
+    moduleKey: securesocial
+    moduleName: SecureSocial
+    contributors: Jorge Aliss
+    projectUrl: https://github.com/jaliss/securesocial
+    description: SecureSocial allows you to add an authentication UI to your app that works with services based on OAuth1, OAuth2, OpenID and OpenID+OAuth hybrid protocols. The following services are supported:\r\n\r\n- Twitter (OAuth1)\r\n- Facebook (OAuth2)\r\n- Google (OpenID + OAuth Hybrid)\r\n- Yahoo (OpenID + OAuth Hybrid)\r\n- LinkedIn (OAuth1)\r\n- Foursquare (OAuth2)\r\n- MyOpenID (OpenID)\r\n- Wordpress (OpenID)\r\n- Username and Password
+
+models.ModuleVersion(m117v1):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-11-21
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m117v2):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-11-24
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m117v3):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.2.1
+    releaseDate: 2011-11-25
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m117v4):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.2.2
+    releaseDate: 2011-11-27
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m117v5):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.2.3
+    releaseDate: 2012-01-24
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m117v6):
+    module: m117
+    compatibility: [ p124 ]
+    versionCode: 0.2.4
+    releaseDate: 2012-02-08
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m118):
+    moduleKey: shibboleth
+    moduleName: shibboleth
+    contributors: Scott Phillips
+    projectUrl: https://github.com/TAMULib/Shibboleth-play
+    description: Allow users to login to your Play! application via Shibboleth.\r\nShibboleth is a federated identity management protocol popular in higher education. The protocol provides a single sign on service across multiple organizational boundaries with secure attribute delivery. Shibboleth support requires that your application be proxies behind a Shibboleth capable web server such as Apache, Lighttpd, or IIS with the corresponding Shibboleth module installed. For more information on the protocol visit: \r\n\r\nhttp://shibboleth.internet2.edu/\r\n
+
+models.ModuleVersion(m118v1):
+    module: m118
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-12-20
+    releaseNotes: Works with Play 1.2.x
+
+models.ModuleVersion(m118v2):
+    module: m118
+    compatibility: [ p124 ]
+    versionCode: head
+    releaseDate: 2012-01-23
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m118v3):
+    module: m118
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2012-01-30
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m119):
+    moduleKey: siena
+    moduleName: Siena
+    contributors: Vijay Kiran, Pascal Voitot, Alberto Gimeno
+    projectUrl: http://github.com/mandubian/play-siena
+    description: The siena module enables Siena support to map your Java entities to GAE/MySQL/PostgreSQL/H2 from your play application (at least since v2.0.0). \r\n\r\n* **NEW: play-siena v2.0.6 with support for GoogleCloudSql**\r\n* play-siena v2.0.5 provides support for Amazon SimpleDB (not yet fully tested)\r\n* play-siena v.2.0.x with support for GAE/MySQL/Postgres/H2 + SQL DDL + Play >1.2.1\r\n\r\nMain github project is: https://github.com/mandubian/play-siena\r\n\r\nRead more on Siena at: http://www.sienaproject.com/ + https://github.com/mandubian/siena
+
+models.ModuleVersion(m119v1):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-01-11
+    releaseNotes: Works with Play 1.0,1.1
+
+models.ModuleVersion(m119v2):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2010-02-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m119v3):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2010-09-01
+    releaseNotes: Works with Play 1.0, 1.1
+
+models.ModuleVersion(m119v4):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.3
+    releaseDate: 2010-10-07
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m119v5):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.4
+    releaseDate: 2011-01-19
+    releaseNotes: Works with Play 1.2,1.1
+
+models.ModuleVersion(m119v6):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 1.5
+    releaseDate: 2011-02-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m119v7):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.0
+    releaseDate: 2011-06-12
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v8):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.1
+    releaseDate: 2011-06-27
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v9):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.2
+    releaseDate: 2011-07-08
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v10):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.3
+    releaseDate: 2011-07-26
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v11):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.4_work
+    releaseDate: 2011-08-08
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v12):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.4
+    releaseDate: 2011-08-10
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v13):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.5
+    releaseDate: 2011-09-02
+    releaseNotes: Works with Play [1.2.1,)
+
+models.ModuleVersion(m119v14):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.6
+    releaseDate: 2011-11-28
+    releaseNotes: Works with Play 1.2.3
+
+models.ModuleVersion(m119v15):
+    module: m119
+    compatibility: [ p124 ]
+    versionCode: 2.0.7
+    releaseDate: 2012-01-17
+    releaseNotes: Works with Play [1.2.3,)
+
+
+models.Module(m120):
+    moduleKey: spocktests
+    moduleName: Spock tests
+    contributors: Peter Lundberg
+    projectUrl: http://github.com/peterlundberg/play-spock-tests
+    description: This module allows running \"Spock\":http://www.spockframework.org specifications. This provides the possibility to write \"BDD\":http://en.wikipedia.org/wiki/Behavior_Driven_Development style tests (still wrapped as  junit) with the expressive power of groovy and still have the tested application be in playframework. This can also be combined with \"Geb\":http://geb.codehaus.org/ which provides \"The future of functional web testing\":http://blog.springsource.com/2010/08/28/the-future-of-functional-web-testing/.\r\n\r\nSee more description on \"github\":http://github.com/peterlundberg/play-spock-tests\r\n
+
+
+models.Module(m121):
+    moduleKey: spring
+    moduleName: Spring
+    contributors: Nicolas Leroux
+    projectUrl: http://github.com/pepite/Play--framework-Spring-module
+    description: This module allows to use Spring managed beans inside your play! applications. 
+
+models.ModuleVersion(m121v1):
+    module: m121
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-03-22
+    releaseNotes: Works with Play 1.0.1
+
+models.ModuleVersion(m121v2):
+    module: m121
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2011-05-18
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m121v3):
+    module: m121
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2011-09-12
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m122):
+    moduleKey: springtester
+    moduleName: spring tester
+    contributors: An Do
+    projectUrl: https://github.com/digiarnie/springtester
+    description: Used to write tests that can auto-magically inject mocks (using\r\nMockito) into Play applications wired up using the spring module.
+
+models.ModuleVersion(m122v1):
+    module: m122
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2012-02-07
+
+
+models.Module(m123):
+    moduleKey: statsd
+    moduleName: statsd
+    contributors: Rich Kroll
+    projectUrl: https://github.com/rkroll/play-statsd/
+    description: The module is a wrapper over StatsD (https://github.com/etsy/statsd) which allow for dead simple statistic aggregation from within play.
+
+
+models.Module(m124):
+    moduleKey: stax
+    moduleName: Stax
+    contributors: Erwan Loisant
+    projectUrl: http://github.com/erwan/playstax
+    description: Easy deployment to Stax cloud hosting platform (http://www.stax.net).
+
+models.ModuleVersion(m124v1):
+    module: m124
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-02-22
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m124v2):
+    module: m124
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-03-26
+    releaseNotes: Works with Play 1.0
+
+
+models.Module(m125):
+    moduleKey: swagger
+    moduleName: Swagger
+    contributors: Tony Tam
+    projectUrl: https://github.com/wordnik/swagger-play
+    description: Creates a self-documenting meta-description for REST APIs which allows for code-gen, UI-sandbox, and test framework.  See more at http://swagger.wordnik.com and at http://developer.wordnik.com/docs\r\n
+
+
+models.Module(m126):
+    moduleKey: sass
+    moduleName: Syntactically Awesome Stylesheets
+    contributors: Guillaume Bort
+    projectUrl: http://github.com/guillaumebort/play-sass
+    description: **{style with attitude}** - Sass makes CSS fun again. Sass is CSS, plus nested rules, variables, mixins, and more, all in a concise, readable syntax. \r\n\r\nRead more at \"http://sass-lang.com\":http://sass-lang.com/
+
+models.ModuleVersion(m126v1):
+    module: m126
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2010-07-28
+    releaseNotes: Works with Play 1.0.3
+
+models.ModuleVersion(m126v2):
+    module: m126
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-10-29
+    releaseNotes: Works with Play Play-1.1
+
+models.ModuleVersion(m126v3):
+    module: m126
+    compatibility: [ p124 ]
+    versionCode: 1.1
+    releaseDate: 2011-09-16
+    releaseNotes: Works with Play 1.2.x
+
+
+models.Module(m127):
+    moduleKey: table
+    moduleName: Table
+    contributors: Julien Richard-Foy
+    projectUrl: https://github.com/julienrf/play-table
+    description: This module aims to simplify the code needed to display data in HTML tables.
+
+models.ModuleVersion(m127v1):
+    module: m127
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2011-03-27
+    releaseNotes: Works with Play 1.1.1
+
+models.ModuleVersion(m127v2):
+    module: m127
+    compatibility: [ p124 ]
+    versionCode: 1.2
+    releaseDate: 2011-04-23
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m127v3):
+    module: m127
+    compatibility: [ p124 ]
+    versionCode: 1.2.1
+    releaseDate: 2011-07-06
+    releaseNotes: Works with Play [1.2,)
+
+models.ModuleVersion(m127v4):
+    module: m127
+    compatibility: [ p124 ]
+    versionCode: 1.2.2
+    releaseDate: 2011-11-21
+    releaseNotes: Works with Play 1.2.+
+
+
+models.Module(m128):
+    moduleKey: tabularasa
+    moduleName: Tabula Rasa
+    contributors: Steve Chaloner
+    projectUrl: https://github.com/schaloner/tabula-rasa
+    description: Tabula Rasa provides support for user-customisable tables in views.  DataTables is used as the client-side table renderer. Loading data via AJAX into tables is also simplified, and can be used with or without personalized tables.
+
+models.ModuleVersion(m128v1):
+    module: m128
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-01-28
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m128v2):
+    module: m128
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-03-15
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m129):
+    moduleKey: thymeleaf
+    moduleName: Thymeleaf
+    contributors: Satoshi Takata
+    projectUrl: https://github.com/choreo/play-thymeleaf
+    description: Play framework module to use Thymeleaf 2.0 (http://www.thymeleaf.org/)  as a template engine.\r\nThis is NOT a whole replacement of the groovy template. It is rather an add-on, rendering thymeleaf only if the alternative template exists.
+
+models.ModuleVersion(m129v1):
+    module: m129
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2012-03-09
+    releaseNotes: Works with Play 1.2.4
+
+
+models.Module(m130):
+    moduleKey: twig
+    moduleName: Twig
+    contributors: Dave Jafari
+    projectUrl: https://github.com/netmau5/Play-Twig
+    description: Twig superpowers Google App Engine's Datastore for Play applications. Get a fluid API, in-memory joins, and asynchronous queries out of the box. 
+
+models.ModuleVersion(m130v1):
+    module: m130
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-06-06
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m131):
+    moduleKey: twitterbootstrap
+    moduleName: twitterbootstrap
+    contributors: Scott Clasen
+    projectUrl: http://github.com/sclasen/twitterBootstrap
+    description: Play module that bundles up the twitter-bootstrap stylekit and the play less plugin, so that you can use twitter-bootstrap, edit the .less files and have your changes picked up and dynamically rendered to css.
+
+
+models.Module(m132):
+    moduleKey: useragentcheck
+    moduleName: UserAgentCheck
+    contributors: Olivier Refalo
+    projectUrl: https://github.com/orefalo/useragentcheck
+    description: UserAgentCheck provides an easy way to notify users when their browser is outdated. It displays a banner (blocking or non blocking) that drives the user to a page where he/she may download an upgrade.\r\n\r\nVersion 0.3: Fixes issues with IE10
+
+models.ModuleVersion(m132v1):
+    module: m132
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-10-03
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m132v2):
+    module: m132
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-10-18
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m132v3):
+    module: m132
+    compatibility: [ p124 ]
+    versionCode: 0.3
+    releaseDate: 2011-11-07
+    releaseNotes: Works with Play 1.2.3
+
+
+models.Module(m133):
+    moduleKey: vhost
+    moduleName: VHost
+    contributors: Lyubomir Ivanov
+    projectUrl: https://github.com/lyubo/play-vhost
+    description: Adds some virtual hosts functionality with separate datasource and customizable application settings for each virtual host. 
+
+models.ModuleVersion(m133v1):
+    module: m133
+    compatibility: [ p124 ]
+    versionCode: 1.0
+    releaseDate: 2010-04-20
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m133v2):
+    module: m133
+    compatibility: [ p124 ]
+    versionCode: 1.0.1
+    releaseDate: 2010-04-26
+    releaseNotes: Works with Play 1.0
+
+models.ModuleVersion(m133v3):
+    module: m133
+    compatibility: [ p124 ]
+    versionCode: 1.0.2
+    releaseDate: 2011-03-23
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m133v4):
+    module: m133
+    compatibility: [ p124 ]
+    versionCode: 1.0.3
+    releaseDate: 2011-10-25
+    releaseNotes: Works with Play 1.1
+
+models.ModuleVersion(m133v5):
+    module: m133
+    compatibility: [ p124 ]
+    versionCode: 1.0.4
+    releaseDate: 2011-11-30
+    releaseNotes: Works with Play 1.1
+
+
+models.Module(m134):
+    moduleKey: webdrive
+    moduleName: webdrive
+    contributors: Raghu Kaippully
+    projectUrl: https://github.com/rkaippully/play-webdrive
+    description: WebDrive module provides Selenium 2 testing support for Play framework. You can use this module to test your application with any browser supported by Selenium WebDriver.
+
+models.ModuleVersion(m134v1):
+    module: m134
+    compatibility: [ p124 ]
+    versionCode: 0.1
+    releaseDate: 2011-09-02
+    releaseNotes: Works with Play 1.2
+
+models.ModuleVersion(m134v2):
+    module: m134
+    compatibility: [ p124 ]
+    versionCode: 0.2
+    releaseDate: 2011-09-13
+    releaseNotes: Works with Play 1.2.x
+
+

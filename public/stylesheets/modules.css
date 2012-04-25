@@ -18,6 +18,12 @@ header nav a.download:active {
 #introduction, #top { background-color:#1487B4; }
 #title { color:#C2D8DF; }
 
+#features h2 {
+	font-size: 24px;
+}
+#features .item p {
+	text-align: left;
+}
 
 /*  Styles added by Steve, these can be removed once consistent styling is added*/
 .addNew {
