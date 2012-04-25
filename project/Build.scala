@@ -8,11 +8,11 @@ object ApplicationBuild extends Build {
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
-      "deadbolt-2" %% "deadbolt-2" % "1.1.2"
+      "be.objectify" %% "deadbolt-2" % "1.1.2"
     )
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
-        resolvers += "Objectify Play Repository" at "http://schaloner.github.com/releases/"
-    )
+  val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+    resolvers += Resolver.url("Objectify Play Repository", url("http://schaloner.github.com/releases/"))(Resolver.ivyStylePatterns)
+  )
 
 }
