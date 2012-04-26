@@ -45,11 +45,18 @@ public class AllowToVote extends AbstractDynamicResourceHandler
         }
         else
         {
-            User user = (User)deadboltHandler.getRoleHolder(ctx);
-            for (Iterator<Vote> iterator = user.votes.iterator(); allowed && iterator.hasNext(); )
+            User user = (User) deadboltHandler.getRoleHolder(ctx);
+            if (user == null)
             {
-                Vote vote = iterator.next();
-                allowed = !meta.equals(vote.playModule.key);
+                return false;
+            }
+            else
+            {
+                for (Iterator<Vote> iterator = user.votes.iterator(); allowed && iterator.hasNext(); )
+                {
+                    Vote vote = iterator.next();
+                    allowed = !meta.equals(vote.playModule.key);
+                }
             }
         }
         return allowed;
