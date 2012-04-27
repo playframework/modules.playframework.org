@@ -29,6 +29,7 @@ POST /modules/my/versions/:moduleKey    controllers.Modules.uploadNewVersion(mod
 # Administrators’ interface
 GET  /admin/versions                    controllers.PlayVersions.showPlayVersions()
 POST /admin/versions                    controllers.PlayVersions.addNewPlayVersion()
+POST /admin/versions/update             controllers.PlayVersions.update()
 GET  /admin/categories                  controllers.Categories.showCategories()
 POST /admin/categories                  controllers.Categories.addNewCategory()
 GET  /admin/category/:categoryName      controllers.Categories.categoryDetails(categoryName: String)

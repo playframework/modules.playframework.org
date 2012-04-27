@@ -3,17 +3,26 @@
   playTwoVersions: List[PlayVersion],
   versionForm: Form[models.PlayVersion])
 
-@import tags.admin.playVersionList
-
+@displayVersion(playVersion: PlayVersion) = {
+    <li><span id="name-@playVersion.id">@playVersion.name</span> - <span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span> (<a href="javascript:editVersion('@playVersion.id', '@playVersion.name', '@playVersion.documentationUrl')">Edit</a>)</li>
+}
 
 @admin.adminTemplate("Play versions", currentUser) {
 <section>
     <div id="overviewArea">
         <h4>Play 1</h4>
-        @playVersionList(playOneVersions)
+        <ul>
+            @for(playVersion <- playOneVersions) {
+            @displayVersion(playVersion)
+            }
+        </ul>
 
         <h4>Play 2</h4>
-        @playVersionList(playTwoVersions)
+        <ul>
+            @for(playVersion <- playTwoVersions) {
+            @displayVersion(playVersion)
+            }
+        </ul>
     </div>
     <div id="controlArea">
         <h3>Add new version</h3>
@@ -26,4 +35,40 @@
         }
     </div>
 </section>
+<script type="text/javascript">
+    function editVersion(id, name, documentationUrl) {
+        var template = _.template($('#editVersionTemplate').html(),
+                                  {id:id, name:name, documentationUrl:documentationUrl})
+        $.prompt(template,
+                 { buttons: { Update: true, Cancel: false },
+                   callback: function(e,v,m,f) {
+                       if (v) {
+                           $.post('@routes.PlayVersions.update',
+                                  {id:f.id, name:f.name, documentationUrl:f.documentationUrl})
+                           .success(function() {
+                                        $('#name-' + id).text(f.name);
+                                        $('#documentationUrl-' + id).text(f.documentationUrl);
+                                    })
+                           .error(function() {
+                                      window.alert('oh-oh');
+                                  });
+                       }
+                   }});
+    }
+</script>
+<script type="underscore-template" id="editVersionTemplate">
+    @helper.form(routes.PlayVersions.update) {
+    <input type="hidden" name="id" value="<%= id %>"/>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="<%= name %>"/></td>
+        </tr>
+        <tr>
+            <td>Documentation URL</td>
+            <td><input type="text" name="documentationUrl" value="<%= documentationUrl %>"/></td>
+        </tr>
+    </table>
+    }
+</script>
 }
