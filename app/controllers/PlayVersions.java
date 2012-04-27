@@ -71,7 +71,7 @@ public class PlayVersions extends Controller
         Form<PlayVersion> form = form(PlayVersion.class).bindFromRequest();
         if (form.hasErrors())
         {
-            result = badRequest();
+            result = badRequest(form.errorsAsJson());
         }
         else
         {

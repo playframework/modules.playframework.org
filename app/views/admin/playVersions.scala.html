@@ -4,7 +4,7 @@
   versionForm: Form[models.PlayVersion])
 
 @displayVersion(playVersion: PlayVersion) = {
-    <li><span id="name-@playVersion.id">@playVersion.name</span> - <span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span> (<a href="javascript:editVersion('@playVersion.id', '@playVersion.name', '@playVersion.documentationUrl')">Edit</a>)</li>
+    <li><span id="name-@playVersion.id">@playVersion.name</span> - <span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span> (<a href="javascript:editVersion('@playVersion.id', $('#name-@playVersion.id').text(), $('#documentationUrl-@playVersion.id').text())">Edit</a>)</li>
 }
 
 @admin.adminTemplate("Play versions", currentUser) {
@@ -36,21 +36,29 @@
     </div>
 </section>
 <script type="text/javascript">
-    function editVersion(id, name, documentationUrl) {
+    function editVersion(id, name, documentationUrl, message) {
+        message = (typeof message == 'undefined') ? '' : message;
         var template = _.template($('#editVersionTemplate').html(),
-                                  {id:id, name:name, documentationUrl:documentationUrl})
+                                  {id:id, name:name, documentationUrl:documentationUrl, message:message})
         $.prompt(template,
                  { buttons: { Update: true, Cancel: false },
                    callback: function(e,v,m,f) {
                        if (v) {
                            $.post('@routes.PlayVersions.update',
                                   {id:f.id, name:f.name, documentationUrl:f.documentationUrl})
-                           .success(function() {
-                                        $('#name-' + id).text(f.name);
-                                        $('#documentationUrl-' + id).text(f.documentationUrl);
+                           .success(function(data, textStatus, jqXHR) {
+                                        for (var key in f) {
+                                            $('#' + key + '-' + id).text(f[key]);
+                                        }
                                     })
-                           .error(function() {
-                                      window.alert('oh-oh');
+                           .error(function(jqXHR, textStatus, errorThrown) {
+                                      var messageJson = JSON.parse(jqXHR.responseText);
+                                      var message = '';
+                                      for (var key in messageJson) {
+                                          message += (key + ': ' + messageJson[key] + '<br>');
+                                      }
+
+                                      editVersion(id, name, documentationUrl, message);
                                   });
                        }
                    }});
@@ -59,6 +67,7 @@
 <script type="underscore-template" id="editVersionTemplate">
     @helper.form(routes.PlayVersions.update) {
     <input type="hidden" name="id" value="<%= id %>"/>
+    <p><%= message %></p>
     <table>
         <tr>
             <td>Name</td>
