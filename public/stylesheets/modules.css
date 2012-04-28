@@ -87,7 +87,11 @@ header nav a.download:active {
     font-weight: bolder;
 }
 
-/* Steve: I've just copied the example inpromptu css for now, it will need restyling later*/
+table.formTable, table.formTable tr td input {
+    width: 100%;
+}
+
+/* Steve: I've just copied the example inpromptu css for now, it may need restyling later*/
 .jqifade{
     position: absolute;
     background-color: #aaaaaa;

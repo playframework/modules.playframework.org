@@ -36,48 +36,35 @@
     </div>
 </section>
 <script type="text/javascript">
+
+    var onError = function(form, message) {
+        editVersion(form.id, form.name, form.documentationUrl, message);
+    };
+
     function editVersion(id, name, documentationUrl, message) {
         message = (typeof message == 'undefined') ? '' : message;
         var template = _.template($('#editVersionTemplate').html(),
                                   {id:id, name:name, documentationUrl:documentationUrl, message:message})
-        $.prompt(template,
-                 { buttons: { Update: true, Cancel: false },
-                   callback: function(e,v,m,f) {
-                       if (v) {
-                           $.post('@routes.PlayVersions.update',
-                                  {id:f.id, name:f.name, documentationUrl:f.documentationUrl})
-                           .success(function(data, textStatus, jqXHR) {
-                                        for (var key in f) {
-                                            $('#' + key + '-' + id).text(f[key]);
-                                        }
-                                    })
-                           .error(function(jqXHR, textStatus, errorThrown) {
-                                      var messageJson = JSON.parse(jqXHR.responseText);
-                                      var message = '';
-                                      for (var key in messageJson) {
-                                          message += (key + ': ' + messageJson[key] + '<br>');
-                                      }
-
-                                      editVersion(id, name, documentationUrl, message);
-                                  });
-                       }
-                   }});
+        editAdminSection(template,
+                         function(form){},
+                         onError);
     }
 </script>
 <script type="underscore-template" id="editVersionTemplate">
-    @helper.form(routes.PlayVersions.update) {
-    <input type="hidden" name="id" value="<%= id %>"/>
-    <p><%= message %></p>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td><input type="text" name="name" value="<%= name %>"/></td>
-        </tr>
-        <tr>
-            <td>Documentation URL</td>
-            <td><input type="text" name="documentationUrl" value="<%= documentationUrl %>"/></td>
-        </tr>
-    </table>
-    }
+    <form>
+        <input type="hidden" name="id" value="<%= id %>"/>
+        <input type="hidden" name="targetUrl" value="@routes.PlayVersions.update"/>
+        <p><%= message %></p>
+        <table class="formTable">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value="<%= name %>"/></td>
+            </tr>
+            <tr>
+                <td>Documentation URL</td>
+                <td><input type="text" name="documentationUrl" value="<%= documentationUrl %>"/></td>
+            </tr>
+        </table>
+    </form>
 </script>
 }

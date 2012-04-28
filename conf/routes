@@ -32,6 +32,7 @@ POST /admin/versions                    controllers.PlayVersions.addNewPlayVersi
 POST /admin/versions/update             controllers.PlayVersions.update()
 GET  /admin/categories                  controllers.Categories.showCategories()
 POST /admin/categories                  controllers.Categories.addNewCategory()
+POST /admin/categories/update           controllers.Categories.update()
 GET  /admin/category/:categoryName      controllers.Categories.categoryDetails(categoryName: String)
 
 # Module details (the only path not containing a slash, to make the most published URL cleanest)
