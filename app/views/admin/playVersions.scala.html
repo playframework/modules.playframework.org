@@ -3,17 +3,26 @@
   playTwoVersions: List[PlayVersion],
   versionForm: Form[models.PlayVersion])
 
-@import tags.admin.playVersionList
-
+@displayVersion(playVersion: PlayVersion) = {
+    <li><span id="name-@playVersion.id">@playVersion.name</span> - <span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span> (<a href="javascript:editVersion('@playVersion.id', $('#name-@playVersion.id').text(), $('#documentationUrl-@playVersion.id').text())">Edit</a>)</li>
+}
 
 @admin.adminTemplate("Play versions", currentUser) {
 <section>
     <div id="overviewArea">
         <h4>Play 1</h4>
-        @playVersionList(playOneVersions)
+        <ul>
+            @for(playVersion <- playOneVersions) {
+            @displayVersion(playVersion)
+            }
+        </ul>
 
         <h4>Play 2</h4>
-        @playVersionList(playTwoVersions)
+        <ul>
+            @for(playVersion <- playTwoVersions) {
+            @displayVersion(playVersion)
+            }
+        </ul>
     </div>
     <div id="controlArea">
         <h3>Add new version</h3>
@@ -26,4 +35,36 @@
         }
     </div>
 </section>
+<script type="text/javascript">
+
+    var onError = function(form, message) {
+        editVersion(form.id, form.name, form.documentationUrl, message);
+    };
+
+    function editVersion(id, name, documentationUrl, message) {
+        message = (typeof message == 'undefined') ? '' : message;
+        var template = _.template($('#editVersionTemplate').html(),
+                                  {id:id, name:name, documentationUrl:documentationUrl, message:message})
+        editAdminSection(template,
+                         function(form){},
+                         onError);
+    }
+</script>
+<script type="underscore-template" id="editVersionTemplate">
+    <form>
+        <input type="hidden" name="id" value="<%= id %>"/>
+        <input type="hidden" name="targetUrl" value="@routes.PlayVersions.update"/>
+        <p><%= message %></p>
+        <table class="formTable">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value="<%= name %>"/></td>
+            </tr>
+            <tr>
+                <td>Documentation URL</td>
+                <td><input type="text" name="documentationUrl" value="<%= documentationUrl %>"/></td>
+            </tr>
+        </table>
+    </form>
+</script>
 }

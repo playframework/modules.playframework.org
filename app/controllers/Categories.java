@@ -20,6 +20,7 @@ import be.objectify.deadbolt.actions.Restrict;
 import models.Category;
 import models.Module;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
@@ -71,5 +72,24 @@ public class Categories extends Controller
         return ok(categoryDetails.render(currentUser(),
                                          category,
                                          modules));
+    }
+    
+    public static Result update()
+    {
+        Result result;
+        Form<Category> form = form(Category.class).bindFromRequest();
+        if (form.hasErrors())
+        {
+            result = badRequest(form.errorsAsJson());
+        }
+        else
+        {
+            Category incoming = form.get();
+            Category storedCategory = Category.FIND.byId(incoming.id);
+            storedCategory.name = incoming.name;
+            storedCategory.save();
+            result = ok(Json.toJson(storedCategory));
+        }
+        return result;
     }
 }

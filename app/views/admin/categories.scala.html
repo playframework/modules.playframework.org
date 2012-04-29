@@ -7,7 +7,7 @@
     <div id="overviewArea">
         <ul>
             @for(category <- categories) {
-            <li><a href="@routes.Categories.categoryDetails(category.name)">@category.name</a></li>
+            <li><a id="name-@category.id" href="@routes.Categories.categoryDetails(category.name)">@category.name</a> (<a href="javascript:editCategory('@category.id', $('#name-@category.id').text())">Edit</a>)</li>
             }
         </ul>
     </div>
@@ -21,4 +21,39 @@
         }
     </div>
 </section>
+<script type="text/javascript">
+
+    var onError = function(form, message) {
+        editCategory(form.id, form.name, message);
+    };
+
+    var onSuccess = function(form) {
+        var anchor = $('#name-' + form.id);
+        var href = anchor.attr('href');
+        href = href.substring(0, href.lastIndexOf('/') + 1) + form.name;
+        $('#name-' + form.id).attr('href', href);
+    }
+
+    function editCategory(id, name, message) {
+        message = (typeof message == 'undefined') ? '' : message;
+        var template = _.template($('#editCategoryTemplate').html(),
+                                  {id:id, name:name, message:message})
+        editAdminSection(template,
+                         onSuccess,
+                         onError);
+    }
+</script>
+<script type="underscore-template" id="editCategoryTemplate">
+    <form>
+        <input type="hidden" name="id" value="<%= id %>"/>
+        <input type="hidden" name="targetUrl" value="@routes.Categories.update"/>
+        <p><%= message %></p>
+        <table class="formTable">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value="<%= name %>"/></td>
+            </tr>
+        </table>
+    </form>
+</script>
 }

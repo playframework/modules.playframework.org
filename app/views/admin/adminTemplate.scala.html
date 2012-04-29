@@ -1,6 +1,11 @@
 @(title: String, currentUser: User)(content: Html)
+@moreScripts = {
+    <script src="@routes.Assets.at("javascripts/jquery-impromptu.4.0.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/underscore.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/mpo.js")" type="text/javascript"></script>
+}
 
-@main("Admin :: " + title, currentUser) {
+@main("Admin :: " + title, currentUser, moreScripts) {
 <div id="content" class="wrapper">
     @tags.admin.adminMenu()
     @content

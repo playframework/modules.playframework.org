@@ -19,6 +19,7 @@ import actions.CurrentUser;
 import be.objectify.deadbolt.actions.Restrict;
 import models.PlayVersion;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
@@ -62,5 +63,28 @@ public class PlayVersions extends Controller
             result = showPlayVersions();
         }
         return result;
+    }
+    
+    public static Result update()
+    {
+        Result result;
+        Form<PlayVersion> form = form(PlayVersion.class).bindFromRequest();
+        if (form.hasErrors())
+        {
+            result = badRequest(form.errorsAsJson());
+        }
+        else
+        {
+            PlayVersion incoming = form.get();
+            PlayVersion storedVersion = PlayVersion.FIND.byId(incoming.id);
+            storedVersion.name = incoming.name;
+            storedVersion.documentationUrl = incoming.documentationUrl;
+            storedVersion.majorVersion = storedVersion.name.startsWith("1") ? PlayVersion.MajorVersion.ONE
+                                                                            : PlayVersion.MajorVersion.TWO;
+            storedVersion.save();
+            result = ok(Json.toJson(storedVersion));
+        }
+        return result;
+
     }
 }
