@@ -1092,11 +1092,13 @@ modules:
         key: featureflags
         name: "Feature Flags"
         summary: "Adds ‘feature flags’ to your application so you can enable and disable functionality at runtime"
-        description: "play-featureflags is a module for playframework that enables you to easily use 'feature flags' in your application. A feature flag is any piece of functionality in your application that you want to be able to switch ON and OFF at runtime, using an admin screen. \r\nWith this module, you can define feature flags by name, using a simple annotation on your controllers and/or a tag in your views. \r\n\r\nThis simple technique allows you to never have to branch your code again! You can safely deploy your HEAD multiple times a day to all of your environments for development, testing, production, whatever. Just use a different set of enabled features.\r\nFeature flags are what Flickr uses to be able to do 10+ deployments to production per day. See http://code.flickr.com/blog/2009/12/02/flipping-out/ for more info."
+        description: "play-featureflags is a module for playframework that enables you to easily use 'feature flags' in your application. <br/>A feature flag is any piece of functionality in your application that you want to be able to switch ON and OFF at runtime, using an admin screen. <br/>With this module, you can define feature flags by name, using a simple annotation on your controllers and/or a tag in your views. <br/><br/>This simple technique allows you to never have to branch your code again! You can safely deploy your HEAD multiple times a day to all of your environments for development, testing, production, whatever. Just use a different set of enabled features.<br/>Feature flags are what Flickr uses to be able to do 10+ deployments to production per day. See http://code.flickr.com/blog/2009/12/02/flipping-out/ for more info."
         contributors: Ben Verbeken
         projectUrl: http://code.google.com/p/play-featureflags
+        demoUrl: http://ostia.be
         organisation: (unknown)
-        licenseType: (unknown)
+        licenseType: LGPL
+        licenseUrl: http://www.google.com/
 
     - !!models.Module
         id: 109

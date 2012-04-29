@@ -17,18 +17,28 @@
     <div id="overviewArea">
 
         <p>
-            @module.description
+            @Html(module.description)
         </p>
+
+        <p>
+            <strong>Project home: </strong><a href="@module.projectUrl" target="_blank">@module.projectUrl</a><br/>
+            @if(!isEmpty(module.demoUrl)) {
+                <strong>Demo: </strong><a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
+            }
+        </p>
+        
+        <p>
+            @if(!isEmpty(module.licenseType)){
+                <strong>License: </strong>
+                @if(!isEmpty(module.licenseUrl)){
+                    <a href="@module.licenseUrl">@module.licenseType</a>
+                } else {
+                    @module.licenseType
+                }
+            }
+        </p>
+        
         <!--
-        <table>
-            <tr>
-                <td>Summary :</td>
-                <td>@module.summary</td>
-            </tr>
-            <tr>
-                <td>Category: </td>
-                <td>@module.category?.name</td>
-            </tr>
             <tr>
                 <td>License :</td>
                 <td><a href="@module.licenseUrl" target="_blank">@module.licenseType</a></td>
