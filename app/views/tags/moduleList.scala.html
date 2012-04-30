@@ -8,7 +8,7 @@
     @defining(accessor.getModule()) { module =>
     <li>
 		<p>
-            <a href="@routes.Modules.details(module.key)">@module.name</a>
+            <a href="@routes.Modules.details(module.key)">@module.name</a> by @module.contributors
             <br>@StringUtils.summarize(module.summary)
         </p>
     </li>

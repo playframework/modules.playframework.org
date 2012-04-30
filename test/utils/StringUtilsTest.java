@@ -104,7 +104,7 @@ public class StringUtilsTest
     @Test
     public void nl2br_stringWithNl()
     {
-        String str = "this \\r\\n string \\r\\n contains \\r\\n breaks";
+        String str = "this \r\n string \r\n contains \r\n breaks";
         assertThat(nl2br(str)).isEqualTo("this <br/> string <br/> contains <br/> breaks");
     }
 }
