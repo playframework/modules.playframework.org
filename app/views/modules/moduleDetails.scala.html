@@ -1,6 +1,6 @@
 @(currentUser: User, module: Module, versions: List[ModuleVersion])
 @import tags.moduleList
-@import utils.StringUtils.isEmpty
+@import utils.StringUtils._
 @import be.objectify.deadbolt.views.html._
 
 @main(module.name, currentUser) {
@@ -17,7 +17,7 @@
     <div id="overviewArea">
 
         <p>
-            @Html(module.description)
+            @Html(nl2br(module.description))
         </p>
 
         <p>

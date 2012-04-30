@@ -43,4 +43,9 @@ public class StringUtils
         }
         return result;
     }
+    
+    public static String nl2br(String s)
+    {
+        return org.apache.commons.lang.StringUtils.replace(s, "\\r\\n", "<br/>");
+    }
 }
