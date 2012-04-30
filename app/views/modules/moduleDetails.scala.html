@@ -26,16 +26,20 @@
                 <strong>Demo: </strong><a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
             }
         </p>
+
+        @if(!isEmpty(module.licenseType)){
+        <p>
+            <strong>License: </strong>
+            @if(!isEmpty(module.licenseUrl)){
+                <a href="@module.licenseUrl">@module.licenseType</a>
+            } else {
+                @module.licenseType
+            }
+        </p>
+        }
         
         <p>
-            @if(!isEmpty(module.licenseType)){
-                <strong>License: </strong>
-                @if(!isEmpty(module.licenseUrl)){
-                    <a href="@module.licenseUrl">@module.licenseType</a>
-                } else {
-                    @module.licenseType
-                }
-            }
+            Written by @module.contributors
         </p>
         
         <!--

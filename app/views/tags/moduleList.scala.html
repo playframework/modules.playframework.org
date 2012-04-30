@@ -1,19 +1,26 @@
-@(title: String, moduleAccessors: List[_ <: ModuleAccessor])
+@(title: String, moduleAccessors: List[_
+<: ModuleAccessor])
 
-@import utils.StringUtils;
+@import utils.StringUtils._;
 
 <p class="sectionHeader">@title</p>
-<ul>
-@for(accessor <- moduleAccessors) {
-    @defining(accessor.getModule()) { module =>
-    <li>
-		<p>
-            <a href="@routes.Modules.details(module.key)">@module.name</a> by @module.contributors
-            <br>@StringUtils.summarize(module.summary)
-        </p>
-    </li>
+<div id="modules">
+    @for(accessor <- moduleAccessors) {
+        @defining(accessor.getModule()) { module =>
+        <div class="module">
+            <h2>@module.name
+                <span class="by">by @module.contributors</span>
+            </h2>
+
+            <p>
+                @summarize(module.summary)
+            </p>
+            <p>
+                <a href="@routes.Modules.details(module.key)">get details and versions</a>
+            </p>
+        </div>
+        }
     }
-}
-</ul>
+</div>
 
 
