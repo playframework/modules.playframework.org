@@ -98,10 +98,10 @@ public class Modules extends Controller
         Form<ModuleVersion> form = form(ModuleVersion.class).bindFromRequest();
         if (form.hasErrors())
         {
-            return badRequest(manageVersionsForm.render(currentUser(),
-                                                        Module.findByModuleKey(moduleKey),
-                                                        PlayVersion.getAll(),
-                                                        form));
+            result = badRequest(manageVersionsForm.render(currentUser(),
+                                                          Module.findByModuleKey(moduleKey),
+                                                          PlayVersion.getAll(),
+                                                          form));
         }
         else
         {
@@ -147,18 +147,20 @@ public class Modules extends Controller
 
     public static Result details(String moduleKey)
     {
+        Result result;
         Module module = Module.findByModuleKey(moduleKey);
         if (module == null)
         {
-            return notFound("Module not found: " + moduleKey);
+            result = notFound("Module not found: " + moduleKey);
         }
         else
         {
             List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
-            return ok(moduleDetails.render(currentUser(),
-                                           module,
-                                           moduleVersions));
+            result = ok(moduleDetails.render(currentUser(),
+                                             module,
+                                             moduleVersions));
         }
+        return result;
     }
 
     // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice, when request params are available

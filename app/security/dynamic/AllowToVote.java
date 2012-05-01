@@ -46,11 +46,7 @@ public class AllowToVote extends AbstractDynamicResourceHandler
         else
         {
             User user = (User) deadboltHandler.getRoleHolder(ctx);
-            if (user == null)
-            {
-                return false;
-            }
-            else
+            if (user != null)
             {
                 for (Iterator<Vote> iterator = user.votes.iterator(); allowed && iterator.hasNext(); )
                 {
