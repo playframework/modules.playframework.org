@@ -34,6 +34,13 @@ create table featured_module (
   constraint pk_featured_module primary key (id))
 ;
 
+create table historical_event (
+  id                        bigint not null,
+  creation_date             timestamp not null,
+  message                   varchar(1000) not null,
+  constraint pk_historical_event primary key (id))
+;
+
 create table MPO_MODULE (
   id                        bigint not null,
   owner_id                  bigint not null,
@@ -159,6 +166,8 @@ create sequence comment_seq;
 
 create sequence featured_module_seq;
 
+create sequence historical_event_seq;
+
 create sequence MPO_MODULE_seq;
 
 create sequence module_version_seq;
@@ -222,9 +231,9 @@ alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_MPO_USE_01 f
 
 alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_user_ro_02 foreign key (user_role_id) references user_role (id) on delete restrict on update restrict;
 
-alter sequence MPO_USER_seq restart with 10000
+alter sequence MPO_USER_seq restart with 10000;
 
-alter sequence MPO_MODULE_seq restart with 10000
+alter sequence MPO_MODULE_seq restart with 10000;
 
 # --- !Downs
 
@@ -237,6 +246,8 @@ drop table if exists category;
 drop table if exists comment;
 
 drop table if exists featured_module;
+
+drop table if exists historical_event;
 
 drop table if exists MPO_MODULE;
 
@@ -271,6 +282,8 @@ drop sequence if exists category_seq;
 drop sequence if exists comment_seq;
 
 drop sequence if exists featured_module_seq;
+
+drop sequence if exists historical_event_seq;
 
 drop sequence if exists MPO_MODULE_seq;
 

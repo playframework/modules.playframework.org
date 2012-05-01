@@ -39,7 +39,7 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Application extends Controller
+public class Application extends AbstractController
 {
     public static Result index()
     {

@@ -37,7 +37,7 @@ import static actions.CurrentUser.currentUser;
  */
 @With(CurrentUser.class)
 @Restrict(RoleDefinitions.ADMIN)
-public class Categories extends Controller
+public class Categories extends AbstractController
 {
     public static Result showCategories()
     {

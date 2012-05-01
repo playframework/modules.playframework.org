@@ -42,7 +42,7 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Modules extends Controller
+public class Modules extends AbstractController
 {
     @RoleHolderPresent
     public static Result myModules()
@@ -64,16 +64,23 @@ public class Modules extends Controller
     {
         Form<Module> form = form(Module.class).bindFromRequest();
         Result result;
+        User user = currentUser();
         if (form.hasErrors())
         {
-            result = badRequest(moduleRegistrationForm.render(currentUser(),
+            result = badRequest(moduleRegistrationForm.render(user,
                                                               form));
         }
         else
         {
             Module module = form.get();
-            module.owner = currentUser();
+            module.owner = user;
             module.save();
+
+            createHistoricalEvent(String.format("%s (%s) created a new module - %s",
+                                                user.displayName,
+                                                user.userName,
+                                                module.name));
+
             result = redirect(routes.Modules.myModules());
         }
 
@@ -96,9 +103,10 @@ public class Modules extends Controller
     {
         Result result;
         Form<ModuleVersion> form = form(ModuleVersion.class).bindFromRequest();
+        User user = currentUser();
         if (form.hasErrors())
         {
-            result = badRequest(manageVersionsForm.render(currentUser(),
+            result = badRequest(manageVersionsForm.render(user,
                                                           Module.findByModuleKey(moduleKey),
                                                           PlayVersion.getAll(),
                                                           form));
@@ -119,6 +127,12 @@ public class Modules extends Controller
             moduleVersion.binaryFile.contentLength = 1;
             moduleVersion.save();
             moduleVersion.saveManyToManyAssociations("compatibility");
+
+            createHistoricalEvent(String.format("%s (%s) uploaded version %s of %s",
+                                                user.displayName,
+                                                user.userName,
+                                                moduleVersion.versionCode,
+                                                moduleVersion.playModule.name));
 
             result = redirect(routes.Modules.myModules());
         }

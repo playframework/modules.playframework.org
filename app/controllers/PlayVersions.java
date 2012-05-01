@@ -33,7 +33,7 @@ import static actions.CurrentUser.currentUser;
  */
 @With(CurrentUser.class)
 @Restrict(RoleDefinitions.ADMIN)
-public class PlayVersions extends Controller
+public class PlayVersions extends AbstractController
 {
     public static Result showPlayVersions()
     {

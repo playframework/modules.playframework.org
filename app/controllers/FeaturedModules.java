@@ -42,7 +42,7 @@ import static actions.CurrentUser.currentUser;
  */
 @With(CurrentUser.class)
 @Restrict(RoleDefinitions.ADMIN)
-public class FeaturedModules extends Controller
+public class FeaturedModules extends AbstractController
 {
     public static Result showFeaturedModules()
     {
