@@ -222,6 +222,8 @@ alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_MPO_USE_01 f
 
 alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_user_ro_02 foreign key (user_role_id) references user_role (id) on delete restrict on update restrict;
 
+alter sequence MPO_USER_seq restart with 10000
+
 alter sequence MPO_MODULE_seq restart with 10000
 
 # --- !Downs
