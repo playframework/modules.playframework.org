@@ -60,7 +60,7 @@ public class Categories extends Controller
         {
             Category category = form.get();
             category.save();
-            result = showCategories();
+            result = redirect(routes.Categories.showCategories());
         }
         return result;
     }

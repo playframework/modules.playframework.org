@@ -57,10 +57,9 @@ public class PlayVersions extends Controller
         else
         {
             PlayVersion playVersion = form.get();
-            playVersion.majorVersion = playVersion.name.startsWith("1") ? PlayVersion.MajorVersion.ONE
-                                                                        : PlayVersion.MajorVersion.TWO;
+            playVersion.majorVersion = getMajorVersion(playVersion);
             playVersion.save();
-            result = showPlayVersions();
+            result = redirect(routes.PlayVersions.showPlayVersions());
         }
         return result;
     }
@@ -79,12 +78,17 @@ public class PlayVersions extends Controller
             PlayVersion storedVersion = PlayVersion.FIND.byId(incoming.id);
             storedVersion.name = incoming.name;
             storedVersion.documentationUrl = incoming.documentationUrl;
-            storedVersion.majorVersion = storedVersion.name.startsWith("1") ? PlayVersion.MajorVersion.ONE
-                                                                            : PlayVersion.MajorVersion.TWO;
+            storedVersion.majorVersion = getMajorVersion(storedVersion);
             storedVersion.save();
             result = ok(Json.toJson(storedVersion));
         }
         return result;
 
+    }
+
+    private static PlayVersion.MajorVersion getMajorVersion(PlayVersion playVersion)
+    {
+        return playVersion.name.startsWith("1") ? PlayVersion.MajorVersion.ONE
+                                                : PlayVersion.MajorVersion.TWO;
     }
 }

@@ -48,30 +48,36 @@ public class Modules extends Controller
     public static Result myModules()
     {
         User currentUser = currentUser();
-        return ok(myModules.render(currentUser, Module.ownedBy(currentUser)));
+        return ok(myModules.render(currentUser,
+                                   Module.ownedBy(currentUser)));
     }
 
     @RoleHolderPresent
     public static Result showModuleRegistrationForm()
     {
-        return ok(moduleRegistrationForm.render(currentUser(), form(Module.class)));
+        return ok(moduleRegistrationForm.render(currentUser(),
+                                                form(Module.class)));
     }
 
     @RoleHolderPresent
     public static Result submitModuleRegistrationForm()
     {
         Form<Module> form = form(Module.class).bindFromRequest();
+        Result result;
         if (form.hasErrors())
         {
-            return badRequest(moduleRegistrationForm.render(currentUser(), form));
+            result = badRequest(moduleRegistrationForm.render(currentUser(),
+                                                              form));
         }
         else
         {
             Module module = form.get();
             module.owner = currentUser();
             module.save();
-            return myModules();
+            result = redirect(routes.Modules.myModules());
         }
+
+        return result;
     }
 
     @RoleHolderPresent
@@ -114,7 +120,7 @@ public class Modules extends Controller
             moduleVersion.save();
             moduleVersion.saveManyToManyAssociations("compatibility");
 
-            result = myModules();
+            result = redirect(routes.Modules.myModules());
         }
         return result;
     }

@@ -27,7 +27,7 @@
         editCategory(form.id, form.name, message);
     };
 
-    var onSuccess = function(form) {
+    var onSuccess = function(form, data) {
         var anchor = $('#name-' + form.id);
         var href = anchor.attr('href');
         href = href.substring(0, href.lastIndexOf('/') + 1) + form.name;
@@ -50,8 +50,8 @@
         <p><%= message %></p>
         <table class="formTable">
             <tr>
-                <td>Name</td>
-                <td><input type="text" name="name" value="<%= name %>"/></td>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" name="name" id="name" value="<%= name %>"/></td>
             </tr>
         </table>
     </form>

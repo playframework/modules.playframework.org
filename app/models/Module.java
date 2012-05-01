@@ -20,7 +20,9 @@ import utils.CollectionUtils;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
@@ -32,9 +34,8 @@ import static play.data.validation.Constraints.Required;
  */
 @Entity
 @Table(name = "MPO_MODULE")
-public class Module extends AbstractModel implements ModuleAccessor {
-
-
+public class Module extends AbstractModel implements ModuleAccessor
+{
     @ManyToOne(optional = false)
     public User owner;
 
@@ -115,6 +116,18 @@ public class Module extends AbstractModel implements ModuleAccessor {
 
     public static Module findByModuleKey(String moduleKey) {
         return FIND.where().eq("key", moduleKey).findUnique();
+    }
+
+    public static Map<String, String> options()
+    {
+        Map<String, String> options = new LinkedHashMap<String, String>();
+
+        for (Module module : all()) {
+            options.put(module.id.toString(),
+                        module.name);
+        }
+
+        return options;
     }
 
     @Override

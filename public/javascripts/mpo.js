@@ -10,7 +10,7 @@ function editAdminSection(template, successCallback, errorCallback) {
                                      for (var key in form) {
                                          $('#' + key + '-' + form.id).text(form[key]);
                                      }
-                                     successCallback(form);
+                                     successCallback(form, data);
                                  })
                                  .error(
                                  function(jqXHR, textStatus, errorThrown) {
@@ -23,4 +23,23 @@ function editAdminSection(template, successCallback, errorCallback) {
                                  });
                      }
                  }});
+}
+
+function confirmDelete(description, path, id, success) {
+    var template = _.template($('#confirmDeleteTemplate').html(),
+                              {description: description});
+    $.prompt(template,
+             { buttons: { Delete: true, Cancel: false },
+                 callback: function(e,buttonValue,m,form) {
+                     if (buttonValue) {
+                         $.post(path,
+                                {id:id})
+                         .success(success);
+                     }
+                 }});
+}
+
+function removeElement(selector) {
+    var element = $(selector);
+    element.hide('slow', function(){element.remove();});
 }

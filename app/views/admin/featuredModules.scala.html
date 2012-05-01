@@ -1,0 +1,65 @@
+@(currentUser: User,
+  featuredModules: List[FeaturedModule],
+  featuredModuleForm: Form[models.FeaturedModule])
+
+@displayFeaturedModule(featuredModule: FeaturedModule) = {
+    <tr class="tableSectionHeader featuredModule-@featuredModule.id">
+        <td>@featuredModule.playModule.name (@featuredModule.creationDate.format("dd/MM/yyyy"))</td>
+        <td class="tableTools">
+            <a href="javascript:editFeaturedModule('@featuredModule.id', $('#description-@featuredModule.id').text())">Edit</a> |
+            <a href="javascript:confirmDelete('@featuredModule.playModule.name', '@routes.FeaturedModules.delete()', @featuredModule.id, function(){removeElement('tr.featuredModule-@featuredModule.id')})">Delete</a>
+        </td>
+    </tr>
+    <tr class="featuredModule-@featuredModule.id">
+        <td  id="description-@featuredModule.id" colspan="2">@featuredModule.description</td>
+    </tr>
+}
+
+@admin.adminTemplate("Featured modules", currentUser) {
+<section>
+    <div id="overviewArea">
+        <table>
+            @for(featuredModule <- featuredModules) {
+            @displayFeaturedModule(featuredModule)
+            }
+        </table>
+    </div>
+    <div id="controlArea">
+        <h3>Add new featured module</h3>
+        @helper.form(routes.FeaturedModules.addNewFeaturedModule) {
+        <input type="hidden" name="sticky" value="false"/>
+        @helper.select(featuredModuleForm("playModule.id"), helper.options(Module.options()))
+        @helper.textarea(featuredModuleForm("description"))
+        <p>
+            <button type="submit">Add</button>
+        </p>
+        }
+    </div>
+</section>
+<script type="text/javascript">
+    function editFeaturedModule(id, description, message) {
+        message = (typeof message == 'undefined') ? '' : message;
+        var template = _.template($('#editFeaturedModuleTemplate').html(),
+                                  {id:id, description:description, message:message})
+        editAdminSection(template,
+                         function(form, data){
+                             $('#description-' + data.id).text(data.description);
+                         },
+                         function(form, message) {});
+    }
+</script>
+<script type="underscore-template" id="editFeaturedModuleTemplate">
+    <form>
+        <input type="hidden" name="id" value="<%= id %>"/>
+        <input type="hidden" name="sticky" value="false"/>
+        <input type="hidden" name="targetUrl" value="@routes.FeaturedModules.update"/>
+        <p><%= message %></p>
+        <table class="formTable">
+            <tr>
+                <td><label for="description">Description</label></td>
+                <td><input type="text" id="description" name="description" value="<%= description %>"/></td>
+            </tr>
+        </table>
+    </form>
+</script>
+}

@@ -46,7 +46,7 @@
         var template = _.template($('#editVersionTemplate').html(),
                                   {id:id, name:name, documentationUrl:documentationUrl, message:message})
         editAdminSection(template,
-                         function(form){},
+                         function(form, data){},
                          onError);
     }
 </script>
@@ -57,12 +57,12 @@
         <p><%= message %></p>
         <table class="formTable">
             <tr>
-                <td>Name</td>
-                <td><input type="text" name="name" value="<%= name %>"/></td>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" id="name" name="name" value="<%= name %>"/></td>
             </tr>
             <tr>
-                <td>Documentation URL</td>
-                <td><input type="text" name="documentationUrl" value="<%= documentationUrl %>"/></td>
+                <td><label for="documentationUrl">Documentation URL</label></td>
+                <td><input type="text" id="documentationUrl" name="documentationUrl" value="<%= documentationUrl %>"/></td>
             </tr>
         </table>
     </form>

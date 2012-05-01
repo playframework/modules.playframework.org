@@ -20,7 +20,6 @@ import forms.login.Login;
 import forms.login.Register;
 import models.FeaturedModule;
 import models.Module;
-import models.ModuleVersion;
 import models.PlayVersion;
 import play.data.Form;
 import play.mvc.Controller;
@@ -40,12 +39,13 @@ import static actions.CurrentUser.currentUser;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @With(CurrentUser.class)
-public class Application extends Controller {
-	public static Result index() {
-
-		List<Module> mostRecentModules = Module.findMostRecent(5);
-		List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
-		List<FeaturedModule> featuredModules = FeaturedModule.getAll();
+public class Application extends Controller
+{
+    public static Result index()
+    {
+        final List<Module> mostRecentModules = Module.findMostRecent(5);
+        final List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
+        final List<FeaturedModule> featuredModules = FeaturedModule.getAll();
         final List<PlayVersion> playVersions = PlayVersion.getAll();
 
         return ok(index.render(currentUser(),
@@ -53,46 +53,57 @@ public class Application extends Controller {
                                highestRatedModules,
                                featuredModules,
                                playVersions,
-				               Module.count()));
+                               Module.count()));
     }
 
-	public static Result login() {
-		return ok(login.render(form(Login.class)));
-	}
+    public static Result login()
+    {
+        return ok(login.render(form(Login.class)));
+    }
 
-	public static Result authenticate() {
-		Form<Login> loginForm = form(Login.class).bindFromRequest();
-		Result result;
-		if (loginForm.hasErrors()) {
-			result = badRequest(login.render(loginForm));
-		} else {
-			session("userName", loginForm.get().userName);
-			result = redirect(routes.Application.index());
-		}
+    public static Result authenticate()
+    {
+        Form<Login> loginForm = form(Login.class).bindFromRequest();
+        Result result;
+        if (loginForm.hasErrors())
+        {
+            result = badRequest(login.render(loginForm));
+        }
+        else
+        {
+            session("userName", loginForm.get().userName);
+            result = redirect(routes.Application.index());
+        }
 
-		return result;
-	}
+        return result;
+    }
 
-	public static Result register() {
-		return ok(register.render(form(Register.class)));
-	}
+    public static Result register()
+    {
+        return ok(register.render(form(Register.class)));
+    }
 
-	public static Result createAccount() {
-		Form<Register> registerForm = form(Register.class).bindFromRequest();
-		Result result;
-		if (registerForm.hasErrors()) {
-			result = badRequest(register.render(registerForm));
-		} else {
-			Register register = registerForm.get();
-			new UserServices().createUser(register.userName, register.displayName, register.password);
-			session("userName", register.userName);
-			result = redirect(routes.Application.index());
-		}
-		return result;
-	}
+    public static Result createAccount()
+    {
+        Form<Register> registerForm = form(Register.class).bindFromRequest();
+        Result result;
+        if (registerForm.hasErrors())
+        {
+            result = badRequest(register.render(registerForm));
+        }
+        else
+        {
+            Register register = registerForm.get();
+            new UserServices().createUser(register.userName, register.displayName, register.password);
+            session("userName", register.userName);
+            result = redirect(routes.Application.index());
+        }
+        return result;
+    }
 
-	public static Result logout() {
-		session().clear();
-		return redirect(routes.Application.index());
-	}
+    public static Result logout()
+    {
+        session().clear();
+        return redirect(routes.Application.index());
+    }
 }
