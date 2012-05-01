@@ -148,10 +148,17 @@ public class Modules extends Controller
     public static Result details(String moduleKey)
     {
         Module module = Module.findByModuleKey(moduleKey);
-        List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
-        return ok(moduleDetails.render(currentUser(),
-                                       module,
-                                       moduleVersions));
+        if (module == null)
+        {
+            return notFound("Module not found: " + moduleKey);
+        }
+        else
+        {
+            List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
+            return ok(moduleDetails.render(currentUser(),
+                                           module,
+                                           moduleVersions));
+        }
     }
 
     // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice, when request params are available

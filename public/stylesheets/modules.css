@@ -15,8 +15,20 @@ header nav a.download:active {
   box-shadow: 0 1px 0 #1487B4;
 }
 
+#modules .module {
+    padding-top: 16px;
+}
+
+#modules p {
+    margin-top: 6px;
+}
+
 #introduction, #top { background-color:#1487B4; }
 #title { color:#C2D8DF; }
+#top h2 {
+    color: #C2D8DF;
+    font-size: 20px;
+}
 
 #features h2 {
 	font-size: 24px;

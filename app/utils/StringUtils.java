@@ -15,6 +15,8 @@
  */
 package utils;
 
+import static org.apache.commons.lang.StringUtils.replace;
+
 /**
  * A few handy string helpers.
  *
@@ -42,5 +44,10 @@ public class StringUtils
             result = s.length() <= 100 ? s : s.substring(0, 100) + "...";
         }
         return result;
+    }
+    
+    public static String nl2br(String s)
+    {
+        return replace(s, "\r\n", "<br/>");
     }
 }
