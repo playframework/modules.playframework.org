@@ -72,7 +72,8 @@ create table module_version (
   version_code              varchar(255) not null,
   release_notes             varchar(255) not null,
   release_date              timestamp not null,
-  binary_file_id            bigint not null,
+  -- TODO Add binaries and change binary_file_id back to not null
+  binary_file_id            bigint,
   source_file_id            bigint,
   document_file_id          bigint,
   constraint pk_module_version primary key (id))

@@ -56,6 +56,10 @@ public class ModuleVersion extends AbstractModel {
     public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,
             ModuleVersion.class);
 
+    public static int count() {
+        return FIND.findRowCount();
+    }
+
     public static List<ModuleVersion> findByModule(Module module) {
         return FIND.where()
                 .eq("playModule", module)

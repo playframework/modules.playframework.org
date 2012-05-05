@@ -22,6 +22,7 @@ import akka.actor.Props;
 import akka.util.Duration;
 import com.avaje.ebean.Ebean;
 import models.Module;
+import models.ModuleVersion;
 import models.PlayVersion;
 import models.User;
 import models.UserRole;
@@ -116,6 +117,13 @@ public class Global extends GlobalSettings
             final List<Object> modules = data.get("modules");
             Logger.debug(String.format("Module: %d loaded", modules.size()));
             Ebean.save(modules);
+        }
+
+        if (ModuleVersion.count() == 0)
+        {
+            final List<Object> versions = data.get("versions");
+            Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
+            Ebean.save(versions);
         }
     }
 }
