@@ -83,7 +83,7 @@ public class Global extends GlobalSettings
         ActorSystem actorSystem = Akka.system();
         ActorRef feedCreationActor = actorSystem.actorOf(new Props(FeedCreationActor.class));
         actorSystem.scheduler().schedule(Duration.create(0, TimeUnit.MILLISECONDS),
-                                           Duration.create(1, TimeUnit.MINUTES),
+                                           Duration.create(1, TimeUnit.HOURS),
                                            feedCreationActor,
                                            "generate");
     }
