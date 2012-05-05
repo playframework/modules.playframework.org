@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Steve Chaloner
+ * Copyright 2012 The Play! Framework
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+import actors.FeedCreationActor;
+import actors.HistoricalEventActor;
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
+import akka.util.Duration;
 import com.avaje.ebean.Ebean;
 import models.Module;
 import models.PlayVersion;
@@ -22,6 +28,7 @@ import models.UserRole;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
+import play.libs.Akka;
 import play.libs.Yaml;
 import security.RoleDefinitions;
 import services.UserServices;
@@ -29,6 +36,7 @@ import services.UserServices;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -66,6 +74,18 @@ public class Global extends GlobalSettings
         }
 
         loadInitialData();
+
+        scheduleJobs();
+    }
+
+    public void scheduleJobs()
+    {
+        ActorSystem actorSystem = Akka.system();
+        ActorRef feedCreationActor = actorSystem.actorOf(new Props(FeedCreationActor.class));
+        actorSystem.scheduler().schedule(Duration.create(0, TimeUnit.MILLISECONDS),
+                                           Duration.create(1, TimeUnit.MINUTES),
+                                           feedCreationActor,
+                                           "generate");
     }
 
     /**

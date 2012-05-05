@@ -18,6 +18,7 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -28,7 +29,18 @@ public class HistoricalEvent extends AbstractModel
     @Column(nullable = false)
     public Date creationDate;
 
+    @Column(nullable = false)
+    public String category;
+
     @Column(length = 1000,
             nullable = false)
     public String message;
+
+    public static final Finder<Long, HistoricalEvent> FIND = new Finder<Long, HistoricalEvent>(Long.class,
+                                                                                               HistoricalEvent.class);
+
+    public static List<HistoricalEvent> findMostRecent(int count)
+    {
+        return FIND.where().orderBy("creationDate DESC").setMaxRows(count).findList();
+    }
 }

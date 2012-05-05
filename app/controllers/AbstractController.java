@@ -30,15 +30,16 @@ import java.util.Date;
  */
 public class AbstractController extends Controller
 {
-    public static void createHistoricalEvent(String message)
+    public static void createHistoricalEvent(String category,
+                                             String message)
     {
         HistoricalEvent historicalEvent = new HistoricalEvent();
         historicalEvent.creationDate = new Date();
+        historicalEvent.category = category;
         historicalEvent.message = message;
 
         ActorSystem actorSystem = Akka.system();
-        ActorRef actor = actorSystem.actorOf(new Props(HistoricalEventActor.class), "history");
-
+        ActorRef actor = actorSystem.actorOf(new Props(HistoricalEventActor.class));
         actor.tell(historicalEvent);
     }
 }

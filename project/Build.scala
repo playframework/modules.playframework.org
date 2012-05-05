@@ -8,7 +8,8 @@ object ApplicationBuild extends Build {
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
-      "be.objectify" %% "deadbolt-2" % "1.1.2"
+      "be.objectify" %% "deadbolt-2" % "1.1.2",
+      "rome" % "rome" % "1.0"
     )
 
   val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(

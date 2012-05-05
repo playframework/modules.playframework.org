@@ -76,7 +76,8 @@ public class Modules extends AbstractController
             module.owner = user;
             module.save();
 
-            createHistoricalEvent(String.format("%s (%s) created a new module - %s",
+            createHistoricalEvent("New module - " + module.name,
+                                  String.format("%s (%s) created a new module - %s",
                                                 user.displayName,
                                                 user.userName,
                                                 module.name));
@@ -128,7 +129,8 @@ public class Modules extends AbstractController
             moduleVersion.save();
             moduleVersion.saveManyToManyAssociations("compatibility");
 
-            createHistoricalEvent(String.format("%s (%s) uploaded version %s of %s",
+            createHistoricalEvent("Module updated - " + moduleVersion.playModule.name,
+                                  String.format("%s (%s) uploaded version %s of %s",
                                                 user.displayName,
                                                 user.userName,
                                                 moduleVersion.versionCode,
