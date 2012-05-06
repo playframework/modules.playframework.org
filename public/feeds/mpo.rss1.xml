@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel rdf:about="http://modules.playframework.org">
+    <title>Play! Modules</title>
+    <link>http://modules.playframework.org</link>
+    <description>The Play! Framework's module repository feed</description>
+    <dc:date>2012-05-06T08:32:22Z</dc:date>
+  </channel>
+</rdf:RDF>
+

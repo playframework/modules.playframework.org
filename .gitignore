@@ -14,3 +14,6 @@ dist
 *.iml
 *.ipr
 .DS_Store
+public/feeds/mpo.atom.xml
+public/feeds/mpo.rss1.xml
+public/feeds/mpo.rss2.xml
