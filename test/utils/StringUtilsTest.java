@@ -18,9 +18,6 @@ package utils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static utils.StringUtils.nl2br;
-
 /**
  * Test cases for {@link StringUtils}.
  *
@@ -81,30 +78,5 @@ public class StringUtilsTest
     {
         Assert.assertFalse(StringUtils.isEmpty("    foo    "));
     }
-    
-    @Test
-    public void nl2br_emptyString()
-    {
-        assertThat(nl2br("")).isEqualTo("");    
-    }
-    
-    @Test
-    public void nl2br_nullString()
-    {
-        assertThat(nl2br(null)).isEqualTo(null);    
-    }
-    
-    @Test
-    public void nl2br_stringWithoutNl()
-    {
-        String str = "this is a string without new lines";
-        assertThat(nl2br(str)).isEqualTo(str);
-    }
-    
-    @Test
-    public void nl2br_stringWithNl()
-    {
-        String str = "this \r\n string \r\n contains \r\n breaks";
-        assertThat(nl2br(str)).isEqualTo("this <br/> string <br/> contains <br/> breaks");
-    }
+
 }

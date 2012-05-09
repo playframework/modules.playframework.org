@@ -15,8 +15,6 @@
  */
 package utils;
 
-import static org.apache.commons.lang.StringUtils.replace;
-
 /**
  * A few handy string helpers.
  *
@@ -45,9 +43,5 @@ public class StringUtils
         }
         return result;
     }
-    
-    public static String nl2br(String s)
-    {
-        return replace(s, "\r\n", "<br/>");
-    }
+
 }
