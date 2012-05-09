@@ -15,6 +15,7 @@
  */
 package models;
 
+import com.petebevin.markdown.MarkdownProcessor;
 import play.data.validation.Constraints;
 import utils.CollectionUtils;
 
@@ -103,6 +104,10 @@ public class Module extends AbstractModel implements ModuleAccessor
 
     @ManyToMany(cascade = {DETACH, PERSIST, REFRESH})
     public List<Tag> tags;
+
+    public String getDescriptionHtml() {
+        return new MarkdownProcessor().markdown(description);
+    }
 
     public static final Finder<Long, Module> FIND = new Finder<Long, Module>(Long.class, Module.class);
 

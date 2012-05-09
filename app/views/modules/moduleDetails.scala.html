@@ -17,27 +17,29 @@
     <div id="overviewArea">
 
         <p>
-            @Html(nl2br(module.description))
+            @Html(module.getDescriptionHtml())
         </p>
 
         <h2>Releases</h2>
-        <table style="width: 100%">
+        <table>
             @for(version <- versions){
-                <tr>
-                    <td>@version.versionCode</td>
-                    <td>@version.releaseDate</td>
-                    <td>@version.releaseNotes</td>
-                    <td>compatible with @for(compatible <- version.compatibility) {<span class="lineList">@compatible.name,</span>}
-                    </td>
+            <tr>
+                <td>@version.versionCode</td>
+                <td>@version.releaseDate</td>
+                <td>@version.releaseNotes</td>
+                <td>compatible with
+                    @for(compatible <- version.compatibility) {
+                        <span class="lineList">@compatible.name,</span>
+                    }
+                </td>
 
-                </tr>
+            </tr>
 
             }
         </table>
-
+          
     </div>
     <div id="controlArea">
-
 
         <h3>Project home: </h3>
         <a href="@module.projectUrl" target="_blank">@module.projectUrl</a>
@@ -58,7 +60,6 @@
 
         <h3>Contributors: </h3>
         @module.contributors
-
     </div>
 </div>
 }

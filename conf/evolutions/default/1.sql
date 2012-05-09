@@ -233,9 +233,34 @@ alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_MPO_USE_01 f
 
 alter table MPO_USER_user_role add constraint fk_MPO_USER_user_role_user_ro_02 foreign key (user_role_id) references user_role (id) on delete restrict on update restrict;
 
-alter sequence MPO_USER_seq restart with 10000;
+alter sequence binary_content_seq restart with 10000;
+
+alter sequence category_seq restart with 10000;
+
+alter sequence comment_seq restart with 10000;
+
+alter sequence featured_module_seq restart with 10000;
+
+alter sequence historical_event_seq restart with 10000;
 
 alter sequence MPO_MODULE_seq restart with 10000;
+
+alter sequence module_version_seq restart with 10000;
+
+alter sequence play_version_seq restart with 10000;
+
+alter sequence rate_seq restart with 10000;
+
+alter sequence rating_seq restart with 10000;
+
+alter sequence tag_seq restart with 10000;
+
+alter sequence MPO_USER_seq restart with 10000;
+
+alter sequence user_role_seq restart with 10000;
+
+alter sequence vote_seq restart with 10000;
+
 
 # --- !Downs
 
