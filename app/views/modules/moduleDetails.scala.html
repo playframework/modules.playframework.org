@@ -20,58 +20,45 @@
             @Html(nl2br(module.description))
         </p>
 
-        <p>
-            <strong>Project home: </strong><a href="@module.projectUrl" target="_blank">@module.projectUrl</a><br/>
-            @if(!isEmpty(module.demoUrl)) {
-                <strong>Demo: </strong><a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
+        <h2>Releases</h2>
+        <table style="width: 100%">
+            @for(version <- versions){
+                <tr>
+                    <td>@version.versionCode</td>
+                    <td>@version.releaseDate</td>
+                    <td>@version.releaseNotes</td>
+                    <td>compatible with @for(compatible <- version.compatibility) {<span class="lineList">@compatible.name,</span>}
+                    </td>
+
+                </tr>
+
             }
-        </p>
+        </table>
+
+    </div>
+    <div id="controlArea">
+
+
+        <h3>Project home: </h3>
+        <a href="@module.projectUrl" target="_blank">@module.projectUrl</a>
+
+        @if(!isEmpty(module.demoUrl)) {
+            <h3>Demo: </h3>
+            <a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
+        }
 
         @if(!isEmpty(module.licenseType)){
-        <p>
-            <strong>License: </strong>
+            <h3>License: </h3>
             @if(!isEmpty(module.licenseUrl)){
                 <a href="@module.licenseUrl">@module.licenseType</a>
             } else {
                 @module.licenseType
             }
-        </p>
         }
-        
-        <p>
-            Written by @module.contributors
-        </p>
-        
-        <!--
-            <tr>
-                <td>License :</td>
-                <td><a href="@module.licenseUrl" target="_blank">@module.licenseType</a></td>
-            </tr>
-            @if(!isEmpty(module.demoUrl)) {
-            <tr>
-                <td>Demo: </td>
-                <td><a href="@module.demoUrl">@module.demoUrl</a></td>
-            </tr>
-            }
-            @dynamic(security.dynamic.AllowToVote.KEY, module.key) {
-            <tr>
-                <td>Vote: </td>
-                <td>
-                    <a href="@routes.Modules.vote(module.key)">Vote</a>
-                </td>
-            </tr>
-            }
-        </table>
-        -->
-    </div>
-    <div id="controlArea">
-        @for(version <- versions){
-        <h3>@version.versionCode (@version.releaseDate)</h3>
-        <p>@version.releaseNotes</p>
-        <p>
-            Compatible with: @for(compatible <- version.compatibility) {<span class="lineList">@compatible.name,</span>}
-        </p>
-        }
+
+        <h3>Contributors: </h3>
+        @module.contributors
+
     </div>
 </div>
 }

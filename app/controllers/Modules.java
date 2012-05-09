@@ -23,7 +23,6 @@ import models.ModuleVersion;
 import models.PlayVersion;
 import models.User;
 import play.data.Form;
-import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import utils.RequestUtils;
@@ -149,10 +148,19 @@ public class Modules extends AbstractController
     // e.g. /modules/play-1.2.4
     public static Result getModulesByPlayVersion(String version)
     {
-        User currentUser = currentUser();
-        final String title = String.format("Play %s.x modules", version);
-        // TODO List modules with a ModuleVersion with the given majorVersion, instead of all modules.
-        return ok(genericModuleList.render(currentUser, title, Module.all()));
+        List<PlayVersion> playVersionList = PlayVersion.findByLooseName(version);
+        Result result;
+        if (playVersionList.isEmpty()){
+            result = notFound("Play version not found: " + version);
+        }                                                                        
+        else 
+        {
+            User currentUser = currentUser();
+            String title = String.format("Play %s.x modules", version);
+            List<Module> modules = ModuleVersion.findModulesByPlayVersion(playVersionList);
+            result = ok(genericModuleList.render(currentUser, title, modules));
+        }
+        return result; 
     }
 
     public static Result getModulesByCategory(String version,
