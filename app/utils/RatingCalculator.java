@@ -22,24 +22,37 @@ public class RatingCalculator {
 	
 	private static final double CHANCE = 1.96;
 
-	public static double confidence(int positiveRatings, int totalRatings) {
-		if (totalRatings == 0) {
-			return 0d;
+	public static double confidence(int positiveRatings,
+                                    int totalRatings)
+    {
+        double result = 0.0;
+		if (totalRatings != 0)
+        {
+            double z = CHANCE;
+            double phat = 1.0 * positiveRatings / totalRatings;
+            result = (phat + z*z/(2*totalRatings) - z * Math.sqrt((phat*(1-phat)+z*z/(4*totalRatings))/totalRatings))/(1+z*z/totalRatings);
 		}
-		double z = CHANCE;
-		double phat = 1.0 * positiveRatings / totalRatings;
-		return (phat + z*z/(2*totalRatings) - z * Math.sqrt((phat*(1-phat)+z*z/(4*totalRatings))/totalRatings))/(1+z*z/totalRatings);
+		return result;
 	}
 	
-	public static int score(int positiveRatings, int totalRatings) {
-		return score(positiveRatings, totalRatings, 100);
+	public static int score(int positiveRatings,
+                            int totalRatings)
+    {
+		return score(positiveRatings,
+                     totalRatings,
+                     100);
 	}
 	
-	public static int score(int positiveRatings, int totalRatings, int granularity) {
-		if (totalRatings == 0) {
-			return 0;
+	public static int score(int positiveRatings,
+                            int totalRatings,
+                            int granularity)
+    {
+        int result = 0;
+		if (totalRatings != 0)
+        {
+			result = (positiveRatings*granularity)/totalRatings;
 		}
-		return (positiveRatings*granularity)/totalRatings;
+		return result;
 	}
 	
 

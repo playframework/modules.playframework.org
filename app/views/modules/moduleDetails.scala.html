@@ -1,9 +1,14 @@
-@(currentUser: User, module: Module, versions: List[ModuleVersion])
+@(currentUser: User, module: Module, versions: List[ModuleVersion], rate: Rate)
 @import tags.moduleList
 @import utils.StringUtils._
 @import be.objectify.deadbolt.views.html._
 
-@main(module.name, currentUser) {
+@moreScripts = {
+<script src="@routes.Assets.at("javascripts/jquery.rating.pack.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/underscore.min.js")" type="text/javascript"></script>
+}
+
+@main(module.name, currentUser, moreScripts) {
 
 <section id="top">
     <div class="wrapper">
@@ -60,6 +65,50 @@
 
         <h3>Contributors: </h3>
         @module.contributors
+
+        <h3>Rate it</h3>
+        @roleHolderPresent {
+            <input name="rating" type="radio" id="rating-1" class="auto-submit-star" value="1"/>
+            <input name="rating" type="radio" id="rating-2" class="auto-submit-star" value="2"/>
+            <input name="rating" type="radio" id="rating-3" class="auto-submit-star" value="3"/>
+            <input name="rating" type="radio" id="rating-4" class="auto-submit-star" value="4"/>
+            <input name="rating" type="radio" id="rating-5" class="auto-submit-star" value="5"/>
+        }
+        <span id="ratingSummary"/>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        setRatingSummary('@module.rating.averageRating',
+                         '@module.rating.totalRatings()');
+
+        function setRatingSummary(averageRating, totalRatings) {
+            var ratingSummaryTemplate = _.template($('#ratingSummaryTemplate').html(),
+                                                   {averageRating:averageRating, ratingCount:totalRatings});
+            $('#ratingSummary').text(ratingSummaryTemplate);
+        }
+
+        @if(rate != null) {
+            $('#rating-@rate.rating').attr('checked', 'checked');
+        }
+
+        @roleHolderPresent {
+        $('.auto-submit-star').rating(
+                {
+                    'required': true,
+                    callback: function(value, link){
+                        $.post('@routes.Modules.rate(module.key)',
+                               {id:'@module.id', rating:value},
+                               function(data, textStatus, jqXHR) {
+                                   setRatingSummary(data.averageRating, data.totalRatings);
+                               });
+                    }
+                });
+        }
+    });
+</script>
+<script type="underscore-template" id="ratingSummaryTemplate">
+    <%= averageRating %> (<%= ratingCount %> ratings)
+</script>
 }

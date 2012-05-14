@@ -43,7 +43,7 @@ POST /admin/featured/delete             controllers.FeaturedModules.delete()
 # Module details (the only path not containing a slash, to make the most published URL cleanest)
 GET  /:moduleKey                    controllers.Modules.details(moduleKey: String)
 POST /:moduleKey/votes              controllers.Modules.vote(moduleKey: String)
-POST /:moduleKey/ratings/:rate      controllers.Modules.rate(moduleKey: String, rate: java.lang.Integer)
+POST /:moduleKey/ratings            controllers.Modules.rate(moduleKey: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET  /assets/*file           controllers.Assets.at(path="/public", file)

@@ -15,6 +15,7 @@
  */
 package actions;
 
+import com.avaje.ebean.Ebean;
 import models.User;
 import play.mvc.Action;
 import play.mvc.Http;

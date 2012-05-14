@@ -24,6 +24,8 @@ import com.avaje.ebean.Ebean;
 import models.Module;
 import models.ModuleVersion;
 import models.PlayVersion;
+import models.Rate;
+import models.Rating;
 import models.User;
 import models.UserRole;
 import play.Application;
@@ -33,7 +35,9 @@ import play.libs.Akka;
 import play.libs.Yaml;
 import security.RoleDefinitions;
 import services.UserServices;
+import utils.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -107,15 +111,29 @@ public class Global extends GlobalSettings
         // The 'admin' user is already loaded.
         if (User.count() <= 1)
         {
-            final List<Object> users = data.get("users");
+            final List<User> users = CollectionUtils.castTo(data.get("users"),
+                                                            User.class);
+            // programatically add some attributes
+            for (User user : users)
+            {
+                user.rates = new ArrayList<Rate>();
+            }
             Logger.debug(String.format("User: %d loaded", users.size()));
             Ebean.save(users);
         }
 
         if (Module.count() == 0)
         {
-            final List<Object> modules = data.get("modules");
+            final List<Module> modules = CollectionUtils.castTo(data.get("modules"),
+                                                                Module.class);
             Logger.debug(String.format("Module: %d loaded", modules.size()));
+
+            // programatically add some attributes
+            for (Module module : modules)
+            {
+                module.rating = new Rating(true);
+            }
+
             Ebean.save(modules);
         }
 
@@ -126,4 +144,5 @@ public class Global extends GlobalSettings
             Ebean.save(versions);
         }
     }
+
 }

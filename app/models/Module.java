@@ -96,7 +96,7 @@ public class Module extends AbstractModel implements ModuleAccessor
     @Column(nullable = false)
     public Date updatedOn = new Date();
 
-    @OneToOne(optional = true)
+    @OneToOne(optional = true, cascade = ALL)
     public Rating rating;
 
     @OneToMany(fetch = LAZY, cascade = ALL, orphanRemoval = true)

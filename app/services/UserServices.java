@@ -15,6 +15,7 @@
  */
 package services;
 
+import models.Rate;
 import models.User;
 import models.UserRole;
 
@@ -49,6 +50,7 @@ public class UserServices
         user.password = password;
         user.accountActive = true;
         user.roles = new ArrayList<UserRole>(roles);
+        user.rates = new ArrayList<Rate>();
         user.save();
         user.saveManyToManyAssociations("roles");
         return user;

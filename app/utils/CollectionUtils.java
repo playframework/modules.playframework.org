@@ -16,6 +16,7 @@
 package utils;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -64,5 +65,28 @@ public class CollectionUtils
     public static boolean isEmpty(Collection c)
     {
         return c == null || c.isEmpty();
+    }
+
+    public static <T> T filterFirst(Collection<T> collection,
+                                    Filter<T> filter)
+    {
+        T t = null;
+
+        if (!isEmpty(collection))
+        {
+            for (Iterator<T> iterator = collection.iterator(); t == null && iterator.hasNext(); )
+            {
+                T element = iterator.next();
+                t = filter.isAcceptable(element) ? element :  null;
+            }
+        }
+
+        return t;
+    }
+
+    public static <T> List<T> castTo(List list,
+                                    Class<T> t)
+    {
+        return (List<T>)(List)list;
     }
 }

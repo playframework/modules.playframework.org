@@ -17,14 +17,22 @@ package controllers;
 
 import actions.CurrentUser;
 import be.objectify.deadbolt.actions.RoleHolderPresent;
+import com.avaje.ebean.Ebean;
+import forms.modules.RatingForm;
+import forms.modules.RatingResponseForm;
 import models.BinaryContent;
 import models.Module;
 import models.ModuleVersion;
 import models.PlayVersion;
+import models.Rate;
+import models.Rating;
 import models.User;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Result;
 import play.mvc.With;
+import utils.CollectionUtils;
+import utils.Filter;
 import utils.RequestUtils;
 import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
@@ -73,6 +81,7 @@ public class Modules extends AbstractController
         {
             Module module = form.get();
             module.owner = user;
+            module.rating = new Rating(true);
             module.save();
 
             createHistoricalEvent("New module - " + module.name,
@@ -172,7 +181,7 @@ public class Modules extends AbstractController
     public static Result details(String moduleKey)
     {
         Result result;
-        Module module = Module.findByModuleKey(moduleKey);
+        final Module module = Module.findByModuleKey(moduleKey);
         if (module == null)
         {
             result = notFound("Module not found: " + moduleKey);
@@ -180,9 +189,26 @@ public class Modules extends AbstractController
         else
         {
             List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
-            result = ok(moduleDetails.render(currentUser(),
+            User user = currentUser();
+            Rate rate = null;
+
+            if (user != null)
+            {
+                rate = CollectionUtils.filterFirst(user.rates,
+                                                   new Filter<Rate>()
+                                                   {
+                                                       public boolean isAcceptable(Rate rate)
+                                                       {
+                                                           return rate.playModule.id.equals(module.id);
+                                                       }
+                                                   });
+            }
+
+            Ebean.refresh(module.rating);
+            result = ok(moduleDetails.render(user,
                                              module,
-                                             moduleVersions));
+                                             moduleVersions,
+                                             rate));
         }
         return result;
     }
@@ -196,9 +222,65 @@ public class Modules extends AbstractController
 
     // If a user has already rated, then change the rate, don't add a new one
     @RoleHolderPresent
-    public static Result rate(String moduleKey,
-                              int rate)
+    public static Result rate(String moduleKey)
     {
-        return TODO;
+        Result result;
+        Form<RatingForm> form = form(RatingForm.class).bindFromRequest();
+
+        if (form.hasErrors())
+        {
+            result = badRequest(form.errorsAsJson());
+        }
+        else
+        {
+            RatingForm ratingForm = form.get();
+            final Module module = Module.findById(ratingForm.id);
+
+            if (module == null)
+            {
+                result = badRequest("Module does not exist");
+            }
+            else
+            {
+                User user = currentUser();
+                Rate rate = null;
+
+                if (user != null)
+                {
+                    rate = CollectionUtils.filterFirst(user.rates,
+                                                       new Filter<Rate>()
+                                                       {
+                                                           @Override
+                                                           public boolean isAcceptable(Rate rate)
+                                                           {
+                                                               return rate.playModule.id.equals(module.id);
+                                                           }
+                                                       });
+                    if (rate != null)
+                    {
+                        module.rating.subtract(rate);
+                    }
+                    else
+                    {
+                        rate = new Rate();
+                        rate.playModule = module;
+                        user.rates.add(rate);
+                    }
+                    rate.rating = ratingForm.rating;
+                    module.rating.add(rate);
+                    module.rating.calculateAverage();
+
+                    module.save();
+                    user.save();
+                }
+
+                RatingResponseForm responseForm = new RatingResponseForm();
+                responseForm.totalRatings = module.rating.totalRatings();
+                responseForm.averageRating = module.rating.averageRating;
+                result = ok(Json.toJson(responseForm));
+            }
+        }
+
+        return result;
     }
 }

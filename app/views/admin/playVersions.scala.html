@@ -44,7 +44,7 @@
     function editVersion(id, name, documentationUrl, message) {
         message = (typeof message == 'undefined') ? '' : message;
         var template = _.template($('#editVersionTemplate').html(),
-                                  {id:id, name:name, documentationUrl:documentationUrl, message:message})
+                                  {id:id, name:name, documentationUrl:documentationUrl, message:message});
         editAdminSection(template,
                          function(form, data){},
                          onError);
