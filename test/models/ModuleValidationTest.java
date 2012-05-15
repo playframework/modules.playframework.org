@@ -20,16 +20,6 @@ public class ModuleValidationTest {
         assertThat(module).isInvalidBecauseMissingRequired("key");
     }
 
-    /* TODO: continue this test and make key unique..
-    @Test
-    public void keyMustBeUnique() {
-        new ModuleBuilder().withKey("aaa").build().save();
-
-        Module module = new ModuleBuilder().withKey("aaa").build();
-        assertThat(module).isInvalidBecause("key", "error.unique");
-    }
-    */
-
     @Test
     public void nameIsRequired() {
         Module module = new ModuleBuilder().withName(null).build();
