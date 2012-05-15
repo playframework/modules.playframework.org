@@ -33,22 +33,13 @@
 				</p>
 			</div>
 			<div id="quicklinks">
-				<h2>Browse 2.x modules</h2>
+				<h2>Browse modules</h2>
 				<p>
-					<a href='@routes.Modules.getModulesByPlayVersion("2")'>All</a>,
-					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
+                    <a href='@routes.Modules.getModulesByPlayVersion("1")'>Play 1.x</a>,
+                    <a href='@routes.Modules.getModulesByPlayVersion("2")'>Play 2.x</a>
+
 				</p>
-				<h2>Browse 1.x modules</h2>
-				<p>
-					<a href='@routes.Modules.getModulesByPlayVersion("1")'>All</a>,
-					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
-				</p>
-				@if(currentUser == null) {
-				<h2>Contribute</h2>
-				<p>
-					<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
-				</p>
-				}
+
 				<h2>Get involved</h2>
 				<p>
 					Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
@@ -66,16 +57,5 @@
 		</div>
 	</section>
 
-	<section id="features">
-		<div class="wrapper">
-			@featureList("Latest 2.x modules", mostRecentModules)
-			@featureList("Featured 2.x modules", featuredModules)
-			@featureList("Highest-rated 2.x", highestRatedModules)
-		</div>
-		<div class="wrapper">
-			<div class="item"><h2>Latest 1.x modules</h2></div>
-			<div class="item"><h2>Featured 1.x modules</h2></div>
-			<div class="item"><h2>Highest-rated 1.x</h2></div>
-		</div>
-	</section>
+
 }
