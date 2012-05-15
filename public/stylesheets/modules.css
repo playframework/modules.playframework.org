@@ -112,12 +112,14 @@ tr.tableSectionHeader {
 }
 
 /* Voting */
+span.activeVote {
+    cursor: pointer;
+}
 span.vote {
     background-image: url(../images/votes.png);
     background-repeat: no-repeat;
     padding-left: 18px;
     margin-right: 10px;
-    cursor: pointer;
 }
 span.upVote {
     background-position: 0 0;

@@ -65,10 +65,8 @@
         @module.contributors
 
         <h3>Voting</h3>
-        @roleHolderPresent {
-        <span class="vote upVote" title="Vote up">@module.upVoteCount</span>
-        <span class="vote downVote" title="Vote down">@module.downVoteCount</span>
-        }
+        <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
+        <span class="vote downVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote down"}>@module.downVoteCount</span>
 
         <h3>Rating</h3>
         @roleHolderPresent {
@@ -84,33 +82,34 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        $('span.upVote').click(function() {
-            var self = this;
-            $.post('@routes.Modules.voteUp(module.key)',
-                   function(data, textStatus, jqXHR) {
-                       $('span.votedDown').removeClass('votedDown').addClass('downVote').text(data.downVotes);
-                       $('span.downVote').text(data.downVotes);
-                       $(self).removeClass('upVote').addClass('votedUp').text(data.upVotes);
-                   });
-        });
-        $('span.downVote').click(function() {
-            var self = this;
-            $.post('@routes.Modules.voteDown(module.key)',
-                   function(data, textStatus, jqXHR) {
-                       $('span.votedUp').removeClass('votedUp').addClass('upVote').text(data.upVotes);
-                       $('span.upVote').text(data.upVotes);
-                       $(self).removeClass('downVote').addClass('votedDown').text(data.downVotes);
-                   });
-        });
+        @roleHolderPresent {
+         $('span.upVote').click(function() {
+             var self = this;
+             $.post('@routes.Modules.voteUp(module.key)',
+                    function(data, textStatus, jqXHR) {
+                        $('span.votedDown').removeClass('votedDown').addClass('downVote').text(data.downVotes);
+                        $('span.downVote').text(data.downVotes);
+                        $(self).removeClass('upVote').addClass('votedUp').text(data.upVotes);
+                    });
+         });
+         $('span.downVote').click(function() {
+             var self = this;
+             $.post('@routes.Modules.voteDown(module.key)',
+                    function(data, textStatus, jqXHR) {
+                        $('span.votedUp').removeClass('votedUp').addClass('upVote').text(data.upVotes);
+                        $('span.upVote').text(data.upVotes);
+                        $(self).removeClass('downVote').addClass('votedDown').text(data.downVotes);
+                    });
+         });
 
-        @if(vote != null){
-         @if(vote.isUpVote()) {
-          $('span.upVote').removeClass('upVote').addClass('votedUp');
-         } else {
-          $('span.downVote').removeClass('downVote').addClass('votedDown');
+         @if(vote != null){
+          @if(vote.isUpVote()) {
+           $('span.upVote').removeClass('upVote').addClass('votedUp');
+          } else {
+           $('span.downVote').removeClass('downVote').addClass('votedDown');
+          }
          }
         }
-
         setRatingSummary('@module.rating.averageRating',
                          '@module.rating.totalRatings()');
 
