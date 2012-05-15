@@ -111,6 +111,15 @@ tr.tableSectionHeader {
     background-color: #eee;
 }
 
+/* Module details*/
+table.releases {
+    width: 100%;
+}
+
+table.releases thead tr th {
+    font-weight: bolder;
+}
+
 /* Voting */
 span.activeVote {
     cursor: pointer;

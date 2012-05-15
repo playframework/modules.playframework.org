@@ -26,13 +26,21 @@
         </p>
 
         <h2>Releases</h2>
-        <table>
+        <table class="releases">
+            <thead>
+            <tr>
+            <th>Version</th>
+            <th>Release date</th>
+            <th>Release notes</th>
+            <th>Compatible with</th>
+            </tr>
+            </thead>
             @for(version <- versions){
             <tr>
                 <td>@version.versionCode</td>
-                <td>@version.releaseDate</td>
+                <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
                 <td>@version.releaseNotes</td>
-                <td>compatible with
+                <td>
                     @for(compatible <- version.compatibility) {
                         <span class="lineList">@compatible.name,</span>
                     }
