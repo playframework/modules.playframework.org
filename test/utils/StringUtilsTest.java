@@ -79,4 +79,45 @@ public class StringUtilsTest
         Assert.assertFalse(StringUtils.isEmpty("    foo    "));
     }
 
+    @Test
+    public void summarize_null()
+    {
+        Assert.assertEquals("",
+                            StringUtils.summarize(null));
+    }
+
+    @Test
+    public void summarize_empty()
+    {
+        Assert.assertEquals("",
+                            StringUtils.summarize(""));
+    }
+
+    @Test
+    public void summarize_nonPrinting()
+    {
+        Assert.assertEquals("",
+                            StringUtils.summarize("\t\n"));
+    }
+
+    @Test
+    public void summarize_shorterThanLimit()
+    {
+        Assert.assertEquals("0123456789",
+                            StringUtils.summarize("0123456789"));
+    }
+
+    @Test
+    public void summarize_equalToLimit()
+    {
+        Assert.assertEquals("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789",
+                            StringUtils.summarize("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"));
+    }
+
+    @Test
+    public void summarize_longerThanLimit()
+    {
+        Assert.assertEquals("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789...",
+                            StringUtils.summarize("01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"));
+    }
 }

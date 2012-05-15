@@ -8,6 +8,7 @@ public class ModuleBuilder {
     private String summary = "module summmary";
     private String description = "module description";
     private String licenseType = "license type";
+    private String organisation = "organisation";
 
     public Module build() {
         Module module = new Module();
@@ -16,6 +17,7 @@ public class ModuleBuilder {
         module.summary = summary;
         module.description = description;
         module.licenseType = licenseType;
+        module.organisation = organisation;
         return module;
     }
 

@@ -67,6 +67,15 @@ public class CollectionUtils
         return c == null || c.isEmpty();
     }
 
+    /**
+     * Gets the first matching element of collection, using the filter.
+     *
+     * @param collection the collection to filter
+     * @param filter filters the elements
+     * @param <T> the generic type
+     * @return the first element that is accepted by the filter, or null if the collection is null, empty or contains
+     * no acceptable elements
+     */
     public static <T> T filterFirst(Collection<T> collection,
                                     Filter<T> filter)
     {
@@ -84,9 +93,17 @@ public class CollectionUtils
         return t;
     }
 
+    /**
+     * Convenience method for type erasure when casting lists.
+     *
+     * @param list the list to cast
+     * @param t the class type
+     * @param <T> the generic type
+     * @return a list of type T
+     */
     public static <T> List<T> castTo(List list,
                                     Class<T> t)
     {
-        return (List<T>)(List)list;
+        return (List<T>)list;
     }
 }

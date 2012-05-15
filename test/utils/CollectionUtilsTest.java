@@ -19,6 +19,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -152,5 +153,111 @@ public class CollectionUtilsTest
         String first = CollectionUtils.last(list);
         Assert.assertEquals("bar",
                             first);
+    }
+
+    @Test
+    public void filterFirst_null()
+    {
+        Object o = CollectionUtils.filterFirst(null,
+                                               new Filter<Object>()
+                                               {
+                                                   public boolean isAcceptable(Object o)
+                                                   {
+                                                       return true;
+                                                   }
+                                               });
+        Assert.assertNull(o);
+    }
+
+    @Test
+    public void filterFirst_empty()
+    {
+        Object o = CollectionUtils.filterFirst(Collections.emptyList(),
+                                               new Filter<Object>()
+                                               {
+                                                   public boolean isAcceptable(Object o)
+                                                   {
+                                                       return true;
+                                                   }
+                                               });
+        Assert.assertNull(o);
+    }
+
+    @Test
+    public void filterFirst_noMatchingElements()
+    {
+        String s = CollectionUtils.filterFirst(Arrays.asList("a", "b"),
+                                               new Filter<String>()
+                                               {
+                                                   public boolean isAcceptable(String s)
+                                                   {
+                                                       return false;
+                                                   }
+                                               });
+        Assert.assertNull(s);
+    }
+
+    @Test
+    public void filterFirst_matchingElementIsFirst()
+    {
+        String s = CollectionUtils.filterFirst(Arrays.asList("a", "b", "c"),
+                                               new Filter<String>()
+                                               {
+                                                   public boolean isAcceptable(String s)
+                                                   {
+                                                       return "a".equals(s);
+                                                   }
+                                               });
+        Assert.assertNotNull(s);
+        Assert.assertEquals("a",
+                            s);
+    }
+
+    @Test
+    public void filterFirst_matchingElementInMiddle()
+    {
+        String s = CollectionUtils.filterFirst(Arrays.asList("a", "b", "c"),
+                                               new Filter<String>()
+                                               {
+                                                   public boolean isAcceptable(String s)
+                                                   {
+                                                       return "b".equals(s);
+                                                   }
+                                               });
+        Assert.assertNotNull(s);
+        Assert.assertEquals("b",
+                            s);
+    }
+
+    @Test
+    public void filterFirst_matchingElementIsLast()
+    {
+        String s = CollectionUtils.filterFirst(Arrays.asList("a", "b", "c"),
+                                               new Filter<String>()
+                                               {
+                                                   public boolean isAcceptable(String s)
+                                                   {
+                                                       return "c".equals(s);
+                                                   }
+                                               });
+        Assert.assertNotNull(s);
+        Assert.assertEquals("c",
+                            s);
+    }
+
+    @Test
+    public void filterFirst_multipleMatches()
+    {
+        String s = CollectionUtils.filterFirst(Arrays.asList("foobar", "foocafe", "foorestaurant"),
+                                               new Filter<String>()
+                                               {
+                                                   public boolean isAcceptable(String s)
+                                                   {
+                                                       return s.startsWith("foo");
+                                                   }
+                                               });
+        Assert.assertNotNull(s);
+        Assert.assertEquals("foobar",
+                            s);
     }
 }
