@@ -111,6 +111,27 @@ tr.tableSectionHeader {
     background-color: #eee;
 }
 
+/* Voting */
+span.vote {
+    background-image: url(../images/votes.png);
+    background-repeat: no-repeat;
+    padding-left: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+span.upVote {
+    background-position: 0 0;
+}
+span.votedUp {
+    background-position: 0 -25px;
+}
+span.downVote {
+    background-position: 0 -50px;
+}
+span.votedDown {
+    background-position: 0 -75px;
+}
+
 /* Steve: I've just copied the example inpromptu css for now, it may need restyling later*/
 .jqifade{
     position: absolute;

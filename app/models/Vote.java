@@ -17,18 +17,31 @@ package models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Vote extends AbstractModel {
+public class Vote extends AbstractModel
+{
+    public enum VoteType { UP, DOWN }
 
     @OneToOne(optional = false)
     public Module playModule;
 
     @Column(nullable = false)
     public Boolean publicVote;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    public VoteType voteType;
+
+    public boolean isUpVote()
+    {
+        return voteType == VoteType.UP;
+    }
 
 }

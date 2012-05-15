@@ -20,6 +20,7 @@ import be.objectify.deadbolt.actions.RoleHolderPresent;
 import com.avaje.ebean.Ebean;
 import forms.modules.RatingForm;
 import forms.modules.RatingResponseForm;
+import forms.modules.VoteResponseForm;
 import models.BinaryContent;
 import models.Module;
 import models.ModuleVersion;
@@ -27,6 +28,8 @@ import models.PlayVersion;
 import models.Rate;
 import models.Rating;
 import models.User;
+import models.Vote;
+import play.Logger;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.Result;
@@ -191,6 +194,7 @@ public class Modules extends AbstractController
             List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
             User user = currentUser();
             Rate rate = null;
+            Vote vote = null;
 
             if (user != null)
             {
@@ -202,22 +206,144 @@ public class Modules extends AbstractController
                                                            return rate.playModule.id.equals(module.id);
                                                        }
                                                    });
+                vote = CollectionUtils.filterFirst(user.votes,
+                                                   new Filter<Vote>()
+                                                   {
+                                                       public boolean isAcceptable(Vote vote)
+                                                       {
+                                                           return vote.playModule.id.equals(module.id);
+                                                       }
+                                                   });
             }
 
             Ebean.refresh(module.rating);
             result = ok(moduleDetails.render(user,
                                              module,
                                              moduleVersions,
-                                             rate));
+                                             rate,
+                                             vote));
         }
         return result;
     }
 
-    // this will have a deadbolt dynamic restriction to ensure the user hasn't voted twice, when request params are available
     @RoleHolderPresent
-    public static Result vote(String moduleKey)
+    public static Result voteUp(String moduleKey)
     {
-        return TODO;
+        Result result;
+        final Module module = Module.findByModuleKey(moduleKey);
+        if (module == null)
+        {
+            result = notFound("Module not found: " + moduleKey);
+        }
+        else
+        {
+            User user = currentUser();
+            Vote vote = CollectionUtils.filterFirst(user.votes,
+                                                    new Filter<Vote>()
+                                                    {
+                                                        @Override
+                                                        public boolean isAcceptable(Vote vote)
+                                                        {
+                                                            return vote.playModule.id.equals(module.id);
+                                                        }
+                                                    });
+            if (vote != null)
+            {
+                if (vote.voteType == Vote.VoteType.DOWN)
+                {
+                    --module.downVoteCount;
+                    ++module.upVoteCount;
+                    vote.voteType = Vote.VoteType.UP;
+                    vote.save();
+                    module.save();
+                }
+                else
+                {
+                    Logger.info(String.format("User [%s] tried to upvote module [%s] but vote already existed",
+                                              user.userName,
+                                              module.key));
+                }
+            }
+            else
+            {
+                vote = new Vote();
+                vote.playModule = module;
+                vote.voteType = Vote.VoteType.UP;
+                // support for public voting comes later
+                vote.publicVote = false;
+                user.votes.add(vote);
+                user.save();
+
+                ++module.upVoteCount;
+                module.save();
+            }
+
+            VoteResponseForm responseForm = new VoteResponseForm();
+            responseForm.upVotes = module.upVoteCount;
+            responseForm.downVotes = module.downVoteCount;
+            result = ok(Json.toJson(responseForm));
+        }
+        return result;
+    }
+
+    @RoleHolderPresent
+    public static Result voteDown(String moduleKey)
+    {
+        Result result;
+        final Module module = Module.findByModuleKey(moduleKey);
+        if (module == null)
+        {
+            result = notFound("Module not found: " + moduleKey);
+        }
+        else
+        {
+            User user = currentUser();
+            Vote vote = CollectionUtils.filterFirst(user.votes,
+                                                    new Filter<Vote>()
+                                                    {
+                                                        @Override
+                                                        public boolean isAcceptable(Vote vote)
+                                                        {
+                                                            return vote.playModule.id.equals(module.id);
+                                                        }
+                                                    });
+            if (vote != null)
+            {
+                if (vote.voteType == Vote.VoteType.UP)
+                {
+                    --module.upVoteCount;
+                    ++module.downVoteCount;
+                    vote.voteType = Vote.VoteType.DOWN;
+                    vote.save();
+                    module.save();
+                }
+                else
+                {
+                    Logger.info(String.format("User [%s] tried to downvote module [%s] but vote already existed",
+                                              user.userName,
+                                              module.key));
+                }
+            }
+            else
+            {
+                vote = new Vote();
+                vote.playModule = module;
+                vote.voteType = Vote.VoteType.DOWN;
+                // support for public voting comes later
+                vote.publicVote = false;
+                user.votes.add(vote);
+                user.save();
+
+                ++module.downVoteCount;
+                module.save();
+            }
+
+            VoteResponseForm responseForm = new VoteResponseForm();
+            responseForm.upVotes = module.upVoteCount;
+            responseForm.downVotes = module.downVoteCount;
+            result = ok(Json.toJson(responseForm));
+        }
+        return result;
     }
 
     // If a user has already rated, then change the rate, don't add a new one
@@ -247,6 +373,7 @@ public class Modules extends AbstractController
 
                 if (user != null)
                 {
+                    // user shouldn't be null because of @RoleHolderPresent
                     rate = CollectionUtils.filterFirst(user.rates,
                                                        new Filter<Rate>()
                                                        {

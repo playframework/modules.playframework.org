@@ -91,6 +91,9 @@ public class Module extends AbstractModel implements ModuleAccessor
     public Long upVoteCount = 0L;
 
     @Column(nullable = false)
+    public Long downVoteCount = 0L;
+
+    @Column(nullable = false)
     public Date createdOn = new Date();
 
     @Column(nullable = false)

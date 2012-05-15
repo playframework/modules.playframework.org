@@ -59,6 +59,7 @@ create table MPO_MODULE (
   license_url               varchar(255),
   download_count            bigint not null,
   up_vote_count             bigint not null,
+  down_vote_count           bigint not null,
   created_on                timestamp not null,
   updated_on                timestamp not null,
   rating_id                 bigint,
@@ -139,6 +140,8 @@ create table vote (
   user_id                   bigint not null,
   play_module_id            bigint not null,
   public_vote               boolean not null,
+  vote_type                 varchar(4) not null,
+  constraint ck_vote_vote_type check (vote_type in ('UP','DOWN')),
   constraint pk_vote primary key (id))
 ;
 
