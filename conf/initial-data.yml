@@ -688,6 +688,112 @@ users:
         accountActive: true
         password: none
 
+    # Play 2 module owners
+
+    - !!models.User
+        id: 201
+        userName: t2v
+        displayName: t2v
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 202
+        userName: manuelbernhardt
+        displayName: manuelbernhardt
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 203
+        userName: loicdescotte
+        displayName: loicdescotte
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 204
+        userName: branaway
+        displayName: branaway
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 205
+        userName: vznet
+        displayName: vznet
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 206
+        userName: leon
+        displayName: leon
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 207
+        userName: dontcare4free
+        displayName: dontcare4free
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 208
+        userName: pufuwozu
+        displayName: pufuwozu
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 209
+        userName: jlitola
+        displayName: jlitola
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 210
+        userName: dlecan
+        displayName: dlecan
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 211
+        userName: wsargent
+        displayName: wsargent
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 212
+        userName: mumoshu
+        displayName: mumoshu
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 213
+        userName: knuton
+        displayName: knuton
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 214
+        userName: seratch
+        displayName: seratch
+        accountActive: true
+        password: none
+
+    - !!models.User
+        id: 215
+        userName: typesafe
+        displayName: Typesafe
+        accountActive: true
+        password: none
 
 modules:
 
@@ -2985,6 +3091,363 @@ modules:
         organisation: (unknown)
         licenseType: (unknown)
 
+    - !!models.Module
+        id: 201
+        owner: !!models.User
+                id: 201
+        key: auth-auth
+        name: Authentication and Authorization (Scala)
+        projectUrl: https://github.com/t2v/play20-auth
+        summary: Authentication and authorization
+        description: Authentication and authorization
+        organisation: (unknown)
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 202
+        owner: !!models.User
+                id: 10
+        key: auth-token
+        name: Authenticity Token
+        projectUrl: https://github.com/orefalo/play2-authenticitytoken
+        summary: Play 1.x-style authentication token
+        description: Brings back play1 authenticity token - provides a way around CSRF attacks
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 203
+        owner: !!models.User
+                id: 26
+        key: deadbolt2
+        name: Deadbolt 2
+        projectUrl: https://github.com/schaloner/deadbolt-2
+        summary: Authorisation
+        description: An authorisation mechanism for defining access rights to certain controller methods or parts of a view using a simple AND/OR/NOT syntax
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 204
+        owner: !!models.User
+                id: 215
+        key: dust
+        name: Dust
+        projectUrl: https://github.com/typesafehub/play-plugins/tree/master/dust
+        summary: Support for the dust client side template language
+        description: Support for the dust client side template language
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 205
+        owner: !!models.User
+                id: 202
+        key: groovy-templates
+        name: Groovy Templates plugin
+        projectUrl: https://github.com/manuelbernhardt/play2-groovy-templates
+        summary: This module brings the Groovy templates engine of Play 1 to Play 2.
+        description: This module brings the Groovy templates engine of Play 1 to Play 2.
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 206
+        owner: !!models.User
+                id: 34
+        key: gt-engine2
+        name: Groovy Templates plugin - gt-engine-play2
+        projectUrl: https://github.com/mbknor/gt-engine-play2
+        summary: Groovy Template engine from Play 1 http://www.playframework.org/modules/fastergt
+        description: This module brings the Groovy Template engine from play 1 to Play 2. It uses gt-engine which is used by the Play 1 module "Faster Groovy Templates" http://www.playframework.org/modules/fastergt
+        Samples: https://github.com/mbknor/gt-engine-play2/tree/master/samples
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 207
+        owner: !!models.User
+                id: 215
+        key: guice2
+        name: Guice Plugin (Java and Scala)
+        projectUrl: https://github.com/typesafehub/play-plugins
+        summary: Dependency-injection via Guice
+        description: provides DI via Guice
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 208
+        owner: !!models.User
+                id: 203
+        key: html5-tags
+        name: HTML5 Tags module
+        projectUrl: https://github.com/loicdescotte/Play2-HTML5Tags
+        summary: Tags for client side validation attributes
+        description: This tags add client side validation attributes (e.g required, regex pattern, max|min lentgh...) and specific input fields (date, email, url, telephone number,...) to Play 2.0 templates
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 209
+        owner: !!models.User
+                id: 204
+        key: japid2
+        name: Japid module
+        projectUrl: https://github.com/branaway/japid42
+        summary: Japid Java templates
+        description: This module provides Japid java templates for play 2
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 210
+        owner: !!models.User
+                id: 215
+        key: injection
+        name: Manual Dependency Injection Plugin (Java and Scala)
+        projectUrl: https://github.com/typesafehub/play-plugins
+        summary: Dependency-injection via manual injection
+        description: provides DI via manual injection
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 211
+        owner: !!models.User
+                id: 205
+        key: mongo-jackson
+        name: MongoDB Jackson Mapper Plugin (Java)
+        projectUrl: https://github.com/vznet/play-mongo-jackson-mapper
+        summary: Managed MongoDB access and object mapping using Jackson annotations
+        description: provides managed MongoDB access and object mapping using Jackson annotations
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 212
+        owner: !!models.User
+                id: 206
+        key: mongo-salat
+        name: MongoDB Salat, Casbah Plugin (Scala)
+        projectUrl: https://github.com/leon/play-salat
+        summary: Managed MongoDB access and object mapping using Salat and Casbah
+        description: provides managed MongoDB access and object mapping using Salat and Casbah
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 213
+        owner: !!models.User
+                id: 207
+        key: nina
+        name: NINA (Scala)
+        projectUrl: https://github.com/dontcare4free/nina
+        summary: A typesafe way to query SQL databases
+        description: provides a typesafe way to query SQL databases with a special emphasis on selective querying
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 214
+        owner: !!models.User
+                id: 215
+        key: play2-mini
+        name: Play Mini (Java and Scala)
+        projectUrl: https://github.com/typesafehub/play2-mini
+        summary: Play as an HTTP library
+        description: uses play as an HTTP library (in a standard SBT project)
+        organisation: Typesafe
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 215
+        owner: !!models.User
+                id: 215
+        key: redis2
+        name: Redis Plugin (Java and Scala)
+        projectUrl: https://github.com/typesafehub/play-plugins
+        summary: A Redis-based cache implementation
+        description: provides a redis based cache implementation, also lets you use Redis specific APIs
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 216
+        owner: !!models.User
+                id: 215
+        key: emailer
+        name: Emailer Plugin (Java and Scala)
+        projectUrl: https://github.com/typesafehub/play-plugins
+        summary: An e-mailer based on Apache Commons E-mail
+        description: provides an emailer based on apache commons-email
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 217
+        owner: !!models.User
+                id: 208
+        key: ray
+        name: Roy Compiled Asset Plugin (Ray)
+        projectUrl: https://github.com/pufuwozu/ray
+        summary: Compiles Roy files to JavaScript
+        description: compiles Roy files to JavaScript
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 218
+        owner: !!models.User
+                id: 209
+        key: sass2
+        name: Sass Plugin
+        projectUrl: https://github.com/jlitola/play-sass
+        summary: Asset handling for Sass files
+        description: Asset handling for Sass files
+        organisation: (unknown)
+        licenseType: MIT-style license
+        licenseUrl: https://github.com/jlitola/play-sass/blob/master/LICENSE
+
+    - !!models.Module
+        id: 219
+        owner: !!models.User
+                id: 205
+        key: snapshot
+        name: Snapshot Plugin (Java and Scala)
+        projectUrl: https://github.com/vznet/play-snapshot
+        summary: Hash bang snapshot functionality using HtmlUnit
+        description: provides a hash bang snapshot functionality using HtmlUnit
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 220
+        owner: !!models.User
+                id: 205
+        key: statsd2
+        name: Statsd Plugin (Java and Scala)
+        projectUrl: https://github.com/vznet/play-statsd
+        summary: A statsd client
+        description: provides a statsd client
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 221
+        owner: !!models.User
+                id: 215
+        key: typesafe-util
+        name: Typesafe util Plugin (Scala)
+        projectUrl: https://github.com/typesafehub/play-plugins
+        summary: Request header-based security and syntactic sugar to deal with plugins
+        description: provides request header based security and syntactic sugar to deal with plugins
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 222
+        owner: !!models.User
+                id: 215
+        key: typesafe-sbt
+        name: Typesafe SbtGoodies Plugin
+        projectUrl: https://github.com/typesafehub/play-plugins/tree/master/sbtgoodies
+        summary: Extra sbt commands
+        description: provides extra sbt commands
+        organisation: Typesafe
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 223
+        owner: !!models.User
+                id: 210
+        key: war
+        name: WAR Module
+        projectUrl: https://github.com/dlecan/play2-war-plugin
+        summary: Packages Play 2.x applications in standard WAR packages
+        description: Allow to package Play! 2.x applications into standard WAR packages.
+        organisation: CloudBees
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+
+    - !!models.Module
+        id: 224
+        owner: !!models.User
+                id: 10
+        key: xforward
+        name: XForward module
+        projectUrl: https://github.com/orefalo/play2-xforward
+        summary: Missing proxy forwarding settings from Play 1.x
+        description: This module brings back the missing Proxy forwarding settings from Play1.
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 225
+        owner: !!models.User
+                id: 211
+        key: spring2
+        name: Spring Module
+        projectUrl: https://github.com/wsargent/play-2.0-spring-module
+        summary: Spring framework support
+        description: Updated version of the original Spring module for Play 2.0
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 226
+        owner: !!models.User
+                id: 83
+        key: jsmessages
+        name: JsMessages
+        summary: https://github.com/julienrf/play-jsmessages
+        summary: Client-side localized messages
+        description: Allows to compute localized messages on client side.
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 227
+        owner: !!models.User
+                id: 212
+        key: memcached
+        name: Memcached Plugin
+        projectUrl: https://github.com/mumoshu/play2-memcached
+        summary: A memcached-based cache implementation
+        description: provides a memcached based cache implementation
+        organisation: (unknown)
+        licenseType: (unknown)
+
+    - !!models.Module
+        id: 228
+        owner: !!models.User
+                id: 213
+        key: stylus
+        name: Stylus Plugin
+        projectUrl: https://github.com/knuton/play-stylus
+        summary: Support for Stylus CSS compilation
+        description: Support for Stylus CSS compilation
+        organisation: (unknown)
+        licenseType: MIT-style licensing
+        licenseUrl: https://github.com/knuton/play-stylus/blob/master/LICENSE
+
+    - !!models.Module
+        id: 229
+        owner: !!models.User
+                id: 214
+        key: scalikejdbc
+        name: ScalikeJDBC Plugin (Scala)
+        projectUrl: https://github.com/seratch/scalikejdbc-play-plugin
+        summary: Yet another database access API for Play20
+        description: provides yet another database access API for Play20
 
 versions:
 
@@ -8762,3 +9225,295 @@ versions:
         versionCode: 0.2
         releaseDate: 2011-09-13
         releaseNotes: frameworkMatch=1.2.x
+
+    # Play 2 modules
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 201
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 202
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 203
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 204
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 205
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 206
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 207
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 208
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 209
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 210
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 211
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 212
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 213
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 214
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 215
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 216
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 217
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 218
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 219
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 220
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 221
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 222
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 223
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 224
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 225
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 226
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 227
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 228
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
+
+    - !!models.ModuleVersion
+        playModule:
+            !!models.Module
+                id: 229
+        compatibility:
+            - !!models.PlayVersion
+                id: 14
+        versionCode: 0
+        releaseDate: 2012-05-16
