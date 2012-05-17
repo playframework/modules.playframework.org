@@ -49,7 +49,6 @@ name: Groovy Templates plugin - gt-engine-play2
 projectUrl: https://github.com/mbknor/gt-engine-play2
 summary: Groovy Template engine from Play 1 http://www.playframework.org/modules/fastergt
 description: This module brings the Groovy Template engine from play 1 to Play 2. It uses gt-engine which is used by the Play 1 module "Faster Groovy Templates" http://www.playframework.org/modules/fastergt
-Samples: https://github.com/mbknor/gt-engine-play2/tree/master/samples
 
 key: guice
 name: Guice Plugin (Java and Scala)
