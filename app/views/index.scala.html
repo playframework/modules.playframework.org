@@ -1,9 +1,4 @@
-@(currentUser: User,
-  mostRecentModules: List[Module],
-  highestRatedModules: List[Module],
-  featuredModules: List[FeaturedModule],
-  playVersions: List[PlayVersion],
-  moduleCount: Int)
+@(playVersions: List[PlayVersion], moduleCount: Int)
 
 @import tags._
 
@@ -18,7 +13,7 @@
 	</div>
 }
 
-@main("Home", currentUser) {
+@main("Home") {
 
 	<section id="introduction">
 		<div class="wrapper">
@@ -46,12 +41,10 @@
 				</p>
 				<h2>Stay in the loop</h2>
 				<p>
-                    New and updated modules will be published to a syndication feed.  You can subscribe here.
-                    <ul>
-                        <a href="@routes.Assets.at("feeds/mpo.atom.xml")">Atom 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss1.xml")">RSS 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss2.xml")">RSS 2.0</a>
-                    </ul>
+                    New and updated modules will be published to a syndication feed.  You can subscribe here. <br/>
+                    <a href='@routes.Assets.at("feeds/mpo.atom.xml")'>Atom 1.0</a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'>RSS 1.0</a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'>RSS 2.0</a>
 				</p>
 			</div>
 		</div>

@@ -18,22 +18,17 @@ package controllers;
 import actions.CurrentUser;
 import forms.login.Login;
 import forms.login.Register;
-import models.FeaturedModule;
 import models.Module;
 import models.PlayVersion;
 import play.data.Form;
-import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import services.UserServices;
+
 import views.html.index;
 import views.html.login;
 import views.html.register;
 
-import java.util.Collections;
-import java.util.List;
-
-import static actions.CurrentUser.currentUser;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -43,17 +38,7 @@ public class Application extends AbstractController
 {
     public static Result index()
     {
-        final List<Module> mostRecentModules = Module.findMostRecent(5);
-        final List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
-        final List<FeaturedModule> featuredModules = FeaturedModule.getAll();
-        final List<PlayVersion> playVersions = PlayVersion.getAll();
-
-        return ok(index.render(currentUser(),
-                               mostRecentModules,
-                               highestRatedModules,
-                               featuredModules,
-                               playVersions,
-                               Module.count()));
+        return ok(index.render(PlayVersion.getAll(), Module.count()));
     }
 
     public static Result login()

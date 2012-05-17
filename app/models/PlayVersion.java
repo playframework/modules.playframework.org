@@ -53,8 +53,7 @@ public class PlayVersion extends AbstractModel {
     @Constraints.Required
     public String documentationUrl;
     
-    public static final Finder<Long, PlayVersion> FIND = new Finder<Long, PlayVersion>(Long.class,
-            PlayVersion.class);
+    public static final Finder<Long, PlayVersion> FIND = new Finder<Long, PlayVersion>(Long.class, PlayVersion.class);
 
     public static int count() {
         return FIND.findRowCount();
@@ -70,6 +69,10 @@ public class PlayVersion extends AbstractModel {
         return FIND.where()
                 .eq("name", name)
                 .findUnique();
+    }
+    
+    public String toString(){
+        return name;
     }
 
     /**
