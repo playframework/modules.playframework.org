@@ -13,9 +13,9 @@ object ApplicationBuild extends Build {
       "org.markdownj" % "markdownj" % "0.3.0-1.0.2b4"
     )
 
-  val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings {
-    resolvers += Resolver.url("Objectify Play Repository", url("http://schaloner.github.com/releases/"))(Resolver.ivyStylePatterns)
+  val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings (
+    resolvers += Resolver.url("Objectify Play Repository", url("http://schaloner.github.com/releases/"))(Resolver.ivyStylePatterns),
     resolvers += Resolver.url("Scala Tools", url("http://scala-tools.org/repo-releases/"))(Resolver.ivyStylePatterns)
-  }
+  )
 
 }
