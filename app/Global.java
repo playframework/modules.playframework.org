@@ -21,6 +21,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.util.Duration;
 import com.avaje.ebean.Ebean;
+import models.BinaryContent;
 import models.Module;
 import models.ModuleVersion;
 import models.PlayVersion;
@@ -139,8 +140,17 @@ public class Global extends GlobalSettings
 
         if (ModuleVersion.count() == 0)
         {
-            final List<Object> versions = data.get("versions");
+            final List<ModuleVersion> versions = CollectionUtils.castTo(data.get("versions"),
+                                                                        ModuleVersion.class);
             Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
+            for (int i = 0, versionsSize = versions.size(); i < versionsSize; i++)
+            {
+                ModuleVersion version = versions.get(i);
+                BinaryContent binaryContent = new BinaryContent();
+                binaryContent.content = new byte[0];
+                binaryContent.contentLength = 0;
+                version.binaryFile = binaryContent;
+            }
             Ebean.save(versions);
         }
     }

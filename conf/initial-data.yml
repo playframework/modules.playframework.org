@@ -3447,6 +3447,8 @@ modules:
         projectUrl: https://github.com/seratch/scalikejdbc-play-plugin
         summary: Yet another database access API for Play20
         description: provides yet another database access API for Play20
+        organisation: (unknown)
+        licenseType: (unknown)
 
 versions:
 
@@ -9236,6 +9238,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9246,6 +9249,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9256,6 +9260,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9266,6 +9271,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9276,6 +9282,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9286,6 +9293,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9296,6 +9304,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9306,6 +9315,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9316,6 +9326,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9326,6 +9337,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9336,6 +9348,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9346,6 +9359,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9356,6 +9370,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9366,6 +9381,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9376,6 +9392,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9386,6 +9403,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9396,6 +9414,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9406,6 +9425,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9416,6 +9436,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9426,6 +9447,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9436,6 +9458,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9446,6 +9469,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9456,6 +9480,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9466,6 +9491,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9476,6 +9502,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9486,6 +9513,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9496,6 +9524,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9506,6 +9535,7 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
 
     - !!models.ModuleVersion
         playModule:
@@ -9516,3 +9546,4 @@ versions:
                 id: 14
         versionCode: 0
         releaseDate: 2012-05-16
+        releaseNotes: (none)
