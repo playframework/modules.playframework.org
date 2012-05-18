@@ -86,9 +86,6 @@ public class Global extends GlobalSettings
                                            "generate");
     }
 
-    /**
-     * Simplistic loading of YAML initial data file.
-     */
     public void loadInitialData()
     {
         Logger.info("Loading initial data...");
@@ -118,7 +115,6 @@ public class Global extends GlobalSettings
                     Module.class);
             Logger.debug(String.format("Module: %d loaded", modules.size()));
 
-            // programatically add some attributes
             for (Module module : modules)
             {
                 module.rating = new Rating(true);
@@ -132,9 +128,7 @@ public class Global extends GlobalSettings
         // The 'admin' user is already loaded.
         if (User.count() <= 1)
         {
-            final List<User> users = CollectionUtils.castTo(data.get("users"),
-                    User.class);
-            // programatically add some attributes
+            final List<User> users = CollectionUtils.castTo(data.get("users"), User.class);
             for (User user : users)
             {
                 user.rates = new ArrayList<Rate>();
