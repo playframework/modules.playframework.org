@@ -27,6 +27,7 @@ import java.util.Map;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
+import static org.apache.commons.lang.builder.ToStringBuilder.reflectionToString;
 import static play.data.validation.Constraints.MaxLength;
 import static play.data.validation.Constraints.Required;
 
@@ -173,5 +174,10 @@ public class Module extends AbstractModel implements ModuleAccessor
         return FIND.where()
                 .eq("id", id)
                 .findUnique();
+    }
+
+    @Override
+    public String toString() {
+        return reflectionToString(this);
     }
 }

@@ -15,19 +15,12 @@
  */
 
 import actors.FeedCreationActor;
-import actors.HistoricalEventActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.util.Duration;
 import com.avaje.ebean.Ebean;
-import models.Module;
-import models.ModuleVersion;
-import models.PlayVersion;
-import models.Rate;
-import models.Rating;
-import models.User;
-import models.UserRole;
+import models.*;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -100,32 +93,29 @@ public class Global extends GlobalSettings
     {
         Logger.info("Loading initial data...");
         Map<String, List<Object>> data = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
+        savePlayVersions(data);
+        saveUsers(data);
+        saveModules(data);
+        saveModuleVersions(data);
+    }
 
-        if (PlayVersion.count() == 0)
+    private void saveModuleVersions(Map<String, List<Object>> data) {
+        if (ModuleVersion.count() == 0)
         {
-            final List<Object> versions = data.get("playVersions");
-            Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
+            final List<Object> versions = data.get("versions");
+            Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
             Ebean.save(versions);
-        }
-
-        // The 'admin' user is already loaded.
-        if (User.count() <= 1)
-        {
-            final List<User> users = CollectionUtils.castTo(data.get("users"),
-                                                            User.class);
-            // programatically add some attributes
-            for (User user : users)
-            {
-                user.rates = new ArrayList<Rate>();
+            for (Object version : versions){
+                Ebean.saveManyToManyAssociations(version, "compatibility");
             }
-            Logger.debug(String.format("User: %d loaded", users.size()));
-            Ebean.save(users);
         }
+    }
 
+    private void saveModules(Map<String, List<Object>> data) {
         if (Module.count() == 0)
         {
             final List<Module> modules = CollectionUtils.castTo(data.get("modules"),
-                                                                Module.class);
+                    Module.class);
             Logger.debug(String.format("Module: %d loaded", modules.size()));
 
             // programatically add some attributes
@@ -136,11 +126,29 @@ public class Global extends GlobalSettings
 
             Ebean.save(modules);
         }
+    }
 
-        if (ModuleVersion.count() == 0)
+    private void saveUsers(Map<String, List<Object>> data) {
+        // The 'admin' user is already loaded.
+        if (User.count() <= 1)
         {
-            final List<Object> versions = data.get("versions");
-            Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
+            final List<User> users = CollectionUtils.castTo(data.get("users"),
+                    User.class);
+            // programatically add some attributes
+            for (User user : users)
+            {
+                user.rates = new ArrayList<Rate>();
+            }
+            Logger.debug(String.format("User: %d loaded", users.size()));
+            Ebean.save(users);
+        }
+    }
+
+    private void savePlayVersions(Map<String, List<Object>> data) {
+        if (PlayVersion.count() == 0)
+        {
+            final List<Object> versions = data.get("playVersions");
+            Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
             Ebean.save(versions);
         }
     }
