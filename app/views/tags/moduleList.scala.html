@@ -5,22 +5,25 @@
 
 <p class="sectionHeader">@title</p>
 <div id="modules">
-    @for(accessor <- moduleAccessors) {
-        @defining(accessor.getModule()) { module =>
-        <div class="module">
-            <h2>@module.name
-                <span class="by">by @module.contributors</span>
-            </h2>
+    @if(moduleAccessors.isEmpty()){
+        <span>No modules found.</span>
+    } else {
+        @for(accessor <- moduleAccessors) {
+            @defining(accessor.getModule()) { module =>
+                <div class="module">
+                    <h2>@module.name
+                        <span class="by">by @module.contributors</span>
+                    </h2>
 
-            <p>
-                @summarize(module.summary)
-            </p>
-            <p>
-                <a href="@routes.Modules.details(module.key)">get details and versions</a>
-            </p>
-        </div>
+                    <p>
+                        @summarize(module.summary)
+                    </p>
+                    <p>
+                        <a href="@routes.Modules.details(module.key)">get details and versions</a>
+                    </p>
+                </div>
+            }
         }
     }
 </div>
-
 

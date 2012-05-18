@@ -15,20 +15,12 @@
  */
 
 import actors.FeedCreationActor;
-import actors.HistoricalEventActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.util.Duration;
 import com.avaje.ebean.Ebean;
-import models.BinaryContent;
-import models.Module;
-import models.ModuleVersion;
-import models.PlayVersion;
-import models.Rate;
-import models.Rating;
-import models.User;
-import models.UserRole;
+import models.*;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -97,36 +89,41 @@ public class Global extends GlobalSettings
     /**
      * Simplistic loading of YAML initial data file.
      */
+    @SuppressWarnings("unchecked")
     public void loadInitialData()
     {
         Logger.info("Loading initial data...");
         Map<String, List<Object>> data = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
+        savePlayVersions(data);
+        saveUsers(data);
+        saveModules(data);
+        saveModuleVersions(data);
+    }
 
-        if (PlayVersion.count() == 0)
+    private void saveModuleVersions(Map<String, List<Object>> data) {
+        if (ModuleVersion.count() == 0)
         {
-            final List<Object> versions = data.get("playVersions");
-            Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
-            Ebean.save(versions);
-        }
-
-        // The 'admin' user is already loaded.
-        if (User.count() <= 1)
-        {
-            final List<User> users = CollectionUtils.castTo(data.get("users"),
-                                                            User.class);
-            // programatically add some attributes
-            for (User user : users)
-            {
-                user.rates = new ArrayList<Rate>();
+            final List<ModuleVersion> versions = CollectionUtils.castTo(data.get("versions"),
+                    ModuleVersion.class);
+            Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
+            for (ModuleVersion version : versions) {
+                BinaryContent binaryContent = new BinaryContent();
+                binaryContent.content = new byte[0];
+                binaryContent.contentLength = 0;
+                version.binaryFile = binaryContent;
             }
-            Logger.debug(String.format("User: %d loaded", users.size()));
-            Ebean.save(users);
+            Ebean.save(versions);
+            for (Object version : versions){
+                Ebean.saveManyToManyAssociations(version, "compatibility");
+            }
         }
+    }
 
+    private void saveModules(Map<String, List<Object>> data) {
         if (Module.count() == 0)
         {
             final List<Module> modules = CollectionUtils.castTo(data.get("modules"),
-                                                                Module.class);
+                    Module.class);
             Logger.debug(String.format("Module: %d loaded", modules.size()));
 
             // programatically add some attributes
@@ -137,20 +134,29 @@ public class Global extends GlobalSettings
 
             Ebean.save(modules);
         }
+    }
 
-        if (ModuleVersion.count() == 0)
+    private void saveUsers(Map<String, List<Object>> data) {
+        // The 'admin' user is already loaded.
+        if (User.count() <= 1)
         {
-            final List<ModuleVersion> versions = CollectionUtils.castTo(data.get("versions"),
-                                                                        ModuleVersion.class);
-            Logger.debug(String.format("ModuleVersion: %d loaded", versions.size()));
-            for (int i = 0, versionsSize = versions.size(); i < versionsSize; i++)
+            final List<User> users = CollectionUtils.castTo(data.get("users"),
+                    User.class);
+            // programatically add some attributes
+            for (User user : users)
             {
-                ModuleVersion version = versions.get(i);
-                BinaryContent binaryContent = new BinaryContent();
-                binaryContent.content = new byte[0];
-                binaryContent.contentLength = 0;
-                version.binaryFile = binaryContent;
+                user.rates = new ArrayList<Rate>();
             }
+            Logger.debug(String.format("User: %d loaded", users.size()));
+            Ebean.save(users);
+        }
+    }
+
+    private void savePlayVersions(Map<String, List<Object>> data) {
+        if (PlayVersion.count() == 0)
+        {
+            final List<Object> versions = data.get("playVersions");
+            Logger.debug(String.format("PlayVersion: %d loaded", versions.size()));
             Ebean.save(versions);
         }
     }
