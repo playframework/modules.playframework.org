@@ -39,11 +39,7 @@
             <tr>
                 <td>@version.versionCode</td>
                 <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
-                <td>
-                    @for(compatible <- version.compatibility) {
-                        <span class="lineList">@compatible.name,</span>
-                    }
-                </td>
+                <td>@version.getCompatibilityHtml()</td>
             </tr>
             }
             </tbody>

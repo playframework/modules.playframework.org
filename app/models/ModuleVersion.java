@@ -15,6 +15,7 @@
  */
 package models;
 
+import org.apache.commons.lang.StringUtils;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
@@ -53,8 +54,11 @@ public class ModuleVersion extends AbstractModel {
     @OneToOne(optional = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BinaryContent documentFile;
 
-    public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,
-            ModuleVersion.class);
+    public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class, ModuleVersion.class);
+
+    public String getCompatibilityHtml(){
+        return StringUtils.join(compatibility, ", ");
+    }
 
     public static int count() {
         return FIND.findRowCount();
