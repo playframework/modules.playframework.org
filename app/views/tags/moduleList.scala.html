@@ -13,7 +13,9 @@
             @defining(accessor.getModule()) { module =>
                 <div class="module">
                     <h2>@module.name
-                        <span class="by">by @module.contributors</span>
+                        @if(module.contributors){
+                            <span class="by">by @module.contributors</span>
+                        }
                     </h2>
                     <p>
                         @summarize(module.summary)
