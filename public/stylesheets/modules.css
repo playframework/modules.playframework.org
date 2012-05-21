@@ -15,14 +15,6 @@ header nav a.download:active {
   box-shadow: 0 1px 0 #1487B4;
 }
 
-#modules .module {
-    padding-top: 16px;
-}
-
-#modules p {
-    margin-top: 6px;
-}
-
 #introduction, #top { background-color:#1487B4; }
 #title { color:#C2D8DF; }
 #top h2 {
@@ -39,6 +31,15 @@ header nav a.download:active {
 
 td.tableTools {
     text-align: right;
+}
+
+article.wide {
+  width: 960px;
+}
+
+article table th {
+  padding: 8px;
+  font-weight: bold;
 }
 
 /*  Styles added by Steve, these can be removed once consistent styling is added*/
