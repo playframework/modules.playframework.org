@@ -19,11 +19,12 @@
 
 <div class="wrapper">
 
+  <article>
     <div id="overviewArea">
 
-        <p>
+        <div class="description">
             @Html(module.getDescriptionHtml())
-        </p>
+        </div>
 
         <h2>Releases</h2>
         <table class="releases">
@@ -32,7 +33,9 @@
             <th>Version</th>
             <th>Release date</th>
             <th>Release notes</th>
-            <th>Compatible with</th>
+              @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+              <th>Compatible with</th>
+              *@
             </tr>
             </thead>
             <tbody>
@@ -41,38 +44,64 @@
                 <td>@version.versionCode</td>
                 <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
                 <td>@version.releaseNotes</td>
+                @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
                 <td>
                     @for(compatible <- version.compatibility) {
                         <span class="lineList">@compatible.name,</span>
                     }
                 </td>
+                *@
+                @*
+                TODO: replace hard-coded URL prefix with
+                TODO Show when there's a Play 1 module version
+                <td><a href="http://www.playframework.org/modules/@module.key-@version.versionCode/home">Docs</a></td>
+                <td><a href="http://www.playframework.org/modules/@module.key-@(version.versionCode).zip">Download</a></td>
+                *@
             </tr>
             }
             </tbody>
         </table>
-          
+
+        @*
+        TODO Show when there's a Play 1 module version
+        <div class="install">
+          <h2>Installation (Play 1.x)</h2>
+          <p>To add this module as dependency of your application, add it to the <code>dependencies.yml</code> file:</p>
+
+          <pre><code>require:
+          - play -> @module.key @Html("{version}")</code></pre>
+
+          <p>To install locally this module use the <code>install</code> command:</p>
+
+          <pre><code>play install @module.key-{version}</code></pre>
+        </div>
+        *@
+
     </div>
-    <div id="controlArea">
+  </article>
 
-        <h3>Project home: </h3>
-        <a href="@module.projectUrl" target="_blank">@module.projectUrl</a>
+  <aside>
+    <h3>Project home</h3>
+    <p><a href="@module.projectUrl" target="_blank">@module.projectUrl</a></p>
 
-        @if(!isEmpty(module.demoUrl)) {
-            <h3>Demo: </h3>
-            <a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
+    @if(!isEmpty(module.demoUrl)) {
+        <h3>Demo</h3>
+        <p><a href="@module.demoUrl" target="_blank">@module.demoUrl</a></p>
+    }
+
+    @if(!isEmpty(module.licenseType)){
+        <h3>License</h3>
+        <p>
+        @if(!isEmpty(module.licenseUrl)){
+            <a href="@module.licenseUrl">@module.licenseType</a>
+        } else {
+            @module.licenseType
         }
+        </p>
+    }
 
-        @if(!isEmpty(module.licenseType)){
-            <h3>License: </h3>
-            @if(!isEmpty(module.licenseUrl)){
-                <a href="@module.licenseUrl">@module.licenseType</a>
-            } else {
-                @module.licenseType
-            }
-        }
-
-        <h3>Contributors: </h3>
-        @module.contributors
+    <h3>Contributors</h3>
+    <p>@module.contributors</p>
 
         <h3>Voting</h3>
         <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
@@ -87,7 +116,7 @@
             <input name="rating" type="radio" id="rating-5" class="auto-submit-star" value="5"/>
         }
         <span id="ratingSummary"/>
-    </div>
+  </aside>
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
