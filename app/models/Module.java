@@ -123,7 +123,7 @@ public class Module extends AbstractModel implements ModuleAccessor
     }
 
     public static Module findByModuleKey(String moduleKey) {
-        return FIND.where().eq("key", moduleKey).findUnique();
+        return FIND.fetch("owner").where().eq("key", moduleKey).findUnique();
     }
 
     public static Map<String, String> options()

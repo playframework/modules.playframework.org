@@ -100,8 +100,14 @@
         </p>
     }
 
-    <h3>Contributors</h3>
-    <p>@module.contributors</p>
+    <h3>Owner</h3>
+    <p>@module.owner.displayName</p>
+
+    @if(!isEmpty(module.contributors)){
+      <h3>Contributors</h3>
+      <p>@module.contributors</p>
+    }
+  </aside>
 
         <h3>Voting</h3>
         <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
