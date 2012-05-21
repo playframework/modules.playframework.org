@@ -87,8 +87,8 @@ td.tableTools {
 #controlArea h3 {
     color: #1999CE;
     font-size: 16px;
-    margin-top: 15px;
-    padding: 2px;
+    margin-top: 8px;
+    padding-top: 8px;
     border-top: 1px solid #eee;
 }
 #controlArea a {
@@ -114,11 +114,29 @@ tr.tableSectionHeader {
 /* Module details*/
 table.releases {
     width: 100%;
+    background-color: #F7F7F9;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+
+table.releases thead {
+    display: none;
 }
 
 table.releases thead tr th {
     font-weight: bolder;
 }
+
+table.releases tr:first-child td {
+    border:none;
+}
+
+table.releases td {
+    border-top: 1px solid #E1E1E8;
+    padding: 4px;
+}
+
+
 
 /* Voting */
 span.activeVote {
