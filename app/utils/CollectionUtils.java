@@ -15,6 +15,7 @@
  */
 package utils;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -91,6 +92,23 @@ public class CollectionUtils
         }
 
         return t;
+    }
+
+    public static <I, O> List<O> transform(Collection<I> input,
+                                           Transformer<I, O> transformer)
+    {
+        List<O> output = new ArrayList<O>();
+        if (input != null)
+        {
+            for (I i : input)
+            {
+                if (i != null)
+                {
+                    output.add(transformer.transform(i));
+                }
+            }
+        }
+        return output;
     }
 
     /**

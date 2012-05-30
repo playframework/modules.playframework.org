@@ -1,4 +1,4 @@
-@(currentUser: User, module: Module, versions: List[ModuleVersion], rate: Rate, vote: Vote)
+@(currentUser: User, module: Module, versions: List[ModuleVersion], majorVersions: Set[PlayVersion.MajorVersion], rate: Rate, vote: Vote)
 @import tags.moduleList
 @import utils.StringUtils._
 @import be.objectify.deadbolt.views.html._
@@ -25,6 +25,7 @@
             @Html(module.getDescriptionHtml())
         </p>
 
+        <div class="subSection">
         <h2>Releases</h2>
         <table class="releases">
             <thead>
@@ -37,7 +38,7 @@
             </thead>
             <tbody>
             @for(version <- versions){
-            <tr>
+            <tr class="releaseRow" title="@version.versionCode">
                 <td>@version.versionCode</td>
                 <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
                 <td>@version.releaseNotes</td>
@@ -50,7 +51,37 @@
             }
             </tbody>
         </table>
-          
+        </div>
+
+        <div class="subSection">
+        <h2>Installation</h2>
+            <p>Click on a version above to show the exact installation details.</p>
+        @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+        <h3>Play 1</h3>
+        To install locally this module use the install command:
+        <pre class="code">
+            play install @module.key-<span class='exampleVersion'>version</span></pre>
+
+        To add this module as dependency of your application, add it to the dependencies.yml file:
+        <pre class="code">
+require:
+    - play -> @module.key <span class='exampleVersion'>version</span></pre>
+
+            See <a href="http://www.playframework.org/documentation/1.2.4/dependency" target="_blank">the Play 1 documentation</a> for further details.
+        }
+
+        @if(majorVersions.contains(PlayVersion.MajorVersion.TWO)) {
+            <h3>Play 2</h3>
+            To declare a dependency on this module, update project/Build.scala:
+            <pre class="code">
+val appDependencies = Seq(
+    "@module.organisation" %% "@module.key" % "<span class='exampleVersion'>version</span>",
+)</pre>
+
+            See <a href="http://www.playframework.org/documentation/2.0.1/SBTDependencies" target="_blank">the Play 2 documentation</a> for further details.
+        }
+        </div>
+
     </div>
     <div id="controlArea">
 
@@ -65,7 +96,7 @@
         @if(!isEmpty(module.licenseType)){
             <h3>License: </h3>
             @if(!isEmpty(module.licenseUrl)){
-                <a href="@module.licenseUrl">@module.licenseType</a>
+                <a href="@module.licenseUrl" target="_blank">@module.licenseType</a>
             } else {
                 @module.licenseType
             }
@@ -91,6 +122,10 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
+
+        $('tr.releaseRow').click(function() {
+            $('span.exampleVersion').text($(this).attr('title'));
+        });
 
         @roleHolderPresent {
          $('span.upVote').click(function() {

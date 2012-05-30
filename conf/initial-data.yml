@@ -3120,13 +3120,14 @@ modules:
         id: 203
         owner: !!models.User
                 id: 26
-        key: deadbolt2
+        key: deadbolt-2
         name: Deadbolt 2
         projectUrl: https://github.com/schaloner/deadbolt-2
         summary: Authorisation
         description: An authorisation mechanism for defining access rights to certain controller methods or parts of a view using a simple AND/OR/NOT syntax
-        organisation: (unknown)
-        licenseType: (unknown)
+        organisation: be.objectify
+        licenseType: Apache License 2.0
+        licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
 
     - !!models.Module
         id: 204

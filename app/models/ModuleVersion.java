@@ -16,6 +16,8 @@
 package models;
 
 import play.data.validation.Constraints;
+import utils.CollectionUtils;
+import utils.Transformer;
 
 import javax.persistence.*;
 import java.util.*;
@@ -60,6 +62,15 @@ public class ModuleVersion extends AbstractModel {
         return FIND.findRowCount();
     }
 
+    public Set<PlayVersion.MajorVersion> getMajorVersions()
+    {
+        Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
+        Transformer<PlayVersion, PlayVersion.MajorVersion> transformer = new MajorVersionExtractor();
+        majorVersions.addAll(CollectionUtils.transform(compatibility,
+                                                       transformer));
+        return majorVersions;
+    }
+
     public static List<ModuleVersion> findByModule(Module module) {
         return FIND.where()
                 .eq("playModule", module)
@@ -78,5 +89,14 @@ public class ModuleVersion extends AbstractModel {
         }
 
         return new ArrayList<Module>(modules);
+    }
+
+    private class MajorVersionExtractor implements Transformer<PlayVersion, PlayVersion.MajorVersion>
+    {
+        @Override
+        public PlayVersion.MajorVersion transform(PlayVersion playVersion)
+        {
+            return playVersion.majorVersion;
+        }
     }
 }

@@ -130,6 +130,12 @@ public class Global extends GlobalSettings
             for (Module module : modules)
             {
                 module.rating = new Rating(true);
+
+                if (module.organisation == null ||
+                    "(unknown)".equals(module.organisation))
+                {
+                    module.organisation = module.key;
+                }
             }
 
             Ebean.save(modules);

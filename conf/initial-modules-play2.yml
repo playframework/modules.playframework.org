@@ -26,8 +26,9 @@ projectUrl: https://github.com/orefalo/play2-authenticitytoken
 summary: Play 1.x-style authentication token
 description: Brings back play1 authenticity token - provides a way around CSRF attacks
 
-key: deadbolt2
+key: deadbolt-2
 name: Deadbolt 2
+organisation: be.objectify
 projectUrl: https://github.com/schaloner/deadbolt-2
 summary: Authorisation
 description: An authorisation mechanism for defining access rights to certain controller methods or parts of a view using a simple AND/OR/NOT syntax

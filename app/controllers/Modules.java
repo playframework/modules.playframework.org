@@ -37,6 +37,7 @@ import play.mvc.With;
 import utils.CollectionUtils;
 import utils.Filter;
 import utils.RequestUtils;
+import utils.Transformer;
 import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.moduleDetails;
@@ -44,7 +45,9 @@ import views.html.modules.moduleRegistrationForm;
 import views.html.modules.myModules;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static actions.CurrentUser.currentUser;
 
@@ -193,6 +196,7 @@ public class Modules extends AbstractController
         {
             List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
             User user = currentUser();
+            Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
             Rate rate = null;
             Vote vote = null;
 
@@ -216,10 +220,17 @@ public class Modules extends AbstractController
                                                    });
             }
 
+            for (ModuleVersion moduleVersion : moduleVersions)
+            {
+                majorVersions.addAll(moduleVersion.getMajorVersions());
+            }
+
+
             Ebean.refresh(module.rating);
             result = ok(moduleDetails.render(user,
                                              module,
                                              moduleVersions,
+                                             majorVersions,
                                              rate,
                                              vote));
         }
