@@ -81,9 +81,9 @@ public class ModuleVersion extends AbstractModel {
     public static List<Module> findModulesByPlayVersion(List<PlayVersion> playVersions) {
         List<ModuleVersion> matches = FIND.where()
                 .in("compatibility", playVersions)
-                .query().fetch("playModule")
+                .query().fetch("playModule").fetch("playModule.owner")
                 .findList();
-        Set<Module> modules = new HashSet<Module>();
+        SortedSet<Module> modules = new TreeSet<Module>();
         for (ModuleVersion match : matches) {
             modules.add(match.playModule);
         }

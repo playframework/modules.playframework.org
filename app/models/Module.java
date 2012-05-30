@@ -36,7 +36,7 @@ import static play.data.validation.Constraints.Required;
  */
 @Entity
 @Table(name = "MPO_MODULE")
-public class Module extends AbstractModel implements ModuleAccessor
+public class Module extends AbstractModel implements Comparable<Module>, ModuleAccessor
 {
     @ManyToOne(optional = false)
     public User owner;
@@ -109,6 +109,11 @@ public class Module extends AbstractModel implements ModuleAccessor
     @ManyToMany(cascade = {DETACH, PERSIST, REFRESH})
     public List<Tag> tags;
 
+    @Override
+    public int compareTo(Module module) {
+        return name == null ? -1 : name.compareTo(module.name);
+    }
+
     public String getDescriptionHtml() {
         return new MarkdownProcessor().markdown(description);
     }
@@ -124,7 +129,7 @@ public class Module extends AbstractModel implements ModuleAccessor
     }
 
     public static Module findByModuleKey(String moduleKey) {
-        return FIND.where().eq("key", moduleKey).findUnique();
+        return FIND.fetch("owner").where().eq("key", moduleKey).findUnique();
     }
 
     public static Map<String, String> options()

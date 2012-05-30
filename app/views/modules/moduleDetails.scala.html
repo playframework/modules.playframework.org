@@ -19,11 +19,12 @@
 
 <div class="wrapper">
 
+  <article>
     <div id="overviewArea">
 
-        <p>
+        <div class="description">
             @Html(module.getDescriptionHtml())
-        </p>
+        </div>
 
         <div class="subSection">
         <h2>Releases</h2>
@@ -33,7 +34,9 @@
             <th>Version</th>
             <th>Release date</th>
             <th>Release notes</th>
-            <th>Compatible with</th>
+              @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+              <th>Compatible with</th>
+              *@
             </tr>
             </thead>
             <tbody>
@@ -42,11 +45,13 @@
                 <td>@version.versionCode</td>
                 <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
                 <td>@version.releaseNotes</td>
+                @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
                 <td>
                     @for(compatible <- version.compatibility) {
                         <span class="lineList">@compatible.name,</span>
                     }
                 </td>
+                *@
             </tr>
             }
             </tbody>
@@ -58,7 +63,7 @@
             <p>Click on a version above to show the exact installation details.</p>
         @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
         <h3>Play 1</h3>
-        To install locally this module use the install command:
+        <p>To install locally this module use the install command:</p>
         <pre class="code">
             play install @module.key-<span class='exampleVersion'>version</span></pre>
 
@@ -67,43 +72,50 @@
 require:
     - play -> @module.key <span class='exampleVersion'>version</span></pre>
 
-            See <a href="http://www.playframework.org/documentation/1.2.4/dependency" target="_blank">the Play 1 documentation</a> for further details.
+            <p>See <a href="http://www.playframework.org/documentation/1.2.4/dependency" target="_blank" class="external">the Play 1 documentation</a> for further details.</p>
         }
 
         @if(majorVersions.contains(PlayVersion.MajorVersion.TWO)) {
             <h3>Play 2</h3>
-            To declare a dependency on this module, update project/Build.scala:
+            <p>To declare a dependency on this module, update project/Build.scala:</p>
             <pre class="code">
 val appDependencies = Seq(
     "@module.organisation" %% "@module.key" % "<span class='exampleVersion'>version</span>",
 )</pre>
 
-            See <a href="http://www.playframework.org/documentation/2.0.1/SBTDependencies" target="_blank">the Play 2 documentation</a> for further details.
+            <p>See <a href="http://www.playframework.org/documentation/2.0.1/SBTDependencies" target="_blank" class="external">the Play 2 documentation</a> for further details.</p>
         }
         </div>
-
     </div>
-    <div id="controlArea">
+  </article>
 
-        <h3>Project home: </h3>
+  <aside>
+    <h3>Project home</h3>
         <a href="@module.projectUrl" target="_blank">@module.projectUrl</a>
 
         @if(!isEmpty(module.demoUrl)) {
             <h3>Demo: </h3>
-            <a href="@module.demoUrl" target="_blank">@module.demoUrl</a>
+            <p><a href="@module.demoUrl" target="_blank">@module.demoUrl</a></p>
         }
 
         @if(!isEmpty(module.licenseType)){
             <h3>License: </h3>
+            <p>
             @if(!isEmpty(module.licenseUrl)){
-                <a href="@module.licenseUrl" target="_blank">@module.licenseType</a>
+                <a href="@module.licenseUrl" target="_blank" class="external">@module.licenseType</a>
             } else {
                 @module.licenseType
             }
+            </p>
         }
 
-        <h3>Contributors: </h3>
-        @module.contributors
+    <h3>Owner</h3>
+    <p>@module.owner.displayName</p>
+
+    @if(!isEmpty(module.contributors)){
+      <h3>Contributors</h3>
+      <p>@module.contributors</p>
+    }
 
         <h3>Voting</h3>
         <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
@@ -118,7 +130,7 @@ val appDependencies = Seq(
             <input name="rating" type="radio" id="rating-5" class="auto-submit-star" value="5"/>
         }
         <span id="ratingSummary"/>
-    </div>
+  </aside>
 </div>
 <script type="text/javascript">
     $(document).ready(function() {

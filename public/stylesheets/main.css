@@ -895,7 +895,7 @@ dd.info {
 dd.error {
   color: #c00;
 }
-aside a[href^="http"]:after, .doc a[href^="http"]:after {
+aside a[href^="http"]:after, .doc a[href^="http"]:after, .external:after {
   content: url(/assets/images/external.png);
   vertical-align: middle;
   margin-left: 5px;
