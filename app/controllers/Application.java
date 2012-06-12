@@ -20,14 +20,19 @@ import forms.login.Login;
 import forms.login.Register;
 import models.Module;
 import models.PlayVersion;
+import models.memory.Sitemap;
 import play.data.Form;
 import play.mvc.Result;
 import play.mvc.With;
+import services.SitemapServices;
 import services.UserServices;
 
 import views.html.index;
 import views.html.login;
 import views.html.register;
+import views.html.sitemap;
+
+import java.util.List;
 
 
 /**
@@ -90,5 +95,14 @@ public class Application extends AbstractController
     {
         session().clear();
         return redirect(routes.Application.index());
+    }
+
+    /**
+     * Returns the sitemap of the application
+     */
+    public static Result sitemap()
+    {
+        List<Sitemap> list = SitemapServices.generateSitemap(request());
+        return ok(sitemap.render(list)).as("application/xml");
     }
 }
