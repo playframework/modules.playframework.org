@@ -1,5 +1,8 @@
 GET  /                       controllers.Application.index()
 
+# Sitemap
+GET  /sitemap.xml           controllers.Application.sitemap()
+
 # Login/logout/register/password reminder
 GET  /users/login            controllers.Application.login()
 POST /users/login            controllers.Application.authenticate()
