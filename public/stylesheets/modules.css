@@ -98,6 +98,14 @@ table.releases {
     margin: 1em 0;
 }
 
+table.releases tr.releaseRow {
+    cursor: pointer;
+}
+
+table.releases tr.releaseRow:hover {
+    background-color: #eeeeff;
+}
+
 table.releases thead {
     display: none;
 }

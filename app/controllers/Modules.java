@@ -33,7 +33,9 @@ import utils.RequestUtils;
 import views.html.modules.*;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static actions.CurrentUser.currentUser;
 
@@ -205,10 +207,19 @@ public class Modules extends AbstractController
                                                    });
             }
 
+            Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
+
+            for (ModuleVersion moduleVersion : moduleVersions)
+            {
+                majorVersions.addAll(moduleVersion.getMajorVersions());
+            }
+
+
             Ebean.refresh(module.rating);
             result = ok(moduleDetails.render(user,
                                              module,
                                              moduleVersions,
+                                             majorVersions,
                                              rate,
                                              vote));
         }
