@@ -2,6 +2,7 @@
 @import tags.moduleList
 @import utils.StringUtils._
 @import be.objectify.deadbolt.views.html._
+@import play.api.Play.current
 
 @moreScripts = {
 <script src="@routes.Assets.at("javascripts/jquery.rating.pack.js")" type="text/javascript"></script>
@@ -29,32 +30,40 @@
         <div class="subSection">
         <h2>Releases</h2>
         <table class="releases">
-            <thead>
-            <tr>
-            <th>Version</th>
-            <th>Release date</th>
-            <th>Release notes</th>
-              @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-              <th>Compatible with</th>
-              *@
-            </tr>
-            </thead>
-            <tbody>
+          <thead>
+          <tr>
+          <th>Version</th>
+          <th>Release date</th>
+          <th>Release notes</th>
+          @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+            <th>Compatible with</th>
+          *@
+          @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+            <th></th>
+            <th></th>
+          }
+          </tr>
+          </thead>
+          <tbody>
             @for(version <- versions){
-            <tr class="releaseRow" title="@version.versionCode">
+              <tr class="releaseRow" title="@version.versionCode">
                 <td>@version.versionCode</td>
                 <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
                 <td>@version.releaseNotes</td>
                 @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
                 <td>
-                    @for(compatible <- version.compatibility) {
-                        <span class="lineList">@compatible.name,</span>
-                    }
+                  @for(compatible <- version.compatibility) {
+                    <span class="lineList">@compatible.name,</span>
+                  }
                 </td>
                 *@
-            </tr>
+                @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                  <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
+                  <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
+                }
+              </tr>
             }
-            </tbody>
+          </tbody>
         </table>
         </div>
 
