@@ -29,32 +29,34 @@
 
       <h2>Releases</h2>
       <table class="releases">
-          <thead>
-          <tr>
-          <th>Version</th>
-          <th>Release date</th>
-            @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-            <th>Compatible with</th>
-            *@
-          </tr>
-          </thead>
-          <tbody>
-          @for(version <- versions){
+        <thead>
+        <tr>
+        <th>Version</th>
+        <th>Release date</th>
+        @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+          <th>Compatible with</th>
+        *@
+        @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+          <th></th>
+          <th></th>
+        }
+        </tr>
+        </thead>
+        <tbody>
+        @for(version <- versions){
           <tr class="releaseRow" title="@version.versionCode">
-              <td>@version.versionCode</td>
-              <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
-              @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-              <td>@version.getCompatibilityHtml()</td>
-              *@
-              @*
-              TODO: replace hard-coded URL prefix with
-              TODO Show when there's a Play 1 module version
+            <td>@version.versionCode</td>
+            <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
+            @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+            <td>@version.getCompatibilityHtml()</td>
+            *@
+            @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
               <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
               <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
-            *@
+            }
           </tr>
-          }
-          </tbody>
+        }
+        </tbody>
       </table>
 
       <div class="subSection">
