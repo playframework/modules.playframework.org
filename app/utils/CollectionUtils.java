@@ -94,6 +94,15 @@ public class CollectionUtils
         return t;
     }
 
+    /**
+     * Transforms a collection of objects of one type into a list of another type.
+     *
+     * @param input the collection to transform
+     * @param transformer transforms individual objects
+     * @param <I> the input type to tranform
+     * @param <O> the output type that is the result of the transformation
+     * @return a list of transformed objects
+     */
     public static <I, O> List<O> transform(Collection<I> input,
                                            Transformer<I, O> transformer)
     {

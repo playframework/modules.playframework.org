@@ -196,7 +196,6 @@ public class Modules extends AbstractController
         {
             List<ModuleVersion> moduleVersions = ModuleVersion.findByModule(module);
             User user = currentUser();
-            Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
             Rate rate = null;
             Vote vote = null;
 
@@ -220,13 +219,15 @@ public class Modules extends AbstractController
                                                    });
             }
 
+            Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
+
             for (ModuleVersion moduleVersion : moduleVersions)
             {
                 majorVersions.addAll(moduleVersion.getMajorVersions());
             }
 
-
             Ebean.refresh(module.rating);
+
             result = ok(moduleDetails.render(user,
                                              module,
                                              moduleVersions,
