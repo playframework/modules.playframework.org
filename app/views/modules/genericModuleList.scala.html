@@ -4,16 +4,20 @@
 @* convenience template for dumping a list of modules to screen.  Should be replaced by well-targeted templates *@
 @main(title, currentUser) {
 
-<section id="top">
-    <div class="wrapper">
-        <h1>@title</h1>
-    </div>
-</section>
+<header>
+    <h1>@title</h1>
+</header>
 
+@moduleList("", modules)
 
-<div class="wrapper">
-  <article class="wide">
-    @moduleList("", modules)
-  </article>
-</div>
+<script>
+    $(function(){
+        @if(title.contains("Play 1.x")) {
+            setNavbar('Play1');
+        } else {
+            setNavbar('Play2');
+        }
+    });
+</script>
+
 }
