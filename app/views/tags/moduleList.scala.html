@@ -3,30 +3,43 @@
 
 @import utils.StringUtils._;
 
-<p class="sectionHeader">@title</p>
-<div id="modules">
 
+<div class="row">
+    <div class="span12">
+        <p class="sectionHeader">@title</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
     @if(moduleAccessors.isEmpty()){
         <span>No modules found.</span>
+
     } else {
-        <table>
-          <tr>
-            <th>Name &amp; description</th>
-            <th>Owner</th>
-          </tr>
-        @for(accessor <- moduleAccessors) {
-            @defining(accessor.getModule()) { module =>
-                  <tr>
-                    <td>
-                      <a href="@routes.Modules.details(module.key)">@module.name</a>
-                      <br>@summarize(module.summary)
-                    </td>
-                    <td>@module.owner.displayName</td>
-                  </tr>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name &amp; description</th>
+                <th>Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+            @for(accessor <- moduleAccessors) {
+                @defining(accessor.getModule()) { module =>
+                      <tr>
+                        <td>
+                          <a class="moduleTitle" href="@routes.Modules.details(module.key)">@module.name</a>
+                          <br>@summarize(module.summary)
+                        </td>
+                        <td>@module.owner.displayName</td>
+                      </tr>
+                }
             }
-        }
+            </tbody>
         </table>
     }
+    </div>
 </div>
 
 

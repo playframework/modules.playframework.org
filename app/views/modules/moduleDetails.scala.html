@@ -11,118 +11,118 @@
 
 @main(module.name, currentUser, moreScripts) {
 
-<section id="top">
-    <div class="wrapper">
-        <h1>@module.name</h1>
-        <h2>@module.summary</h2>
+<header>
+    <h1>@module.name</h1>
+    <h2>@module.summary</h2>
+</header>
+
+
+<div class="row">
+    <div class="span12">
+        <div class="description">
+            @Html(module.getDescriptionHtml())
+        </div>
     </div>
-</section>
-
-<div class="wrapper">
-
-  <article>
-    <div id="overviewArea">
-
-      <div class="description">
-          @Html(module.getDescriptionHtml())
-      </div>
-
-      <h2>Releases</h2>
-      <table class="releases">
-        <thead>
-        <tr>
-        <th>Version</th>
-        <th>Release date</th>
-        @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-          <th>Compatible with</th>
-        *@
-        @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
-          <th></th>
-          <th></th>
-        }
-        </tr>
-        </thead>
-        <tbody>
-        @for(version <- versions){
-          <tr class="releaseRow" title="@version.versionCode">
-            <td>@version.versionCode</td>
-            <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
-            @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-            <td>@version.getCompatibilityHtml()</td>
-            *@
-            @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
-              <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
-              <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
-            }
-          </tr>
-        }
-        </tbody>
-      </table>
-
-      <div class="subSection">
-        <h2>Installation</h2>
-        <p>Select a release (above) to show the exact installation details.</p>
-        @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
-        <h3>Play 1</h3>
-        <p>To install locally this module use the install command:</p>
-            <pre class="code">
-                play install @module.key-<span class='exampleVersion'>version</span></pre>
-
-        To add this module as dependency of your application, add it to the dependencies.yml file:
-            <pre class="code">
-    require:
-        - play -> @module.key <span class='exampleVersion'>version</span></pre>
-
-        <p>See <a href="http://www.playframework.org/documentation/1.2.4/dependency" target="_blank" class="external">the Play 1 documentation</a> for further details.</p>
-        }
-
-        @if(majorVersions.contains(PlayVersion.MajorVersion.TWO)) {
-        <h3>Play 2</h3>
-        <p>To declare a dependency on this module, update project/Build.scala:</p>
-            <pre class="code">
-val appDependencies = Seq(
-    "@module.organisation" %% "@module.key" % "<span class='exampleVersion'>version</span>",
-)</pre>
-
-        <p>See <a href="http://www.playframework.org/documentation/2.0.1/SBTDependencies" target="_blank" class="external">the Play 2 documentation</a> for further details.</p>
-        }
-      </div>
-
-    </div>
-  </article>
-
-  <aside>
-    <h3>Project home</h3>
-    <p><a href="@module.projectUrl" target="_blank">@module.projectUrl</a></p>
-
-    @if(!isEmpty(module.demoUrl)) {
-        <h3>Demo</h3>
-        <p><a href="@module.demoUrl" target="_blank">@module.demoUrl</a></p>
-    }
-
-    @if(!isEmpty(module.licenseType)){
-        <h3>License</h3>
-        <p>
-        @if(!isEmpty(module.licenseUrl)){
-            <a href="@module.licenseUrl">@module.licenseType</a>
-        } else {
-            @module.licenseType
-        }
-        </p>
-    }
-
-    <h3>Owner</h3>
-    <p>@module.owner.displayName</p>
-
-    @if(!isEmpty(module.contributors)){
-      <h3>Contributors</h3>
-      <p>@module.contributors</p>
-    }
-  </aside>
-
 </div>
+
+<div class="row">
+    <div class="span8">
+        <h2>Releases</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Release date</th>
+                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+                    <th>Compatible with</th>
+                    *@
+                    @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                      <th></th>
+                      <th></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for(version <- versions){
+                  <tr title="@version.versionCode">
+                    <td>@version.versionCode</td>
+                    <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
+                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+                    <td>@version.getCompatibilityHtml()</td>
+                    *@
+                    @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                      <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
+                      <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
+                    }
+                  </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="subSection">
+            <h2>Installation</h2>
+            <p>Select a release (above) to show the exact installation details.</p>
+
+            @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                <h3>Play 1</h3>
+                <p>To install locally this module use the install command:</p>
+                    <pre class="code">
+        play install @module.key-<span class='exampleVersion'>version</span>
+                    </pre>
+                    To add this module as dependency of your application, add it to the dependencies.yml file:
+                    <pre class="code">
+        require:
+            - play -> @module.key <span class='exampleVersion'>version</span>
+                    </pre>
+                <p>See <a href="http://www.playframework.org/documentation/1.2.4/dependency" target="_blank" class="external">the Play 1 documentation</a> for further details.</p>
+            }
+
+            @if(majorVersions.contains(PlayVersion.MajorVersion.TWO)) {
+                <h3>Play 2</h3>
+                <p>To declare a dependency on this module, update project/Build.scala:</p>
+                <pre class="code">
+        val appDependencies = Seq(
+        "@module.organisation" %% "@module.key" % "<span class='exampleVersion'>version</span>",
+        )       </pre>
+                <p>See <a href="http://www.playframework.org/documentation/2.0.1/SBTDependencies" target="_blank" class="external">the Play 2 documentation</a> for further details.</p>
+            }
+        </div>
+
+    </div>
+
+    <div class="span3 aside">
+        <h3>Project home</h3>
+        <p><a href="@module.projectUrl" target="_blank">@module.projectUrl</a></p>
+
+        @if(!isEmpty(module.demoUrl)) {
+            <h3>Demo</h3>
+            <p><a href="@module.demoUrl" target="_blank">@module.demoUrl</a></p>
+        }
+
+        @if(!isEmpty(module.licenseType)){
+            <h3>License</h3>
+            <p>
+            @if(!isEmpty(module.licenseUrl)){
+                <a href="@module.licenseUrl">@module.licenseType</a>
+            } else {
+                @module.licenseType
+            }
+            </p>
+        }
+
+        <h3>Owner</h3>
+        <p>@module.owner.displayName</p>
+
+        @if(!isEmpty(module.contributors)){
+          <h3>Contributors</h3>
+          <p>@module.contributors</p>
+        }
+    </div>
+</div>
+
+
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(function() {
 
       $('tr.releaseRow').click(function() {
         $('span.exampleVersion').text($(this).attr('title'));

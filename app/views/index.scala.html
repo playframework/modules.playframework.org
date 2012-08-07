@@ -15,40 +15,53 @@
 
 @main("Home") {
 
-	<section id="introduction">
-		<div class="wrapper">
-			<div id="title">
-				<h1>
-					@moduleCount Play framework<br>
-					modules for<br>
-					Play 2.x and Play 1.x
-				</h1>
-				<p>
-					Here you can find great modules contributed by the play community. Browse the catalog and add instant power to your application.
-				</p>
-			</div>
-			<div id="quicklinks">
-				<h2>Browse modules</h2>
-				<p>
-                    <a href='@routes.Modules.getModulesByPlayVersion("1")'>Play 1.x</a>,
+
+    <div class="row introduction">
+        <div class="span10 offset1">
+            <div class="title">
+                <h1 class="huge">Play Modules</h1>
+            </div>
+            <div class="links">
+                <a class="btn btn-large btn-success" href="@routes.Modules.getModulesByPlayVersion("1")">Play 1.x Modules</a>
+                <a class="btn btn-large btn-primary" href="@routes.Modules.getModulesByPlayVersion("2")">Play 2.x Modules</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="landingDetails">
+        <h1>@moduleCount Play framework modules for Play 2.x and Play 1.x</h1>
+        <div class="subheader">Here you can find great modules contributed by the play community.Browse the catalog and add instant power to your application.</div>
+
+        <div class="row">
+            <div class="span4">
+                <h2>Browse modules</h2>
+                <p>
+                    Browse modules for both
+                    <a href='@routes.Modules.getModulesByPlayVersion("1")'>Play 1.x</a> and
                     <a href='@routes.Modules.getModulesByPlayVersion("2")'>Play 2.x</a>
+                </p>
+            </div>
+            <div class="span4">
+                <h2>Get involved</h2>
+                <p>
+                    Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
+                </p>
+            </div>
+            <div class="span4">
+                <h2>Stay in the loop</h2>
+                <p>
+                    New and updated modules will be published to a syndication feed. You can subscribe here: <br/>
+                    <a href='@routes.Assets.at("feeds/mpo.atom.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;Atom 1.0</a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 1.0</a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 2.0</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
-				</p>
-
-				<h2>Get involved</h2>
-				<p>
-					Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
-				</p>
-				<h2>Stay in the loop</h2>
-				<p>
-                    New and updated modules will be published to a syndication feed.  You can subscribe here. <br/>
-                    <a href='@routes.Assets.at("feeds/mpo.atom.xml")'>Atom 1.0</a>,
-                    <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'>RSS 1.0</a>,
-                    <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'>RSS 2.0</a>
-				</p>
-			</div>
-		</div>
-	</section>
-
-
+    <script>
+        $(function(){
+            setNavbar("Home");
+        });
+    </script>
 }
